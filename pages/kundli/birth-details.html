@@ -1,0 +1,957 @@
+<!-- =========================================================
+     VEDIC KUNDLI
+     MODULE 01 - BIRTH DETAILS
+     File:
+     pages/kundli/birth-details.html
+
+     NOTE:
+     This is a module fragment.
+     Do NOT add <html>, <head>, or <body>.
+     ========================================================= -->
+
+<section
+    id="birthDetailsModule"
+    class="kundli-module birth-details-module"
+    data-module="birth-details"
+>
+
+    <!-- =====================================================
+         MODULE HEADER
+         ===================================================== -->
+
+    <header class="kundli-module-header birth-details-module-header">
+
+        <div
+            class="kundli-module-number birth-details-module-number"
+            aria-hidden="true"
+        >
+            01
+        </div>
+
+        <div class="kundli-module-heading">
+
+            <p class="kundli-module-eyebrow">
+                VEDIC ASTROLOGY
+            </p>
+
+            <h2 class="kundli-module-title">
+                जन्म विवरण
+            </h2>
+
+            <p class="kundli-module-description">
+                सही जन्म तारीख, समय और स्थान भरें।
+                यही जानकारी आगे पूरी Kundli के सभी modules में उपयोग होगी।
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         FORM WRAPPER
+         ===================================================== -->
+
+    <div class="kundli-module-content">
+
+        <form
+            id="birthDetailsForm"
+            class="birth-details-form"
+            autocomplete="off"
+            novalidate
+        >
+
+            <!-- =================================================
+                 SECTION 01 - PERSONAL INFORMATION
+                 ================================================= -->
+
+            <section
+                id="birthPersonalSection"
+                class="kundli-module-card birth-details-card"
+            >
+
+                <header class="kundli-module-card-header">
+
+                    <div
+                        class="kundli-module-card-number"
+                        aria-hidden="true"
+                    >
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3 class="kundli-module-card-title">
+                            व्यक्तिगत जानकारी
+                        </h3>
+
+                        <p class="kundli-module-card-subtitle">
+                            Personal Information
+                        </p>
+
+                    </div>
+
+                </header>
+
+
+                <div class="birth-details-form-grid">
+
+                    <!-- NAME -->
+
+                    <div
+                        class="birth-details-field birth-details-field-full"
+                    >
+
+                        <label
+                            for="birthPersonName"
+                            class="birth-details-label"
+                        >
+                            नाम
+                            <span
+                                class="birth-details-required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="birthPersonName"
+                            name="name"
+                            class="birth-details-input"
+                            placeholder="अपना पूरा नाम लिखें"
+                            maxlength="120"
+                            required
+                        >
+
+                        <small
+                            id="birthPersonNameHelp"
+                            class="birth-details-help"
+                        >
+                            यही नाम Kundli record में दिखाई देगा।
+                        </small>
+
+                    </div>
+
+
+                    <!-- GENDER -->
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthGender"
+                            class="birth-details-label"
+                        >
+                            लिंग
+                            <span
+                                class="birth-details-required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+                        </label>
+
+                        <select
+                            id="birthGender"
+                            name="gender"
+                            class="birth-details-select"
+                            required
+                        >
+
+                            <option value="">
+                                चुनें
+                            </option>
+
+                            <option value="male">
+                                पुरुष
+                            </option>
+
+                            <option value="female">
+                                महिला
+                            </option>
+
+                            <option value="other">
+                                अन्य
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- BIRTH TIME ACCURACY -->
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthTimeAccuracy"
+                            class="birth-details-label"
+                        >
+                            जन्म समय की सटीकता
+                        </label>
+
+                        <select
+                            id="birthTimeAccuracy"
+                            name="birthTimeAccuracy"
+                            class="birth-details-select"
+                        >
+
+                            <option value="">
+                                चुनें
+                            </option>
+
+                            <option value="exact">
+                                Exact — बिल्कुल सही
+                            </option>
+
+                            <option value="approximate">
+                                Approximate — लगभग
+                            </option>
+
+                            <option value="unknown">
+                                Unknown — ज्ञात नहीं
+                            </option>
+
+                        </select>
+
+                        <small class="birth-details-help">
+                            Timing analysis में यह जानकारी महत्वपूर्ण हो सकती है।
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION 02 - BIRTH DATE & TIME
+                 ================================================= -->
+
+            <section
+                id="birthDateTimeSection"
+                class="kundli-module-card birth-details-card"
+            >
+
+                <header class="kundli-module-card-header">
+
+                    <div
+                        class="kundli-module-card-number"
+                        aria-hidden="true"
+                    >
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3 class="kundli-module-card-title">
+                            जन्म तारीख और समय
+                        </h3>
+
+                        <p class="kundli-module-card-subtitle">
+                            Birth Date &amp; Time
+                        </p>
+
+                    </div>
+
+                </header>
+
+
+                <div class="birth-details-form-grid">
+
+                    <!-- DATE -->
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthDate"
+                            class="birth-details-label"
+                        >
+                            जन्म तारीख
+                            <span
+                                class="birth-details-required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+                        </label>
+
+                        <input
+                            type="date"
+                            id="birthDate"
+                            name="date"
+                            class="birth-details-input"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- TIME -->
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthTime"
+                            class="birth-details-label"
+                        >
+                            जन्म समय
+                            <span
+                                class="birth-details-required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+                        </label>
+
+                        <input
+                            type="time"
+                            id="birthTime"
+                            name="time"
+                            class="birth-details-input"
+                            step="1"
+                            required
+                        >
+
+                        <small class="birth-details-help">
+                            यदि seconds ज्ञात हों तो seconds भी दर्ज करें।
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="birthUtcPreview"
+                    class="birth-details-info-box"
+                    hidden
+                >
+
+                    <div class="birth-details-info-icon">
+                        UTC
+                    </div>
+
+                    <div class="birth-details-info-content">
+
+                        <strong>
+                            Calculation Time
+                        </strong>
+
+                        <span
+                            id="birthUtcPreviewText"
+                        >
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION 03 - BIRTH PLACE
+                 ================================================= -->
+
+            <section
+                id="birthPlaceSection"
+                class="kundli-module-card birth-details-card"
+            >
+
+                <header class="kundli-module-card-header">
+
+                    <div
+                        class="kundli-module-card-number"
+                        aria-hidden="true"
+                    >
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3 class="kundli-module-card-title">
+                            जन्म स्थान
+                        </h3>
+
+                        <p class="kundli-module-card-subtitle">
+                            Birth Place &amp; Coordinates
+                        </p>
+
+                    </div>
+
+                </header>
+
+
+                <!-- LOCATION SEARCH -->
+
+                <div class="birth-details-location-search">
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthPlaceSearch"
+                            class="birth-details-label"
+                        >
+                            जन्म स्थान खोजें
+                            <span
+                                class="birth-details-required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+                        </label>
+
+                        <div
+                            class="birth-details-search-wrapper"
+                        >
+
+                            <span
+                                class="birth-details-search-icon"
+                                aria-hidden="true"
+                            >
+                                ⌕
+                            </span>
+
+                            <input
+                                type="search"
+                                id="birthPlaceSearch"
+                                name="place"
+                                class="birth-details-input birth-details-search-input"
+                                placeholder="City / Town / Village खोजें..."
+                                autocomplete="off"
+                                minlength="2"
+                                maxlength="150"
+                                required
+                                aria-controls="birthLocationResults"
+                                aria-expanded="false"
+                            >
+
+                            <span
+                                id="birthLocationSearchSpinner"
+                                class="birth-details-search-spinner"
+                                aria-hidden="true"
+                                hidden
+                            ></span>
+
+                        </div>
+
+                        <small class="birth-details-help">
+                            कम से कम 2 अक्षर लिखें और नीचे से सही स्थान select करें।
+                        </small>
+
+                    </div>
+
+
+                    <!-- SEARCH RESULTS -->
+
+                    <div
+                        id="birthLocationResults"
+                        class="birth-details-location-results"
+                        role="listbox"
+                        aria-label="Location suggestions"
+                        hidden
+                    ></div>
+
+                </div>
+
+
+                <!-- SELECTED LOCATION -->
+
+                <div
+                    id="birthSelectedLocation"
+                    class="birth-details-selected-location"
+                    hidden
+                >
+
+                    <div
+                        class="birth-details-selected-location-main"
+                    >
+
+                        <span
+                            class="birth-details-selected-location-label"
+                        >
+                            Selected Birth Place
+                        </span>
+
+                        <strong
+                            id="birthSelectedLocationName"
+                            class="birth-details-selected-location-name"
+                        >
+                        </strong>
+
+                        <span
+                            id="birthSelectedLocationMeta"
+                            class="birth-details-selected-location-meta"
+                        >
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="birthChangeLocationButton"
+                        class="birth-details-change-location"
+                    >
+                        बदलें
+                    </button>
+
+                </div>
+
+
+                <!-- LOCATION DATA -->
+
+                <div class="birth-details-form-grid">
+
+                    <!-- STATE -->
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthState"
+                            class="birth-details-label"
+                        >
+                            State / Region
+                        </label>
+
+                        <input
+                            type="text"
+                            id="birthState"
+                            name="state"
+                            class="birth-details-input"
+                            placeholder="State / Region"
+                            maxlength="120"
+                        >
+
+                    </div>
+
+
+                    <!-- COUNTRY -->
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthCountry"
+                            class="birth-details-label"
+                        >
+                            Country
+                        </label>
+
+                        <input
+                            type="text"
+                            id="birthCountry"
+                            name="country"
+                            class="birth-details-input"
+                            placeholder="Country"
+                            maxlength="120"
+                        >
+
+                    </div>
+
+
+                    <!-- LATITUDE -->
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthLatitude"
+                            class="birth-details-label"
+                        >
+                            Latitude
+                            <span
+                                class="birth-details-required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="birthLatitude"
+                            name="latitude"
+                            class="birth-details-input"
+                            placeholder="जैसे 28.6139"
+                            min="-90"
+                            max="90"
+                            step="any"
+                            required
+                        >
+
+                        <small class="birth-details-help">
+                            Location से स्वतः भरता है; आवश्यकता हो तो edit कर सकते हैं।
+                        </small>
+
+                    </div>
+
+
+                    <!-- LONGITUDE -->
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthLongitude"
+                            class="birth-details-label"
+                        >
+                            Longitude
+                            <span
+                                class="birth-details-required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+                        </label>
+
+                        <input
+                            type="number"
+                            id="birthLongitude"
+                            name="longitude"
+                            class="birth-details-input"
+                            placeholder="जैसे 77.2090"
+                            min="-180"
+                            max="180"
+                            step="any"
+                            required
+                        >
+
+                        <small class="birth-details-help">
+                            Location से स्वतः भरता है; आवश्यकता हो तो edit कर सकते हैं।
+                        </small>
+
+                    </div>
+
+
+                    <!-- TIMEZONE -->
+
+                    <div class="birth-details-field">
+
+                        <label
+                            for="birthTimezone"
+                            class="birth-details-label"
+                        >
+                            Timezone
+                            <span
+                                class="birth-details-required"
+                                aria-hidden="true"
+                            >
+                                *
+                            </span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="birthTimezone"
+                            name="timezone"
+                            class="birth-details-input"
+                            placeholder="जैसे Asia/Kolkata"
+                            maxlength="100"
+                            required
+                        >
+
+                        <small class="birth-details-help">
+                            IANA timezone format उपयोग करें, जैसे Asia/Kolkata।
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION VALIDATION -->
+
+                <div
+                    id="birthLocationMessage"
+                    class="birth-details-location-message"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION 04 - ASTROLOGY SETTINGS
+                 ================================================= -->
+
+            <section
+                id="birthAstrologySettingsSection"
+                class="kundli-module-card birth-details-card"
+            >
+
+                <header class="kundli-module-card-header">
+
+                    <div
+                        class="kundli-module-card-number"
+                        aria-hidden="true"
+                    >
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3 class="kundli-module-card-title">
+                            गणना सेटिंग
+                        </h3>
+
+                        <p class="kundli-module-card-subtitle">
+                            Astrology Calculation Settings
+                        </p>
+
+                    </div>
+
+                </header>
+
+
+                <div class="birth-details-setting-grid">
+
+                    <div
+                        id="birthAyanamshaSetting"
+                        class="birth-details-setting-item"
+                    >
+
+                        <span class="birth-details-setting-label">
+                            Ayanamsha
+                        </span>
+
+                        <strong
+                            id="birthAyanamshaValue"
+                            class="birth-details-setting-value"
+                        >
+                            Lahiri
+                        </strong>
+
+                        <small class="birth-details-help">
+                            Vedic calculation के लिए Lahiri ayanamsha।
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        id="birthCalculationSystemSetting"
+                        class="birth-details-setting-item"
+                    >
+
+                        <span class="birth-details-setting-label">
+                            Calculation
+                        </span>
+
+                        <strong
+                            id="birthCalculationSystemValue"
+                            class="birth-details-setting-value"
+                        >
+                            Vedic / Sidereal
+                        </strong>
+
+                        <small class="birth-details-help">
+                            Kundli engine के calculation framework के अनुसार।
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION 05 - NOTES
+                 ================================================= -->
+
+            <section
+                id="birthNotesSection"
+                class="kundli-module-card birth-details-card"
+            >
+
+                <header class="kundli-module-card-header">
+
+                    <div
+                        class="kundli-module-card-number"
+                        aria-hidden="true"
+                    >
+                        05
+                    </div>
+
+                    <div>
+
+                        <h3 class="kundli-module-card-title">
+                            अतिरिक्त जानकारी
+                        </h3>
+
+                        <p class="kundli-module-card-subtitle">
+                            Additional Information
+                        </p>
+
+                    </div>
+
+                </header>
+
+
+                <div class="birth-details-field">
+
+                    <label
+                        for="birthNotes"
+                        class="birth-details-label"
+                    >
+                        नोट्स
+                    </label>
+
+                    <textarea
+                        id="birthNotes"
+                        name="notes"
+                        class="birth-details-textarea"
+                        rows="4"
+                        maxlength="1000"
+                        placeholder="जन्म समय, पुराने रिकॉर्ड या अन्य उपयोगी जानकारी यहाँ लिख सकते हैं..."
+                    ></textarea>
+
+                    <div
+                        id="birthNotesCounter"
+                        class="birth-details-counter"
+                    >
+                        0 / 1000
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FORM MESSAGE
+                 ================================================= -->
+
+            <div
+                id="birthDetailsFormMessage"
+                class="birth-details-form-message"
+                role="alert"
+                aria-live="assertive"
+                hidden
+            ></div>
+
+
+            <!-- =================================================
+                 SAVE NOTE
+                 ================================================= -->
+
+            <div
+                id="birthDetailsSaveNote"
+                class="birth-details-save-note"
+            >
+
+                <span
+                    class="birth-details-save-note-icon"
+                    aria-hidden="true"
+                >
+                    ✓
+                </span>
+
+                <p>
+                    जन्म विवरण एक बार सेव होगा।
+                    आगे के सभी modules इसी data और generated Kundli result का उपयोग करेंगे।
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 FORM ACTIONS
+                 ================================================= -->
+
+            <div
+                id="birthDetailsFormActions"
+                class="birth-details-form-actions"
+            >
+
+                <button
+                    type="button"
+                    id="birthDetailsResetButton"
+                    class="birth-details-button birth-details-button-secondary"
+                >
+                    <span
+                        class="birth-details-button-icon"
+                        aria-hidden="true"
+                    >
+                        ↻
+                    </span>
+
+                    <span>
+                        Reset
+                    </span>
+                </button>
+
+
+                <button
+                    type="submit"
+                    id="birthDetailsSaveButton"
+                    class="birth-details-button birth-details-button-primary"
+                >
+
+                    <span
+                        id="birthDetailsSaveButtonIcon"
+                        class="birth-details-button-icon"
+                        aria-hidden="true"
+                    >
+                        ✦
+                    </span>
+
+                    <span
+                        id="birthDetailsSaveButtonText"
+                    >
+                        Save &amp; Generate Kundli
+                    </span>
+
+                    <span
+                        id="birthDetailsSaveButtonSpinner"
+                        class="birth-details-button-spinner"
+                        aria-hidden="true"
+                        hidden
+                    ></span>
+
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- =====================================================
+             SAVED STATUS
+             ===================================================== -->
+
+        <section
+            id="birthDetailsSavedPanel"
+            class="birth-details-saved-panel"
+            hidden
+            aria-live="polite"
+        >
+
+            <div class="birth-details-saved-icon">
+                ✓
+            </div>
+
+            <div class="birth-details-saved-content">
+
+                <h3>
+                    जन्म विवरण सेव हो गया
+                </h3>
+
+                <p>
+                    Kundli calculation सफलतापूर्वक तैयार होकर shared state में save हो गई है।
+                </p>
+
+                <div
+                    id="birthDetailsSavedSummary"
+                    class="birth-details-saved-summary"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</section>

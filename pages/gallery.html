@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gallery | Mukesh Sah</title>
+
+    <meta
+        name="description"
+        content="Beautiful memories of Mukesh Sah"
+    >
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/footer.css">
+ <link rel="stylesheet" href="../css/gallery.css">
+<link rel="stylesheet" href="../css/mobile.css">
+   
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="background">
+
+        <div class="bg-glow glow-1"></div>
+        <div class="bg-glow glow-2"></div>
+        <div class="bg-glow glow-3"></div>
+
+        <div class="stars stars-1"></div>
+        <div class="stars stars-2"></div>
+
+        <div class="noise"></div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SITE HEADER
+         Loaded by main.js
+    ====================================================== -->
+
+    <div id="site-header"></div>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-orbit orbit-one"></div>
+
+            <div class="hero-orbit orbit-two"></div>
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-kicker">
+
+                    <span></span>
+
+                    A COLLECTION OF MEMORIES
+
+                    <span></span>
+
+                </div>
+
+
+
+                <h1>
+
+                    Beautiful
+
+                    <em>Moments</em>
+
+                </h1>
+
+
+
+                <p>
+
+                    Every picture has a story.
+                    Every moment deserves to be remembered.
+
+                </p>
+
+
+
+                <div class="hero-line"></div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PHOTO PRESENTATION
+        ================================================== -->
+
+        <section class="presentation-section">
+
+
+            <div class="presentation-top">
+
+
+                <div>
+
+                    <span class="small-title">
+
+                        PHOTO PRESENTATION
+
+                    </span>
+
+
+                    <h2>
+
+                        Our <em>Story</em>
+
+                    </h2>
+
+                </div>
+
+
+
+                <div class="counter">
+
+                    <span id="counterCurrent">
+
+                        01
+
+                    </span>
+
+                    <i>/</i>
+
+                    <span id="counterTotal">
+
+                        20
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SINGLE PHOTO CONTAINER
+            ================================================== -->
+
+            <div
+                id="sliderStage"
+                class="slider-stage"
+            >
+
+
+                <!-- PHOTO NUMBER -->
+
+                <div class="photo-number">
+
+                    MEMORY
+
+                    <span id="sliderNumber">
+
+                        01
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MAIN VERTICAL PHOTO
+                     Recommended: 1080 x 1440 px
+                ================================================== -->
+
+                <div class="main-photo-wrap">
+
+
+                    <div class="photo-shine"></div>
+
+
+                    <img
+                        id="sliderImage"
+                        src="../images/photo1.jpg"
+                        alt="Memory 01"
+                    >
+
+
+                    <div class="photo-corner corner-tl"></div>
+
+                    <div class="photo-corner corner-tr"></div>
+
+                    <div class="photo-corner corner-bl"></div>
+
+                    <div class="photo-corner corner-br"></div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PREVIOUS BUTTON
+                ================================================== -->
+
+                <button
+                    id="sliderPrev"
+                    class="nav-button nav-prev"
+                    type="button"
+                    aria-label="Previous photo"
+                >
+
+                    <span>←</span>
+
+                </button>
+
+
+
+                <!-- =================================================
+                     NEXT BUTTON
+                ================================================== -->
+
+                <button
+                    id="sliderNext"
+                    class="nav-button nav-next"
+                    type="button"
+                    aria-label="Next photo"
+                >
+
+                    <span>→</span>
+
+                </button>
+
+
+
+                <!-- =================================================
+                     PHOTO INFORMATION
+                ================================================== -->
+
+                <div class="photo-info">
+
+                    <span class="photo-label">
+
+                        BEAUTIFUL MEMORY
+
+                    </span>
+
+
+                    <h3 id="sliderTitle">
+
+                        A Beautiful Moment
+
+                    </h3>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FULLSCREEN
+                ================================================== -->
+
+                <button
+                    id="sliderFullscreen"
+                    class="fullscreen-button"
+                    type="button"
+                    aria-label="Open fullscreen"
+                >
+
+                    ⛶
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PLAY + PROGRESS
+            ================================================== -->
+
+            <div class="slider-controls">
+
+
+                <button
+                    id="sliderPlay"
+                    class="play-button"
+                    type="button"
+                >
+
+                    Ⅱ&nbsp; PAUSE
+
+                </button>
+
+
+
+                <div class="progress-area">
+
+
+                    <div class="progress-track">
+
+                        <div
+                            id="progressFill"
+                            class="progress-fill"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="progress-text">
+
+                        AUTO PLAY
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PHOTO DOTS
+            ================================================== -->
+
+            <div
+                id="sliderDots"
+                class="slider-dots"
+            ></div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CLOSING
+        ================================================== -->
+
+        <section class="closing-section">
+
+
+            <div class="closing-star">
+
+                ✦
+
+            </div>
+
+
+            <span>
+
+                MEMORIES THAT STAY
+
+            </span>
+
+
+            <h2>
+
+                Some moments
+
+                <em>never fade.</em>
+
+            </h2>
+
+
+            <div class="closing-line"></div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SITE FOOTER
+         Loaded by main.js
+    ====================================================== -->
+
+    <div id="site-footer"></div>
+
+
+
+    <!-- =====================================================
+         LIGHTBOX
+    ====================================================== -->
+
+    <div
+        id="galleryLightbox"
+        class="lightbox"
+    >
+
+
+        <div class="lightbox-backdrop"></div>
+
+
+
+        <button
+            id="lightboxClose"
+            class="lightbox-close"
+            type="button"
+            aria-label="Close"
+        >
+
+            ×
+
+        </button>
+
+
+
+        <button
+            id="lightboxPrev"
+            class="lightbox-nav lightbox-prev"
+            type="button"
+            aria-label="Previous photo"
+        >
+
+            ←
+
+        </button>
+
+
+
+        <div class="lightbox-content">
+
+
+            <div class="lightbox-ring"></div>
+
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt=""
+            >
+
+
+            <div
+                id="lightboxCaption"
+                class="lightbox-caption"
+            >
+
+                MEMORY 01 / 20
+
+            </div>
+
+
+        </div>
+
+
+
+        <button
+            id="lightboxNext"
+            class="lightbox-nav lightbox-next"
+            type="button"
+            aria-label="Next photo"
+        >
+
+            →
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN JS
+         Header + Footer + common functionality
+    ====================================================== -->
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/gallery.js"></script>
+
+
+</body>
+
+</html>

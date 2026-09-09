@@ -1,0 +1,497 @@
+<section class="dashboard-module">
+
+    <!-- =====================================================
+         DASHBOARD HEADER
+    ====================================================== -->
+
+    <div class="dashboard-intro">
+        <div>
+            <span class="dashboard-eyebrow">
+                KUNDLI OVERVIEW
+            </span>
+
+            <h2 id="dashboardTitle">
+                Kundli Dashboard
+            </h2>
+
+            <p id="dashboardSubtitle">
+                जन्म कुंडली का मुख्य सारांश और महत्वपूर्ण संकेत।
+            </p>
+        </div>
+
+        <div class="dashboard-status" id="dashboardStatus">
+            <span class="status-dot"></span>
+            <span>Calculated</span>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         BIRTH SUMMARY
+    ====================================================== -->
+
+    <section class="dashboard-card dashboard-birth-card">
+
+        <div class="dashboard-card-heading">
+            <div>
+                <span class="card-kicker">
+                    BIRTH DETAILS
+                </span>
+
+                <h3>जन्म विवरण</h3>
+            </div>
+        </div>
+
+        <div
+            class="dashboard-birth-grid"
+            id="dashboardBirthGrid"
+        ></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CORE ASTROLOGY
+    ====================================================== -->
+
+    <section class="dashboard-core-grid">
+
+        <!-- Lagna -->
+        <article class="dashboard-metric-card">
+
+            <div class="metric-icon">
+                ल
+            </div>
+
+            <div class="metric-content">
+                <span class="metric-label">
+                    लग्न
+                </span>
+
+                <strong
+                    id="dashboardLagna"
+                    class="metric-value"
+                >
+                    —
+                </strong>
+
+                <span
+                    id="dashboardLagnaDegree"
+                    class="metric-subvalue"
+                >
+                    —
+                </span>
+            </div>
+
+        </article>
+
+
+        <!-- Moon Rashi -->
+        <article class="dashboard-metric-card">
+
+            <div class="metric-icon">
+                च
+            </div>
+
+            <div class="metric-content">
+                <span class="metric-label">
+                    चंद्र राशि
+                </span>
+
+                <strong
+                    id="dashboardMoonRashi"
+                    class="metric-value"
+                >
+                    —
+                </strong>
+
+                <span
+                    id="dashboardMoonDegree"
+                    class="metric-subvalue"
+                >
+                    —
+                </span>
+            </div>
+
+        </article>
+
+
+        <!-- Nakshatra -->
+        <article class="dashboard-metric-card">
+
+            <div class="metric-icon">
+                न
+            </div>
+
+            <div class="metric-content">
+                <span class="metric-label">
+                    जन्म नक्षत्र
+                </span>
+
+                <strong
+                    id="dashboardNakshatra"
+                    class="metric-value"
+                >
+                    —
+                </strong>
+
+                <span
+                    id="dashboardNakshatraPada"
+                    class="metric-subvalue"
+                >
+                    —
+                </span>
+            </div>
+
+        </article>
+
+
+        <!-- Ayanamsha -->
+        <article class="dashboard-metric-card">
+
+            <div class="metric-icon">
+                अ
+            </div>
+
+            <div class="metric-content">
+                <span class="metric-label">
+                    अयनांश
+                </span>
+
+                <strong
+                    id="dashboardAyanamsha"
+                    class="metric-value"
+                >
+                    —
+                </strong>
+
+                <span class="metric-subvalue">
+                    Lahiri
+                </span>
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         MAIN DASHBOARD GRID
+    ====================================================== -->
+
+    <section class="dashboard-main-grid">
+
+        <!-- =================================================
+             PLANETARY OVERVIEW
+        ================================================== -->
+
+        <article class="dashboard-card dashboard-planets-card">
+
+            <div class="dashboard-card-heading">
+
+                <div>
+                    <span class="card-kicker">
+                        PLANETS
+                    </span>
+
+                    <h3>ग्रह स्थिति</h3>
+                </div>
+
+                <span class="card-count">
+                    9 Graha
+                </span>
+
+            </div>
+
+            <div
+                class="dashboard-table-wrap"
+            >
+                <table class="dashboard-planet-table">
+
+                    <thead>
+                        <tr>
+                            <th>ग्रह</th>
+                            <th>राशि</th>
+                            <th>अंश</th>
+                            <th>भाव</th>
+                            <th>नक्षत्र</th>
+                            <th>स्थिति</th>
+                        </tr>
+                    </thead>
+
+                    <tbody
+                        id="dashboardPlanetTable"
+                    ></tbody>
+
+                </table>
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             MARRIAGE SNAPSHOT
+        ================================================== -->
+
+        <article class="dashboard-card dashboard-marriage-card">
+
+            <div class="dashboard-card-heading">
+
+                <div>
+                    <span class="card-kicker">
+                        MARRIAGE
+                    </span>
+
+                    <h3>विवाह संकेत</h3>
+                </div>
+
+            </div>
+
+            <div
+                class="dashboard-indicator-list"
+                id="dashboardMarriageIndicators"
+            ></div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECONDARY GRID
+    ====================================================== -->
+
+    <section class="dashboard-secondary-grid">
+
+        <!-- Manglik -->
+
+        <article class="dashboard-card dashboard-mini-card">
+
+            <div class="dashboard-card-heading">
+                <div>
+                    <span class="card-kicker">
+                        DOSHA
+                    </span>
+
+                    <h3>मांगलिक स्थिति</h3>
+                </div>
+            </div>
+
+            <div
+                id="dashboardManglik"
+                class="dashboard-large-status"
+            >
+                —
+            </div>
+
+            <p
+                id="dashboardManglikNote"
+                class="dashboard-note"
+            ></p>
+
+        </article>
+
+
+        <!-- Dasha -->
+
+        <article class="dashboard-card dashboard-mini-card">
+
+            <div class="dashboard-card-heading">
+                <div>
+                    <span class="card-kicker">
+                        DASHA
+                    </span>
+
+                    <h3>वर्तमान दशा</h3>
+                </div>
+            </div>
+
+            <div
+                id="dashboardDasha"
+                class="dashboard-dasha-box"
+            >
+                <div>
+                    <span>महादशा</span>
+                    <strong id="dashboardMahaDasha">
+                        —
+                    </strong>
+                </div>
+
+                <div>
+                    <span>अंतर्दशा</span>
+                    <strong id="dashboardAntarDasha">
+                        —
+                    </strong>
+                </div>
+            </div>
+
+            <p
+                id="dashboardDashaDates"
+                class="dashboard-note"
+            ></p>
+
+        </article>
+
+
+        <!-- D9 -->
+
+        <article class="dashboard-card dashboard-mini-card">
+
+            <div class="dashboard-card-heading">
+                <div>
+                    <span class="card-kicker">
+                        NAVAMSA
+                    </span>
+
+                    <h3>D9 स्थिति</h3>
+                </div>
+            </div>
+
+            <div
+                id="dashboardD9"
+                class="dashboard-d9-box"
+            >
+                <div>
+                    <span>D9 Lagna</span>
+                    <strong id="dashboardD9Lagna">
+                        —
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Venus D9</span>
+                    <strong id="dashboardD9Venus">
+                        —
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Jupiter D9</span>
+                    <strong id="dashboardD9Jupiter">
+                        —
+                    </strong>
+                </div>
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         CALCULATION INFO
+    ====================================================== -->
+
+    <section class="dashboard-card dashboard-calculation-card">
+
+        <div class="dashboard-card-heading">
+
+            <div>
+                <span class="card-kicker">
+                    CALCULATION
+                </span>
+
+                <h3>Calculation Information</h3>
+            </div>
+
+        </div>
+
+        <div
+            class="dashboard-info-grid"
+            id="dashboardCalculationInfo"
+        ></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         QUICK NAVIGATION
+    ====================================================== -->
+
+    <section class="dashboard-card dashboard-quick-card">
+
+        <div class="dashboard-card-heading">
+
+            <div>
+                <span class="card-kicker">
+                    EXPLORE
+                </span>
+
+                <h3>आगे क्या देखें?</h3>
+            </div>
+
+        </div>
+
+        <div class="dashboard-quick-grid">
+
+            <button
+                type="button"
+                class="dashboard-quick-btn"
+                data-dashboard-module="d1-rashi"
+            >
+                <strong>D1 Rashi</strong>
+                <span>मुख्य जन्म कुंडली</span>
+            </button>
+
+            <button
+                type="button"
+                class="dashboard-quick-btn"
+                data-dashboard-module="bhava"
+            >
+                <strong>Bhava</strong>
+                <span>12 भाव और ग्रह</span>
+            </button>
+
+            <button
+                type="button"
+                class="dashboard-quick-btn"
+                data-dashboard-module="grah-sthiti"
+            >
+                <strong>Grah Sthiti</strong>
+                <span>विस्तृत ग्रह स्थिति</span>
+            </button>
+
+            <button
+                type="button"
+                class="dashboard-quick-btn"
+                data-dashboard-module="nakshatra"
+            >
+                <strong>Nakshatra</strong>
+                <span>नक्षत्र एवं पाद</span>
+            </button>
+
+            <button
+                type="button"
+                class="dashboard-quick-btn"
+                data-dashboard-module="navamsa-d9"
+            >
+                <strong>Navamsa D9</strong>
+                <span>विवाह का D9 analysis</span>
+            </button>
+
+            <button
+                type="button"
+                class="dashboard-quick-btn"
+                data-dashboard-module="dasha"
+            >
+                <strong>Dasha</strong>
+                <span>Vimshottari दशा</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DISCLAIMER
+    ====================================================== -->
+
+    <div class="dashboard-disclaimer">
+        <strong>ध्यान दें:</strong>
+        यह dashboard पारंपरिक Vedic Jyotish गणना और
+        interpretation framework पर आधारित है।
+        यह वैज्ञानिक भविष्यवाणी या निश्चित भविष्यवाणी का दावा नहीं करता।
+    </div>
+
+</section>

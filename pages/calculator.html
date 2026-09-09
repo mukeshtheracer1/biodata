@@ -1,0 +1,6021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title id="pageTitle">Birth & Astrology Calculator | Mukesh Sah</title>
+
+  <meta
+    name="description"
+    content="Birth age, date and Vedic astrology calculator using Swiss Ephemeris."
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Common Website CSS -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- Calculator CSS -->
+  <link rel="stylesheet" href="../css/calculator.css">
+
+  <link rel="stylesheet" href="../css/mobile.css">
+</head>
+
+<body data-page="calculator">
+
+  <!-- =========================================================
+       COMMON ANIMATED BACKGROUND
+       ========================================================= -->
+  <div class="site-background">
+
+    <div class="bg-glow bg-glow-one"></div>
+    <div class="bg-glow bg-glow-two"></div>
+    <div class="bg-glow bg-glow-three"></div>
+
+    <div class="wave-layer wave-layer-one"></div>
+    <div class="wave-layer wave-layer-two"></div>
+    <div class="wave-layer wave-layer-three"></div>
+
+    <div class="particles">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="moving-light"></div>
+
+  </div>
+
+
+  <!-- COMMON HEADER -->
+  <div id="site-header"></div>
+
+
+  <!-- =========================================================
+       MAIN
+       ========================================================= -->
+  <main class="calculator-page">
+
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
+    <section class="calculator-hero">
+
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
+      <div class="hero-orbit orbit-three"></div>
+
+      <div class="calculator-eyebrow">
+        <span class="eyebrow-dot"></span>
+        BIRTH • AGE • ASTROLOGY
+      </div>
+
+      <h1>
+        Birth &amp;
+        <span>Astrology Intelligence</span>
+      </h1>
+
+      <p>
+        Calculate exact age, date intelligence, Vedic Rashi,
+        Nakshatra, Lagna, Manglik status, planetary positions,
+        Navamsa and more from your birth details.
+      </p>
+
+      <div class="hero-pills">
+        <span>Swiss Ephemeris</span>
+        <span>Lahiri Sidereal</span>
+        <span>Whole Sign</span>
+        <span>Global Location Search</span>
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CALCULATOR FORM
+         ======================================================= -->
+    <section class="calculator-card calculator-form-card">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-kicker">01 / INPUT</span>
+
+          <h2>
+            Birth Details
+            <span>Calculator</span>
+          </h2>
+
+          <p>
+            Enter exact birth information for astronomical and
+            calendar calculations.
+          </p>
+        </div>
+
+        <div class="engine-status">
+          <span id="statusDot" class="status-dot"></span>
+
+          <div>
+            <strong id="statusText">
+              Initializing engine…
+            </strong>
+
+            <small id="statusSub">
+              Swiss Ephemeris
+            </small>
+          </div>
+        </div>
+
+      </div>
+
+
+      <form id="birthForm" autocomplete="off">
+
+        <!-- ===================================================
+             ROW 1
+             =================================================== -->
+        <div class="form-grid form-grid-four">
+
+          <div class="field">
+
+            <label for="name">
+              <span>✦</span>
+              Full Name
+            </label>
+
+            <div class="input-wrap">
+              <input
+                id="name"
+                type="text"
+                placeholder="Enter name"
+                maxlength="100"
+              >
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="date">
+              <span>◆</span>
+              Date of Birth
+            </label>
+
+            <div class="input-wrap date-input-wrap">
+              <input
+                id="date"
+                type="date"
+                required
+              >
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="time">
+              <span>◷</span>
+              Exact Birth Time
+            </label>
+
+            <div class="input-wrap time-input-wrap">
+              <input
+                id="time"
+                type="time"
+                step="1"
+                required
+              >
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="asOfDate">
+              <span>◎</span>
+              Calculate Age As Of
+            </label>
+
+            <div class="input-wrap date-input-wrap">
+              <input
+                id="asOfDate"
+                type="date"
+                required
+              >
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             LOCATION
+             =================================================== -->
+        <div class="field location-field">
+
+          <label for="place">
+            <span>⌖</span>
+            Birth Place
+            <em>Global Search</em>
+          </label>
+
+          <div class="input-wrap location-input-wrap">
+
+            <span class="location-search-icon">⌕</span>
+
+            <input
+              id="place"
+              type="text"
+              placeholder="Search city, village, locality, district, country…"
+              maxlength="180"
+              spellcheck="false"
+              aria-autocomplete="list"
+              aria-controls="locationResults"
+            >
+
+            <button
+              type="button"
+              id="clearLocation"
+              class="clear-location"
+              title="Clear location"
+            >
+              ×
+            </button>
+
+          </div>
+
+          <div
+            id="locationResults"
+            class="location-results"
+            role="listbox"
+          ></div>
+
+          <div
+            id="locationHint"
+            class="location-hint"
+          >
+            Type 2+ characters to search any location worldwide.
+          </div>
+
+          <div
+            id="googleStatus"
+            class="google-status"
+          >
+            Global OpenStreetMap / Photon search
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             COORDINATES
+             =================================================== -->
+        <div class="form-grid form-grid-three">
+
+          <div class="field">
+
+            <label for="lat">
+              <span>↕</span>
+              Latitude
+            </label>
+
+            <div class="input-wrap">
+              <input
+                id="lat"
+                type="number"
+                min="-90"
+                max="90"
+                step="0.000001"
+                placeholder="e.g. 28.613939"
+                required
+              >
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="lon">
+              <span>↔</span>
+              Longitude
+            </label>
+
+            <div class="input-wrap">
+              <input
+                id="lon"
+                type="number"
+                min="-180"
+                max="180"
+                step="0.000001"
+                placeholder="e.g. 77.209023"
+                required
+              >
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="tz">
+              <span>◉</span>
+              UTC Offset
+            </label>
+
+            <div class="input-wrap">
+              <input
+                id="tz"
+                type="number"
+                min="-14"
+                max="14"
+                step="0.25"
+                placeholder="e.g. +5.5"
+                required
+              >
+            </div>
+
+            <small class="field-help">
+              Historical birth-time offset. Edit when required.
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             LOCATION META
+             =================================================== -->
+        <div class="location-meta">
+
+          <div>
+            <span class="meta-label">Selected Place</span>
+            <strong id="selectedPlace">Not selected</strong>
+          </div>
+
+          <div>
+            <span class="meta-label">Coordinates</span>
+            <strong id="selectedCoordinates">—</strong>
+          </div>
+
+          <div>
+            <span class="meta-label">UTC</span>
+            <strong id="selectedTimezone">—</strong>
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             ACTIONS
+             =================================================== -->
+        <div class="calculator-actions">
+
+          <button
+            type="submit"
+            id="calcBtn"
+            class="primary-calc-btn"
+            disabled
+          >
+            <span class="btn-icon">✦</span>
+            <span>Calculate Birth Profile</span>
+            <span class="btn-arrow">→</span>
+          </button>
+
+          <button
+            type="button"
+            id="exampleBtn"
+            class="secondary-btn"
+          >
+            Load Example
+          </button>
+
+          <button
+            type="button"
+            id="resetBtn"
+            class="ghost-btn"
+          >
+            Reset
+          </button>
+
+        </div>
+
+
+        <div
+          id="errorBox"
+          class="calculator-error"
+          hidden
+        ></div>
+
+      </form>
+
+    </section>
+
+
+    <!-- =======================================================
+         RESULT SHELL
+         ======================================================= -->
+    <section
+      id="resultShell"
+      class="results-shell"
+      hidden
+    >
+
+
+      <!-- =====================================================
+           RESULT HERO
+           ===================================================== -->
+      <div class="result-hero">
+
+        <div class="result-hero-content">
+
+          <span class="section-kicker">
+            CALCULATION COMPLETE
+          </span>
+
+          <h2 id="resultName">
+            Birth Profile
+          </h2>
+
+          <p id="resultMeta">
+            —
+          </p>
+
+        </div>
+
+        <div class="result-engine-badge">
+
+          <span class="engine-ring"></span>
+
+          <div>
+            <strong>VERIFIED ENGINE</strong>
+            <small id="resultEngine">
+              Swiss Ephemeris
+            </small>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           IDENTITY
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">02 / IDENTITY</span>
+
+            <h2>
+              Birth
+              <span>Snapshot</span>
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="identity-grid">
+
+          <article class="identity-card">
+
+            <span class="card-label">NAME</span>
+
+            <strong id="outName">
+              —
+            </strong>
+
+          </article>
+
+
+          <article class="identity-card">
+
+            <span class="card-label">DATE OF BIRTH</span>
+
+            <strong id="outDob">
+              —
+            </strong>
+
+            <small id="outDobWeekday">
+              —
+            </small>
+
+          </article>
+
+
+          <article class="identity-card">
+
+            <span class="card-label">BIRTH TIME</span>
+
+            <strong id="outBirthTime">
+              —
+            </strong>
+
+            <small id="outBirthTime24">
+              —
+            </small>
+
+          </article>
+
+
+          <article class="identity-card wide">
+
+            <span class="card-label">BIRTH PLACE</span>
+
+            <strong id="outPlace">
+              —
+            </strong>
+
+            <small id="outCoordinates">
+              —
+            </small>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           AGE NUMBERS
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">03 / AGE</span>
+
+            <h2>
+              Your
+              <span>Numbers</span>
+            </h2>
+
+            <p id="ageAsOfText">
+              Age calculated as of —
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="number-grid">
+
+          <article class="number-card age-years">
+
+            <div class="number-card-glow"></div>
+
+            <span class="number-label">
+              YEARS
+            </span>
+
+            <strong id="ageYears">
+              0
+            </strong>
+
+            <small>
+              Completed years
+            </small>
+
+          </article>
+
+
+          <article class="number-card age-months">
+
+            <div class="number-card-glow"></div>
+
+            <span class="number-label">
+              MONTHS
+            </span>
+
+            <strong id="ageMonths">
+              0
+            </strong>
+
+            <small>
+              Remaining months
+            </small>
+
+          </article>
+
+
+          <article class="number-card age-days">
+
+            <div class="number-card-glow"></div>
+
+            <span class="number-label">
+              DAYS
+            </span>
+
+            <strong id="ageDays">
+              0
+            </strong>
+
+            <small>
+              Remaining days
+            </small>
+
+          </article>
+
+
+          <article class="number-card age-total">
+
+            <div class="number-card-glow"></div>
+
+            <span class="number-label">
+              TOTAL DAYS
+            </span>
+
+            <strong id="totalDays">
+              0
+            </strong>
+
+            <small>
+              Elapsed calendar days
+            </small>
+
+          </article>
+
+        </div>
+
+
+        <div class="secondary-number-grid">
+
+          <article class="mini-number-card">
+
+            <span>Total Weeks</span>
+
+            <strong id="totalWeeks">
+              0
+            </strong>
+
+          </article>
+
+
+          <article class="mini-number-card">
+
+            <span>Approx. Months</span>
+
+            <strong id="totalMonthsApprox">
+              0
+            </strong>
+
+          </article>
+
+
+          <article class="mini-number-card">
+
+            <span>Approx. Years</span>
+
+            <strong id="totalYearsApprox">
+              0
+            </strong>
+
+          </article>
+
+
+          <article class="mini-number-card">
+
+            <span>Days to Birthday</span>
+
+            <strong id="daysToBirthday">
+              0
+            </strong>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           NEXT BIRTHDAY
+           ===================================================== -->
+      <section class="birthday-card">
+
+        <div class="birthday-content">
+
+          <span class="section-kicker">
+            NEXT MILESTONE
+          </span>
+
+          <h2>
+            Next
+            <span>Birthday</span>
+          </h2>
+
+          <p id="nextBirthdayDate">
+            —
+          </p>
+
+        </div>
+
+
+        <div
+          id="birthdayCountdown"
+          class="birthday-countdown"
+        >
+
+          <div>
+            <strong id="countDays">0</strong>
+            <span>Days</span>
+          </div>
+
+          <i>:</i>
+
+          <div>
+            <strong id="countHours">0</strong>
+            <span>Hours</span>
+          </div>
+
+          <i>:</i>
+
+          <div>
+            <strong id="countMinutes">0</strong>
+            <span>Minutes</span>
+          </div>
+
+          <i>:</i>
+
+          <div>
+            <strong id="countSeconds">0</strong>
+            <span>Seconds</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           VEDIC ASTROLOGY
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">04 / VEDIC</span>
+
+            <h2>
+              Rashi &
+              <span>Nakshatra</span>
+            </h2>
+
+            <p>
+              Sidereal calculations using Lahiri ayanamsa.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="astro-grid">
+
+          <article class="astro-card sun-card">
+
+            <div class="astro-icon">☉</div>
+
+            <span>Sun Sign</span>
+
+            <strong id="sunSign">
+              —
+            </strong>
+
+            <small id="sunDegree">
+              —
+            </small>
+
+            <em>
+              Tropical / Western
+            </em>
+
+          </article>
+
+
+          <article class="astro-card moon-card">
+
+            <div class="astro-icon">☾</div>
+
+            <span>Moon Rashi</span>
+
+            <strong id="moonRashi">
+              —
+            </strong>
+
+            <small id="moonDegree">
+              —
+            </small>
+
+            <em>
+              Vedic / Sidereal
+            </em>
+
+          </article>
+
+
+          <article class="astro-card lagna-card">
+
+            <div class="astro-icon">ASC</div>
+
+            <span>Lagna / Ascendant</span>
+
+            <strong id="lagna">
+              —
+            </strong>
+
+            <small id="lagnaDegree">
+              —
+            </small>
+
+            <em>
+              Whole Sign
+            </em>
+
+          </article>
+
+
+          <article class="astro-card nak-card">
+
+            <div class="astro-icon">✦</div>
+
+            <span>Janma Nakshatra</span>
+
+            <strong id="nakshatra">
+              —
+            </strong>
+
+            <small id="nakshatraPada">
+              —
+            </small>
+
+            <em id="nakshatraLord">
+              —
+            </em>
+
+          </article>
+
+
+          <article class="astro-card">
+
+            <div class="astro-icon">◈</div>
+
+            <span>Tithi</span>
+
+            <strong id="tithi">
+              —
+            </strong>
+
+            <small id="paksha">
+              —
+            </small>
+
+            <em id="vaar">
+              —
+            </em>
+
+          </article>
+
+
+          <article
+            id="manglikCard"
+            class="astro-card manglik-card"
+          >
+
+            <div class="astro-icon">♂</div>
+
+            <span>Manglik Status</span>
+
+            <strong id="manglik">
+              —
+            </strong>
+
+            <small id="manglikHouse">
+              —
+            </small>
+
+            <em>
+              Lagna based
+            </em>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           ASTRONOMICAL DETAILS
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">05 / ASTRONOMY</span>
+
+            <h2>
+              Calculation
+              <span>Details</span>
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="details-grid">
+
+          <div class="detail-item">
+            <span>Ayanamsa</span>
+            <strong id="outAyanamsa">—</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Julian Day</span>
+            <strong id="outJulian">—</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Latitude</span>
+            <strong id="outLat">—</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Longitude</span>
+            <strong id="outLon">—</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>UTC Offset</span>
+            <strong id="outTz">—</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>UTC Birth Moment</span>
+            <strong id="outUtc">—</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           PLANETS
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">06 / GRAHA</span>
+
+            <h2>
+              Planetary
+              <span>Positions</span>
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="table-shell">
+
+          <div class="table-scroll">
+
+            <table class="planet-table">
+
+              <thead>
+                <tr>
+                  <th>Planet</th>
+                  <th>Longitude</th>
+                  <th>Rashi</th>
+                  <th>Degree</th>
+                  <th>Nakshatra</th>
+                  <th>Pada</th>
+                  <th>Bhava</th>
+                  <th>Motion</th>
+                </tr>
+              </thead>
+
+              <tbody id="planetTable"></tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           NORTH INDIAN KUNDLI
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">07 / KUNDLI</span>
+
+            <h2>
+              Rashi
+              <span>Chart</span>
+            </h2>
+
+            <p>
+              Whole-sign North Indian style chart generated from
+              calculated Lagna and planetary placements.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="chart-layout">
+
+          <div class="kundli-chart-card">
+
+            <svg
+              id="chart"
+              class="kundli-chart"
+              viewBox="0 0 600 600"
+              role="img"
+              aria-label="North Indian Vedic birth chart"
+            ></svg>
+
+          </div>
+
+
+          <div class="house-placement-card">
+
+            <div class="sub-heading">
+              <span>HOUSE PLACEMENT</span>
+              <strong>12 Bhava Overview</strong>
+            </div>
+
+            <div class="table-scroll">
+
+              <table class="house-table">
+
+                <thead>
+                  <tr>
+                    <th>House</th>
+                    <th>Rashi</th>
+                    <th>Planets</th>
+                  </tr>
+                </thead>
+
+                <tbody id="housePlacementTable"></tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           NAVAMSA
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">08 / D9</span>
+
+            <h2>
+              Navamsa
+              <span>Positions</span>
+            </h2>
+
+            <p>
+              D9 sign and house derived from the same calculated
+              planetary longitudes.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="table-shell">
+
+          <div class="table-scroll">
+
+            <table class="planet-table d9-table">
+
+              <thead>
+                <tr>
+                  <th>Planet</th>
+                  <th>Birth Rashi</th>
+                  <th>Degree</th>
+                  <th>D9 Rashi</th>
+                  <th>D9 House</th>
+                </tr>
+              </thead>
+
+              <tbody id="d9Table"></tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           IMPORTANT DETAILS
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">09 / DETAILS</span>
+
+            <h2>
+              Horoscope
+              <span>Indicators</span>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="details"
+          class="kv-grid"
+        ></div>
+
+      </section>
+
+
+      <!-- =====================================================
+           MARRIAGE INDICATORS
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">10 / MARRIAGE</span>
+
+            <h2>
+              Marriage
+              <span>Indicators</span>
+            </h2>
+
+            <p>
+              These are calculated chart indicators, not
+              deterministic predictions.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div
+          id="marriage"
+          class="kv-grid marriage-grid"
+        ></div>
+
+      </section>
+
+
+      <!-- =====================================================
+           DASHA
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">11 / DASHA</span>
+
+            <h2>
+              Vimshottari
+              <span>Dasha</span>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="table-shell">
+
+          <div class="table-scroll">
+
+            <table class="planet-table">
+
+              <thead>
+                <tr>
+                  <th>Lord</th>
+                  <th>Start</th>
+                  <th>End</th>
+                  <th>Duration</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="dashaTable"></tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           DATE INTELLIGENCE
+           ===================================================== -->
+      <section class="result-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">12 / DATE</span>
+
+            <h2>
+              Date
+              <span>Intelligence</span>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="date-intelligence-grid">
+
+          <div class="date-info-card">
+            <span>Birth Weekday</span>
+            <strong id="dateBirthWeekday">—</strong>
+          </div>
+
+          <div class="date-info-card">
+            <span>As-of Weekday</span>
+            <strong id="dateAsOfWeekday">—</strong>
+          </div>
+
+          <div class="date-info-card wide">
+            <span>Date Difference</span>
+            <strong id="dateDifference">—</strong>
+          </div>
+
+          <div class="date-info-card">
+            <span>Next Birthday</span>
+            <strong id="dateNextBirthday">—</strong>
+          </div>
+
+          <div class="date-info-card">
+            <span>Age At Next Birthday</span>
+            <strong id="nextBirthdayAge">—</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           VERIFICATION
+           ===================================================== -->
+      <section class="result-section verification-section">
+
+        <div class="section-heading compact">
+
+          <div>
+            <span class="section-kicker">13 / VERIFY</span>
+
+            <h2>
+              Calculation
+              <span>Checks</span>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="verify"
+          class="verification-grid"
+        ></div>
+
+      </section>
+
+
+      <!-- =====================================================
+           CAUTION
+           ===================================================== -->
+      <div class="calculator-note">
+
+        <span class="note-icon">ⓘ</span>
+
+        <p>
+          Astronomical positions are calculated from the supplied
+          birth details using Swiss Ephemeris. Vedic labels such
+          as Rashi, Nakshatra, Dasha and Manglik are derived from
+          the selected calculation method. Interpretive
+          horoscope or marriage conclusions should not be treated
+          as scientifically certain predictions.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- COMMON FOOTER -->
+  <div id="site-footer"></div>
+
+
+  <!-- =========================================================
+       SWISS EPHEMERIS + COMPLETE CALCULATOR JS
+       ========================================================= -->
+  <script type="module">
+
+    import SwissEph from
+      "https://cdn.jsdelivr.net/gh/prolaxu/swisseph-wasm@v0.1.0/src/swisseph.js";
+
+
+    /* =========================================================
+       DATA
+       ========================================================= */
+
+    const RASHI = [
+      ['Mesha', 'Aries', '♈'],
+      ['Vrishabha', 'Taurus', '♉'],
+      ['Mithuna', 'Gemini', '♊'],
+      ['Karka', 'Cancer', '♋'],
+      ['Simha', 'Leo', '♌'],
+      ['Kanya', 'Virgo', '♍'],
+      ['Tula', 'Libra', '♎'],
+      ['Vrishchika', 'Scorpio', '♏'],
+      ['Dhanu', 'Sagittarius', '♐'],
+      ['Makara', 'Capricorn', '♑'],
+      ['Kumbha', 'Aquarius', '♒'],
+      ['Meena', 'Pisces', '♓']
+    ];
+
+
+    const WESTERN_SIGNS = [
+      ['Aries', '♈'],
+      ['Taurus', '♉'],
+      ['Gemini', '♊'],
+      ['Cancer', '♋'],
+      ['Leo', '♌'],
+      ['Virgo', '♍'],
+      ['Libra', '♎'],
+      ['Scorpio', '♏'],
+      ['Sagittarius', '♐'],
+      ['Capricorn', '♑'],
+      ['Aquarius', '♒'],
+      ['Pisces', '♓']
+    ];
+
+
+    const NAK = [
+      ['Ashwini', 'Ketu'],
+      ['Bharani', 'Venus'],
+      ['Krittika', 'Sun'],
+      ['Rohini', 'Moon'],
+      ['Mrigashira', 'Mars'],
+      ['Ardra', 'Rahu'],
+      ['Punarvasu', 'Jupiter'],
+      ['Pushya', 'Saturn'],
+      ['Ashlesha', 'Mercury'],
+      ['Magha', 'Ketu'],
+      ['Purva Phalguni', 'Venus'],
+      ['Uttara Phalguni', 'Sun'],
+      ['Hasta', 'Moon'],
+      ['Chitra', 'Mars'],
+      ['Swati', 'Rahu'],
+      ['Vishakha', 'Jupiter'],
+      ['Anuradha', 'Saturn'],
+      ['Jyeshtha', 'Mercury'],
+      ['Mula', 'Ketu'],
+      ['Purva Ashadha', 'Venus'],
+      ['Uttara Ashadha', 'Sun'],
+      ['Shravana', 'Moon'],
+      ['Dhanishtha', 'Mars'],
+      ['Shatabhisha', 'Rahu'],
+      ['Purva Bhadrapada', 'Jupiter'],
+      ['Uttara Bhadrapada', 'Saturn'],
+      ['Revati', 'Mercury']
+    ];
+
+
+    const DYE = {
+      Ketu: 7,
+      Venus: 20,
+      Sun: 6,
+      Moon: 10,
+      Mars: 7,
+      Rahu: 18,
+      Jupiter: 16,
+      Saturn: 19,
+      Mercury: 17
+    };
+
+
+    const ORDER = [
+      'Ketu',
+      'Venus',
+      'Sun',
+      'Moon',
+      'Mars',
+      'Rahu',
+      'Jupiter',
+      'Saturn',
+      'Mercury'
+    ];
+
+
+    const PLANETS = [
+      ['Sun', 'Su', 'SE_SUN'],
+      ['Moon', 'Mo', 'SE_MOON'],
+      ['Mars', 'Ma', 'SE_MARS'],
+      ['Mercury', 'Me', 'SE_MERCURY'],
+      ['Jupiter', 'Ju', 'SE_JUPITER'],
+      ['Venus', 'Ve', 'SE_VENUS'],
+      ['Saturn', 'Sa', 'SE_SATURN']
+    ];
+
+
+    const PLANET_ORDER = {
+      Sun: 1,
+      Moon: 2,
+      Mars: 3,
+      Mercury: 4,
+      Jupiter: 5,
+      Venus: 6,
+      Saturn: 7,
+      Rahu: 8,
+      Ketu: 9
+    };
+
+
+    const WEEKDAYS = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ];
+
+
+    const MONTHS = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ];
+
+
+    /* =========================================================
+       GLOBAL STATE
+       ========================================================= */
+
+    let swe = null;
+    let ready = false;
+    let lastData = null;
+
+    let locationSelected = false;
+    let locationResults = [];
+    let locationActive = -1;
+    let locationTimer = null;
+    let locationAbort = null;
+
+    let countdownTimer = null;
+
+
+    /* =========================================================
+       HELPERS
+       ========================================================= */
+
+    const $ = id =>
+      document.getElementById(id);
+
+
+    function norm(x) {
+      return ((x % 360) + 360) % 360;
+    }
+
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replace(/[&<>"']/g, ch => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[ch]));
+    }
+
+
+    function dms(x) {
+
+      x = norm(x);
+
+      let d = Math.floor(x);
+
+      let minFloat = (x - d) * 60;
+
+      let m = Math.floor(minFloat);
+
+      let s = Math.round(
+        (minFloat - m) * 60
+      );
+
+      if (s === 60) {
+        s = 0;
+        m++;
+      }
+
+      if (m === 60) {
+        m = 0;
+        d++;
+      }
+
+      return (
+        String(d).padStart(2, '0') +
+        '° ' +
+        String(m).padStart(2, '0') +
+        '′ ' +
+        String(s).padStart(2, '0') +
+        '″'
+      );
+    }
+
+
+    function localDms(x) {
+
+      const v = norm(x) % 30;
+
+      let d = Math.floor(v);
+
+      let mf = (v - d) * 60;
+
+      let m = Math.floor(mf);
+
+      let s = Math.round(
+        (mf - m) * 60
+      );
+
+      if (s === 60) {
+        s = 0;
+        m++;
+      }
+
+      if (m === 60) {
+        m = 0;
+        d++;
+      }
+
+      return (
+        String(d).padStart(2, '0') +
+        '° ' +
+        String(m).padStart(2, '0') +
+        '′ ' +
+        String(s).padStart(2, '0') +
+        '″'
+      );
+    }
+
+
+    function rashi(longitude) {
+
+      const id =
+        Math.floor(norm(longitude) / 30);
+
+      return {
+        id,
+        name: RASHI[id][0],
+        en: RASHI[id][1],
+        symbol: RASHI[id][2],
+        deg: norm(longitude) - id * 30
+      };
+    }
+
+
+    function nak(longitude) {
+
+      const size = 360 / 27;
+
+      const id =
+        Math.min(
+          26,
+          Math.floor(norm(longitude) / size)
+        );
+
+      const inside =
+        norm(longitude) - id * size;
+
+      const pada =
+        Math.min(
+          4,
+          Math.floor(inside / (size / 4)) + 1
+        );
+
+      return {
+        id,
+        name: NAK[id][0],
+        lord: NAK[id][1],
+        pada
+      };
+    }
+
+
+    function d9(longitude) {
+
+      const rr = rashi(longitude);
+
+      const part =
+        Math.min(
+          8,
+          Math.floor(rr.deg / (30 / 9))
+        );
+
+      let start;
+
+      if (
+        [0, 3, 6, 9].includes(rr.id)
+      ) {
+        start = rr.id;
+      } else if (
+        [1, 4, 7, 10].includes(rr.id)
+      ) {
+        start = (rr.id + 8) % 12;
+      } else {
+        start = (rr.id + 4) % 12;
+      }
+
+      return (start + part) % 12;
+    }
+
+
+    function house(asc, longitude) {
+
+      return (
+        (
+          Math.floor(norm(longitude) / 30) -
+          Math.floor(norm(asc) / 30) +
+          12
+        ) % 12
+      ) + 1;
+    }
+
+
+    function pad2(v) {
+      return String(v).padStart(2, '0');
+    }
+
+
+    function formatHumanDate(date) {
+
+      return (
+        date.getDate() +
+        ' ' +
+        MONTHS[date.getMonth()] +
+        ' ' +
+        date.getFullYear()
+      );
+    }
+
+
+    function formatISODate(date) {
+
+      return (
+        date.getFullYear() +
+        '-' +
+        pad2(date.getMonth() + 1) +
+        '-' +
+        pad2(date.getDate())
+      );
+    }
+
+
+    function parseDateInput(value) {
+
+      const [y, m, d] =
+        value.split('-').map(Number);
+
+      return new Date(
+        y,
+        m - 1,
+        d
+      );
+    }
+
+
+    function formatTime24(h, m, s) {
+
+      return (
+        pad2(h) +
+        ':' +
+        pad2(m) +
+        ':' +
+        pad2(s)
+      );
+    }
+
+
+    function formatTime12(h, m, s) {
+
+      const suffix =
+        h >= 12 ? 'PM' : 'AM';
+
+      let hour =
+        h % 12;
+
+      if (hour === 0) {
+        hour = 12;
+      }
+
+      return (
+        pad2(hour) +
+        ':' +
+        pad2(m) +
+        ':' +
+        pad2(s) +
+        ' ' +
+        suffix
+      );
+    }
+
+
+    function setStatus(text, type = '') {
+
+      const dot =
+        $('statusDot');
+
+      const status =
+        $('statusText');
+
+      if (status) {
+        status.textContent = text;
+      }
+
+      if (dot) {
+
+        dot.className =
+          'status-dot' +
+          (type ? ' ' + type : '');
+      }
+    }
+
+
+    function setError(message) {
+
+      const box =
+        $('errorBox');
+
+      if (!box) return;
+
+      if (!message) {
+        box.hidden = true;
+        box.textContent = '';
+        return;
+      }
+
+      box.hidden = false;
+      box.textContent = message;
+    }
+
+
+    /* =========================================================
+       SWISS EPHEMERIS INITIALIZATION
+       IMPORTANT: NEW SwissEph()
+       ========================================================= */
+
+    async function initSwissEphemeris() {
+
+      if (ready && swe) {
+        return swe;
+      }
+
+      setStatus(
+        'Initializing Swiss Ephemeris…'
+      );
+
+      try {
+
+        /*
+         * IMPORTANT:
+         * SwissEph is a class.
+         * It MUST be instantiated with new.
+         */
+        swe = new SwissEph();
+
+        await swe.initSwissEph();
+
+        setSidereal(swe);
+
+        ready = true;
+
+        setStatus(
+          'Swiss Ephemeris ready',
+          'ok'
+        );
+
+        return swe;
+
+      } catch (error) {
+
+        console.error(
+          'Swiss Ephemeris initialization failed:',
+          error
+        );
+
+        ready = false;
+        swe = null;
+
+        setStatus(
+          'Engine initialization failed',
+          'bad'
+        );
+
+        throw error;
+      }
+    }
+
+
+    function setSidereal(s) {
+
+      if (
+        typeof s.swe_set_sid_mode ===
+          'function' &&
+        s.SE_SIDM_LAHIRI !== undefined
+      ) {
+
+        s.swe_set_sid_mode(
+          s.SE_SIDM_LAHIRI,
+          0,
+          0
+        );
+
+        return;
+      }
+
+
+      if (
+        typeof s.set_sid_mode ===
+          'function' &&
+        s.SE_SIDM_LAHIRI !== undefined
+      ) {
+
+        s.set_sid_mode(
+          s.SE_SIDM_LAHIRI,
+          0,
+          0
+        );
+
+        return;
+      }
+
+
+      throw new Error(
+        'This Swiss Ephemeris build does not expose Lahiri sidereal mode.'
+      );
+    }
+
+
+    /* =========================================================
+       INPUT
+       ========================================================= */
+
+    function readInput() {
+
+      const dateValue =
+        $('date').value;
+
+      if (!dateValue) {
+        throw new Error(
+          'Please enter date of birth.'
+        );
+      }
+
+
+      const [
+        y,
+        m,
+        d
+      ] =
+        dateValue
+          .split('-')
+          .map(Number);
+
+
+      const timeParts =
+        (
+          $('time').value ||
+          '00:00:00'
+        )
+          .split(':')
+          .map(Number);
+
+
+      const hh =
+        Number(timeParts[0] || 0);
+
+      const mm =
+        Number(timeParts[1] || 0);
+
+      const ss =
+        Number(timeParts[2] || 0);
+
+
+      const tz =
+        Number($('tz').value);
+
+      const lat =
+        Number($('lat').value);
+
+      const lon =
+        Number($('lon').value);
+
+
+      if (
+        !y ||
+        !m ||
+        !d ||
+        !Number.isFinite(hh) ||
+        !Number.isFinite(mm) ||
+        !Number.isFinite(ss) ||
+        !Number.isFinite(tz) ||
+        !Number.isFinite(lat) ||
+        !Number.isFinite(lon)
+      ) {
+
+        throw new Error(
+          'Please enter valid birth date, time, UTC offset, latitude and longitude.'
+        );
+      }
+
+
+      if (
+        hh < 0 ||
+        hh > 23 ||
+        mm < 0 ||
+        mm > 59 ||
+        ss < 0 ||
+        ss > 59
+      ) {
+
+        throw new Error(
+          'Birth time is invalid.'
+        );
+      }
+
+
+      if (
+        lat < -90 ||
+        lat > 90 ||
+        lon < -180 ||
+        lon > 180
+      ) {
+
+        throw new Error(
+          'Latitude or longitude is outside a valid range.'
+        );
+      }
+
+
+      if (
+        tz < -14 ||
+        tz > 14
+      ) {
+
+        throw new Error(
+          'UTC offset must be between -14 and +14.'
+        );
+      }
+
+
+      const asOfValue =
+        $('asOfDate').value;
+
+      if (!asOfValue) {
+
+        throw new Error(
+          'Please select the age calculation date.'
+        );
+      }
+
+
+      return {
+        name:
+          $('name').value.trim() ||
+          'Unnamed',
+
+        y,
+        m,
+        d,
+
+        hh,
+        mm,
+        ss,
+
+        tz,
+        lat,
+        lon,
+
+        place:
+          $('place').value.trim() ||
+          '—',
+
+        asOf:
+          parseDateInput(asOfValue)
+      };
+    }
+
+
+    /* =========================================================
+       UTC DATE
+       ========================================================= */
+
+    function utcDate(b) {
+
+      return new Date(
+        Date.UTC(
+          b.y,
+          b.m - 1,
+          b.d,
+          b.hh,
+          b.mm,
+          b.ss
+        ) -
+        b.tz * 3600000
+      );
+    }
+
+
+    /* =========================================================
+       HOUSE / ASCENDANT
+       ========================================================= */
+
+    function calcHouses(
+      s,
+      jd,
+      b,
+      ayan
+    ) {
+
+      const sidtime =
+        typeof s.swe_sidtime ===
+          'function'
+          ? s.swe_sidtime(jd)
+          : typeof s.sidtime ===
+            'function'
+            ? s.sidtime(jd)
+            : NaN;
+
+
+      if (!Number.isFinite(sidtime)) {
+
+        throw new Error(
+          'Swiss Ephemeris sidereal-time function is unavailable.'
+        );
+      }
+
+
+      let nut = null;
+
+
+      if (
+        typeof s.calc_ut ===
+          'function' &&
+        s.SE_ECL_NUT !== undefined
+      ) {
+
+        nut =
+          s.calc_ut(
+            jd,
+            s.SE_ECL_NUT,
+            0
+          );
+      }
+
+
+      const eps =
+        Number(nut?.[0]);
+
+
+      if (!Number.isFinite(eps)) {
+
+        throw new Error(
+          'Swiss Ephemeris obliquity calculation is unavailable.'
+        );
+      }
+
+
+      const theta =
+        sidtime * 15 +
+        b.lon;
+
+
+      const phi =
+        b.lat *
+        Math.PI /
+        180;
+
+
+      const th =
+        theta *
+        Math.PI /
+        180;
+
+
+      const ep =
+        eps *
+        Math.PI /
+        180;
+
+
+      let tropicalAsc =
+        Math.atan2(
+          -Math.cos(th),
+          Math.sin(th) *
+            Math.cos(ep) +
+            Math.tan(phi) *
+            Math.sin(ep)
+        ) *
+        180 /
+        Math.PI;
+
+
+      tropicalAsc =
+        norm(
+          tropicalAsc + 180
+        );
+
+
+      return {
+        tropicalAsc,
+        asc:
+          norm(
+            tropicalAsc - ayan
+          )
+      };
+    }
+
+
+    /* =========================================================
+       PLANET
+       ========================================================= */
+
+    function planet(
+      s,
+      jd,
+      p,
+      flags
+    ) {
+
+      const pos =
+        s.calc_ut(
+          jd,
+          s[p[2]],
+          flags
+        );
+
+
+      const longitude =
+        norm(pos[0]);
+
+
+      return {
+
+        key: p[0],
+
+        short: p[1],
+
+        longitude,
+
+        speed: pos[3],
+
+        retro:
+          pos[3] < 0,
+
+        rashi:
+          rashi(longitude),
+
+        nak:
+          nak(longitude),
+
+        d9:
+          d9(longitude),
+
+        house: 0
+      };
+    }
+
+
+    /* =========================================================
+       DASHA
+       ========================================================= */
+
+    function yearsDays(years) {
+
+      return years * 365.2425;
+    }
+
+
+    function addDays(date, days) {
+
+      return new Date(
+        date.getTime() +
+        days *
+        86400000
+      );
+    }
+
+
+    function dashas(
+      b,
+      moonLongitude
+    ) {
+
+      const size =
+        360 / 27;
+
+
+      const nakId =
+        Math.floor(
+          norm(moonLongitude) /
+          size
+        );
+
+
+      const inside =
+        norm(moonLongitude) -
+        nakId * size;
+
+
+      const fraction =
+        inside / size;
+
+
+      const lord =
+        NAK[nakId][1];
+
+
+      const startIndex =
+        ORDER.indexOf(lord);
+
+
+      const elapsed =
+        DYE[lord] *
+        fraction;
+
+
+      let currentStart =
+        new Date(
+          utcDate(b).getTime() -
+          yearsDays(elapsed) *
+          86400000
+        );
+
+
+      const result = [];
+
+
+      for (
+        let i = 0;
+        i < 9;
+        i++
+      ) {
+
+        const currentLord =
+          ORDER[
+            (startIndex + i) %
+            9
+          ];
+
+
+        const duration =
+          DYE[currentLord];
+
+
+        const end =
+          addDays(
+            currentStart,
+            yearsDays(duration)
+          );
+
+
+        result.push({
+
+          lord:
+            currentLord,
+
+          start:
+            new Date(
+              currentStart
+            ),
+
+          end,
+
+          duration
+        });
+
+
+        currentStart =
+          end;
+      }
+
+
+      return result;
+    }
+
+
+    function activeDasha(ds) {
+
+      const now =
+        new Date();
+
+      return (
+        ds.find(
+          x =>
+            now >= x.start &&
+            now < x.end
+        ) ||
+        null
+      );
+    }
+
+
+    /* =========================================================
+       TITHI
+       ========================================================= */
+
+    function calculateTithi(
+      sunSidereal,
+      moonSidereal
+    ) {
+
+      const difference =
+        norm(
+          moonSidereal -
+          sunSidereal
+        );
+
+
+      const tithiNumber =
+        Math.floor(
+          difference / 12
+        ) + 1;
+
+
+      const paksha =
+        tithiNumber <= 15
+          ? 'Shukla Paksha'
+          : 'Krishna Paksha';
+
+
+      const names = [
+        'Pratipada',
+        'Dvitiya',
+        'Tritiya',
+        'Chaturthi',
+        'Panchami',
+        'Shashthi',
+        'Saptami',
+        'Ashtami',
+        'Navami',
+        'Dashami',
+        'Ekadashi',
+        'Dwadashi',
+        'Trayodashi',
+        'Chaturdashi',
+        'Purnima'
+      ];
+
+
+      const index =
+        (tithiNumber - 1) %
+        15;
+
+
+      const name =
+        tithiNumber === 30
+          ? 'Amavasya'
+          : names[index];
+
+
+      return {
+        number: tithiNumber,
+        name,
+        paksha
+      };
+    }
+
+
+    /* =========================================================
+       AGE CALCULATION
+       ========================================================= */
+
+    function calculateAge(
+      birthDate,
+      asOfDate
+    ) {
+
+      let years =
+        asOfDate.getFullYear() -
+        birthDate.getFullYear();
+
+
+      let months =
+        asOfDate.getMonth() -
+        birthDate.getMonth();
+
+
+      let days =
+        asOfDate.getDate() -
+        birthDate.getDate();
+
+
+      if (days < 0) {
+
+        const previousMonth =
+          new Date(
+            asOfDate.getFullYear(),
+            asOfDate.getMonth(),
+            0
+          );
+
+
+        days +=
+          previousMonth.getDate();
+
+        months--;
+      }
+
+
+      if (months < 0) {
+
+        years--;
+        months += 12;
+      }
+
+
+      if (
+        asOfDate <
+        birthDate
+      ) {
+
+        return null;
+      }
+
+
+      const totalDays =
+        Math.floor(
+          (
+            Date.UTC(
+              asOfDate.getFullYear(),
+              asOfDate.getMonth(),
+              asOfDate.getDate()
+            ) -
+            Date.UTC(
+              birthDate.getFullYear(),
+              birthDate.getMonth(),
+              birthDate.getDate()
+            )
+          ) /
+          86400000
+        );
+
+
+      return {
+
+        years,
+
+        months,
+
+        days,
+
+        totalDays,
+
+        totalWeeks:
+          totalDays / 7,
+
+        approxMonths:
+          totalDays /
+          30.436875,
+
+        approxYears:
+          totalDays /
+          365.2425
+      };
+    }
+
+
+    /* =========================================================
+       NEXT BIRTHDAY
+       ========================================================= */
+
+    function getNextBirthday(
+      birth,
+      asOf
+    ) {
+
+      let year =
+        asOf.getFullYear();
+
+
+      let month =
+        birth.getMonth();
+
+
+      let day =
+        birth.getDate();
+
+
+      let target =
+        new Date(
+          year,
+          month,
+          day,
+          birth.getHours(),
+          birth.getMinutes(),
+          birth.getSeconds()
+        );
+
+
+      if (
+        target <= asOf
+      ) {
+
+        target =
+          new Date(
+            year + 1,
+            month,
+            day,
+            birth.getHours(),
+            birth.getMinutes(),
+            birth.getSeconds()
+          );
+      }
+
+
+      return target;
+    }
+
+
+    /* =========================================================
+       BIRTHDAY COUNTDOWN
+       ========================================================= */
+
+    function startBirthdayCountdown(
+      birthInfo
+    ) {
+
+      clearInterval(
+        countdownTimer
+      );
+
+
+      function tick() {
+
+        const now =
+          new Date();
+
+
+        let year =
+          now.getFullYear();
+
+
+        let target =
+          makeBirthdayUtc(
+            year,
+            birthInfo
+          );
+
+
+        if (
+          target <= now
+        ) {
+
+          target =
+            makeBirthdayUtc(
+              year + 1,
+              birthInfo
+            );
+        }
+
+
+        const diff =
+          Math.max(
+            0,
+            target.getTime() -
+            now.getTime()
+          );
+
+
+        const days =
+          Math.floor(
+            diff /
+            86400000
+          );
+
+
+        const hours =
+          Math.floor(
+            (diff %
+              86400000) /
+              3600000
+          );
+
+
+        const minutes =
+          Math.floor(
+            (diff %
+              3600000) /
+              60000
+          );
+
+
+        const seconds =
+          Math.floor(
+            (diff %
+              60000) /
+              1000
+          );
+
+
+        $('countDays')
+          .textContent =
+          days;
+
+
+        $('countHours')
+          .textContent =
+          pad2(hours);
+
+
+        $('countMinutes')
+          .textContent =
+          pad2(minutes);
+
+
+        $('countSeconds')
+          .textContent =
+          pad2(seconds);
+
+
+        const birthYear =
+          birthInfo.y;
+
+
+        const currentAge =
+          year -
+          birthYear +
+          (
+            target.getFullYear() ===
+            year
+              ? 0
+              : 0
+          );
+
+
+        $('nextBirthdayAge')
+          .textContent =
+          target.getFullYear() -
+          birthYear;
+
+
+        $('dateNextBirthday')
+          .textContent =
+          formatDateUtcLike(
+            target
+          );
+
+
+        $('daysToBirthday')
+          .textContent =
+          days;
+      }
+
+
+      tick();
+
+
+      countdownTimer =
+        setInterval(
+          tick,
+          1000
+        );
+    }
+
+
+    function makeBirthdayUtc(
+      year,
+      birth
+    ) {
+
+      return new Date(
+        Date.UTC(
+          year,
+          birth.m - 1,
+          birth.d,
+          birth.hh,
+          birth.mm,
+          birth.ss
+        ) -
+        birth.tz *
+        3600000
+      );
+    }
+
+
+    function formatDateUtcLike(
+      date
+    ) {
+
+      const d =
+        new Date(date);
+
+
+      return (
+        d.getUTCDate() +
+        ' ' +
+        MONTHS[
+          d.getUTCMonth()
+        ] +
+        ' ' +
+        d.getUTCFullYear()
+      );
+    }
+
+
+    /* =========================================================
+       LOCATION SEARCH — GLOBAL
+       ========================================================= */
+
+    const PHOTON_URL =
+      'https://photon.komoot.io/api/';
+
+
+    function locationLabel(feature) {
+
+      const p =
+        feature?.properties ||
+        {};
+
+
+      const name =
+        p.name ||
+        p.street ||
+        p.city ||
+        p.district ||
+        p.state ||
+        p.country ||
+        'Unknown place';
+
+
+      const parts = [
+        p.locality,
+        p.city,
+        p.district,
+        p.state,
+        p.country
+      ]
+        .filter(Boolean);
+
+
+      const unique =
+        [
+          ...new Set(
+            parts.filter(
+              x => x !== name
+            )
+          )
+        ];
+
+
+      const sub =
+        unique
+          .slice(0, 5)
+          .join(', ');
+
+
+      return {
+        name,
+        sub,
+        display:
+          sub
+            ? `${name}, ${sub}`
+            : name
+      };
+    }
+
+
+    function clearLocationResults() {
+
+      const box =
+        $('locationResults');
+
+
+      if (box) {
+
+        box.innerHTML = '';
+
+        box.classList.remove(
+          'open'
+        );
+      }
+
+
+      locationResults = [];
+
+      locationActive = -1;
+    }
+
+
+    function updateLocation(
+      feature
+    ) {
+
+      const coordinates =
+        feature?.geometry?.coordinates;
+
+
+      if (
+        !Array.isArray(
+          coordinates
+        ) ||
+        coordinates.length < 2
+      ) {
+
+        return false;
+      }
+
+
+      const lon =
+        Number(
+          coordinates[0]
+        );
+
+
+      const lat =
+        Number(
+          coordinates[1]
+        );
+
+
+      if (
+        !Number.isFinite(lat) ||
+        !Number.isFinite(lon)
+      ) {
+
+        return false;
+      }
+
+
+      const label =
+        locationLabel(
+          feature
+        );
+
+
+      $('place').value =
+        label.display;
+
+
+      $('lat').value =
+        lat.toFixed(6);
+
+
+      $('lon').value =
+        lon.toFixed(6);
+
+
+      locationSelected =
+        true;
+
+
+      $('selectedPlace')
+        .textContent =
+        label.display;
+
+
+      $('selectedCoordinates')
+        .textContent =
+        `${lat.toFixed(6)}°, ${lon.toFixed(6)}°`;
+
+
+      $('selectedTimezone')
+        .textContent =
+        'Manual UTC offset';
+
+
+      $('locationHint')
+        .textContent =
+        `Selected • ${label.display} • ${lat.toFixed(6)}, ${lon.toFixed(6)}`;
+
+
+      $('locationHint')
+        .className =
+        'location-hint ok';
+
+
+      $('googleStatus')
+        .textContent =
+        'Global OpenStreetMap / Photon result selected';
+
+
+      $('googleStatus')
+        .className =
+        'google-status ok';
+
+
+      clearLocationResults();
+
+
+      return true;
+    }
+
+
+    function renderLocationResults(
+      features
+    ) {
+
+      const box =
+        $('locationResults');
+
+
+      if (!box) return;
+
+
+      locationResults =
+        features || [];
+
+
+      locationActive =
+        -1;
+
+
+      if (
+        !locationResults.length
+      ) {
+
+        box.innerHTML =
+          '<div class="location-loading">No matching location found. Try a longer city, village, locality or country name.</div>';
+
+        box.classList.add(
+          'open'
+        );
+
+        return;
+      }
+
+
+      box.innerHTML =
+        locationResults
+          .map(
+            (feature, index) => {
+
+              const label =
+                locationLabel(
+                  feature
+                );
+
+
+              const type =
+                feature?.properties?.type ||
+                feature?.properties?.osm_value ||
+                'place';
+
+
+              const coordinates =
+                feature?.geometry?.coordinates;
+
+
+              const coordinateText =
+                Array.isArray(
+                  coordinates
+                )
+                  ? ` • ${Number(coordinates[1]).toFixed(4)}, ${Number(coordinates[0]).toFixed(4)}`
+                  : '';
+
+
+              return `
+                <div
+                  class="location-result"
+                  data-index="${index}"
+                  role="option"
+                >
+
+                  <span class="result-pin">⌖</span>
+
+                  <div class="location-result-text">
+
+                    <strong>
+                      ${escapeHtml(label.name)}
+                    </strong>
+
+                    <span>
+                      ${escapeHtml(
+                        label.sub ||
+                        type
+                      )}
+                      ${coordinateText}
+                    </span>
+
+                  </div>
+
+                  <span class="result-arrow">
+                    →
+                  </span>
+
+                </div>
+              `;
+            }
+          )
+          .join('');
+
+
+      box.classList.add(
+        'open'
+      );
+
+
+      box
+        .querySelectorAll(
+          '.location-result'
+        )
+        .forEach(
+          element => {
+
+            element.addEventListener(
+              'mousedown',
+              event => {
+
+                event.preventDefault();
+
+
+                const index =
+                  Number(
+                    element.dataset.index
+                  );
+
+
+                updateLocation(
+                  locationResults[
+                    index
+                  ]
+                );
+              }
+            );
+          }
+        );
+    }
+
+
+    async function searchLocations(
+      query
+    ) {
+
+      const q =
+        (
+          query ||
+          ''
+        ).trim();
+
+
+      if (
+        q.length < 2
+      ) {
+
+        clearLocationResults();
+
+
+        $('googleStatus')
+          .textContent =
+          'Type at least 2 characters to search worldwide.';
+
+
+        return;
+      }
+
+
+      if (locationAbort) {
+
+        locationAbort.abort();
+      }
+
+
+      locationAbort =
+        new AbortController();
+
+
+      const box =
+        $('locationResults');
+
+
+      if (box) {
+
+        box.innerHTML =
+          '<div class="location-loading"><span></span> Searching worldwide locations…</div>';
+
+        box.classList.add(
+          'open'
+        );
+      }
+
+
+      $('googleStatus')
+        .textContent =
+        'Searching global locations…';
+
+
+      try {
+
+        const url =
+          `${PHOTON_URL}?q=${encodeURIComponent(q)}&limit=10&lang=en`;
+
+
+        const response =
+          await fetch(
+            url,
+            {
+              signal:
+                locationAbort.signal,
+
+              headers: {
+                Accept:
+                  'application/json'
+              }
+            }
+          );
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            `Location search failed (${response.status}).`
+          );
+        }
+
+
+        const data =
+          await response.json();
+
+
+        const features =
+          (
+            data.features ||
+            []
+          )
+            .filter(
+              feature => {
+
+                const c =
+                  feature?.geometry?.coordinates;
+
+
+                return (
+                  Array.isArray(c) &&
+                  c.length >= 2 &&
+                  Number.isFinite(
+                    Number(c[0])
+                  ) &&
+                  Number.isFinite(
+                    Number(c[1])
+                  )
+                );
+              }
+            );
+
+
+        renderLocationResults(
+          features
+        );
+
+
+        $('googleStatus')
+          .textContent =
+          `Found ${features.length} global location${features.length === 1 ? '' : 's'} • select one to set coordinates`;
+
+
+        $('googleStatus')
+          .className =
+          'google-status ok';
+
+      } catch (error) {
+
+        if (
+          error?.name ===
+          'AbortError'
+        ) {
+          return;
+        }
+
+
+        console.error(
+          'Photon search error:',
+          error
+        );
+
+
+        if (box) {
+
+          box.innerHTML =
+            '<div class="location-loading">Live location search is temporarily unavailable. You can still enter latitude and longitude manually.</div>';
+
+          box.classList.add(
+            'open'
+          );
+        }
+
+
+        $('googleStatus')
+          .textContent =
+          'Live search unavailable — manual coordinates can still be used.';
+
+
+        $('googleStatus')
+          .className =
+          'google-status warn';
+      }
+    }
+
+
+    /* =========================================================
+       LOCATION EVENTS
+       ========================================================= */
+
+    $('place')
+      .addEventListener(
+        'input',
+        () => {
+
+          locationSelected =
+            false;
+
+
+          const query =
+            $('place')
+              .value
+              .trim();
+
+
+          $('locationHint')
+            .textContent =
+            query.length < 2
+              ? 'Type 2+ characters to search any place worldwide.'
+              : 'Searching worldwide… select the exact result.';
+
+
+          $('locationHint')
+            .className =
+            'location-hint';
+
+
+          clearTimeout(
+            locationTimer
+          );
+
+
+          locationTimer =
+            setTimeout(
+              () =>
+                searchLocations(
+                  query
+                ),
+              350
+            );
+        }
+      );
+
+
+    $('place')
+      .addEventListener(
+        'focus',
+        () => {
+
+          const query =
+            $('place')
+              .value
+              .trim();
+
+
+          if (
+            query.length >= 2 &&
+            !locationSelected
+          ) {
+
+            searchLocations(
+              query
+            );
+          }
+        }
+      );
+
+
+    $('clearLocation')
+      .addEventListener(
+        'click',
+        () => {
+
+          $('place').value = '';
+          $('lat').value = '';
+          $('lon').value = '';
+
+          locationSelected =
+            false;
+
+          $('selectedPlace')
+            .textContent =
+            'Not selected';
+
+          $('selectedCoordinates')
+            .textContent =
+            '—';
+
+          $('selectedTimezone')
+            .textContent =
+            '—';
+
+          $('locationHint')
+            .textContent =
+            'Type 2+ characters to search any location worldwide.';
+
+          clearLocationResults();
+        }
+      );
+
+
+    document.addEventListener(
+      'click',
+      event => {
+
+        const field =
+          $('place')
+            ?.closest(
+              '.location-field'
+            );
+
+
+        if (
+          field &&
+          !field.contains(
+            event.target
+          )
+        ) {
+
+          clearLocationResults();
+        }
+      }
+    );
+
+
+    document.addEventListener(
+      'keydown',
+      event => {
+
+        const input =
+          $('place');
+
+
+        const box =
+          $('locationResults');
+
+
+        if (
+          document.activeElement !==
+            input ||
+          !box?.classList.contains(
+            'open'
+          ) ||
+          !locationResults.length
+        ) {
+
+          return;
+        }
+
+
+        if (
+          event.key ===
+          'ArrowDown'
+        ) {
+
+          event.preventDefault();
+
+          locationActive =
+            (
+              locationActive + 1
+            ) %
+            locationResults.length;
+        }
+
+
+        else if (
+          event.key ===
+          'ArrowUp'
+        ) {
+
+          event.preventDefault();
+
+          locationActive =
+            (
+              locationActive -
+              1 +
+              locationResults.length
+            ) %
+            locationResults.length;
+        }
+
+
+        else if (
+          event.key ===
+          'Enter' &&
+          locationActive >= 0
+        ) {
+
+          event.preventDefault();
+
+          updateLocation(
+            locationResults[
+              locationActive
+            ]
+          );
+        }
+
+
+        else if (
+          event.key ===
+          'Escape'
+        ) {
+
+          clearLocationResults();
+
+          return;
+        }
+
+
+        box
+          .querySelectorAll(
+            '.location-result'
+          )
+          .forEach(
+            (element, index) => {
+
+              element.classList.toggle(
+                'active',
+                index ===
+                locationActive
+              );
+            }
+          );
+      }
+    );
+
+
+    /* =========================================================
+       LOCATION VALIDATION
+       ========================================================= */
+
+    function ensureLocationResolved() {
+
+      const place =
+        $('place')
+          .value
+          .trim();
+
+
+      const lat =
+        Number(
+          $('lat').value
+        );
+
+
+      const lon =
+        Number(
+          $('lon').value
+        );
+
+
+      if (
+        place &&
+        Number.isFinite(lat) &&
+        Number.isFinite(lon)
+      ) {
+
+        return true;
+      }
+
+
+      if (!place) {
+
+        throw new Error(
+          'Please enter your birth place.'
+        );
+      }
+
+
+      throw new Error(
+        `Please select the exact location result for “${place}” so its latitude and longitude are known.`
+      );
+    }
+
+
+    /* =========================================================
+       MAIN CALCULATION
+       ========================================================= */
+
+    async function calculate() {
+
+      try {
+
+        setError('');
+
+        setStatus(
+          'Checking birth details…'
+        );
+
+
+        ensureLocationResolved();
+
+
+        const b =
+          readInput();
+
+
+        const engine =
+          await initSwissEphemeris();
+
+
+        setStatus(
+          'Calculating planetary positions…'
+        );
+
+
+        const utc =
+          utcDate(b);
+
+
+        const utHour =
+          utc.getUTCHours() +
+          utc.getUTCMinutes() / 60 +
+          utc.getUTCSeconds() / 3600 +
+          utc.getUTCMilliseconds() / 3600000;
+
+
+        const jd =
+          engine.julday(
+            b.y,
+            b.m,
+            b.d,
+            utHour
+          );
+
+
+        const siderealFlags =
+          engine.SEFLG_SWIEPH |
+          engine.SEFLG_SPEED |
+          engine.SEFLG_SIDEREAL;
+
+
+        const tropicalFlags =
+          engine.SEFLG_SWIEPH |
+          engine.SEFLG_SPEED;
+
+
+        const ayanamsa =
+          typeof engine.swe_get_ayanamsa_ut ===
+            'function'
+            ? engine.swe_get_ayanamsa_ut(jd)
+            : typeof engine.get_ayanamsa_ut ===
+              'function'
+              ? engine.get_ayanamsa_ut(jd)
+              : NaN;
+
+
+        if (
+          !Number.isFinite(
+            ayanamsa
+          )
+        ) {
+
+          throw new Error(
+            'Unable to read Lahiri ayanamsa from Swiss Ephemeris.'
+          );
+        }
+
+
+        /* ================================================
+           HOUSES
+           ================================================ */
+
+        const houses =
+          calcHouses(
+            engine,
+            jd,
+            b,
+            ayanamsa
+          );
+
+
+        /* ================================================
+           PLANETS
+           ================================================ */
+
+        const planets =
+          PLANETS.map(
+            p =>
+              planet(
+                engine,
+                jd,
+                p,
+                siderealFlags
+              )
+          );
+
+
+        /* ================================================
+           RAHU / KETU
+           ================================================ */
+
+        const rahuResult =
+          engine.calc_ut(
+            jd,
+            engine.SE_MEAN_NODE,
+            siderealFlags
+          );
+
+
+        const rahuLongitude =
+          norm(
+            rahuResult[0]
+          );
+
+
+        const rahu = {
+
+          key: 'Rahu',
+
+          short: 'Ra',
+
+          longitude:
+            rahuLongitude,
+
+          speed:
+            rahuResult[3],
+
+          retro:
+            rahuResult[3] < 0,
+
+          rashi:
+            rashi(
+              rahuLongitude
+            ),
+
+          nak:
+            nak(
+              rahuLongitude
+            ),
+
+          d9:
+            d9(
+              rahuLongitude
+            ),
+
+          house: 0
+        };
+
+
+        const ketuLongitude =
+          norm(
+            rahuLongitude + 180
+          );
+
+
+        const ketu = {
+
+          key: 'Ketu',
+
+          short: 'Ke',
+
+          longitude:
+            ketuLongitude,
+
+          speed:
+            rahuResult[3],
+
+          retro:
+            rahuResult[3] < 0,
+
+          rashi:
+            rashi(
+              ketuLongitude
+            ),
+
+          nak:
+            nak(
+              ketuLongitude
+            ),
+
+          d9:
+            d9(
+              ketuLongitude
+            ),
+
+          house: 0
+        };
+
+
+        planets.push(
+          rahu,
+          ketu
+        );
+
+
+        /* ================================================
+           HOUSES
+           ================================================ */
+
+        planets.forEach(
+          p => {
+
+            p.house =
+              house(
+                houses.asc,
+                p.longitude
+              );
+          }
+        );
+
+
+        const moon =
+          planets.find(
+            p =>
+              p.key === 'Moon'
+          );
+
+
+        const mars =
+          planets.find(
+            p =>
+              p.key === 'Mars'
+          );
+
+
+        const sun =
+          planets.find(
+            p =>
+              p.key === 'Sun'
+          );
+
+
+        const venus =
+          planets.find(
+            p =>
+              p.key === 'Venus'
+          );
+
+
+        const saturn =
+          planets.find(
+            p =>
+              p.key === 'Saturn'
+          );
+
+
+        /* ================================================
+           TROPICAL SUN
+           ================================================ */
+
+        const tropicalSunResult =
+          engine.calc_ut(
+            jd,
+            engine.SE_SUN,
+            tropicalFlags
+          );
+
+
+        const tropicalSun =
+          norm(
+            tropicalSunResult[0]
+          );
+
+
+        const westernSunId =
+          Math.floor(
+            tropicalSun / 30
+          );
+
+
+        /* ================================================
+           RASHI / NAKSHATRA
+           ================================================ */
+
+        const ascRashi =
+          rashi(
+            houses.asc
+          );
+
+
+        const moonNak =
+          nak(
+            moon.longitude
+          );
+
+
+        const tithi =
+          calculateTithi(
+            sun.longitude,
+            moon.longitude
+          );
+
+
+        const birthLocalDate =
+          new Date(
+            b.y,
+            b.m - 1,
+            b.d
+          );
+
+
+        const age =
+          calculateAge(
+            birthLocalDate,
+            b.asOf
+          );
+
+
+        if (!age) {
+
+          throw new Error(
+            'As-of date cannot be earlier than the date of birth.'
+          );
+        }
+
+
+        /* ================================================
+           DASHA
+           ================================================ */
+
+        const dashaData =
+          dashas(
+            b,
+            moon.longitude
+          );
+
+
+        /* ================================================
+           7TH LORD
+           ================================================ */
+
+        const seventhSign =
+          (
+            ascRashi.id + 6
+          ) % 12;
+
+
+        const lordMap = {
+
+          Mesha: 'Mars',
+
+          Vrishabha: 'Venus',
+
+          Mithuna: 'Mercury',
+
+          Karka: 'Moon',
+
+          Simha: 'Sun',
+
+          Kanya: 'Mercury',
+
+          Tula: 'Venus',
+
+          Vrishchika: 'Mars',
+
+          Dhanu: 'Jupiter',
+
+          Makara: 'Saturn',
+
+          Kumbha: 'Saturn',
+
+          Meena: 'Jupiter'
+        };
+
+
+        const seventhLordName =
+          lordMap[
+            RASHI[
+              seventhSign
+            ][0]
+          ];
+
+
+        const seventhLordPlanet =
+          planets.find(
+            p =>
+              p.key ===
+              seventhLordName
+          );
+
+
+        /* ================================================
+           MANGALIK
+           ================================================ */
+
+        const manglik =
+          [
+            1,
+            2,
+            4,
+            7,
+            8,
+            12
+          ].includes(
+            mars.house
+          );
+
+
+        /* ================================================
+           FINAL DATA
+           ================================================ */
+
+        const data = {
+
+          b,
+
+          utc,
+
+          jd,
+
+          ayan:
+            ayanamsa,
+
+          asc:
+            houses.asc,
+
+          ascRashi,
+
+          ascSign:
+            ascRashi.id,
+
+          tropicalSun,
+
+          westernSun:
+            WESTERN_SIGNS[
+              westernSunId
+            ],
+
+          planets,
+
+          sun,
+
+          moon,
+
+          mars,
+
+          venus,
+
+          saturn,
+
+          moonNak,
+
+          tithi,
+
+          manglik,
+
+          age,
+
+          dashaData,
+
+          seventhSign,
+
+          seventhLordName,
+
+          seventhLordPlanet,
+
+          engine:
+            'Swiss Ephemeris WASM • Lahiri sidereal • Whole Sign'
+        };
+
+
+        lastData =
+          data;
+
+
+        renderResults(
+          data
+        );
+
+
+        setStatus(
+          'Calculation complete',
+          'ok'
+        );
+
+
+      } catch (error) {
+
+        console.error(
+          error
+        );
+
+
+        setStatus(
+          'Calculation failed',
+          'bad'
+        );
+
+
+        setError(
+          error?.message ||
+          String(error)
+        );
+      }
+    }
+
+
+    /* =========================================================
+       RENDER RESULTS
+       ========================================================= */
+
+    function renderResults(
+      data
+    ) {
+
+      const b =
+        data.b;
+
+
+      const birthDate =
+        new Date(
+          b.y,
+          b.m - 1,
+          b.d
+        );
+
+
+      /* ================================================
+         HERO
+         ================================================ */
+
+      $('resultName')
+        .textContent =
+        b.name;
+
+
+      $('resultMeta')
+        .textContent =
+        `${formatHumanDate(birthDate)} • ${formatTime12(b.hh, b.mm, b.ss)} • UTC${b.tz >= 0 ? '+' : ''}${b.tz}`;
+
+
+      $('resultEngine')
+        .textContent =
+        data.engine;
+
+
+      /* ================================================
+         IDENTITY
+         ================================================ */
+
+      $('outName')
+        .textContent =
+        b.name;
+
+
+      $('outDob')
+        .textContent =
+        formatHumanDate(
+          birthDate
+        );
+
+
+      $('outDobWeekday')
+        .textContent =
+        WEEKDAYS[
+          birthDate.getDay()
+        ];
+
+
+      $('outBirthTime')
+        .textContent =
+        formatTime12(
+          b.hh,
+          b.mm,
+          b.ss
+        );
+
+
+      $('outBirthTime24')
+        .textContent =
+        `${formatTime24(b.hh, b.mm, b.ss)} local birth time`;
+
+
+      $('outPlace')
+        .textContent =
+        b.place;
+
+
+      $('outCoordinates')
+        .textContent =
+        `${b.lat.toFixed(6)}°, ${b.lon.toFixed(6)}° • UTC${b.tz >= 0 ? '+' : ''}${b.tz}`;
+
+
+      /* ================================================
+         AGE
+         ================================================ */
+
+      $('ageAsOfText')
+        .textContent =
+        `Age calculated as of ${formatHumanDate(b.asOf)}`;
+
+
+      $('ageYears')
+        .textContent =
+        data.age.years;
+
+
+      $('ageMonths')
+        .textContent =
+        data.age.months;
+
+
+      $('ageDays')
+        .textContent =
+        data.age.days;
+
+
+      $('totalDays')
+        .textContent =
+        data.age.totalDays.toLocaleString();
+
+
+      $('totalWeeks')
+        .textContent =
+        data.age.totalWeeks.toLocaleString(
+          undefined,
+          {
+            maximumFractionDigits: 2
+          }
+        );
+
+
+      $('totalMonthsApprox')
+        .textContent =
+        data.age.approxMonths.toLocaleString(
+          undefined,
+          {
+            maximumFractionDigits: 2
+          }
+        );
+
+
+      $('totalYearsApprox')
+        .textContent =
+        data.age.approxYears.toLocaleString(
+          undefined,
+          {
+            maximumFractionDigits: 4
+          }
+        );
+
+
+      /* ================================================
+         NEXT BIRTHDAY
+         ================================================ */
+
+      startBirthdayCountdown(
+        b
+      );
+
+
+      /* ================================================
+         ASTRO
+         ================================================ */
+
+      $('sunSign')
+        .textContent =
+        `${data.westernSun[1]} ${data.westernSun[0]}`;
+
+
+      $('sunDegree')
+        .textContent =
+        dms(
+          data.tropicalSun
+        );
+
+
+      $('moonRashi')
+        .textContent =
+        `${data.moon.rashi.symbol} ${data.moon.rashi.name}`;
+
+
+      $('moonDegree')
+        .textContent =
+        `${data.moon.rashi.en} • ${localDms(data.moon.longitude)}`;
+
+
+      $('lagna')
+        .textContent =
+        `${data.ascRashi.symbol} ${data.ascRashi.name}`;
+
+
+      $('lagnaDegree')
+        .textContent =
+        `${data.ascRashi.en} • ${localDms(data.asc)}`;
+
+
+      $('nakshatra')
+        .textContent =
+        data.moonNak.name;
+
+
+      $('nakshatraPada')
+        .textContent =
+        `Pada ${data.moonNak.pada}`;
+
+
+      $('nakshatraLord')
+        .textContent =
+        `Lord: ${data.moonNak.lord}`;
+
+
+      $('tithi')
+        .textContent =
+        data.tithi.name;
+
+
+      $('paksha')
+        .textContent =
+        data.tithi.paksha;
+
+
+      $('vaar')
+        .textContent =
+        WEEKDAYS[
+          birthDate.getDay()
+        ];
+
+
+      $('manglik')
+        .textContent =
+        data.manglik
+          ? 'YES'
+          : 'NO';
+
+
+      $('manglikHouse')
+        .textContent =
+        `Mars in Lagna-based Bhava ${data.mars.house}`;
+
+
+      const manglikCard =
+        $('manglikCard');
+
+
+      manglikCard.classList.toggle(
+        'is-manglik',
+        data.manglik
+      );
+
+
+      /* ================================================
+         DETAILS
+         ================================================ */
+
+      $('outAyanamsa')
+        .textContent =
+        `${data.ayan.toFixed(4)}°`;
+
+
+      $('outJulian')
+        .textContent =
+        data.jd.toFixed(8);
+
+
+      $('outLat')
+        .textContent =
+        `${data.b.lat.toFixed(6)}°`;
+
+
+      $('outLon')
+        .textContent =
+        `${data.b.lon.toFixed(6)}°`;
+
+
+      $('outTz')
+        .textContent =
+        `UTC${data.b.tz >= 0 ? '+' : ''}${data.b.tz}`;
+
+
+      $('outUtc')
+        .textContent =
+        data.utc
+          .toISOString()
+          .replace(
+            'T',
+            ' '
+          )
+          .replace(
+            '.000Z',
+            ' UTC'
+          );
+
+
+      /* ================================================
+         PLANET TABLE
+         ================================================ */
+
+      $('planetTable')
+        .innerHTML =
+        data.planets
+          .map(
+            p => `
+              <tr>
+
+                <td>
+                  <span class="planet-short">
+                    ${escapeHtml(p.short)}
+                  </span>
+                  <strong>
+                    ${escapeHtml(p.key)}
+                  </strong>
+                </td>
+
+                <td>
+                  ${dms(p.longitude)}
+                </td>
+
+                <td>
+                  ${p.rashi.symbol}
+                  ${escapeHtml(p.rashi.name)}
+                  <small>
+                    ${escapeHtml(p.rashi.en)}
+                  </small>
+                </td>
+
+                <td>
+                  ${localDms(p.longitude)}
+                </td>
+
+                <td>
+                  ${escapeHtml(p.nak.name)}
+                </td>
+
+                <td>
+                  ${p.nak.pada}
+                </td>
+
+                <td>
+                  <span class="house-badge">
+                    ${p.house}
+                  </span>
+                </td>
+
+                <td
+                  class="${p.retro ? 'retro' : 'direct'}"
+                >
+                  ${p.retro
+                    ? 'Retrograde'
+                    : 'Direct'}
+                </td>
+
+              </tr>
+            `
+          )
+          .join('');
+
+
+      /* ================================================
+         KUNDLI CHART
+         ================================================ */
+
+      drawChart(
+        data
+      );
+
+
+      renderHouseWisePlacement(
+        data
+      );
+
+
+      /* ================================================
+         D9
+         ================================================ */
+
+      const d9Lagna =
+        d9(
+          data.asc
+        );
+
+
+      $('d9Table')
+        .innerHTML =
+        data.planets
+          .map(
+            p => {
+
+              const sign =
+                RASHI[
+                  p.d9
+                ];
+
+
+              const d9House =
+                (
+                  p.d9 -
+                  d9Lagna +
+                  12
+                ) %
+                12 +
+                1;
+
+
+              return `
+                <tr>
+
+                  <td>
+                    <strong>
+                      ${escapeHtml(p.key)}
+                    </strong>
+                  </td>
+
+                  <td>
+                    ${p.rashi.name}
+                    <small>
+                      ${p.rashi.en}
+                    </small>
+                  </td>
+
+                  <td>
+                    ${localDms(p.longitude)}
+                  </td>
+
+                  <td>
+                    ${sign[2]}
+                    ${sign[0]}
+                    <small>
+                      ${sign[1]}
+                    </small>
+                  </td>
+
+                  <td>
+                    <span class="house-badge">
+                      ${d9House}
+                    </span>
+                  </td>
+
+                </tr>
+              `;
+            }
+          )
+          .join('');
+
+
+      /* ================================================
+         DETAILS GRID
+         ================================================ */
+
+      const saturnText =
+        data.saturn
+          ? `${data.saturn.rashi.name} • Bhava ${data.saturn.house}`
+          : '—';
+
+
+      const rahu =
+        data.planets.find(
+          p =>
+            p.key === 'Rahu'
+        );
+
+
+      const ketu =
+        data.planets.find(
+          p =>
+            p.key === 'Ketu'
+        );
+
+
+      $('details')
+        .innerHTML =
+        [
+          [
+            'Lagna',
+            `${data.ascRashi.name} (${data.ascRashi.en})`
+          ],
+
+          [
+            'Lagna Lord',
+            'Saturn'
+          ],
+
+          [
+            '7th House',
+            `${RASHI[data.seventhSign][0]} (${RASHI[data.seventhSign][1]})`
+          ],
+
+          [
+            '7th Lord',
+            data.seventhLordName
+          ],
+
+          [
+            '7th Lord Placement',
+            data.seventhLordPlanet
+              ? `${data.seventhLordPlanet.rashi.name} • Bhava ${data.seventhLordPlanet.house}`
+              : '—'
+          ],
+
+          [
+            'Moon Sign Lord',
+            'Derived from Moon Rashi'
+          ],
+
+          [
+            'Moon Nakshatra Lord',
+            data.moonNak.lord
+          ],
+
+          [
+            'Mars Placement',
+            `${data.mars.rashi.name} • Bhava ${data.mars.house}`
+          ],
+
+          [
+            'Saturn Placement',
+            saturnText
+          ],
+
+          [
+            'Rahu / Ketu',
+            `${rahu?.rashi.name || '—'} / ${ketu?.rashi.name || '—'}`
+          ],
+
+          [
+            'D9 Lagna',
+            RASHI[d9Lagna][0]
+          ],
+
+          [
+            'Calculation Method',
+            'Lahiri Sidereal • Whole Sign'
+          ]
+        ]
+          .map(
+            item => `
+              <div class="kv-item">
+                <small>
+                  ${escapeHtml(item[0])}
+                </small>
+
+                <strong>
+                  ${escapeHtml(item[1])}
+                </strong>
+              </div>
+            `
+          )
+          .join('');
+
+
+      /* ================================================
+         MARRIAGE
+         ================================================ */
+
+      const planetsIn7 =
+        data.planets
+          .filter(
+            p =>
+              p.house === 7
+          )
+          .sort(
+            (a, b) =>
+              (
+                PLANET_ORDER[a.key] ||
+                99
+              ) -
+              (
+                PLANET_ORDER[b.key] ||
+                99
+              )
+          )
+          .map(
+            p =>
+              p.key
+          )
+          .join(', ') ||
+        'None';
+
+
+      const marsFromMoon =
+        house(
+          data.moon.longitude,
+          data.mars.longitude
+        );
+
+
+      const marsFromVenus =
+        house(
+          data.venus.longitude,
+          data.mars.longitude
+        );
+
+
+      const moonManglik =
+        [
+          1,
+          2,
+          4,
+          7,
+          8,
+          12
+        ].includes(
+          marsFromMoon
+        );
+
+
+      const venusManglik =
+        [
+          1,
+          2,
+          4,
+          7,
+          8,
+          12
+        ].includes(
+          marsFromVenus
+        );
+
+
+      $('marriage')
+        .innerHTML =
+        [
+          [
+            '7th House',
+            `${RASHI[data.seventhSign][0]} (${RASHI[data.seventhSign][1]})`
+          ],
+
+          [
+            '7th Lord',
+            data.seventhLordName
+          ],
+
+          [
+            'Planets in 7th',
+            planetsIn7
+          ],
+
+          [
+            'Manglik from Lagna',
+            data.manglik
+              ? 'YES'
+              : 'NO'
+          ],
+
+          [
+            'Manglik from Moon',
+            `${moonManglik ? 'YES' : 'NO'} • Mars ${marsFromMoon}th from Moon`
+          ],
+
+          [
+            'Manglik from Venus',
+            `${venusManglik ? 'YES' : 'NO'} • Mars ${marsFromVenus}th from Venus`
+          ],
+
+          [
+            '7th Lord Placement',
+            data.seventhLordPlanet
+              ? `${data.seventhLordPlanet.rashi.name} • Bhava ${data.seventhLordPlanet.house}`
+              : '—'
+          ],
+
+          [
+            'Interpretive Caution',
+            'Marriage outcome and timing are not deterministic software outputs.'
+          ]
+        ]
+          .map(
+            item => `
+              <div class="kv-item">
+                <small>
+                  ${escapeHtml(item[0])}
+                </small>
+
+                <strong>
+                  ${escapeHtml(item[1])}
+                </strong>
+              </div>
+            `
+          )
+          .join('');
+
+
+      /* ================================================
+         DASHA
+         ================================================ */
+
+      const active =
+        activeDasha(
+          data.dashaData
+        );
+
+
+      $('dashaTable')
+        .innerHTML =
+        data.dashaData
+          .map(
+            d => `
+              <tr>
+
+                <td>
+                  <strong>
+                    ${d.lord}
+                  </strong>
+                </td>
+
+                <td>
+                  ${formatDateOnly(d.start)}
+                </td>
+
+                <td>
+                  ${formatDateOnly(d.end)}
+                </td>
+
+                <td>
+                  ${d.duration.toFixed(2)} years
+                </td>
+
+                <td>
+                  ${
+                    active === d
+                      ? '<span class="current-pill">CURRENT</span>'
+                      : '—'
+                  }
+                </td>
+
+              </tr>
+            `
+          )
+          .join('');
+
+
+      /* ================================================
+         DATE INTELLIGENCE
+         ================================================ */
+
+      $('dateBirthWeekday')
+        .textContent =
+        WEEKDAYS[
+          birthDate.getDay()
+        ];
+
+
+      $('dateAsOfWeekday')
+        .textContent =
+        WEEKDAYS[
+          data.b.asOf.getDay()
+        ];
+
+
+      $('dateDifference')
+        .textContent =
+        `${data.age.years} years • ${data.age.months} months • ${data.age.days} days`;
+
+
+      $('dateNextBirthday')
+        .textContent =
+        'Live countdown below';
+
+
+      $('nextBirthdayAge')
+        .textContent =
+        '—';
+
+
+      /* ================================================
+         VERIFICATION
+         ================================================ */
+
+      renderVerification(
+        data
+      );
+
+
+      /* ================================================
+         SHOW
+         ================================================ */
+
+      $('resultShell')
+        .hidden = false;
+
+
+      setTimeout(
+        () => {
+
+          $('resultShell')
+            .classList.add(
+              'results-visible'
+            );
+
+        },
+        20
+      );
+
+
+      window.scrollTo({
+        top:
+          $('resultShell')
+            .offsetTop -
+          80,
+
+        behavior:
+          'smooth'
+      });
+    }
+
+
+    function formatDateOnly(
+      date
+    ) {
+
+      return (
+        date.getUTCFullYear() +
+        '-' +
+        pad2(
+          date.getUTCMonth() + 1
+        ) +
+        '-' +
+        pad2(
+          date.getUTCDate()
+        )
+      );
+    }
+
+
+    /* =========================================================
+       VERIFICATION
+       ========================================================= */
+
+    function renderVerification(
+      data
+    ) {
+
+      const checks = [];
+
+
+      checks.push([
+        'Engine initialized',
+        ready
+      ]);
+
+
+      checks.push([
+        'Lagna matches calculated sign',
+        Math.floor(
+          data.asc / 30
+        ) ===
+        data.ascSign
+      ]);
+
+
+      checks.push([
+        'Moon Rashi matches Moon longitude',
+        data.moon.rashi.id ===
+        Math.floor(
+          data.moon.longitude / 30
+        )
+      ]);
+
+
+      checks.push([
+        'Nakshatra is within 27 Nakshatras',
+        data.moon.nak.id >= 0 &&
+        data.moon.nak.id < 27
+      ]);
+
+
+      checks.push([
+        'Nakshatra Pada is valid',
+        data.moon.nak.pada >= 1 &&
+        data.moon.nak.pada <= 4
+      ]);
+
+
+      const rahu =
+        data.planets.find(
+          p =>
+            p.key === 'Rahu'
+        );
+
+
+      const ketu =
+        data.planets.find(
+          p =>
+            p.key === 'Ketu'
+        );
+
+
+      checks.push([
+        'Rahu / Ketu are 180° apart',
+        Math.abs(
+          norm(
+            rahu.longitude -
+            ketu.longitude
+          ) -
+          180
+        ) < 1e-9
+      ]);
+
+
+      checks.push([
+        'All Bhavas are 1–12',
+        data.planets.every(
+          p =>
+            p.house >= 1 &&
+            p.house <= 12
+        )
+      ]);
+
+
+      checks.push([
+        'All D9 signs are valid',
+        data.planets.every(
+          p =>
+            p.d9 >= 0 &&
+            p.d9 < 12
+        )
+      ]);
+
+
+      checks.push([
+        'No static Lagna contradiction',
+        data.ascRashi.id ===
+        data.ascSign
+      ]);
+
+
+      $('verify')
+        .innerHTML =
+        checks
+          .map(
+            check => `
+              <div class="verify-item">
+
+                <span
+                  class="verify-status ${
+                    check[1]
+                      ? 'pass'
+                      : 'fail'
+                  }"
+                >
+                  ${
+                    check[1]
+                      ? 'PASS'
+                      : 'FAIL'
+                  }
+                </span>
+
+                <strong>
+                  ${escapeHtml(
+                    check[0]
+                  )}
+                </strong>
+
+              </div>
+            `
+          )
+          .join('');
+    }
+
+
+    /* =========================================================
+       NORTH INDIAN CHART
+       ========================================================= */
+
+    function drawChart(
+      data
+    ) {
+
+      const svg =
+        $('chart');
+
+
+      if (!svg) return;
+
+
+      const NS =
+        'http://www.w3.org/2000/svg';
+
+
+      svg.innerHTML = '';
+
+
+      svg.setAttribute(
+        'viewBox',
+        '0 0 600 600'
+      );
+
+
+      function create(
+        tag,
+        attrs = {}
+      ) {
+
+        const element =
+          document.createElementNS(
+            NS,
+            tag
+          );
+
+
+        Object.entries(
+          attrs
+        )
+          .forEach(
+            ([key, value]) => {
+
+              element.setAttribute(
+                key,
+                value
+              );
+            }
+          );
+
+
+        return element;
+      }
+
+
+      function addText(
+        parent,
+        text,
+        x,
+        y,
+        className
+      ) {
+
+        const element =
+          create(
+            'text',
+            {
+              x,
+              y,
+              class:
+                className,
+              'text-anchor':
+                'middle',
+              'dominant-baseline':
+                'middle'
+            }
+          );
+
+
+        element.textContent =
+          text;
+
+
+        parent.appendChild(
+          element
+        );
+
+
+        return element;
+      }
+
+
+      /* ================================================
+         DEFS
+         ================================================ */
+
+      const defs =
+        create('defs');
+
+
+      const gradient =
+        create(
+          'linearGradient',
+          {
+            id:
+              'chartGradient',
+
+            x1: '0%',
+
+            y1: '0%',
+
+            x2: '100%',
+
+            y2: '100%'
+          }
+        );
+
+
+      [
+        ['0%', '#ff4d6d'],
+        ['20%', '#ffb703'],
+        ['40%', '#38e8ff'],
+        ['60%', '#7cff6b'],
+        ['80%', '#b66dff'],
+        ['100%', '#ff66c4']
+      ]
+        .forEach(
+          stop => {
+
+            gradient.appendChild(
+              create(
+                'stop',
+                {
+                  offset:
+                    stop[0],
+
+                  'stop-color':
+                    stop[1]
+                }
+              )
+            );
+          }
+        );
+
+
+      defs.appendChild(
+        gradient
+      );
+
+
+      const filter =
+        create(
+          'filter',
+          {
+            id:
+              'chartGlow',
+
+            x:
+              '-50%',
+
+            y:
+              '-50%',
+
+            width:
+              '200%',
+
+            height:
+              '200%'
+          }
+        );
+
+
+      filter.appendChild(
+        create(
+          'feGaussianBlur',
+          {
+            stdDeviation:
+              '3',
+
+            result:
+              'blur'
+          }
+        )
+      );
+
+
+      const merge =
+        create(
+          'feMerge'
+        );
+
+
+      merge.appendChild(
+        create(
+          'feMergeNode',
+          {
+            in:
+              'blur'
+          }
+        )
+      );
+
+
+      merge.appendChild(
+        create(
+          'feMergeNode',
+          {
+            in:
+              'SourceGraphic'
+          }
+        )
+      );
+
+
+      filter.appendChild(
+        merge
+      );
+
+
+      defs.appendChild(
+        filter
+      );
+
+
+      svg.appendChild(
+        defs
+      );
+
+
+      /* ================================================
+         BACKGROUND
+         ================================================ */
+
+      svg.appendChild(
+        create(
+          'rect',
+          {
+            x: 8,
+            y: 8,
+            width: 584,
+            height: 584,
+            rx: 14,
+            class:
+              'kundli-svg-bg'
+          }
+        )
+      );
+
+
+      svg.appendChild(
+        create(
+          'rect',
+          {
+            x: 20,
+            y: 20,
+            width: 560,
+            height: 560,
+            class:
+              'kundli-svg-outer'
+          }
+        )
+      );
+
+
+      svg.appendChild(
+        create(
+          'polygon',
+          {
+            points:
+              '300,20 580,300 300,580 20,300',
+
+            class:
+              'kundli-svg-diamond'
+          }
+        )
+      );
+
+
+      svg.appendChild(
+        create(
+          'line',
+          {
+            x1: 20,
+            y1: 20,
+            x2: 580,
+            y2: 580,
+
+            class:
+              'kundli-svg-diagonal'
+          }
+        )
+      );
+
+
+      svg.appendChild(
+        create(
+          'line',
+          {
+            x1: 580,
+            y1: 20,
+            x2: 20,
+            y2: 580,
+
+            class:
+              'kundli-svg-diagonal'
+          }
+        )
+      );
+
+
+      /* ================================================
+         HOUSE POSITIONS
+         ================================================ */
+
+      const housePos = {
+
+        1: {
+          x: 300,
+          y: 160
+        },
+
+        2: {
+          x: 155,
+          y: 90
+        },
+
+        3: {
+          x: 70,
+          y: 180
+        },
+
+        4: {
+          x: 130,
+          y: 320
+        },
+
+        5: {
+          x: 80,
+          y: 450
+        },
+
+        6: {
+          x: 160,
+          y: 500
+        },
+
+        7: {
+          x: 300,
+          y: 460
+        },
+
+        8: {
+          x: 445,
+          y: 520
+        },
+
+        9: {
+          x: 520,
+          y: 450
+        },
+
+        10: {
+          x: 450,
+          y: 320
+        },
+
+        11: {
+          x: 520,
+          y: 180
+        },
+
+        12: {
+          x: 445,
+          y: 90
+        }
+      };
+
+
+      /* ================================================
+         CENTER
+         ================================================ */
+
+      svg.appendChild(
+        create(
+          'circle',
+          {
+            cx: 300,
+            cy: 300,
+            r: 68,
+
+            class:
+              'kundli-svg-center'
+          }
+        )
+      );
+
+
+      addText(
+        svg,
+        'LAGNA',
+        300,
+        270,
+        'kundli-svg-lagna-title'
+      );
+
+
+      addText(
+        svg,
+        localDms(
+          data.asc
+        ),
+        300,
+        299,
+        'kundli-svg-lagna-degree'
+      );
+
+
+      addText(
+        svg,
+        `${data.ascRashi.symbol} ${data.ascRashi.name}`,
+        300,
+        328,
+        'kundli-svg-lagna-rashi'
+      );
+
+
+      /* ================================================
+         HOUSES
+         ================================================ */
+
+      for (
+        let houseNo = 1;
+        houseNo <= 12;
+        houseNo++
+      ) {
+
+        const pos =
+          housePos[
+            houseNo
+          ];
+
+
+        const signIndex =
+          (
+            data.ascSign +
+            houseNo -
+            1
+          ) % 12;
+
+
+        const sign =
+          RASHI[
+            (
+              signIndex +
+              12
+            ) % 12
+          ];
+
+
+        const group =
+          create(
+            'g',
+            {
+              class:
+                `kundli-svg-house house-${houseNo}`
+            }
+          );
+
+
+        svg.appendChild(
+          group
+        );
+
+
+        addText(
+          group,
+          `${houseNo}H`,
+          pos.x,
+          pos.y - 36,
+          'kundli-svg-house-number'
+        );
+
+
+        addText(
+          group,
+          sign[0],
+          pos.x,
+          pos.y - 10,
+          'kundli-svg-rashi-name'
+        );
+
+
+        addText(
+          group,
+          sign[2],
+          pos.x,
+          pos.y + 11,
+          'kundli-svg-rashi-sign'
+        );
+
+
+        const housePlanets =
+          data.planets
+            .filter(
+              p =>
+                Number(
+                  p.house
+                ) === houseNo
+            )
+            .sort(
+              (a, b) =>
+                (
+                  PLANET_ORDER[
+                    a.key
+                  ] || 99
+                ) -
+                (
+                  PLANET_ORDER[
+                    b.key
+                  ] || 99
+                )
+            );
+
+
+        housePlanets
+          .forEach(
+            (p, index) => {
+
+              const y =
+                pos.y +
+                35 +
+                index *
+                22;
+
+
+              const planetText =
+                addText(
+                  group,
+                  p.retro
+                    ? `${p.short} R`
+                    : p.short,
+                  pos.x,
+                  y,
+                  `kundli-svg-planet planet-${p.short.toLowerCase()}`
+                );
+
+
+              const title =
+                create(
+                  'title'
+                );
+
+
+              title.textContent =
+                `${p.key} • ${p.rashi.name} • Bhava ${p.house}${p.retro ? ' • Retrograde' : ''}`;
+
+
+              planetText.appendChild(
+                title
+              );
+            }
+          );
+      }
+
+
+      /* ================================================
+         CORNERS
+         ================================================ */
+
+      [
+        [20, 20],
+        [580, 20],
+        [580, 580],
+        [20, 580]
+      ]
+        .forEach(
+          ([x, y]) => {
+
+            svg.appendChild(
+              create(
+                'circle',
+                {
+                  cx: x,
+                  cy: y,
+                  r: 3,
+                  class:
+                    'kundli-svg-corner'
+                }
+              )
+            );
+          }
+        );
+    }
+
+
+    /* =========================================================
+       HOUSE TABLE
+       ========================================================= */
+
+    function renderHouseWisePlacement(
+      data
+    ) {
+
+      const tbody =
+        $('housePlacementTable');
+
+
+      if (!tbody) return;
+
+
+      tbody.innerHTML =
+        Array.from(
+          {
+            length: 12
+          },
+          (_, index) => {
+
+            const houseNo =
+              index + 1;
+
+
+            const sign =
+              RASHI[
+                (
+                  data.ascSign +
+                  index
+                ) % 12
+              ];
+
+
+            const planets =
+              data.planets
+                .filter(
+                  p =>
+                    Number(
+                      p.house
+                    ) === houseNo
+                )
+                .sort(
+                  (a, b) =>
+                    (
+                      PLANET_ORDER[
+                        a.key
+                      ] || 99
+                    ) -
+                    (
+                      PLANET_ORDER[
+                        b.key
+                      ] || 99
+                    )
+                );
+
+
+            const planetHtml =
+              planets.length
+                ? planets
+                    .map(
+                      p => `
+                        <span class="placement-planet planet-${p.short.toLowerCase()}">
+                          ${escapeHtml(p.short)}
+                          ${p.retro ? '<em>R</em>' : ''}
+                        </span>
+                      `
+                    )
+                    .join('')
+                : '<span class="placement-empty">—</span>';
+
+
+            return `
+              <tr>
+
+                <td>
+                  <span class="house-number-badge">
+                    ${houseNo}
+                  </span>
+                </td>
+
+                <td>
+
+                  <div class="placement-sign">
+
+                    <span class="placement-symbol">
+                      ${sign[2]}
+                    </span>
+
+                    <div>
+                      <strong>
+                        ${escapeHtml(sign[0])}
+                      </strong>
+
+                      <small>
+                        ${escapeHtml(sign[1])}
+                      </small>
+                    </div>
+
+                  </div>
+
+                </td>
+
+                <td>
+
+                  <div class="placement-planets">
+                    ${planetHtml}
+                  </div>
+
+                </td>
+
+              </tr>
+            `;
+          }
+        )
+        .join('');
+    }
+
+
+    /* =========================================================
+       EXAMPLE
+       ========================================================= */
+
+    $('exampleBtn')
+      .addEventListener(
+        'click',
+        async () => {
+
+          $('name').value =
+            'Mukesh Sah';
+
+
+          $('date').value =
+            '1992-07-05';
+
+
+          $('time').value =
+            '20:29:10';
+
+
+          $('asOfDate').value =
+            formatISODate(
+              new Date()
+            );
+
+
+          $('place').value =
+            'Rampur Bhainsahi, Gopalganj, Bihar';
+
+
+          $('lat').value =
+            '26.491377';
+
+
+          $('lon').value =
+            '84.309143';
+
+
+          $('tz').value =
+            '5.5';
+
+
+          locationSelected =
+            true;
+
+
+          $('selectedPlace')
+            .textContent =
+            'Rampur Bhainsahi, Gopalganj, Bihar';
+
+
+          $('selectedCoordinates')
+            .textContent =
+            '26.491377°, 84.309143°';
+
+
+          $('selectedTimezone')
+            .textContent =
+            'UTC+5.5';
+
+
+          $('locationHint')
+            .textContent =
+            'Example location loaded • 26.491377, 84.309143 • UTC+5:30';
+
+
+          $('locationHint')
+            .className =
+            'location-hint ok';
+
+
+          clearLocationResults();
+
+
+          if (!ready) {
+
+            await initSwissEphemeris();
+          }
+
+
+          await calculate();
+        }
+      );
+
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    $('resetBtn')
+      .addEventListener(
+        'click',
+        () => {
+
+          $('birthForm')
+            .reset();
+
+
+          $('date').value = '';
+
+          $('time').value = '';
+
+          $('asOfDate').value =
+            formatISODate(
+              new Date()
+            );
+
+
+          locationSelected =
+            false;
+
+
+          $('selectedPlace')
+            .textContent =
+            'Not selected';
+
+
+          $('selectedCoordinates')
+            .textContent =
+            '—';
+
+
+          $('selectedTimezone')
+            .textContent =
+            '—';
+
+
+          $('locationHint')
+            .textContent =
+            'Type 2+ characters to search any location worldwide.';
+
+
+          $('googleStatus')
+            .textContent =
+            'Global OpenStreetMap / Photon search';
+
+
+          $('googleStatus')
+            .className =
+            'google-status';
+
+
+          clearLocationResults();
+
+          setError('');
+
+          $('resultShell')
+            .hidden = true;
+
+
+          $('resultShell')
+            .classList.remove(
+              'results-visible'
+            );
+
+
+          clearInterval(
+            countdownTimer
+          );
+
+
+          setStatus(
+            ready
+              ? 'Swiss Ephemeris ready'
+              : 'Initializing engine…',
+            ready
+              ? 'ok'
+              : ''
+          );
+        }
+      );
+
+
+    /* =========================================================
+       FORM SUBMIT
+       ========================================================= */
+
+    $('birthForm')
+      .addEventListener(
+        'submit',
+        event => {
+
+          event.preventDefault();
+
+          calculate();
+        }
+      );
+
+
+    /* =========================================================
+       INITIALIZATION
+       ========================================================= */
+
+    (async () => {
+
+      try {
+
+        const today =
+          new Date();
+
+
+        $('asOfDate')
+          .value =
+          formatISODate(
+            today
+          );
+
+
+        setStatus(
+          'Initializing Swiss Ephemeris…'
+        );
+
+
+        await initSwissEphemeris();
+
+
+        $('calcBtn')
+          .disabled = false;
+
+
+        setStatus(
+          'Swiss Ephemeris ready',
+          'ok'
+        );
+
+
+      } catch (error) {
+
+        console.error(
+          error
+        );
+
+
+        $('calcBtn')
+          .disabled = true;
+
+
+        setError(
+          error?.message ||
+          String(error)
+        );
+      }
+
+    })();
+
+  </script>
+
+
+  <!-- Common JS -->
+  <script src="../js/main.js"></script>
+
+</body>
+</html>

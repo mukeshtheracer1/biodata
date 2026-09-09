@@ -1,0 +1,305 @@
+<section class="yog-page" id="yogPage">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+    <div class="yog-hero">
+
+        <div class="yog-hero-icon">ॐ</div>
+
+        <div class="yog-hero-content">
+            <span class="yog-eyebrow">
+                VEDIC YOGA ANALYSIS
+            </span>
+
+            <h2>योग</h2>
+
+            <p>
+                जन्म कुंडली में ग्रहों की स्थिति, भाव, भावेश,
+                ग्रह-दृष्टि और राशि संबंधों के आधार पर
+                प्रमुख वैदिक योगों का विश्लेषण।
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ERROR / EMPTY STATE
+    ====================================================== -->
+    <div
+        id="yogEmpty"
+        class="yog-empty"
+        hidden
+    >
+        <div class="yog-empty-icon">ॐ</div>
+
+        <h3>कुंडली उपलब्ध नहीं है</h3>
+
+        <p>
+            पहले जन्म विवरण भरकर Kundli generate करें।
+            उसके बाद यहाँ योगों की गणना दिखाई जाएगी।
+        </p>
+    </div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+    <div
+        id="yogContent"
+        class="yog-content"
+        hidden
+    >
+
+        <!-- =================================================
+             SUMMARY CARDS
+        ================================================== -->
+        <section class="yog-summary-grid">
+
+            <article class="yog-stat-card">
+                <span class="yog-stat-label">
+                    Total Yogas
+                </span>
+
+                <strong id="yogCount">
+                    0
+                </strong>
+
+                <small>
+                    Detected from D1
+                </small>
+            </article>
+
+
+            <article class="yog-stat-card">
+                <span class="yog-stat-label">
+                    Raj / Career
+                </span>
+
+                <strong id="yogRajCount">
+                    0
+                </strong>
+
+                <small>
+                    Kendra + Trikona
+                </small>
+            </article>
+
+
+            <article class="yog-stat-card">
+                <span class="yog-stat-label">
+                    Lagna
+                </span>
+
+                <strong id="yogLagna">
+                    —
+                </strong>
+
+                <small>
+                    Ascendant Rashi
+                </small>
+            </article>
+
+
+            <article class="yog-stat-card">
+                <span class="yog-stat-label">
+                    Mahapurusha
+                </span>
+
+                <strong id="yogMahapurushaCount">
+                    0
+                </strong>
+
+                <small>
+                    Pancha Mahapurusha
+                </small>
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             DETECTED YOGAS
+        ================================================== -->
+        <section class="yog-section">
+
+            <div class="yog-section-heading">
+
+                <div>
+                    <span class="yog-section-kicker">
+                        DETECTED YOGAS
+                    </span>
+
+                    <h3>
+                        प्रमुख योग
+                    </h3>
+                </div>
+
+                <span class="yog-section-badge">
+                    D1 Based
+                </span>
+
+            </div>
+
+            <div
+                id="yogList"
+                class="yog-list"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             PLANETARY COMBINATIONS
+        ================================================== -->
+        <section class="yog-section">
+
+            <div class="yog-section-heading">
+
+                <div>
+                    <span class="yog-section-kicker">
+                        PLANETARY COMBINATIONS
+                    </span>
+
+                    <h3>
+                        ग्रह संबंध
+                    </h3>
+                </div>
+
+            </div>
+
+            <div
+                id="yogCombinations"
+                class="yog-combinations"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             HOUSE LORDS
+        ================================================== -->
+        <section class="yog-section">
+
+            <div class="yog-section-heading">
+
+                <div>
+                    <span class="yog-section-kicker">
+                        HOUSE LORDS
+                    </span>
+
+                    <h3>
+                        भाव स्वामी स्थिति
+                    </h3>
+                </div>
+
+                <span class="yog-section-badge">
+                    12 Houses
+                </span>
+
+            </div>
+
+            <div class="yog-table-wrap">
+
+                <table class="yog-table">
+
+                    <thead>
+                        <tr>
+                            <th>भाव</th>
+                            <th>राशि</th>
+                            <th>स्वामी</th>
+                            <th>स्वामी का भाव</th>
+                            <th>वर्ग</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="houseLordTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RULE COVERAGE
+        ================================================== -->
+        <section class="yog-section">
+
+            <div class="yog-section-heading">
+
+                <div>
+                    <span class="yog-section-kicker">
+                        RULE COVERAGE
+                    </span>
+
+                    <h3>
+                        Yoga Rules
+                    </h3>
+                </div>
+
+                <span class="yog-section-badge">
+                    Configured D1 Rules
+                </span>
+
+            </div>
+
+            <div
+                id="yogRuleCoverage"
+                class="yog-rule-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             INTERPRETATION
+        ================================================== -->
+        <section class="yog-section yog-highlight-section">
+
+            <div class="yog-section-heading">
+
+                <div>
+                    <span class="yog-section-kicker">
+                        INTERPRETATION
+                    </span>
+
+                    <h3>
+                        योग Highlights
+                    </h3>
+                </div>
+
+            </div>
+
+            <div
+                id="yogHighlights"
+                class="yog-highlights"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             DISCLAIMER
+        ================================================== -->
+        <div class="yog-disclaimer">
+
+            <strong>
+                ⚠️ ज्योतिषीय सूचना
+            </strong>
+
+            <p>
+                यह विश्लेषण जन्म-कुंडली की गणना और configured
+                वैदिक योग-नियमों पर आधारित informational analysis है।
+                किसी भी महत्वपूर्ण जीवन-निर्णय के लिए केवल इस
+                रिपोर्ट पर निर्भर न रहें।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>

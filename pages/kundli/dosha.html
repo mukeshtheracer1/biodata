@@ -1,0 +1,357 @@
+<section
+    class="kundli-module dosha-module"
+    data-module="dosha"
+>
+
+    <!-- =====================================================
+         MODULE HEADER
+    ====================================================== -->
+    <div class="dosha-page-header">
+
+        <div class="dosha-header-content">
+
+            <div class="dosha-eyebrow">
+                ✦ VEDIC DOSHA ANALYSIS ✦
+            </div>
+
+            <h2>
+                दोष
+                <span>Dosha Analysis</span>
+            </h2>
+
+            <p>
+                जन्म कुंडली में ग्रहों की वास्तविक स्थिति,
+                भाव, राशि और ग्रह-दृष्टि के आधार पर
+                प्रमुख दोषों का विश्लेषण।
+            </p>
+
+        </div>
+
+        <div class="dosha-engine-badge">
+            <span class="dosha-engine-dot"></span>
+            <span id="doshaEngineStatus">
+                Calculating from D1
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CALCULATION NOTICE
+    ====================================================== -->
+    <div
+        id="doshaCalculationNotice"
+        class="dosha-calculation-notice"
+    >
+        <div class="dosha-notice-icon">✓</div>
+
+        <div>
+            <strong>Calculation Based Analysis</strong>
+
+            <p>
+                सभी परिणाम आपकी वर्तमान जन्म कुंडली के
+                calculated planetary positions और D1
+                whole-sign houses से निकाले जा रहे हैं।
+            </p>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         SUMMARY
+    ====================================================== -->
+    <section class="dosha-section">
+
+        <div class="dosha-section-heading">
+
+            <div>
+                <span class="dosha-section-kicker">
+                    CHART SUMMARY
+                </span>
+
+                <h3>
+                    दोष सारांश
+                </h3>
+            </div>
+
+            <span
+                id="doshaSummaryBasis"
+                class="dosha-section-badge"
+            >
+                D1 Based
+            </span>
+
+        </div>
+
+
+        <div class="dosha-summary-grid">
+
+            <article class="dosha-summary-card">
+
+                <div class="dosha-summary-icon">
+                    ⚠
+                </div>
+
+                <div>
+                    <span class="dosha-summary-label">
+                        Detected Doshas
+                    </span>
+
+                    <strong id="doshaDetectedCount">
+                        —
+                    </strong>
+
+                    <small>
+                        configured indicators matched
+                    </small>
+                </div>
+
+            </article>
+
+
+            <article class="dosha-summary-card">
+
+                <div class="dosha-summary-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <span class="dosha-summary-label">
+                        Clear / Not Indicated
+                    </span>
+
+                    <strong id="doshaClearCount">
+                        —
+                    </strong>
+
+                    <small>
+                        configured rules not matched
+                    </small>
+                </div>
+
+            </article>
+
+
+            <article class="dosha-summary-card">
+
+                <div class="dosha-summary-icon">
+                    ♂
+                </div>
+
+                <div>
+                    <span class="dosha-summary-label">
+                        Manglik References
+                    </span>
+
+                    <strong id="doshaManglikCount">
+                        —
+                    </strong>
+
+                    <small>
+                        traditional reference points
+                    </small>
+                </div>
+
+            </article>
+
+
+            <article class="dosha-summary-card">
+
+                <div class="dosha-summary-icon">
+                    ☊
+                </div>
+
+                <div>
+                    <span class="dosha-summary-label">
+                        Rahu / Ketu Axis
+                    </span>
+
+                    <strong id="doshaNodeAxis">
+                        —
+                    </strong>
+
+                    <small>
+                        calculated D1 houses
+                    </small>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DOSHA CARDS
+    ====================================================== -->
+    <section class="dosha-section">
+
+        <div class="dosha-section-heading">
+
+            <div>
+                <span class="dosha-section-kicker">
+                    DETECTED / NOT DETECTED
+                </span>
+
+                <h3>
+                    प्रमुख दोष
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div
+            id="doshaList"
+            class="dosha-list"
+        ></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MANGAL DETAIL
+    ====================================================== -->
+    <section class="dosha-section">
+
+        <div class="dosha-section-heading">
+
+            <div>
+                <span class="dosha-section-kicker">
+                    MARS REFERENCE
+                </span>
+
+                <h3>
+                    मंगल दोष स्थिति
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div
+            id="doshaManglikDetail"
+            class="dosha-detail-panel"
+        ></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RAHU KETU AXIS
+    ====================================================== -->
+    <section class="dosha-section">
+
+        <div class="dosha-section-heading">
+
+            <div>
+                <span class="dosha-section-kicker">
+                    RAHU / KETU
+                </span>
+
+                <h3>
+                    राहु-केतु अक्ष
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div
+            id="doshaNodeDetail"
+            class="dosha-node-grid"
+        ></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PLANETARY POSITIONS USED
+    ====================================================== -->
+    <section class="dosha-section">
+
+        <div class="dosha-section-heading">
+
+            <div>
+                <span class="dosha-section-kicker">
+                    CALCULATION INPUT
+                </span>
+
+                <h3>
+                    दोष गणना में प्रयुक्त ग्रह स्थिति
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div
+            id="doshaPlanetTable"
+            class="dosha-table-wrap"
+        ></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RULE COVERAGE
+    ====================================================== -->
+    <section class="dosha-section">
+
+        <div class="dosha-section-heading">
+
+            <div>
+                <span class="dosha-section-kicker">
+                    RULE COVERAGE
+                </span>
+
+                <h3>
+                    Dosha Rules
+                </h3>
+            </div>
+
+            <span class="dosha-section-badge">
+                Configured D1 Rules
+            </span>
+
+        </div>
+
+
+        <div
+            id="doshaRuleCoverage"
+            class="dosha-rule-grid"
+        ></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         IMPORTANT NOTE
+    ====================================================== -->
+    <section class="dosha-note-card">
+
+        <div class="dosha-note-icon">
+            ॐ
+        </div>
+
+        <div>
+
+            <h3>
+                महत्वपूर्ण सूचना
+            </h3>
+
+            <p>
+                Dosha indication केवल configured Jyotish
+                rules के आधार पर दिखाई जाती है। किसी दोष की
+                strength, cancellation, dignity और अन्य
+                remedial factors का अलग से विस्तृत विश्लेषण
+                आवश्यक हो सकता है।
+            </p>
+
+        </div>
+
+    </section>
+
+</section>

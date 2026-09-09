@@ -1,0 +1,922 @@
+<section
+    class="kundli-milan-module"
+    id="kundliMilanModule"
+>
+
+    <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
+
+    <div class="kundli-milan-page-head">
+
+        <div class="kundli-milan-title-wrap">
+
+            <span class="kundli-milan-eyebrow">
+                KUNDLI MILAN / कुंडली मिलान
+            </span>
+
+            <h2>
+                Kundli Milan / कुंडली मिलान
+            </h2>
+
+            <p>
+                Person A / व्यक्ति A की saved Kundli को आधार बनाकर
+                Person B / व्यक्ति B की जन्म जानकारी भरें और
+                वास्तविक ग्रह-नक्षत्र गणना के आधार पर Ashtakoota
+                Guna Milan देखें।
+            </p>
+
+        </div>
+
+        <div
+            class="kundli-milan-engine-badge"
+            id="kundliMilanEngineBadge"
+        >
+            Kundli Engine / कुंडली इंजन
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FORM MESSAGE
+    ====================================================== -->
+
+    <div
+        id="kundliMilanMessage"
+        class="kundli-milan-message"
+        hidden
+    ></div>
+
+
+    <!-- =====================================================
+         PERSON COMPARISON
+    ====================================================== -->
+
+    <div class="kundli-milan-person-grid">
+
+        <!-- =================================================
+             PERSON A
+        ================================================== -->
+
+        <article
+            class="kundli-milan-person-card person-a-card"
+        >
+
+            <div class="person-card-head">
+
+                <div>
+                    <span class="person-card-kicker">
+                        PERSON A / व्यक्ति A
+                    </span>
+
+                    <h3>
+                        Existing Kundli / मौजूदा कुंडली
+                    </h3>
+                </div>
+
+                <span class="locked-badge">
+                    🔒 Locked / सुरक्षित
+                </span>
+
+            </div>
+
+
+            <div
+                id="kundliMilanPersonA"
+                class="person-data-grid"
+            >
+
+                <div class="person-empty">
+                    Person A की saved Kundli उपलब्ध नहीं है।
+                    पहले Birth Details में Kundli बनाएं।
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PERSON B
+        ================================================== -->
+
+        <article
+            class="kundli-milan-person-card person-b-card"
+        >
+
+            <div class="person-card-head">
+
+                <div>
+                    <span class="person-card-kicker">
+                        PERSON B / व्यक्ति B
+                    </span>
+
+                    <h3>
+                        दूसरी जन्म कुंडली / दूसरी जानकारी
+                    </h3>
+                </div>
+
+                <span class="required-badge">
+                    Required / आवश्यक
+                </span>
+
+            </div>
+
+
+            <form
+                id="kundliMilanPersonBForm"
+                class="person-b-form"
+                autocomplete="off"
+                novalidate
+            >
+
+                <!-- =========================================
+                     PERSONAL DETAILS
+                ========================================== -->
+
+                <div class="milan-form-section">
+
+                    <div class="milan-section-title">
+
+                        <span>01</span>
+
+                        <div>
+                            <strong>
+                                व्यक्तिगत जानकारी / Personal Details
+                            </strong>
+
+                            <small>
+                                दूसरी व्यक्ति की मूल जानकारी
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="milan-form-grid">
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBName">
+                                Name / नाम
+                                <b>*</b>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="milanBName"
+                                maxlength="100"
+                                placeholder="नाम लिखें"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBGender">
+                                Gender / लिंग
+                                <b>*</b>
+                            </label>
+
+                            <select
+                                id="milanBGender"
+                                required
+                            >
+
+                                <option value="">
+                                    Select / चयन करें
+                                </option>
+
+                                <option value="male">
+                                    Male / पुरुष
+                                </option>
+
+                                <option value="female">
+                                    Female / महिला
+                                </option>
+
+                                <option value="other">
+                                    Other / अन्य
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     DATE & TIME
+                ========================================== -->
+
+                <div class="milan-form-section">
+
+                    <div class="milan-section-title">
+
+                        <span>02</span>
+
+                        <div>
+                            <strong>
+                                जन्म तारीख और समय / Birth Date & Time
+                            </strong>
+
+                            <small>
+                                Accurate birth time calculation के लिए
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="milan-form-grid">
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBDate">
+                                Date of Birth / जन्म तिथि
+                                <b>*</b>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="milanBDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBTime">
+                                Birth Time / जन्म समय
+                                <b>*</b>
+                            </label>
+
+                            <input
+                                type="time"
+                                id="milanBTime"
+                                step="1"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     BIRTH PLACE
+                ========================================== -->
+
+                <div class="milan-form-section">
+
+                    <div class="milan-section-title">
+
+                        <span>03</span>
+
+                        <div>
+                            <strong>
+                                जन्म स्थान / Birth Place
+                            </strong>
+
+                            <small>
+                                Real location search से स्थान चुनें
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="milan-location-group">
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBPlace">
+                                Birth Place / जन्म स्थान
+                                <b>*</b>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="milanBPlace"
+                                maxlength="150"
+                                placeholder="City / Town / Village खोजें..."
+                                autocomplete="off"
+                                required
+                            >
+
+                            <small class="milan-field-help">
+                                Search result में से location select करना जरूरी है।
+                            </small>
+
+                        </div>
+
+
+                        <div
+                            id="milanBLocationResults"
+                            class="milan-location-results"
+                            hidden
+                        ></div>
+
+                    </div>
+
+
+                    <div class="milan-form-grid">
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBState">
+                                State / राज्य
+                            </label>
+
+                            <input
+                                type="text"
+                                id="milanBState"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBCountry">
+                                Country / देश
+                            </label>
+
+                            <input
+                                type="text"
+                                id="milanBCountry"
+                                readonly
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     COORDINATES & TIMEZONE
+                ========================================== -->
+
+                <div class="milan-form-section">
+
+                    <div class="milan-section-title">
+
+                        <span>04</span>
+
+                        <div>
+                            <strong>
+                                Location Calculation Data
+                            </strong>
+
+                            <small>
+                                Latitude, Longitude और Timezone
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="milan-form-grid">
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBLatitude">
+                                Latitude / अक्षांश
+                            </label>
+
+                            <input
+                                type="number"
+                                id="milanBLatitude"
+                                min="-90"
+                                max="90"
+                                step="0.000001"
+                                placeholder="Auto-filled"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBLongitude">
+                                Longitude / देशांतर
+                            </label>
+
+                            <input
+                                type="number"
+                                id="milanBLongitude"
+                                min="-180"
+                                max="180"
+                                step="0.000001"
+                                placeholder="Auto-filled"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="milan-form-group milan-full-field">
+
+                            <label for="milanBTimezone">
+                                Timezone / समय क्षेत्र
+                            </label>
+
+                            <input
+                                type="text"
+                                id="milanBTimezone"
+                                placeholder="Asia/Kolkata"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="milan-location-actions">
+
+                        <button
+                            type="button"
+                            id="milanBChangeLocation"
+                            class="milan-secondary-btn"
+                        >
+                            Change Location / स्थान बदलें
+                        </button>
+
+                        <span
+                            id="milanBLocationStatus"
+                            class="milan-location-status"
+                        >
+                            Location select नहीं हुई है।
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     ACCURACY + NOTES
+                ========================================== -->
+
+                <div class="milan-form-section">
+
+                    <div class="milan-section-title">
+
+                        <span>05</span>
+
+                        <div>
+                            <strong>
+                                अतिरिक्त जानकारी / Additional Details
+                            </strong>
+
+                            <small>
+                                Birth-time accuracy और notes
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="milan-form-grid">
+
+                        <div class="milan-form-group">
+
+                            <label for="milanBAccuracy">
+                                Birth Time Accuracy / जन्म समय शुद्धता
+                            </label>
+
+                            <select id="milanBAccuracy">
+
+                                <option value="">
+                                    Select / चयन करें
+                                </option>
+
+                                <option value="exact">
+                                    Exact / सटीक
+                                </option>
+
+                                <option value="approximate">
+                                    Approximate / अनुमानित
+                                </option>
+
+                                <option value="unknown">
+                                    Unknown / अज्ञात
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="milan-form-group milan-full-field">
+
+                            <label for="milanBNotes">
+                                Notes / नोट्स
+                            </label>
+
+                            <textarea
+                                id="milanBNotes"
+                                rows="3"
+                                maxlength="1000"
+                                placeholder="यदि कोई अतिरिक्त जानकारी हो..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     ACTIONS
+                ========================================== -->
+
+                <div class="milan-form-actions">
+
+                    <button
+                        type="submit"
+                        id="milanBGenerateBtn"
+                        class="milan-primary-btn"
+                    >
+                        <span>
+                            ✦
+                        </span>
+
+                        Generate Person B Kundli
+                        / व्यक्ति B की कुंडली बनाएं
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="milanBResetBtn"
+                        class="milan-secondary-btn"
+                    >
+                        Reset / रीसेट
+                    </button>
+
+                </div>
+
+            </form>
+
+        </article>
+
+    </div>
+
+
+    <!-- =====================================================
+         PERSON B CALCULATION STATUS
+    ====================================================== -->
+
+    <section
+        id="kundliMilanCalculatedSection"
+        class="kundli-milan-calculated-section"
+        hidden
+    >
+
+        <div class="calculated-head">
+
+            <div>
+                <span>
+                    CALCULATION COMPLETE / गणना पूर्ण
+                </span>
+
+                <h3>
+                    Person B Kundli तैयार है
+                </h3>
+
+                <p>
+                    अब दोनों वास्तविक Kundli के आधार पर Milan किया जा सकता है।
+                </p>
+            </div>
+
+            <div
+                id="kundliMilanCalculationBadge"
+                class="calculation-badge"
+            >
+                Calculated
+            </div>
+
+        </div>
+
+
+        <div
+            id="kundliMilanQuickFacts"
+            class="milan-quick-facts"
+        ></div>
+
+
+        <button
+            type="button"
+            id="kundliMilanCalculateBtn"
+            class="milan-calculate-btn"
+        >
+            ❤️
+            Kundli Milan करें / मिलान शुरू करें
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         MILAN RESULT
+    ====================================================== -->
+
+    <section
+        id="kundliMilanResult"
+        class="kundli-milan-result"
+        hidden
+    >
+
+        <div class="milan-result-header">
+
+            <div>
+
+                <span class="result-kicker">
+                    ASHTAKOOTA GUNA MILAN / अष्टकूट गुण मिलान
+                </span>
+
+                <h3>
+                    Kundli Milan Result / कुंडली मिलान परिणाम
+                </h3>
+
+                <p>
+                    यह परिणाम दोनों व्यक्तियों की calculated Moon Rashi
+                    और Janma Nakshatra के आधार पर तैयार किया गया है।
+                </p>
+
+            </div>
+
+            <div
+                id="kundliMilanEngineResultBadge"
+                class="kundli-milan-engine-badge"
+            >
+                Real Calculation
+            </div>
+
+        </div>
+
+
+        <!-- SCORE SUMMARY -->
+
+        <div
+            id="kundliMilanScoreSummary"
+            class="milan-score-summary"
+        ></div>
+
+
+        <!-- PERSON RESULT SUMMARY -->
+
+        <div
+            id="kundliMilanResultPersons"
+            class="milan-result-persons"
+        ></div>
+
+
+        <!-- KOOTA TABLE -->
+
+        <div class="milan-result-card">
+
+            <div class="result-card-title">
+
+                <div>
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+                        <h4>
+                            Ashtakoota Details / अष्टकूट विवरण
+                        </h4>
+
+                        <small>
+                            36 गुणों का वास्तविक rule-based breakdown
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="milan-table-wrap">
+
+                <table class="milan-koota-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Koota / कूट
+                            </th>
+
+                            <th>
+                                Max
+                            </th>
+
+                            <th>
+                                Score
+                            </th>
+
+                            <th>
+                                Person A / व्यक्ति A
+                            </th>
+
+                            <th>
+                                Person B / व्यक्ति B
+                            </th>
+
+                            <th>
+                                Calculation / गणना
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody
+                        id="kundliMilanKootaBody"
+                    ></tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- CALCULATED SUMMARY -->
+
+        <div class="milan-result-card">
+
+            <div class="result-card-title">
+
+                <div>
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+                        <h4>
+                            Milan Summary / मिलान सारांश
+                        </h4>
+
+                        <small>
+                            केवल calculated result से तैयार
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="kundliMilanSummaryDetails"
+                class="milan-summary-details"
+            ></div>
+
+        </div>
+
+
+        <!-- DOSHA / SPECIAL CHECKS -->
+
+        <div class="milan-result-card">
+
+            <div class="result-card-title">
+
+                <div>
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+                        <h4>
+                            Special Checks / विशेष परीक्षण
+                        </h4>
+
+                        <small>
+                            Manglik और अन्य actual chart indicators
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="kundliMilanSpecialChecks"
+                class="milan-special-grid"
+            ></div>
+
+        </div>
+
+
+        <!-- CHART CROSS CHECK -->
+
+        <div class="milan-result-card">
+
+            <div class="result-card-title">
+
+                <div>
+                    <span>
+                        04
+                    </span>
+
+                    <div>
+                        <h4>
+                            Marriage Chart Cross-Check
+                            / विवाह कुंडली परीक्षण
+                        </h4>
+
+                        <small>
+                            D1, 7th House, Venus, Jupiter, Mars और D9
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="kundliMilanChartCrossCheck"
+                class="milan-chart-cross-grid"
+            ></div>
+
+        </div>
+
+
+        <!-- DETAILED INTERPRETATION -->
+
+        <div class="milan-result-card">
+
+            <div class="result-card-title">
+
+                <div>
+                    <span>
+                        05
+                    </span>
+
+                    <div>
+                        <h4>
+                            Detailed Analysis / विस्तृत विश्लेषण
+                        </h4>
+
+                        <small>
+                            हर conclusion calculated values से
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="kundliMilanDetailedAnalysis"
+                class="milan-detailed-analysis"
+            ></div>
+
+        </div>
+
+
+        <!-- METHOD -->
+
+        <div class="milan-result-note">
+
+            <strong>
+                Calculation Note / गणना नोट
+            </strong>
+
+            <p>
+                Ashtakoota score Moon Rashi और Janma Nakshatra से
+                निकाला गया है। अंतिम विवाह निर्णय केवल 36 गुणों पर
+                आधारित नहीं होना चाहिए। D1, 7th House, 7th Lord,
+                Venus, Jupiter, Mars, Manglik status, Navamsa D9 और
+                Dasha को भी अलग से देखना आवश्यक है।
+            </p>
+
+        </div>
+
+    </section>
+
+</section>

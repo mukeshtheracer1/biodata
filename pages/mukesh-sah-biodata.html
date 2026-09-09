@@ -1,0 +1,3975 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mukesh Sah | Personal Profile</title>
+
+
+<!-- =========================================================
+     PDF ENGINE
+     REAL TEXT / VECTOR PDF
+     ========================================================= -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+<style>
+
+/* =========================================================
+   MUKESH SAH — PREMIUM A4 BIODATA
+   SINGLE FILE : HTML + CSS + JAVASCRIPT
+   HOROSCOPE / KUNDLI REMOVED
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600&display=swap');
+
+
+/* =========================
+   ROOT
+   ========================= */
+
+:root{
+
+    --ivory:#f8f4e9;
+
+    --paper:#fffdf7;
+
+    --gold:#b08a3c;
+
+    --gold-light:#d8bf82;
+
+    --gold-dark:#76551d;
+
+    --ink:#25221d;
+
+    --muted:#756b5a;
+
+    --line:#d9c9a5;
+
+    --soft:#f2ead9;
+
+    --white:#ffffff;
+
+
+    --serif:"Cormorant Garamond", Georgia, serif;
+
+    --sans:"Inter", Arial, sans-serif;
+
+    --hindi:"Noto Serif Devanagari", serif;
+
+}
+
+
+/* =========================
+   RESET
+   ========================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:
+
+        radial-gradient(
+
+            circle at top,
+
+            #eee7d8 0%,
+
+            #dcd5c8 45%,
+
+            #ccc5b8 100%
+
+        );
+
+    color:var(--ink);
+
+    font-family:var(--sans);
+
+    -webkit-print-color-adjust:exact;
+
+    print-color-adjust:exact;
+
+}
+
+
+/* =========================
+   PDF DOWNLOAD BUTTON
+   ========================= */
+
+.toolbar{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    z-index:9999;
+
+    display:flex;
+
+}
+
+
+.toolbar button{
+
+    border:1px solid rgba(255,255,255,.25);
+
+    padding:13px 22px;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #76551d,
+
+            #b08a3c,
+
+            #d8bf82
+
+        );
+
+    color:white;
+
+    font-family:var(--sans);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.7px;
+
+    cursor:pointer;
+
+    box-shadow:
+
+        0 8px 25px rgba(0,0,0,.25);
+
+    transition:
+
+        transform .25s ease,
+
+        box-shadow .25s ease,
+
+        opacity .25s ease;
+
+}
+
+
+.toolbar button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+        0 12px 30px rgba(0,0,0,.28);
+
+}
+
+
+.toolbar button:active{
+
+    transform:translateY(0);
+
+}
+
+
+.toolbar button.loading{
+
+    opacity:.7;
+
+    pointer-events:none;
+
+}
+
+
+/* =========================
+   A4 PAGE
+   ========================= */
+
+.page{
+
+    position:relative;
+
+    width:210mm;
+
+    min-height:297mm;
+
+    margin:24px auto;
+
+    padding:18mm 18mm 17mm;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(176,138,60,.035),
+
+            transparent 30%,
+
+            rgba(176,138,60,.025)
+
+        ),
+
+        var(--paper);
+
+    box-shadow:
+
+        0 18px 55px rgba(0,0,0,.18);
+
+    overflow:hidden;
+
+    page-break-after:always;
+
+    break-after:page;
+
+}
+
+
+/* =========================
+   PREMIUM BORDER
+   ========================= */
+
+.page::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:7mm;
+
+    border:1px solid var(--gold-light);
+
+    pointer-events:none;
+
+}
+
+
+.page::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:9mm;
+
+    border:1px solid rgba(176,138,60,.22);
+
+    pointer-events:none;
+
+}
+
+
+/* =========================
+   CORNER ORNAMENTS
+   ========================= */
+
+.corner{
+
+    position:absolute;
+
+    width:25mm;
+
+    height:25mm;
+
+    color:var(--gold);
+
+    opacity:.75;
+
+    pointer-events:none;
+
+}
+
+
+.corner::before,
+.corner::after{
+
+    content:"";
+
+    position:absolute;
+
+    background:var(--gold-light);
+
+}
+
+
+.corner::before{
+
+    width:100%;
+
+    height:1px;
+
+}
+
+
+.corner::after{
+
+    width:1px;
+
+    height:100%;
+
+}
+
+
+.corner.tl{
+
+    top:9mm;
+
+    left:9mm;
+
+}
+
+
+.corner.tr{
+
+    top:9mm;
+
+    right:9mm;
+
+    transform:rotate(90deg);
+
+}
+
+
+.corner.bl{
+
+    bottom:9mm;
+
+    left:9mm;
+
+    transform:rotate(-90deg);
+
+}
+
+
+.corner.br{
+
+    bottom:9mm;
+
+    right:9mm;
+
+    transform:rotate(180deg);
+
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.hero{
+
+    position:relative;
+
+    text-align:center;
+
+    padding:3mm 10mm 8mm;
+
+}
+
+
+.ganesh{
+
+    font-family:var(--hindi);
+
+    color:var(--gold-dark);
+
+    font-size:15px;
+
+    letter-spacing:.8px;
+
+    margin-bottom:5px;
+
+}
+
+
+.hero-line{
+
+    width:75px;
+
+    height:1px;
+
+    margin:0 auto 8px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            var(--gold),
+
+            transparent
+
+        );
+
+}
+
+
+.hero-name{
+
+    font-family:var(--serif);
+
+    font-size:38px;
+
+    font-weight:700;
+
+    letter-spacing:6px;
+
+    line-height:1;
+
+    color:#1d1a15;
+
+    text-shadow:
+
+        0 1px 0 white;
+
+}
+
+
+.hero-subtitle{
+
+    margin-top:8px;
+
+    font-size:9px;
+
+    font-weight:600;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:var(--muted);
+
+}
+
+
+/* =========================
+   SECTION
+   ========================= */
+
+.section{
+
+    position:relative;
+
+    margin-top:7mm;
+
+}
+
+
+.section-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:4mm;
+
+}
+
+
+.section-number{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:27px;
+
+    height:27px;
+
+    flex-shrink:0;
+
+    border:1px solid var(--gold);
+
+    border-radius:50%;
+
+    color:var(--gold-dark);
+
+    font-family:var(--serif);
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+.section-title{
+
+    font-family:var(--serif);
+
+    font-size:19px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    color:#332918;
+
+}
+
+
+.section-heading::after{
+
+    content:"";
+
+    height:1px;
+
+    flex:1;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(--line),
+
+            transparent
+
+        );
+
+}
+
+
+/* =========================
+   INFO GRID
+   ========================= */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+
+}
+
+
+.info-card{
+
+    min-height:47px;
+
+    padding:9px 12px;
+
+    border:1px solid rgba(176,138,60,.28);
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255,255,255,.8),
+
+            rgba(242,234,217,.42)
+
+        );
+
+    position:relative;
+
+    transition:.2s ease;
+
+}
+
+
+.info-card:hover{
+
+    transform:translateY(-1px);
+
+    border-color:var(--gold);
+
+}
+
+
+.info-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    width:2px;
+
+    background:
+
+        linear-gradient(
+
+            var(--gold),
+
+            transparent
+
+        );
+
+}
+
+
+.info-label{
+
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:1.4px;
+
+    text-transform:uppercase;
+
+    color:#97835e;
+
+    margin-bottom:4px;
+
+}
+
+
+.info-value{
+
+    font-family:var(--sans);
+
+    font-size:10.5px;
+
+    line-height:1.3;
+
+    font-weight:600;
+
+    color:var(--ink);
+
+}
+
+
+.full{
+
+    grid-column:1/-1;
+
+}
+
+
+/* =========================
+   FAMILY
+   ========================= */
+
+.family-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10mm;
+
+}
+
+
+.family-box{
+
+    padding:5mm;
+
+    border:1px solid var(--line);
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(255,255,255,.8),
+
+            rgba(242,234,217,.3)
+
+        );
+
+}
+
+
+.family-title{
+
+    font-family:var(--serif);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:var(--gold-dark);
+
+    padding-bottom:7px;
+
+    margin-bottom:5px;
+
+    border-bottom:1px solid var(--line);
+
+}
+
+
+.family-person{
+
+    padding:6px 0;
+
+    border-bottom:
+
+        1px solid rgba(217,201,165,.55);
+
+}
+
+
+.family-person:last-child{
+
+    border-bottom:0;
+
+}
+
+
+.family-person strong{
+
+    display:block;
+
+    font-family:var(--serif);
+
+    font-size:15px;
+
+    color:#29241c;
+
+}
+
+
+.family-person span{
+
+    display:block;
+
+    margin-top:1px;
+
+    font-size:8px;
+
+    letter-spacing:.7px;
+
+    color:var(--muted);
+
+}
+
+
+/* =========================
+   ADDRESS
+   ========================= */
+
+.address-box{
+
+    padding:5mm;
+
+    border:1px solid var(--line);
+
+    background:var(--soft);
+
+    font-family:var(--serif);
+
+    font-size:13px;
+
+    line-height:1.65;
+
+    color:#40372a;
+
+}
+
+
+/* =========================
+   PARTNER
+   ========================= */
+
+.preference{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+
+}
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+
+}
+
+
+.contact-card{
+
+    padding:12px 14px;
+
+    border:1px solid var(--gold-light);
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #fffdf7,
+
+            #f3ead8
+
+        );
+
+}
+
+
+.contact-card .label{
+
+    font-size:7px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.5px;
+
+    color:#97835e;
+
+}
+
+
+.contact-card .value{
+
+    margin-top:4px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    color:#29241d;
+
+}
+
+
+/* =========================
+   QUOTE
+   ========================= */
+
+.quote{
+
+    margin-top:10mm;
+
+    padding:6mm 10mm;
+
+    text-align:center;
+
+    border-top:1px solid var(--gold-light);
+
+    border-bottom:1px solid var(--gold-light);
+
+    font-family:var(--serif);
+
+    font-size:16px;
+
+    font-style:italic;
+
+    color:#665337;
+
+}
+
+
+.quote::before{
+
+    content:"✦";
+
+    display:block;
+
+    margin-bottom:3px;
+
+    color:var(--gold);
+
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer{
+
+    position:absolute;
+
+    left:18mm;
+
+    right:18mm;
+
+    bottom:11mm;
+
+    text-align:center;
+
+    font-size:6.5px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#a18b64;
+
+}
+
+
+/* =========================
+   PDF PAGE NUMBER
+   ========================= */
+
+.pdf-page-number{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:7mm;
+
+    text-align:center;
+
+    font-size:6px;
+
+    letter-spacing:1px;
+
+    color:#a18b64;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:850px){
+
+    body{
+
+        background:var(--ivory);
+
+    }
+
+
+    .toolbar{
+
+        position:sticky;
+
+        top:0;
+
+        padding:10px;
+
+        background:
+
+            rgba(248,244,233,.96);
+
+        justify-content:center;
+
+    }
+
+
+    .toolbar button{
+
+        width:100%;
+
+        max-width:300px;
+
+    }
+
+
+    .page{
+
+        width:100%;
+
+        min-height:auto;
+
+        margin:0;
+
+        padding:16mm 12mm;
+
+        box-shadow:none;
+
+    }
+
+
+    .page::before{
+
+        inset:5mm;
+
+    }
+
+
+    .page::after{
+
+        inset:7mm;
+
+    }
+
+
+    .hero-name{
+
+        font-size:30px;
+
+        letter-spacing:4px;
+
+    }
+
+
+    .info-grid,
+    .family-grid,
+    .preference,
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .full{
+
+        grid-column:auto;
+
+    }
+
+
+    .footer{
+
+        position:static;
+
+        margin-top:12mm;
+
+    }
+
+
+    .pdf-page-number{
+
+        display:none;
+
+    }
+
+}
+
+
+/* =========================
+   PDF GENERATION MODE
+   ========================= */
+
+.pdf-generating .toolbar{
+
+    display:none !important;
+
+}
+
+
+.pdf-generating body{
+
+    background:white !important;
+
+}
+
+
+.pdf-generating .page{
+
+    margin:0;
+
+    box-shadow:none;
+
+}
+
+
+/* =========================
+   PRINT
+   DISABLED
+   ========================= */
+
+@media print{
+
+    .toolbar{
+
+        display:none !important;
+
+    }
+
+
+    .page{
+
+        box-shadow:none;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     DOWNLOAD BUTTON
+     ===================================================== -->
+
+<div class="toolbar">
+
+    <button
+        id="downloadPdfBtn"
+        type="button"
+        onclick="downloadPDF()">
+
+        DOWNLOAD PDF
+
+    </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE 01
+     ===================================================== -->
+
+<section class="page">
+
+    <span class="corner tl"></span>
+
+    <span class="corner tr"></span>
+
+    <span class="corner bl"></span>
+
+    <span class="corner br"></span>
+
+
+    <!-- HEADER -->
+
+    <header class="hero">
+
+        <div class="ganesh">
+            ॥ श्री गणेशाय नमः ॥
+        </div>
+
+        <div class="hero-line"></div>
+
+        <h1 class="hero-name">
+            MUKESH SAH
+        </h1>
+
+        <p class="hero-subtitle">
+            Simple • Responsible • Family-Oriented
+        </p>
+
+    </header>
+
+
+
+    <!-- PERSONAL PROFILE -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <h2 class="section-title">
+                PERSONAL PROFILE
+            </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Full Name
+                </div>
+
+                <div class="info-value">
+                    Mukesh Sah
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Date of Birth
+                </div>
+
+                <div class="info-value">
+                    05 July 1992
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Age
+                </div>
+
+                <div class="info-value">
+                    34 Years
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Gender
+                </div>
+
+                <div class="info-value">
+                    Male
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Time of Birth
+                </div>
+
+                <div class="info-value">
+                    20:29 PM
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Place of Birth
+                </div>
+
+                <div class="info-value">
+                    Gopalganj, Bihar
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Height
+                </div>
+
+                <div class="info-value">
+                    5'3"
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Weight
+                </div>
+
+                <div class="info-value">
+                    68 Kg
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Complexion
+                </div>
+
+                <div class="info-value">
+                    Dusky
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Blood Group
+                </div>
+
+                <div class="info-value">
+                    O+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Marital Status
+                </div>
+
+                <div class="info-value">
+                    Single
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Religion
+                </div>
+
+                <div class="info-value">
+                    Hindu
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Caste
+                </div>
+
+                <div class="info-value">
+                    Gond (Jethwas)
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Gotra
+                </div>
+
+                <div class="info-value">
+                    Kashyap
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Manglik
+                </div>
+
+                <div class="info-value">
+                    No
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EDUCATION -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                02
+            </div>
+
+            <h2 class="section-title">
+                EDUCATION & PROFESSION
+            </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Highest Qualification
+                </div>
+
+                <div class="info-value">
+                    9th Passed
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Profession
+                </div>
+
+                <div class="info-value">
+                    Technical & IT Professional
+                </div>
+
+            </div>
+
+
+            <div class="info-card full">
+
+                <div class="info-label">
+                    Experience
+                </div>
+
+                <div class="info-value">
+                    Self-Taught & Hands-on Practical Experience
+                </div>
+
+            </div>
+
+
+            <div class="info-card full">
+
+                <div class="info-label">
+                    Key Skills
+                </div>
+
+                <div class="info-value">
+                    Front-End Web Development • Data Entry Operator • MEP Technician
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LIFESTYLE -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                03
+            </div>
+
+            <h2 class="section-title">
+                PERSONAL & LIFESTYLE
+            </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Food Preference
+                </div>
+
+                <div class="info-value">
+                    Vegetarian & Non-Vegetarian
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Hobbies & Interests
+                </div>
+
+                <div class="info-value">
+                    Travelling • Listening to Music • Cooking • Exploring New Places
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <div class="footer">
+        MUKESH SAH • PERSONAL PROFILE
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 02
+     ===================================================== -->
+
+<section class="page">
+
+    <span class="corner tl"></span>
+
+    <span class="corner tr"></span>
+
+    <span class="corner bl"></span>
+
+    <span class="corner br"></span>
+
+
+    <!-- PATERNAL FAMILY -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                04
+            </div>
+
+            <h2 class="section-title">
+                PATERNAL FAMILY
+            </h2>
+
+        </div>
+
+
+        <div class="family-grid">
+
+
+            <div class="family-box">
+
+                <div class="family-title">
+                    Paternal Grandparents
+                </div>
+
+
+                <div class="family-person">
+
+                    <strong>
+                        Late Shri Hajar Sah
+                    </strong>
+
+                    <span>
+                        Grandfather
+                    </span>
+
+                </div>
+
+
+                <div class="family-person">
+
+                    <strong>
+                        Late Smt. Singaro Devi
+                    </strong>
+
+                    <span>
+                        Grandmother
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="family-box">
+
+                <div class="family-title">
+                    Parents
+                </div>
+
+
+                <div class="family-person">
+
+                    <strong>
+                        Shri Ramnath Sah
+                    </strong>
+
+                    <span>
+                        Father
+                    </span>
+
+                </div>
+
+
+                <div class="family-person">
+
+                    <strong>
+                        Late Smt. Shobha Devi
+                    </strong>
+
+                    <span>
+                        Mother
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="family-box">
+
+                <div class="family-title">
+                    Siblings
+                </div>
+
+
+                <div class="family-person">
+
+                    <strong>
+                        Nilesh Sah
+                    </strong>
+
+                    <span>
+                        Brother • HVAC Technician • Married
+                    </span>
+
+                </div>
+
+
+                <div class="family-person">
+
+                    <strong>
+                        Nitu Devi
+                    </strong>
+
+                    <span>
+                        Sister • Housewife • Married
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="family-box">
+
+                <div class="family-title">
+                    Family Address
+                </div>
+
+
+                <div class="address-box">
+
+                    Vill. – Rampur Bhaisahi<br>
+
+                    P.O. – Mateya Khas<br>
+
+                    P.S. – Kuchaikote<br>
+
+                    Dist. – Gopalganj<br>
+
+                    Bihar – 841501
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MATERNAL FAMILY -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                05
+            </div>
+
+            <h2 class="section-title">
+                MATERNAL FAMILY
+            </h2>
+
+        </div>
+
+
+        <div class="family-grid">
+
+
+            <div class="family-box">
+
+                <div class="family-title">
+                    Maternal Grandparents
+                </div>
+
+
+                <div class="family-person">
+
+                    <strong>
+                        Late Shri Sudama Sah
+                    </strong>
+
+                    <span>
+                        Maternal Grandfather (Nana)
+                    </span>
+
+                </div>
+
+
+                <div class="family-person">
+
+                    <strong>
+                        Late Smt. Sharda Devi
+                    </strong>
+
+                    <span>
+                        Maternal Grandmother (Nani)
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="family-box">
+
+                <div class="family-title">
+                    Maternal Family Address
+                </div>
+
+
+                <div class="address-box">
+
+                    Vill. & P.O. – Mateya Khas<br>
+
+                    P.S. – Kuchaikote<br>
+
+                    Dist. – Gopalganj<br>
+
+                    Bihar – 841501
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FAMILY ADDRESS -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                06
+            </div>
+
+            <h2 class="section-title">
+                PERMANENT / FAMILY ADDRESS
+            </h2>
+
+        </div>
+
+
+        <div class="address-box">
+
+            Vill. – Rampur Bhaisahi<br>
+
+            P.O. – Mateya Khas<br>
+
+            P.S. – Kuchaikote<br>
+
+            Dist. – Gopalganj<br>
+
+            Bihar – 841501
+
+        </div>
+
+    </section>
+
+
+
+    <div class="footer">
+        MUKESH SAH • FAMILY PROFILE
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 03
+     ===================================================== -->
+
+<section class="page">
+
+    <span class="corner tl"></span>
+
+    <span class="corner tr"></span>
+
+    <span class="corner bl"></span>
+
+    <span class="corner br"></span>
+
+
+
+    <!-- PARTNER -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                07
+            </div>
+
+            <h2 class="section-title">
+                PARTNER PREFERENCE
+            </h2>
+
+        </div>
+
+
+        <div class="preference">
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Preferred Age
+                </div>
+
+                <div class="info-value">
+                    25–30 Years
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Education
+                </div>
+
+                <div class="info-value">
+                    No Specific Preference
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Profession
+                </div>
+
+                <div class="info-value">
+                    No Specific Preference
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Preferred Location
+                </div>
+
+                <div class="info-value">
+                    Gopalganj, Bihar
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Marital Status
+                </div>
+
+                <div class="info-value">
+                    Never Married Preferred
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Lifestyle
+                </div>
+
+                <div class="info-value">
+                    Simple, Positive & Family-Oriented
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Family Values
+                </div>
+
+                <div class="info-value">
+                    Respectful, Caring & Progressive
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-label">
+                    Other Preferences
+                </div>
+
+                <div class="info-value">
+                    Open to mutual understanding and compatibility
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                08
+            </div>
+
+            <h2 class="section-title">
+                CONTACT DETAILS
+            </h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <div class="label">
+                    Contact Person
+                </div>
+
+                <div class="value">
+                    Mr. Ramnath Sah
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="label">
+                    Mobile
+                </div>
+
+                <div class="value">
+                    +91 85110 32262
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="label">
+                    WhatsApp
+                </div>
+
+                <div class="value">
+                    +91 93193 71826
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ADDRESS -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                09
+            </div>
+
+            <h2 class="section-title">
+                PERMANENT / FAMILY ADDRESS
+            </h2>
+
+        </div>
+
+
+        <div class="address-box">
+
+            Vill. – Rampur Bhaisahi<br>
+
+            P.O. – Mateya Khas<br>
+
+            P.S. – Kuchaikote<br>
+
+            Dist. – Gopalganj<br>
+
+            State – Bihar, India
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FINAL QUOTE -->
+
+    <div class="quote">
+
+        “A meaningful relationship is built on trust,
+        respect, understanding and togetherness.”
+
+    </div>
+
+
+
+    <div class="footer">
+        MUKESH SAH • FAMILY PROFILE
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     REAL TEXT / VECTOR PDF ENGINE
+     ===================================================== -->
+
+<script>
+
+/* =========================================================
+   MUKESH SAH — PDF ENGINE
+   =========================================================
+
+   IMPORTANT:
+
+   This PDF engine DOES NOT use html2canvas.
+
+   It does NOT create a JPG screenshot of the page.
+
+   Text is written into the PDF using jsPDF text objects.
+
+   Therefore English text is selectable/copyable/searchable.
+
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL STATE
+   ========================================================= */
+
+let pdfIsGenerating = false;
+
+
+/* =========================================================
+   RGB HELPER
+   ========================================================= */
+
+function cssColorToRGB(color){
+
+    if(!color){
+
+        return [37,34,29];
+
+    }
+
+
+    const rgb =
+        color.match(/\d+/g);
+
+
+    if(rgb && rgb.length >= 3){
+
+        return [
+
+            parseInt(rgb[0]),
+
+            parseInt(rgb[1]),
+
+            parseInt(rgb[2])
+
+        ];
+
+    }
+
+
+    return [37,34,29];
+
+}
+
+
+/* =========================================================
+   GET ELEMENT RECT RELATIVE TO PAGE
+   ========================================================= */
+
+function getPDFRect(
+    element,
+    pageElement,
+    scaleX,
+    scaleY
+){
+
+    const rect =
+        element.getBoundingClientRect();
+
+
+    const pageRect =
+        pageElement.getBoundingClientRect();
+
+
+    return {
+
+        x:
+            (rect.left -
+             pageRect.left) *
+            scaleX,
+
+        y:
+            (rect.top -
+             pageRect.top) *
+            scaleY,
+
+        width:
+            rect.width *
+            scaleX,
+
+        height:
+            rect.height *
+            scaleY
+
+    };
+
+}
+
+
+/* =========================================================
+   DRAW RECTANGLE
+   ========================================================= */
+
+function drawPDFRect(
+    pdf,
+    rect,
+    fillColor,
+    strokeColor,
+    lineWidth
+){
+
+    if(fillColor){
+
+        pdf.setFillColor(
+
+            fillColor[0],
+
+            fillColor[1],
+
+            fillColor[2]
+
+        );
+
+    }
+
+
+    if(strokeColor){
+
+        pdf.setDrawColor(
+
+            strokeColor[0],
+
+            strokeColor[1],
+
+            strokeColor[2]
+
+        );
+
+    }
+
+
+    pdf.setLineWidth(
+        lineWidth || 0.2
+    );
+
+
+    let mode = "S";
+
+
+    if(fillColor && strokeColor){
+
+        mode = "FD";
+
+    }
+    else if(fillColor){
+
+        mode = "F";
+
+    }
+
+
+    pdf.rect(
+
+        rect.x,
+
+        rect.y,
+
+        rect.width,
+
+        rect.height,
+
+        mode
+
+    );
+
+}
+
+
+/* =========================================================
+   DRAW LINE
+   ========================================================= */
+
+function drawPDFLine(
+    pdf,
+    x1,
+    y1,
+    x2,
+    y2,
+    color,
+    width
+){
+
+    pdf.setDrawColor(
+
+        color[0],
+
+        color[1],
+
+        color[2]
+
+    );
+
+
+    pdf.setLineWidth(
+        width || 0.2
+    );
+
+
+    pdf.line(
+
+        x1,
+
+        y1,
+
+        x2,
+
+        y2
+
+    );
+
+}
+
+
+/* =========================================================
+   DRAW TEXT
+   ========================================================= */
+
+function drawPDFText(
+    pdf,
+    element,
+    pageElement,
+    scaleX,
+    scaleY
+){
+
+    const text =
+        element.innerText
+        .replace(/\s+/g," ")
+        .trim();
+
+
+    if(!text){
+
+        return;
+
+    }
+
+
+    const rect =
+        element.getBoundingClientRect();
+
+
+    const pageRect =
+        pageElement.getBoundingClientRect();
+
+
+    let x =
+        (rect.left -
+         pageRect.left) *
+        scaleX;
+
+
+    let y =
+        (rect.top -
+         pageRect.top) *
+        scaleY;
+
+
+    const computed =
+        window.getComputedStyle(
+            element
+        );
+
+
+    /* =====================================================
+       FONT SIZE
+       ===================================================== */
+
+    let fontSize =
+        parseFloat(
+            computed.fontSize
+        );
+
+
+    if(!fontSize || isNaN(fontSize)){
+
+        fontSize = 10;
+
+    }
+
+
+    /*
+       Browser px → approximate PDF pt
+    */
+
+    fontSize =
+        fontSize * 0.75;
+
+
+    /*
+       Keep readable PDF size
+    */
+
+    fontSize =
+        Math.max(
+            5,
+            Math.min(
+                32,
+                fontSize
+            )
+        );
+
+
+    /* =====================================================
+       FONT FAMILY
+       ===================================================== */
+
+    let fontName =
+        "helvetica";
+
+
+    const family =
+        computed.fontFamily
+        .toLowerCase();
+
+
+    if(
+        family.includes(
+            "garamond"
+        )
+    ){
+
+        fontName =
+            "times";
+
+    }
+
+
+    /*
+       Noto Serif Devanagari is not
+       available as a standard jsPDF font.
+
+       Keep fallback to Times for PDF
+       compatibility.
+    */
+
+
+    /* =====================================================
+       FONT WEIGHT
+       ===================================================== */
+
+    const weight =
+        parseInt(
+            computed.fontWeight
+        ) || 400;
+
+
+    let fontStyle =
+        "normal";
+
+
+    if(
+        computed.fontStyle ===
+        "italic"
+    ){
+
+        fontStyle =
+            "italic";
+
+    }
+
+
+    if(weight >= 600){
+
+        fontStyle =
+            fontStyle === "italic"
+                ? "bolditalic"
+                : "bold";
+
+    }
+
+
+    /* =====================================================
+       COLOR
+       ===================================================== */
+
+    const rgb =
+        cssColorToRGB(
+            computed.color
+        );
+
+
+    pdf.setTextColor(
+
+        rgb[0],
+
+        rgb[1],
+
+        rgb[2]
+
+    );
+
+
+    /* =====================================================
+       FONT
+       ===================================================== */
+
+    pdf.setFont(
+
+        fontName,
+
+        fontStyle
+
+    );
+
+
+    pdf.setFontSize(
+        fontSize
+    );
+
+
+    /* =====================================================
+       TEXT POSITION
+       ===================================================== */
+
+    y +=
+        Math.max(
+            3,
+            fontSize * 0.35
+        );
+
+
+    /* =====================================================
+       AVAILABLE WIDTH
+       ===================================================== */
+
+    let maxWidth =
+        rect.width *
+        scaleX;
+
+
+    maxWidth =
+        Math.max(
+            10,
+            maxWidth
+        );
+
+
+    /*
+       Don't allow text outside printable
+       A4 area.
+    */
+
+    maxWidth =
+        Math.min(
+            maxWidth,
+            188
+        );
+
+
+    /* =====================================================
+       TEXT ALIGNMENT
+       ===================================================== */
+
+    const textAlign =
+        computed.textAlign;
+
+
+    let align =
+        "left";
+
+
+    if(
+        textAlign === "center"
+    ){
+
+        align =
+            "center";
+
+        x +=
+            maxWidth / 2;
+
+    }
+    else if(
+        textAlign === "right"
+    ){
+
+        align =
+            "right";
+
+        x +=
+            maxWidth;
+
+    }
+
+
+    /* =====================================================
+       WRAP TEXT
+       ===================================================== */
+
+    const lines =
+        pdf.splitTextToSize(
+
+            text,
+
+            maxWidth
+
+        );
+
+
+    /* =====================================================
+       WRITE REAL PDF TEXT
+       ===================================================== */
+
+    pdf.text(
+
+        lines,
+
+        x,
+
+        y,
+
+        {
+
+            align:align
+
+        }
+
+    );
+
+}
+
+
+/* =========================================================
+   DRAW CARD BACKGROUNDS
+   ========================================================= */
+
+function drawCards(
+    pdf,
+    pageElement,
+    scaleX,
+    scaleY
+){
+
+    const cards =
+        pageElement.querySelectorAll(
+
+            ".info-card, " +
+            ".family-box, " +
+            ".contact-card, " +
+            ".address-box"
+
+        );
+
+
+    cards.forEach(function(card){
+
+        const rect =
+            getPDFRect(
+
+                card,
+
+                pageElement,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+        let borderColor =
+            [217,201,165];
+
+
+        let fillColor =
+            [255,253,247];
+
+
+        if(
+            card.classList.contains(
+                "address-box"
+            )
+        ){
+
+            fillColor =
+                [242,234,217];
+
+        }
+
+
+        if(
+            card.classList.contains(
+                "contact-card"
+            )
+        ){
+
+            borderColor =
+                [216,191,130];
+
+        }
+
+
+        if(
+            card.classList.contains(
+                "info-card"
+            )
+        ){
+
+            borderColor =
+                [211,190,147];
+
+        }
+
+
+        drawPDFRect(
+
+            pdf,
+
+            rect,
+
+            fillColor,
+
+            borderColor,
+
+            0.2
+
+        );
+
+
+        /*
+        -----------------------------------------------------
+        INFO CARD GOLD VERTICAL LINE
+        -----------------------------------------------------
+        */
+
+        if(
+            card.classList.contains(
+                "info-card"
+            )
+        ){
+
+            drawPDFLine(
+
+                pdf,
+
+                rect.x,
+
+                rect.y,
+
+                rect.x,
+
+                rect.y + rect.height,
+
+                [176,138,60],
+
+                0.45
+
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   DRAW FAMILY DIVIDER LINES
+   ========================================================= */
+
+function drawFamilyDividers(
+    pdf,
+    pageElement,
+    scaleX,
+    scaleY
+){
+
+    const persons =
+        pageElement.querySelectorAll(
+            ".family-person"
+        );
+
+
+    persons.forEach(function(person){
+
+        if(
+            person ===
+            person.parentElement
+            .lastElementChild
+        ){
+
+            return;
+
+        }
+
+
+        const rect =
+            getPDFRect(
+
+                person,
+
+                pageElement,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+        drawPDFLine(
+
+            pdf,
+
+            rect.x,
+
+            rect.y + rect.height,
+
+            rect.x + rect.width,
+
+            rect.y + rect.height,
+
+            [217,201,165],
+
+            0.12
+
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   DRAW SECTION HEADING LINES
+   ========================================================= */
+
+function drawHeadingLines(
+    pdf,
+    pageElement,
+    scaleX,
+    scaleY
+){
+
+    const headings =
+        pageElement.querySelectorAll(
+            ".section-heading"
+        );
+
+
+    headings.forEach(function(heading){
+
+        const rect =
+            getPDFRect(
+
+                heading,
+
+                pageElement,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+        /*
+        The heading line begins after the title.
+        */
+
+        const title =
+            heading.querySelector(
+                ".section-title"
+            );
+
+
+        if(!title){
+
+            return;
+
+        }
+
+
+        const titleRect =
+            getPDFRect(
+
+                title,
+
+                pageElement,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+        drawPDFLine(
+
+            pdf,
+
+            titleRect.x +
+            titleRect.width +
+            4,
+
+            titleRect.y +
+            titleRect.height / 2,
+
+            rect.x +
+            rect.width,
+
+            titleRect.y +
+            titleRect.height / 2,
+
+            [217,201,165],
+
+            0.2
+
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   DRAW SECTION NUMBER CIRCLES
+   ========================================================= */
+
+function drawSectionNumbers(
+    pdf,
+    pageElement,
+    scaleX,
+    scaleY
+){
+
+    const numbers =
+        pageElement.querySelectorAll(
+            ".section-number"
+        );
+
+
+    numbers.forEach(function(number){
+
+        const rect =
+            getPDFRect(
+
+                number,
+
+                pageElement,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+        const radius =
+            Math.min(
+                rect.width,
+                rect.height
+            ) / 2;
+
+
+        pdf.setDrawColor(
+            176,
+            138,
+            60
+        );
+
+
+        pdf.setLineWidth(
+            0.25
+        );
+
+
+        pdf.circle(
+
+            rect.x +
+            rect.width / 2,
+
+            rect.y +
+            rect.height / 2,
+
+            radius,
+
+            "S"
+
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   DRAW HERO LINE
+   ========================================================= */
+
+function drawHeroLine(
+    pdf,
+    pageElement,
+    scaleX,
+    scaleY
+){
+
+    const line =
+        pageElement.querySelector(
+            ".hero-line"
+        );
+
+
+    if(!line){
+
+        return;
+
+    }
+
+
+    const rect =
+        getPDFRect(
+
+            line,
+
+            pageElement,
+
+            scaleX,
+
+            scaleY
+
+        );
+
+
+    drawPDFLine(
+
+        pdf,
+
+        rect.x,
+
+        rect.y + rect.height / 2,
+
+        rect.x + rect.width,
+
+        rect.y + rect.height / 2,
+
+        [176,138,60],
+
+        0.3
+
+    );
+
+}
+
+
+/* =========================================================
+   DRAW QUOTE LINES
+   ========================================================= */
+
+function drawQuote(
+    pdf,
+    pageElement,
+    scaleX,
+    scaleY
+){
+
+    const quote =
+        pageElement.querySelector(
+            ".quote"
+        );
+
+
+    if(!quote){
+
+        return;
+
+    }
+
+
+    const rect =
+        getPDFRect(
+
+            quote,
+
+            pageElement,
+
+            scaleX,
+
+            scaleY
+
+        );
+
+
+    drawPDFLine(
+
+        pdf,
+
+        rect.x,
+
+        rect.y,
+
+        rect.x + rect.width,
+
+        rect.y,
+
+        [216,191,130],
+
+        0.25
+
+    );
+
+
+    drawPDFLine(
+
+        pdf,
+
+        rect.x,
+
+        rect.y + rect.height,
+
+        rect.x + rect.width,
+
+        rect.y + rect.height,
+
+        [216,191,130],
+
+        0.25
+
+    );
+
+}
+
+
+/* =========================================================
+   DRAW CORNERS
+   ========================================================= */
+
+function drawCorners(
+    pdf
+){
+
+    const gold =
+        [216,191,130];
+
+
+    const positions = [
+
+        {
+            x:9,
+            y:9,
+            sx:1,
+            sy:1
+        },
+
+        {
+            x:201,
+            y:9,
+            sx:-1,
+            sy:1
+        },
+
+        {
+            x:9,
+            y:288,
+            sx:1,
+            sy:-1
+        },
+
+        {
+            x:201,
+            y:288,
+            sx:-1,
+            sy:-1
+        }
+
+    ];
+
+
+    positions.forEach(function(pos){
+
+        const length =
+            25;
+
+
+        drawPDFLine(
+
+            pdf,
+
+            pos.x,
+
+            pos.y,
+
+            pos.x +
+            length *
+            pos.sx,
+
+            pos.y,
+
+            gold,
+
+            0.25
+
+        );
+
+
+        drawPDFLine(
+
+            pdf,
+
+            pos.x,
+
+            pos.y,
+
+            pos.x,
+
+            pos.y +
+            length *
+            pos.sy,
+
+            gold,
+
+            0.25
+
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   DRAW PAGE BACKGROUND + BORDERS
+   ========================================================= */
+
+function drawPageBase(
+    pdf
+){
+
+    /*
+    ---------------------------------------------------------
+    PAPER
+    ---------------------------------------------------------
+    */
+
+    pdf.setFillColor(
+        255,
+        253,
+        247
+    );
+
+
+    pdf.rect(
+
+        0,
+
+        0,
+
+        210,
+
+        297,
+
+        "F"
+
+    );
+
+
+    /*
+    ---------------------------------------------------------
+    OUTER BORDER
+    ---------------------------------------------------------
+    */
+
+    pdf.setDrawColor(
+        216,
+        191,
+        130
+    );
+
+
+    pdf.setLineWidth(
+        0.25
+    );
+
+
+    pdf.rect(
+
+        7,
+
+        7,
+
+        196,
+
+        283,
+
+        "S"
+
+    );
+
+
+    /*
+    ---------------------------------------------------------
+    INNER BORDER
+    ---------------------------------------------------------
+    */
+
+    pdf.setDrawColor(
+        176,
+        138,
+        60
+    );
+
+
+    pdf.setLineWidth(
+        0.12
+    );
+
+
+    pdf.rect(
+
+        9,
+
+        9,
+
+        192,
+
+        279,
+
+        "S"
+
+    );
+
+
+    drawCorners(
+        pdf
+    );
+
+}
+
+
+/* =========================================================
+   MAIN PDF FUNCTION
+   ========================================================= */
+
+async function downloadPDF(){
+
+    if(pdfIsGenerating){
+
+        return;
+
+    }
+
+
+    pdfIsGenerating =
+        true;
+
+
+    const button =
+        document.getElementById(
+            "downloadPdfBtn"
+        );
+
+
+    if(button){
+
+        button.disabled =
+            true;
+
+        button.classList.add(
+            "loading"
+        );
+
+        button.textContent =
+            "CREATING PDF...";
+
+    }
+
+
+    try{
+
+        /*
+        -----------------------------------------------------
+        WAIT FOR FONTS
+        -----------------------------------------------------
+        */
+
+        if(
+            document.fonts &&
+            document.fonts.ready
+        ){
+
+            await document.fonts.ready;
+
+        }
+
+
+        /*
+        -----------------------------------------------------
+        LOAD JSPDF
+        -----------------------------------------------------
+        */
+
+        if(
+            !window.jspdf ||
+            !window.jspdf.jsPDF
+        ){
+
+            throw new Error(
+                "jsPDF library load nahi hui."
+            );
+
+        }
+
+
+        const {
+            jsPDF
+        } = window.jspdf;
+
+
+        /*
+        -----------------------------------------------------
+        CREATE A4 PDF
+        -----------------------------------------------------
+        */
+
+        const pdf =
+            new jsPDF({
+
+                orientation:
+                    "portrait",
+
+                unit:
+                    "mm",
+
+                format:
+                    "a4",
+
+                compress:
+                    true
+
+            });
+
+
+        /*
+        -----------------------------------------------------
+        GET ALL HTML PAGES
+        -----------------------------------------------------
+        */
+
+        const pages =
+            Array.from(
+                document.querySelectorAll(
+                    ".page"
+                )
+            );
+
+
+        if(!pages.length){
+
+            throw new Error(
+                "Biodata pages nahi mili."
+            );
+
+        }
+
+
+        /*
+        -----------------------------------------------------
+        PDF PAGE LOOP
+        -----------------------------------------------------
+        */
+
+        for(
+            let pageIndex = 0;
+            pageIndex < pages.length;
+            pageIndex++
+        ){
+
+            const page =
+                pages[pageIndex];
+
+
+            /*
+            -------------------------------------------------
+            ADD NEW PAGE
+            -------------------------------------------------
+            */
+
+            if(pageIndex > 0){
+
+                pdf.addPage(
+                    "a4",
+                    "portrait"
+                );
+
+            }
+
+
+            /*
+            -------------------------------------------------
+            BASE
+            -------------------------------------------------
+            */
+
+            drawPageBase(
+                pdf
+            );
+
+
+            /*
+            -------------------------------------------------
+            GET HTML PAGE SIZE
+            -------------------------------------------------
+            */
+
+            const pageRect =
+                page.getBoundingClientRect();
+
+
+            const scaleX =
+                210 /
+                pageRect.width;
+
+
+            const scaleY =
+                297 /
+                pageRect.height;
+
+
+            /*
+            -------------------------------------------------
+            CARDS FIRST
+            -------------------------------------------------
+            IMPORTANT:
+            Backgrounds are drawn BEFORE text.
+            Otherwise text would get covered.
+            -------------------------------------------------
+            */
+
+            drawCards(
+
+                pdf,
+
+                page,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+            /*
+            -------------------------------------------------
+            FAMILY DIVIDERS
+            -------------------------------------------------
+            */
+
+            drawFamilyDividers(
+
+                pdf,
+
+                page,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+            /*
+            -------------------------------------------------
+            SECTION LINES
+            -------------------------------------------------
+            */
+
+            drawHeadingLines(
+
+                pdf,
+
+                page,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+            /*
+            -------------------------------------------------
+            SECTION NUMBER CIRCLES
+            -------------------------------------------------
+            */
+
+            drawSectionNumbers(
+
+                pdf,
+
+                page,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+            /*
+            -------------------------------------------------
+            HERO LINE
+            -------------------------------------------------
+            */
+
+            drawHeroLine(
+
+                pdf,
+
+                page,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+            /*
+            -------------------------------------------------
+            QUOTE
+            -------------------------------------------------
+            */
+
+            drawQuote(
+
+                pdf,
+
+                page,
+
+                scaleX,
+
+                scaleY
+
+            );
+
+
+            /*
+            -------------------------------------------------
+            ALL TEXT ELEMENTS
+            -------------------------------------------------
+            */
+
+            const textElements =
+                page.querySelectorAll(
+
+                    ".ganesh, " +
+
+                    ".hero-name, " +
+
+                    ".hero-subtitle, " +
+
+                    ".section-number, " +
+
+                    ".section-title, " +
+
+                    ".info-label, " +
+
+                    ".info-value, " +
+
+                    ".family-title, " +
+
+                    ".family-person strong, " +
+
+                    ".family-person span, " +
+
+                    ".address-box, " +
+
+                    ".contact-card .label, " +
+
+                    ".contact-card .value, " +
+
+                    ".quote"
+
+                );
+
+
+            textElements.forEach(
+                function(element){
+
+                    /*
+                    Avoid duplicate section number
+                    text only gets written once.
+                    */
+
+                    drawPDFText(
+
+                        pdf,
+
+                        element,
+
+                        page,
+
+                        scaleX,
+
+                        scaleY
+
+                    );
+
+                }
+            );
+
+
+            /*
+            -------------------------------------------------
+            FOOTER
+            -------------------------------------------------
+            */
+
+            const footer =
+                page.querySelector(
+                    ".footer"
+                );
+
+
+            if(footer){
+
+                const footerRect =
+                    footer.getBoundingClientRect();
+
+
+                const footerPageRect =
+                    page.getBoundingClientRect();
+
+
+                const footerX =
+                    (
+                        footerRect.left -
+                        footerPageRect.left
+                    ) *
+                    scaleX;
+
+
+                const footerY =
+                    (
+                        footerRect.top -
+                        footerPageRect.top
+                    ) *
+                    scaleY;
+
+
+                const footerWidth =
+                    footerRect.width *
+                    scaleX;
+
+
+                pdf.setFont(
+                    "helvetica",
+                    "bold"
+                );
+
+
+                pdf.setFontSize(
+                    5
+                );
+
+
+                pdf.setTextColor(
+                    161,
+                    139,
+                    100
+                );
+
+
+                pdf.text(
+
+                    footer.innerText.trim(),
+
+                    footerX +
+                    footerWidth / 2,
+
+                    footerY + 4,
+
+                    {
+
+                        align:
+                            "center"
+
+                    }
+
+                );
+
+            }
+
+
+            /*
+            -------------------------------------------------
+            PAGE NUMBER
+            -------------------------------------------------
+            */
+
+            pdf.setFont(
+                "helvetica",
+                "normal"
+            );
+
+
+            pdf.setFontSize(
+                5
+            );
+
+
+            pdf.setTextColor(
+                161,
+                139,
+                100
+            );
+
+
+            pdf.text(
+
+                "PAGE " +
+                (pageIndex + 1) +
+                " / " +
+                pages.length,
+
+                105,
+
+                293,
+
+                {
+
+                    align:
+                        "center"
+
+                }
+
+            );
+
+        }
+
+
+        /*
+        =====================================================
+        DIRECT DOWNLOAD
+        =====================================================
+        */
+
+        pdf.save(
+            "Mukesh_Sah_Marriage_Biodata.pdf"
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "PDF GENERATION ERROR:",
+            error
+        );
+
+
+        alert(
+
+            "PDF generate nahi ho saka.\n\n" +
+            error.message
+
+        );
+
+    }
+    finally{
+
+        pdfIsGenerating =
+            false;
+
+
+        if(button){
+
+            button.disabled =
+                false;
+
+            button.classList.remove(
+                "loading"
+            );
+
+            button.textContent =
+                "DOWNLOAD PDF";
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   CTRL + P DISABLED
+   DIRECT PDF DOWNLOAD INSTEAD
+   ========================================================= */
+
+document.addEventListener(
+
+    "keydown",
+
+    function(event){
+
+        if(
+
+            (event.ctrlKey ||
+             event.metaKey) &&
+
+            event.key.toLowerCase() === "p"
+
+        ){
+
+            event.preventDefault();
+
+            downloadPDF();
+
+        }
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
+

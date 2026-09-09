@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kundli | Vedic Astrology</title>
+
+    <!-- Agar tumhare main website mein global CSS ka naam alag hai,
+         to sirf is path ko apne existing CSS ke naam se match karna. -->
+
+
+
+ <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/kundli/kundli-shell.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+
+
+
+
+
+
+
+
+
+    <!-- Kundli common CSS -->
+    
+</head>
+
+<body>
+
+    <!-- =====================================================
+         EXISTING WEBSITE HEADER
+         ===================================================== -->
+    <header id="site-header"></header>
+
+
+    <!-- =====================================================
+         KUNDLI APPLICATION
+         ===================================================== -->
+    <main id="kundliApp" class="kundli-app">
+
+        <!-- App heading -->
+        <header id="kundliHeader" class="kundli-app-header">
+            <div>
+                <h1>Vedic Kundli</h1>
+                <p>
+                    जन्म विवरण एक बार भरें और पूरी Kundli एक ही जगह देखें।
+                </p>
+            </div>
+
+            <div id="kundliHeaderActions"></div>
+        </header>
+
+
+        <!-- =================================================
+             MODULE NAVIGATION
+             ================================================= -->
+        <nav
+            id="kundliNavigation"
+            class="kundli-navigation"
+            aria-label="Kundli Modules"
+        >
+            <!-- JS tabs create karega -->
+        </nav>
+
+
+        <!-- =================================================
+             CURRENT MODULE SCREEN
+             ================================================= -->
+        <section
+            id="kundliScreen"
+            class="kundli-screen"
+        >
+            <!-- Module HTML yahan render hoga -->
+        </section>
+
+
+        <!-- =================================================
+             PREVIOUS / NEXT
+             ================================================= -->
+        <div
+            id="kundliPager"
+            class="kundli-pager"
+        >
+            <!-- JS generate karega -->
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         EXISTING WEBSITE FOOTER
+         ===================================================== -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- =====================================================
+         GLOBAL JS
+         ===================================================== -->
+
+
+
+<script src="../js/main.js"></script>
+
+<!-- Astronomy calculation library -->
+<script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+
+<!-- Our Vedic Kundli engine -->
+<script src="../js/kundli/kundli-engine.js"></script>
+
+<script src="../js/kundli/kundli-state.js"></script>
+<script src="../js/kundli/kundli-shell.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
