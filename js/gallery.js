@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const photos = Array.from(
         { length: TOTAL_PHOTOS },
-        (_, i) => `../images/photo${i + 1}.JPEG`
+        (_, i) => `../images/photo${i + 1}.jpeg`
     );
 
 
