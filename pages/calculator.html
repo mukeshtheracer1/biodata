@@ -171,9 +171,15 @@
               <input
                 id="name"
                 type="text"
-                placeholder="Enter name"
+                placeholder="Enter name / नाम लिखें"
                 maxlength="100"
               >
+            </div>
+
+            <div id="nameRashiLive" class="name-rashi-live" aria-live="polite">
+              <span class="name-rashi-live-label">Naam Rashi / नाम राशि</span>
+              <strong id="nameRashiLiveValue">—</strong>
+              <small id="nameRashiLiveMatch">Name की पहली ध्वनि से live check होगा</small>
             </div>
 
           </div>
@@ -364,8 +370,20 @@
             </div>
 
             <small class="field-help">
-              Historical birth-time offset. Edit when required.
+              Historical birth-time offset. Location से auto-detect हो सकता है; आप इसे manually भी edit कर सकते हैं।
             </small>
+
+            <label class="auto-tz-control" for="autoTz">
+              <input id="autoTz" type="checkbox" checked>
+              <span>Auto UTC Offset from Location / स्थान से Auto UTC</span>
+            </label>
+
+            <button
+              type="button"
+              id="refreshTimezone"
+              class="timezone-refresh-btn"
+              title="Refresh UTC offset from selected coordinates"
+            >↻ Refresh UTC</button>
 
           </div>
 
@@ -824,6 +842,15 @@
               Tropical / Western
             </em>
 
+          </article>
+
+
+          <article class="astro-card name-rashi-card">
+            <div class="astro-icon">म</div>
+            <span>Name Rashi / नाम राशि</span>
+            <strong id="nameRashi">—</strong>
+            <small id="nameRashiSyllable">—</small>
+            <em id="nameRashiMeaning">Traditional opening sound</em>
           </article>
 
 
@@ -1408,6 +1435,146 @@
       ['Meena', 'Pisces', '♓']
     ];
 
+    /* Traditional Naam Rashi opening-sound chart. */
+    const NAME_RASHI_RULES = [
+      { id: 0, hindi: ['चू','चे','चो','ला','ली','लू','ले','लो','अ'], roman: ['chu','che','cho','la','li','lu','le','lo','a'], initial: ['a','l'] },
+      { id: 1, hindi: ['ई','इ','उ','ए','ओ','वा','वी','वू','वे','वो'], roman: ['ee','i','u','e','o','va','vi','vu','ve','vo'], initial: ['i','e','o','u','v'] },
+      { id: 2, hindi: ['का','की','कु','घ','ङ','छ','के','को','हा'], roman: ['ka','ki','ku','gha','nga','chha','ke','ko','ha'], initial: ['k','g','c','h'] },
+      { id: 3, hindi: ['ही','हू','हे','हो','डा','डी','डू','डे','डो'], roman: ['hi','hu','he','ho','da','di','du','de','do'], initial: ['h','d'] },
+      { id: 4, hindi: ['मा','मी','मु','मू','मे','मो','टा','टी','टू','टे'], roman: ['ma','mi','mu','me','mo','ta','ti','tu','te'], initial: ['m'] },
+      { id: 5, hindi: ['टो','पा','पी','पू','ष','शा','ना','ठा','पे','पो'], roman: ['to','pa','pi','pu','sha','na','tha','pe','po'], initial: ['p','n'] },
+      { id: 6, hindi: ['रा','री','रू','रे','रो','ता','ती','तू','ते'], roman: ['ra','ri','ru','re','ro','ta','ti','tu','te'], initial: ['r'] },
+      { id: 7, hindi: ['तो','ना','नी','नू','ने','नो','या','यी','यू'], roman: ['to','na','ni','nu','ne','no','ya','yi','yu'], initial: ['n','y'] },
+      { id: 8, hindi: ['ये','यो','भा','भी','भू','धा','फा','ढा','भे'], roman: ['ye','yo','bha','bhi','bhu','dha','pha','dha','bhe'], initial: ['b','d','f','y'] },
+      { id: 9, hindi: ['भो','जा','जी','जू','जे','जो','खी','खू','खे','खो','गा','गी'], roman: ['bho','ja','ji','ju','je','jo','khi','khu','khe','kho','ga','gi'], initial: ['j','k','g'] },
+      { id: 10, hindi: ['गू','गे','गो','सा','सी','सू','से','सो','दा'], roman: ['gu','ge','go','sa','si','su','se','so','da'], initial: ['g','s'] },
+      { id: 11, hindi: ['दी','दू','थ','झ','त्र','दे','दो','चा','ची'], roman: ['di','du','tha','jha','tra','de','do','cha','chi'], initial: ['d','t','j','c'] }
+    ];
+
+    const NAME_RASHI_HINDI = [
+      'मेष','वृषभ','मिथुन','कर्क','सिंह','कन्या',
+      'तुला','वृश्चिक','धनु','मकर','कुंभ','मीन'
+    ];
+
+    function firstNameToken(value) {
+      return String(value || '').trim().split(/\s+/)[0] || '';
+    }
+
+    function isDevanagari(value) {
+      return /[\u0900-\u097F]/.test(value);
+    }
+
+    function getNameRashi(name) {
+      const first = firstNameToken(name);
+      if (!first) {
+        return { matched:false, ambiguous:false, rashiIds:[], input:'', matchedSound:'', matchedHindi:'' };
+      }
+
+      if (isDevanagari(first)) {
+        const candidates = [];
+        NAME_RASHI_RULES.forEach(rule => {
+          rule.hindi.forEach(sound => {
+            if (first.startsWith(sound)) candidates.push({id:rule.id,sound,length:sound.length});
+          });
+        });
+        candidates.sort((a,b)=>b.length-a.length);
+
+        if (!candidates.length) {
+          return { matched:false, ambiguous:false, rashiIds:[], input:first, matchedSound:first.slice(0,2), matchedHindi:'' };
+        }
+
+        const len = candidates[0].length;
+        const best = candidates.filter(x=>x.length===len);
+        const ids = [...new Set(best.map(x=>x.id))];
+
+        return {
+          matched:true,
+          ambiguous:ids.length>1,
+          rashiIds:ids,
+          input:first,
+          matchedSound:best[0].sound,
+          matchedHindi:best[0].sound
+        };
+      }
+
+      const clean = first.normalize('NFKD').toLowerCase().replace(/[^a-z]/g,'');
+      const candidates = [];
+
+      NAME_RASHI_RULES.forEach(rule => {
+        rule.roman.forEach(sound => {
+          if (clean.startsWith(sound)) candidates.push({id:rule.id,sound,length:sound.length});
+        });
+      });
+      candidates.sort((a,b)=>b.length-a.length);
+
+      if (candidates.length) {
+        const len = candidates[0].length;
+        const best = candidates.filter(x=>x.length===len);
+        const ids = [...new Set(best.map(x=>x.id))];
+
+        return {
+          matched:true,
+          ambiguous:ids.length>1,
+          rashiIds:ids,
+          input:first,
+          matchedSound:best[0].sound,
+          matchedHindi:''
+        };
+      }
+
+      /* Quick chart fallback: M -> Simha/Leo, etc. */
+      const initial = clean.charAt(0);
+      const ids = NAME_RASHI_RULES
+        .filter(rule=>rule.initial.includes(initial))
+        .map(rule=>rule.id);
+
+      if (ids.length) {
+        return {
+          matched:true,
+          ambiguous:ids.length>1,
+          rashiIds:ids,
+          input:first,
+          matchedSound:initial.toUpperCase(),
+          matchedHindi:''
+        };
+      }
+
+      return {
+        matched:false,
+        ambiguous:false,
+        rashiIds:[],
+        input:first,
+        matchedSound:clean.slice(0,3),
+        matchedHindi:''
+      };
+    }
+
+    function renderNameRashiLive() {
+      const result = getNameRashi($('name')?.value || '');
+      const value = $('nameRashiLiveValue');
+      const match = $('nameRashiLiveMatch');
+      if (!value || !match) return;
+
+      if (!result.matched) {
+        value.textContent = '—';
+        match.textContent = result.input
+          ? `No traditional name-opening match for "${result.input}".`
+          : 'Name की पहली ध्वनि से live check होगा';
+        return;
+      }
+
+      value.textContent = result.rashiIds.map(id => {
+        const r = RASHI[id];
+        return `${r[2]} ${NAME_RASHI_HINDI[id]} / ${r[0]} (${r[1]})`;
+      }).join('  •  ');
+
+      match.textContent =
+        `Matched: ${isDevanagari(result.input) ? result.matchedSound : (result.input.charAt(0).toUpperCase() + ' / ' + (result.matchedSound || '—').toUpperCase())}`
+        + (result.ambiguous
+          ? ' • Roman spelling ambiguous; Hindi spelling can resolve it.'
+          : '');
+    }
+
 
     const WESTERN_SIGNS = [
       ['Aries', '♈'],
@@ -1546,6 +1713,10 @@
     let locationActive = -1;
     let locationTimer = null;
     let locationAbort = null;
+
+    let timezoneTimer = null;
+    let timezoneAbort = null;
+    let timezoneName = '';
 
     let countdownTimer = null;
 
@@ -2810,6 +2981,115 @@
 
 
     /* =========================================================
+       AUTO UTC OFFSET — LOCATION BASED
+       ========================================================= */
+
+    const TIMEZONE_API =
+      'https://timeapi.io/api/timezone/coordinate';
+
+    function formatUtcOffset(offsetHours) {
+      const sign = offsetHours >= 0 ? '+' : '-';
+      const abs = Math.abs(offsetHours);
+      const hours = Math.floor(abs);
+      const minutes = Math.round((abs - hours) * 60);
+      return `UTC${sign}${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}`;
+    }
+
+    function getOffsetForTimezone(timeZone, dateValue, timeValue='12:00:00') {
+      const [y,m,d] = dateValue.split('-').map(Number);
+      const [hh,mm,ss] = timeValue.split(':').map(Number);
+      const probe = new Date(Date.UTC(y,m-1,d,hh||0,mm||0,ss||0));
+
+      const parts = new Intl.DateTimeFormat('en-US',{
+        timeZone,
+        year:'numeric', month:'2-digit', day:'2-digit',
+        hour:'2-digit', minute:'2-digit', second:'2-digit',
+        hourCycle:'h23'
+      }).formatToParts(probe);
+
+      const get = type => Number(parts.find(p=>p.type===type)?.value||0);
+
+      const asUtc = Date.UTC(
+        get('year'), get('month')-1, get('day'),
+        get('hour'), get('minute'), get('second')
+      );
+
+      return (asUtc-probe.getTime())/3600000;
+    }
+
+    async function autoDetectTimezone() {
+      if (!$('autoTz')?.checked) return;
+
+      const lat = Number($('lat')?.value);
+      const lon = Number($('lon')?.value);
+
+      if (!Number.isFinite(lat)||!Number.isFinite(lon)||
+          lat < -90||lat > 90||lon < -180||lon > 180) return;
+
+      if (timezoneAbort) timezoneAbort.abort();
+      timezoneAbort = new AbortController();
+
+      $('selectedTimezone').textContent = 'Detecting…';
+      $('googleStatus').textContent =
+        'Detecting timezone from selected coordinates…';
+      $('googleStatus').className = 'google-status';
+
+      try {
+        const response = await fetch(
+          `${TIMEZONE_API}?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}`,
+          {signal:timezoneAbort.signal,headers:{Accept:'application/json'}}
+        );
+
+        if (!response.ok) {
+          throw new Error(`Timezone lookup failed (${response.status}).`);
+        }
+
+        const data = await response.json();
+        const zone =
+          data?.timeZone ||
+          data?.timezone ||
+          data?.ianaTimeZone ||
+          data?.zoneName;
+
+        if (!zone) throw new Error('Timezone name was not returned.');
+
+        timezoneName = zone;
+
+        const dateValue = $('date')?.value || formatISODate(new Date());
+        const timeValue = $('time')?.value || '12:00:00';
+        const offset = getOffsetForTimezone(zone,dateValue,timeValue);
+
+        if (!Number.isFinite(offset)||offset < -14||offset > 14) {
+          throw new Error('Invalid UTC offset.');
+        }
+
+        $('tz').value = String(Number(offset.toFixed(2)));
+        $('selectedTimezone').textContent =
+          `${formatUtcOffset(offset)} • ${zone}`;
+        $('googleStatus').textContent =
+          `UTC auto-detected • ${zone} • ${formatUtcOffset(offset)}`;
+        $('googleStatus').className = 'google-status ok';
+
+      } catch(error) {
+        if (error?.name === 'AbortError') return;
+
+        console.warn('Automatic timezone lookup failed:',error);
+        $('selectedTimezone').textContent =
+          'Auto lookup unavailable — edit UTC manually';
+        $('googleStatus').textContent =
+          'Timezone auto-detection unavailable. UTC offset remains manually editable.';
+        $('googleStatus').className = 'google-status warn';
+      }
+    }
+
+    function scheduleTimezoneDetection() {
+      if (!$('autoTz')?.checked) return;
+      clearTimeout(timezoneTimer);
+      timezoneTimer = setTimeout(autoDetectTimezone,450);
+    }
+
+
+    /* =========================================================
        LOCATION SEARCH — GLOBAL
        ========================================================= */
 
@@ -2967,7 +3247,9 @@
 
       $('selectedTimezone')
         .textContent =
-        'Manual UTC offset';
+        'Detecting UTC offset…';
+
+      scheduleTimezoneDetection();
 
 
       $('locationHint')
@@ -3303,6 +3585,31 @@
 
 
     /* =========================================================
+       LIVE NAME RASHI + TIMEZONE EVENTS
+       ========================================================= */
+
+    $('name')?.addEventListener('input',renderNameRashiLive);
+
+    $('autoTz')?.addEventListener('change',() => {
+      if ($('autoTz').checked) {
+        scheduleTimezoneDetection();
+      } else {
+        if (timezoneAbort) timezoneAbort.abort();
+        $('selectedTimezone').textContent = 'Manual UTC offset';
+        $('googleStatus').textContent =
+          'Manual UTC offset enabled — edit the value below.';
+        $('googleStatus').className = 'google-status';
+      }
+    });
+
+    $('refreshTimezone')?.addEventListener('click',autoDetectTimezone);
+    $('lat')?.addEventListener('input',scheduleTimezoneDetection);
+    $('lon')?.addEventListener('input',scheduleTimezoneDetection);
+    $('date')?.addEventListener('change',scheduleTimezoneDetection);
+    $('time')?.addEventListener('change',scheduleTimezoneDetection);
+
+
+    /* =========================================================
        LOCATION EVENTS
        ========================================================= */
 
@@ -3382,6 +3689,9 @@
           $('place').value = '';
           $('lat').value = '';
           $('lon').value = '';
+
+          if (timezoneAbort) timezoneAbort.abort();
+          timezoneName = '';
 
           locationSelected =
             false;
@@ -4262,6 +4572,31 @@
         dms(
           data.tropicalSun
         );
+
+      const nameRashi = getNameRashi(b.name);
+
+      if ($('nameRashi') && $('nameRashiSyllable') && $('nameRashiMeaning')) {
+        if (nameRashi.matched) {
+          $('nameRashi').textContent = nameRashi.rashiIds.map(id => {
+            const r = RASHI[id];
+            return `${r[2]} ${NAME_RASHI_HINDI[id]} / ${r[0]} • ${r[1]}`;
+          }).join('  •  ');
+
+          $('nameRashiSyllable').textContent =
+            `Matched: ${nameRashi.matchedSound || '—'}`
+            + (nameRashi.matchedHindi ? ` / ${nameRashi.matchedHindi}` : '');
+
+          $('nameRashiMeaning').textContent =
+            nameRashi.ambiguous
+              ? 'Roman spelling ambiguous • Hindi spelling can resolve'
+              : 'Naam Rashi from first opening sound';
+        } else {
+          $('nameRashi').textContent = 'Not determined';
+          $('nameRashiSyllable').textContent = 'No traditional opening-sound match';
+          $('nameRashiMeaning').textContent =
+            'Use Hindi spelling for a more exact phonetic match';
+        }
+      }
 
 
       $('moonRashi')
@@ -5807,6 +6142,10 @@
           $('tz').value =
             '5.5';
 
+          if ($('autoTz')) {
+            $('autoTz').checked = true;
+          }
+
 
           locationSelected =
             true;
@@ -5824,7 +6163,7 @@
 
           $('selectedTimezone')
             .textContent =
-            'UTC+5.5';
+            'Detecting UTC offset…';
 
 
           $('locationHint')
@@ -5838,6 +6177,9 @@
 
 
           clearLocationResults();
+
+          renderNameRashiLive();
+          scheduleTimezoneDetection();
 
 
           if (!ready) {
@@ -5876,6 +6218,10 @@
 
           locationSelected =
             false;
+
+          if (timezoneAbort) timezoneAbort.abort();
+          timezoneName = '';
+          renderNameRashiLive();
 
 
           $('selectedPlace')
@@ -5972,6 +6318,8 @@
           formatISODate(
             today
           );
+
+          renderNameRashiLive();
 
 
         setStatus(
