@@ -1,0 +1,1928 @@
+:root {
+    --bg: #0b0d12;
+    --panel: #121722;
+    --panel2: #181e2a;
+    --line: #2b3442;
+    --gold: #e3bd6b;
+    --text: #f4f1e8;
+    --muted: #aab3c1;
+    --ok: #71d39d;
+    --bad: #ef8a8a;
+    --ink: #151515
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif
+}
+
+body {
+    min-height: 100vh
+}
+
+.wrap {
+    width: min(1220px, calc(100% - 28px));
+    margin: auto;
+    padding: 24px 0 60px
+}
+
+.hero,
+.card {
+    background: linear-gradient(145deg, #141a25, #10151e);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, .25)
+}
+
+.hero {
+    padding: 26px;
+    margin-bottom: 16px
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 800
+}
+
+.hero h1 {
+    margin: 8px 0 8px;
+    font-size: clamp(30px, 5vw, 54px);
+    letter-spacing: -.04em
+}
+
+.hero p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 900px
+}
+
+.status {
+    margin-top: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 12px;
+    color: var(--muted);
+    font-size: 12px
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold)
+}
+
+.dot.ok {
+    background: var(--ok);
+    box-shadow: 0 0 12px #71d39d88
+}
+
+.dot.bad {
+    background: var(--bad)
+}
+
+.card {
+    padding: 20px;
+    margin: 16px 0
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: end;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+    margin-bottom: 16px
+}
+
+.title h2 {
+    font-size: 20px;
+    margin: 0
+}
+
+.title small {
+    color: var(--muted)
+}
+
+.formgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px
+}
+
+.field {
+    display: grid;
+    gap: 6px
+}
+
+.field label {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 700
+}
+
+.field input {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: #0c1119;
+    color: var(--text);
+    padding: 11px 12px;
+    border-radius: 10px;
+    outline: none
+}
+
+.field input:focus {
+    border-color: var(--gold)
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px
+}
+
+.btn {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 11px 15px;
+    font-weight: 800;
+    cursor: pointer;
+    background: #222b38;
+    color: var(--text)
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #f0d48f, #d9ad55);
+    color: #17130b;
+    border: 0
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: not-allowed
+}
+
+.note {
+    font-size: 11px;
+    line-height: 1.65;
+    color: var(--muted)
+}
+
+.error {
+    display: none;
+    background: #3a2023;
+    border: 1px solid #704047;
+    color: #ffc2c2;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 12px;
+    white-space: pre-wrap
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px
+}
+
+.stat {
+    background: var(--panel2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px
+}
+
+.stat label {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .08em
+}
+
+.stat strong {
+    display: block;
+    margin-top: 7px;
+    font-size: 18px
+}
+
+.stat span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 3px
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(320px, 560px) 1fr;
+    gap: 18px;
+    align-items: start
+}
+
+.chart {
+    background: #0b1017;
+    border: 1px solid #6b5834;
+    border-radius: 14px;
+    overflow: hidden
+}
+
+.chart svg {
+    width: 100%;
+    height: auto;
+    display: block
+}
+
+.side {
+    display: grid;
+    gap: 12px
+}
+
+.mini {
+    background: var(--panel2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px
+}
+
+.mini h3 {
+    margin: 0 0 8px;
+    color: var(--gold);
+    font-size: 13px
+}
+
+.mini p {
+    margin: 5px 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6
+}
+
+.tablewrap {
+    overflow: auto;
+    border: 1px solid var(--line);
+    border-radius: 12px
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 820px
+}
+
+.table th,
+.table td {
+    padding: 10px 11px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    font-size: 12px;
+    white-space: nowrap
+}
+
+.table th {
+    background: #0b1017;
+    color: var(--gold);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .07em
+}
+
+.table tr:last-child td {
+    border-bottom: 0
+}
+
+.retro {
+    color: var(--bad);
+    font-weight: 800
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px
+}
+
+.kv {
+    background: var(--panel2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 13px
+}
+
+.kv small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .08em
+}
+
+.kv b {
+    display: block;
+    margin-top: 5px;
+    line-height: 1.45
+}
+
+.pill {
+    display: inline-block;
+    border: 1px solid #5d4b2e;
+    background: #2b2417;
+    color: var(--gold);
+    border-radius: 999px;
+    padding: 3px 7px;
+    font-size: 10px;
+    font-weight: 800
+}
+
+.verify {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px
+}
+
+.check {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px;
+    background: var(--panel2)
+}
+
+.check b {
+    display: block
+}
+
+.pass {
+    color: var(--ok)
+}
+
+.fail {
+    color: var(--bad)
+}
+
+.print-only {
+    display: none
+}
+
+.location-field {
+    position: relative
+}
+
+.location-box {
+    position: relative
+}
+
+.location-box input {
+    padding-right: 34px
+}
+
+.auto-badge {
+    font-size: 8px;
+    letter-spacing: .08em;
+    border: 1px solid #5d4b2e;
+    color: var(--gold);
+    padding: 2px 5px;
+    border-radius: 999px;
+    margin-left: 4px;
+    vertical-align: 1px
+}
+
+.location-results {
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    top: calc(100% + 5px);
+    display: none;
+    max-height: 300px;
+    overflow: auto;
+    background: #10151e;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .4)
+}
+
+.location-results.open {
+    display: block
+}
+
+.location-result {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer
+}
+
+.location-result:last-child {
+    border-bottom: 0
+}
+
+.location-result:hover,
+.location-result.active {
+    background: #1d2633
+}
+
+.location-result strong {
+    display: block;
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.35
+}
+
+.location-result span {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.4
+}
+
+.location-loading {
+    padding: 11px 12px;
+    font-size: 11px;
+    color: var(--muted)
+}
+
+.google-status {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-top: 4px
+}
+
+.google-status.ok {
+    color: var(--ok)
+}
+
+.google-status.warn {
+    color: var(--bad)
+}
+
+.pac-container {
+    z-index: 99999 !important;
+    font-family: Inter, system-ui, sans-serif
+}
+
+.location-hint {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-top: 3px
+}
+
+.location-hint.ok {
+    color: var(--ok)
+}
+
+.location-hint.warn {
+    color: var(--bad)
+}
+
+@media(max-width:900px) {
+
+    .formgrid,
+    .summary {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .layout {
+        grid-template-columns: 1fr
+    }
+
+    .grid3 {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:600px) {
+    .wrap {
+        width: min(100% - 16px, 1220px)
+    }
+
+    .hero,
+    .card {
+        padding: 15px;
+        border-radius: 15px
+    }
+
+    .formgrid,
+    .summary,
+    .grid3,
+    .verify {
+        grid-template-columns: 1fr
+    }
+
+    .title {
+        align-items: flex-start;
+        flex-direction: column
+    }
+
+    .actions .btn {
+        width: 100%
+    }
+}
+
+@page {
+    size: A4;
+    margin: 11mm 10mm 12mm
+}
+
+@media print {
+    body {
+        background: white;
+        color: #111
+    }
+
+    .wrap {
+        width: 100%;
+        padding: 0
+    }
+
+    .hero,
+    .card {
+        box-shadow: none;
+        background: white;
+        color: #111;
+        border: 1px solid #aaa;
+        border-radius: 0;
+        margin: 0 0 8mm;
+        padding: 5mm
+    }
+
+    .hero {
+        page-break-after: avoid
+    }
+
+    .no-print {
+        display: none !important
+    }
+
+    .print-only {
+        display: block
+    }
+
+    .title {
+        border-color: #bbb
+    }
+
+    .title small,
+    .note,
+    .mini p,
+    .stat label,
+    .stat span,
+    .kv small {
+        color: #555
+    }
+
+    .stat,
+    .mini,
+    .kv,
+    .check {
+        background: #fff;
+        border-color: #bbb
+    }
+
+    .table th {
+        background: #eee;
+        color: #111
+    }
+
+    .table td {
+        color: #111;
+        border-color: #ccc
+    }
+
+    .chart {
+        border-color: #777;
+        background: white;
+        break-inside: avoid
+    }
+
+    .card {
+        break-inside: auto
+    }
+
+    .layout,
+    .summary,
+    .grid3,
+    .verify {
+        break-inside: avoid
+    }
+
+    .tablewrap {
+        overflow: visible
+    }
+
+    .table {
+        min-width: 0
+    }
+
+    .table th,
+    .table td {
+        white-space: normal;
+        font-size: 9px;
+        padding: 5px
+    }
+
+    .hero h1 {
+        font-size: 30px
+    }
+}
+
+
+.wrap {
+    padding-top: 110px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   NORTH INDIAN KUNDLI
+   REFERENCE STYLE
+   ========================================================= */
+
+#chart {
+
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    overflow: visible;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+#chart .kundli-bg {
+
+    fill: #031321;
+
+}
+
+
+/* =========================================================
+   OUTER SQUARE
+   ========================================================= */
+
+#chart .kundli-outer {
+
+    fill: none;
+
+    stroke: #e8b83f;
+
+    stroke-width: 3;
+
+}
+
+
+/* =========================================================
+   MAIN DIAMOND
+   ========================================================= */
+
+#chart .kundli-diamond {
+
+    fill: none;
+
+    stroke: #e8b83f;
+
+    stroke-width: 2.2;
+
+}
+
+
+/* =========================================================
+   DIAGONAL
+   ========================================================= */
+
+#chart .kundli-diagonal {
+
+    stroke: #e8b83f;
+
+    stroke-width: 1.7;
+
+}
+
+
+/* =========================================================
+   HOUSE NUMBER
+   ========================================================= */
+
+#chart .kundli-house-number {
+
+    fill: #d2aa55;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .7px;
+
+}
+
+
+/* =========================================================
+   RASHI
+   ========================================================= */
+
+#chart .kundli-rashi {
+
+    fill: #f3c958;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   PLANETS
+   ========================================================= */
+
+#chart .kundli-planet {
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    stroke: #031321;
+
+    stroke-width: 2px;
+
+    paint-order: stroke fill;
+
+}
+
+
+/* =========================================================
+   PLANET COLORS
+   ========================================================= */
+
+#chart .planet-su {
+
+    fill: #f5a623;
+
+}
+
+#chart .planet-mo {
+
+    fill: #dce9ff;
+
+}
+
+#chart .planet-ma {
+
+    fill: #ff3030;
+
+}
+
+#chart .planet-me {
+
+    fill: #42e68a;
+
+}
+
+#chart .planet-ju {
+
+    fill: #ff76c8;
+
+}
+
+#chart .planet-ve {
+
+    fill: #31dce8;
+
+}
+
+#chart .planet-sa {
+
+    fill: #8275ff;
+
+}
+
+#chart .planet-ra {
+
+    fill: #b85cff;
+
+}
+
+#chart .planet-ke {
+
+    fill: #42e68a;
+
+}
+
+
+/* =========================================================
+   CENTER LAGNA
+   ========================================================= */
+
+#chart .kundli-lagna {
+
+    fill: #061626;
+
+    stroke: #e8b83f;
+
+    stroke-width: 2.2;
+
+}
+
+
+#chart .kundli-lagna-title {
+
+    fill: #f4e9d0;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+}
+
+
+#chart .kundli-lagna-degree {
+
+    fill: #e8e8e8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+#chart .kundli-lagna-rashi {
+
+    fill: #e8bd45;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   CORNER DOT
+   ========================================================= */
+
+#chart .kundli-corner {
+
+    fill: #e8b83f;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #chart .kundli-house-number {
+
+        font-size: 9px;
+
+    }
+
+    #chart .kundli-rashi {
+
+        font-size: 11px;
+
+    }
+
+    #chart .kundli-planet {
+
+        font-size: 11px;
+
+    }
+
+    #chart .kundli-lagna-title {
+
+        font-size: 15px;
+
+    }
+
+    #chart .kundli-lagna-degree {
+
+        font-size: 11px;
+
+    }
+
+    #chart .kundli-lagna-rashi {
+
+        font-size: 11px;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   NORTH INDIAN KUNDLI
+   ADVANCED CHART DESIGN
+   ========================================================= */
+
+#chart {
+
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    overflow: visible;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    text-rendering: geometricPrecision;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+#chart .kundli-bg {
+
+    fill: #031321;
+
+}
+
+
+/* =========================================================
+   OUTER SQUARE
+   ========================================================= */
+
+#chart .kundli-outer {
+
+    fill: none;
+
+    stroke: #e8b83f;
+
+    stroke-width: 3;
+
+    vector-effect: non-scaling-stroke;
+
+}
+
+
+/* =========================================================
+   MAIN DIAMOND
+   ========================================================= */
+
+#chart .kundli-diamond {
+
+    fill: none;
+
+    stroke: url(#kundliLineGradient);
+
+    stroke-width: 2.4;
+
+    vector-effect: non-scaling-stroke;
+
+    filter:
+        drop-shadow(0 0 2px rgba(232, 184, 63, .25));
+
+}
+
+
+/* =========================================================
+   DIAGONAL
+   ========================================================= */
+
+#chart .kundli-diagonal {
+
+    stroke: url(#kundliLineGradient);
+
+    stroke-width: 1.8;
+
+    vector-effect: non-scaling-stroke;
+
+    opacity: .92;
+
+}
+
+
+/* =========================================================
+   HOUSE NUMBER
+   ========================================================= */
+
+#chart .kundli-house-number {
+
+    fill: #b99a55;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .8px;
+
+    opacity: .9;
+
+}
+
+
+/* =========================================================
+   RASHI NAME
+   ========================================================= */
+
+#chart .kundli-rashi {
+
+    fill: #f5ca55;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: .15px;
+
+    paint-order: stroke fill;
+
+    stroke: #031321;
+
+    stroke-width: 3px;
+
+}
+
+
+/* =========================================================
+   RASHI ZODIAC SYMBOL
+   ========================================================= */
+
+#chart .kundli-rashi-sign {
+
+    font-family:
+        "Segoe UI Symbol",
+        "Noto Sans Symbols 2",
+        Arial,
+        sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    fill: #ffffff;
+
+    stroke: #031321;
+
+    stroke-width: 3px;
+
+    paint-order: stroke fill;
+
+    filter:
+        drop-shadow(0 0 4px rgba(255,255,255,.18));
+
+}
+
+
+/* =========================================================
+   RASHI-SPECIFIC COLOURS
+   ========================================================= */
+
+#chart .house-1 .kundli-rashi-sign {
+    fill: #ff5c7a;
+}
+
+#chart .house-2 .kundli-rashi-sign {
+    fill: #ffc857;
+}
+
+#chart .house-3 .kundli-rashi-sign {
+    fill: #55d6ff;
+}
+
+#chart .house-4 .kundli-rashi-sign {
+    fill: #72e66d;
+}
+
+#chart .house-5 .kundli-rashi-sign {
+    fill: #ff9f43;
+}
+
+#chart .house-6 .kundli-rashi-sign {
+    fill: #a879ff;
+}
+
+#chart .house-7 .kundli-rashi-sign {
+    fill: #ff6fcf;
+}
+
+#chart .house-8 .kundli-rashi-sign {
+    fill: #ff6868;
+}
+
+#chart .house-9 .kundli-rashi-sign {
+    fill: #62e6c9;
+}
+
+#chart .house-10 .kundli-rashi-sign {
+    fill: #7da7ff;
+}
+
+#chart .house-11 .kundli-rashi-sign {
+    fill: #d88cff;
+}
+
+#chart .house-12 .kundli-rashi-sign {
+    fill: #ffd166;
+}
+
+
+/* =========================================================
+   PLANETS
+   ========================================================= */
+
+#chart .kundli-planet {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    stroke: #031321;
+
+    stroke-width: 3px;
+
+    paint-order: stroke fill;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   SUN
+   ========================================================= */
+
+#chart .planet-su {
+
+    fill: #ffb52e;
+
+    filter:
+        drop-shadow(0 0 3px rgba(255,181,46,.45));
+
+}
+
+
+/* =========================================================
+   MOON
+   ========================================================= */
+
+#chart .planet-mo {
+
+    fill: #e8f2ff;
+
+    filter:
+        drop-shadow(0 0 3px rgba(232,242,255,.4));
+
+}
+
+
+/* =========================================================
+   MARS
+   ========================================================= */
+
+#chart .planet-ma {
+
+    fill: #ff3b30;
+
+    filter:
+        drop-shadow(0 0 4px rgba(255,59,48,.45));
+
+}
+
+
+/* =========================================================
+   MERCURY
+   ========================================================= */
+
+#chart .planet-me {
+
+    fill: #45ed91;
+
+    filter:
+        drop-shadow(0 0 4px rgba(69,237,145,.4));
+
+}
+
+
+/* =========================================================
+   JUPITER
+   ========================================================= */
+
+#chart .planet-ju {
+
+    fill: #ff78c9;
+
+    filter:
+        drop-shadow(0 0 4px rgba(255,120,201,.42));
+
+}
+
+
+/* =========================================================
+   VENUS
+   ========================================================= */
+
+#chart .planet-ve {
+
+    fill: #32e1ec;
+
+    filter:
+        drop-shadow(0 0 4px rgba(50,225,236,.42));
+
+}
+
+
+/* =========================================================
+   SATURN
+   ========================================================= */
+
+#chart .planet-sa {
+
+    fill: #8b7cff;
+
+    filter:
+        drop-shadow(0 0 4px rgba(139,124,255,.42));
+
+}
+
+
+/* =========================================================
+   RAHU
+   ========================================================= */
+
+#chart .planet-ra {
+
+    fill: #bd5cff;
+
+    filter:
+        drop-shadow(0 0 5px rgba(189,92,255,.5));
+
+}
+
+
+/* =========================================================
+   KETU
+   ========================================================= */
+
+#chart .planet-ke {
+
+    fill: #4be69b;
+
+    filter:
+        drop-shadow(0 0 4px rgba(75,230,155,.45));
+
+}
+
+
+/* =========================================================
+   CENTER LAGNA
+   ========================================================= */
+
+#chart .kundli-lagna {
+
+    fill: #061626;
+
+    stroke: url(#kundliLineGradient);
+
+    stroke-width: 2.5;
+
+    filter:
+        drop-shadow(0 0 5px rgba(232,184,63,.3));
+
+}
+
+
+/* =========================================================
+   LAGNA TITLE
+   ========================================================= */
+
+#chart .kundli-lagna-title {
+
+    fill: #fff1cf;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    letter-spacing: .4px;
+
+}
+
+
+/* =========================================================
+   LAGNA DEGREE
+   ========================================================= */
+
+#chart .kundli-lagna-degree {
+
+    fill: #eeeeee;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   LAGNA RASHI + ZODIAC
+   ========================================================= */
+
+#chart .kundli-lagna-rashi {
+
+    fill: #ffd45c;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   CORNER DOT
+   ========================================================= */
+
+#chart .kundli-corner {
+
+    fill: #f0c34f;
+
+    filter:
+        drop-shadow(0 0 4px rgba(240,195,79,.5));
+
+}
+
+
+/* =========================================================
+   PLANET HOVER
+   ========================================================= */
+
+#chart .kundli-planet:hover {
+
+    opacity: 1;
+
+}
+
+
+/* =========================================================
+   RASHI HOVER
+   ========================================================= */
+
+#chart .kundli-house:hover .kundli-rashi {
+
+    fill: #fff1a8;
+
+}
+
+
+/* =========================================================
+   RASHI SIGN HOVER
+   ========================================================= */
+
+#chart .kundli-house:hover .kundli-rashi-sign {
+
+    filter:
+        drop-shadow(0 0 8px currentColor);
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #chart {
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+    }
+
+    #chart .kundli-house-number {
+
+        font-size: 9px;
+
+    }
+
+    #chart .kundli-rashi {
+
+        font-size: 11px;
+
+    }
+
+    #chart .kundli-rashi-sign {
+
+        font-size: 19px;
+
+    }
+
+    #chart .kundli-planet {
+
+        font-size: 11px;
+
+        stroke-width: 2.5px;
+
+    }
+
+    #chart .kundli-lagna-title {
+
+        font-size: 15px;
+
+    }
+
+    #chart .kundli-lagna-degree {
+
+        font-size: 11px;
+
+    }
+
+    #chart .kundli-lagna-rashi {
+
+        font-size: 11px;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FINAL KUNDLI TOP LAYOUT
+   Chart left + House-wise placement right
+   Calculation basis + Birth location below both
+   ========================================================= */
+
+.layout {
+    display: block;
+}
+
+.kundli-top-row {
+    display: grid;
+    grid-template-columns: minmax(320px, 560px) minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.kundli-top-row > .chart {
+    min-width: 0;
+}
+
+.house-placement-panel {
+    min-width: 0;
+    padding: 14px;
+}
+
+.house-placement-title {
+    margin: 0 0 10px;
+}
+
+.house-placement-title h3 {
+    margin: 0;
+    color: var(--gold);
+    font-size: 13px;
+}
+
+.house-placement-title span {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 9px;
+    line-height: 1.35;
+}
+
+.house-placement-wrap {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.house-placement-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.house-placement-table th,
+.house-placement-table td {
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+    text-align: left;
+}
+
+.house-placement-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.house-placement-table th {
+    height: 27px;
+    padding: 5px 7px;
+    background: #0b1017;
+    color: var(--gold);
+    font-size: 8px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.house-placement-table td {
+    height: 36px;
+    padding: 4px 7px;
+    background: rgba(24, 30, 42, .72);
+}
+
+.house-placement-table th:nth-child(1),
+.house-placement-table td:nth-child(1) {
+    width: 58px;
+}
+
+.house-placement-table th:nth-child(2),
+.house-placement-table td:nth-child(2) {
+    width: 42%;
+}
+
+.house-number-badge {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #5d4b2e;
+    border-radius: 6px;
+    background: #101722;
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.placement-sign {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+}
+
+.placement-sign-symbol {
+    flex: 0 0 25px;
+    font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+}
+
+.placement-sign-text {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    line-height: 1.05;
+}
+
+.placement-sign-text strong {
+    overflow: hidden;
+    color: var(--text);
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.placement-sign-text small {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 8px;
+    white-space: nowrap;
+}
+
+.placement-planets {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.placement-planet {
+    display: inline-flex;
+    min-width: 29px;
+    height: 19px;
+    padding: 0 5px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    background: #0d131d;
+    font-size: 9px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.placement-planet em {
+    margin-left: 2px;
+    font-style: normal;
+    color: var(--bad);
+}
+
+.placement-empty {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.planet-su { color: #ffb52e; }
+.planet-mo { color: #e8f2ff; }
+.planet-ma { color: #ff3b30; }
+.planet-me { color: #45ed91; }
+.planet-ju { color: #ff78c9; }
+.planet-ve { color: #32e1ec; }
+.planet-sa { color: #8b7cff; }
+.planet-ra { color: #bd5cff; }
+.planet-ke { color: #4be69b; }
+
+.kundli-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+    align-items: stretch;
+}
+
+.kundli-info-card {
+    min-width: 0;
+    height: 100%;
+}
+
+.kundli-info-card p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .kundli-top-row {
+        grid-template-columns: 1fr;
+    }
+
+    .kundli-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .kundli-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .house-placement-table th,
+    .house-placement-table td {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .house-placement-table th:nth-child(1),
+    .house-placement-table td:nth-child(1) {
+        width: 48px;
+    }
+
+    .house-placement-table th:nth-child(2),
+    .house-placement-table td:nth-child(2) {
+        width: 44%;
+    }
+
+    .placement-sign {
+        gap: 4px;
+    }
+
+    .placement-sign-symbol {
+        flex-basis: 21px;
+        font-size: 17px;
+    }
+}
+
+@media print {
+    .kundli-top-row {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .kundli-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   CLEAN RAINBOW MULTICOLOUR WAVE
+   RIGHT → LEFT | SLOW | NO BLUR | NO SHADOW
+   ========================================================= */
+
+#pageTitle {
+    background: linear-gradient(
+        90deg,
+
+        #ff0000 0%,
+        #ff4d00 7%,
+        #ff9500 14%,
+        #ffd000 21%,
+        #ffff00 28%,
+        #b7ff00 35%,
+        #39ff00 42%,
+        #00ff66 49%,
+        #00ffd5 56%,
+        #00eaff 63%,
+        #008cff 70%,
+        #304cff 77%,
+        #7000ff 84%,
+        #b000ff 89%,
+        #ff00cc 94%,
+        #ff0066 97%,
+        #ff0000 100%
+
+    );
+
+    background-size: 350% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    animation: cleanRainbowTravel 9s linear infinite;
+}
+
+@keyframes cleanRainbowTravel {
+
+    0% {
+        background-position: 350% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}

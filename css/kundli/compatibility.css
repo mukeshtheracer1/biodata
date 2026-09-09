@@ -1,0 +1,683 @@
+/* =========================================================
+   COMPATIBILITY MODULE
+========================================================= */
+
+.compatibility-module {
+    width: 100%;
+    padding: 0;
+}
+
+
+/* =========================================================
+   PAGE HEAD
+========================================================= */
+
+.compatibility-page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+
+    padding: 28px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #faf7f1
+        );
+
+    border: 1px solid rgba(117, 79, 35, 0.16);
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.compatibility-title-wrap {
+    min-width: 0;
+}
+
+.compatibility-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    color: #8a632f;
+}
+
+.compatibility-title-wrap h2 {
+    margin: 0;
+
+    color: #2b1713;
+
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.compatibility-title-wrap p {
+    max-width: 850px;
+
+    margin: 10px 0 0;
+
+    color: #665b57;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.compatibility-engine-badge {
+    flex: 0 0 auto;
+
+    padding: 10px 14px;
+
+    border-radius: 999px;
+
+    background: #351c18;
+    color: #e5c27c;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PROFILE GRID
+========================================================= */
+
+.compatibility-profile-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+.compatibility-profile-card {
+    padding: 24px;
+
+    background: #351c18;
+    color: #ffffff;
+
+    border: 1px solid rgba(229, 194, 124, 0.28);
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 28px rgba(42, 20, 15, 0.16);
+}
+
+.compatibility-profile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+.compatibility-profile-label {
+    margin: 0 0 5px;
+
+    color: #e5c27c;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.compatibility-profile-name {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+.compatibility-profile-index {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(229, 194, 124, 0.14);
+    border: 1px solid rgba(229, 194, 124, 0.35);
+
+    color: #e5c27c;
+
+    font-weight: 800;
+}
+
+.compatibility-profile-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.compatibility-profile-item {
+    padding: 13px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.compatibility-profile-item-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #d5c8c3;
+
+    font-size: 11px;
+}
+
+.compatibility-profile-item-value {
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.compatibility-section {
+    margin-top: 22px;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(117, 79, 35, 0.14);
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.045);
+}
+
+.compatibility-section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 18px;
+}
+
+.compatibility-section-kicker {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #9a7036;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+.compatibility-section-head h3 {
+    margin: 0;
+
+    color: #2d1915;
+
+    font-size: 21px;
+}
+
+.compatibility-section-head p {
+    margin: 7px 0 0;
+
+    color: #6f6460;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GUN MILAN
+========================================================= */
+
+.compatibility-gun-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fbf6ec,
+            #ffffff
+        );
+
+    border: 1px solid rgba(154, 112, 54, 0.18);
+}
+
+.compatibility-gun-score {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+}
+
+.compatibility-gun-score-number {
+    color: #8b6028;
+
+    font-size: 38px;
+    font-weight: 900;
+}
+
+.compatibility-gun-score-max {
+    color: #756963;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.compatibility-gun-status {
+    color: #3c302c;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   OVERALL
+========================================================= */
+
+.compatibility-overall-card {
+    padding: 22px;
+
+    border-radius: 15px;
+
+    background: #351c18;
+    color: #ffffff;
+}
+
+.compatibility-overall-card h4 {
+    margin: 0 0 8px;
+
+    color: #e5c27c;
+
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.compatibility-overall-card p {
+    margin: 0;
+
+    color: #f0e8e4;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FACTORS
+========================================================= */
+
+.compatibility-factors {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.compatibility-factor-card {
+    padding: 19px;
+
+    border-radius: 15px;
+
+    background: #fffdf9;
+
+    border: 1px solid rgba(117, 79, 35, 0.14);
+}
+
+.compatibility-factor-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.compatibility-factor-title {
+    margin: 0;
+
+    color: #2f1c17;
+
+    font-size: 16px;
+}
+
+.compatibility-factor-status {
+    flex: 0 0 auto;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    background: #f1ebe1;
+
+    color: #73562f;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.compatibility-factor-values {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.compatibility-factor-person {
+    padding: 11px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(117, 79, 35, 0.10);
+}
+
+.compatibility-factor-person-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #837873;
+
+    font-size: 10px;
+}
+
+.compatibility-factor-person-value {
+    color: #34231f;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.55;
+}
+
+.compatibility-factor-note {
+    margin: 13px 0 0;
+
+    color: #655a56;
+
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TWO COLUMN
+========================================================= */
+
+.compatibility-two-column {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    background: transparent;
+
+    border: 0;
+    box-shadow: none;
+
+    padding: 0;
+}
+
+.compatibility-panel {
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(117, 79, 35, 0.14);
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.045);
+}
+
+.compatibility-panel-head h3 {
+    margin: 0 0 15px;
+
+    color: #2d1915;
+
+    font-size: 18px;
+}
+
+.compatibility-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.compatibility-list-item {
+    padding: 12px 14px;
+
+    border-radius: 11px;
+
+    background: #fbf8f3;
+
+    border-left: 3px solid #b58a48;
+
+    color: #554945;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.compatibility-list-empty {
+    padding: 14px;
+
+    border-radius: 11px;
+
+    background: #f7f4ef;
+
+    color: #756b66;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.compatibility-note {
+    display: flex;
+
+    gap: 16px;
+
+    margin-top: 22px;
+
+    padding: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf0,
+            #ffffff
+        );
+
+    border: 1px solid rgba(181, 138, 72, 0.25);
+    border-radius: 17px;
+}
+
+.compatibility-note-icon {
+    flex: 0 0 auto;
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #351c18;
+    color: #e5c27c;
+
+    font-size: 18px;
+}
+
+.compatibility-note h3 {
+    margin: 0 0 8px;
+
+    color: #3a211b;
+
+    font-size: 17px;
+}
+
+.compatibility-note p {
+    margin: 0 0 9px;
+
+    color: #655a55;
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.compatibility-note p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SOURCE
+========================================================= */
+
+.compatibility-source {
+    margin-top: 18px;
+
+    padding: 17px 20px;
+
+    border-radius: 14px;
+
+    background: #2d1915;
+
+    color: #d9ceca;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.compatibility-source strong {
+    color: #e5c27c;
+}
+
+
+/* =========================================================
+   EMPTY / ERROR
+========================================================= */
+
+.compatibility-empty {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(117, 79, 35, 0.14);
+    border-radius: 17px;
+}
+
+.compatibility-empty h3 {
+    margin: 0 0 8px;
+
+    color: #3a211b;
+}
+
+.compatibility-empty p {
+    margin: 0;
+
+    color: #756a65;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .compatibility-page-head {
+        flex-direction: column;
+    }
+
+    .compatibility-profile-grid,
+    .compatibility-factors,
+    .compatibility-two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .compatibility-page-head,
+    .compatibility-section,
+    .compatibility-profile-card,
+    .compatibility-panel,
+    .compatibility-note {
+        padding: 17px;
+    }
+
+    .compatibility-title-wrap h2 {
+        font-size: 23px;
+    }
+
+    .compatibility-profile-details,
+    .compatibility-factor-values {
+        grid-template-columns: 1fr;
+    }
+
+    .compatibility-gun-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

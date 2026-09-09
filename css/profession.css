@@ -1,0 +1,1350 @@
+/* =========================================================
+   PROFESSION PAGE
+   Mukesh Sah — Marriage Biodata
+   ========================================================= */
+
+.profession-page {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.profession-hero {
+  width: min(calc(100% - 36px), var(--content-width));
+  margin: 0 auto;
+  padding: 90px 0 55px;
+  text-align: center;
+}
+
+.profession-hero-ornament {
+  width: min(280px, 70%);
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.profession-hero-ornament span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,166,58,.55)
+  );
+}
+
+.profession-hero-ornament span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(212,166,58,.55),
+    transparent
+  );
+}
+
+.profession-hero-ornament i {
+  color: var(--color-gold-light);
+  font-style: normal;
+  font-size: 14px;
+  text-shadow: var(--gold-glow);
+  animation: professionStar 3s ease-in-out infinite;
+}
+
+.profession-eyebrow,
+.profession-section-kicker,
+.summary-kicker {
+  margin: 0 0 12px;
+  color: var(--color-gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.profession-page-title {
+  margin: 0;
+  color: var(--color-white-soft);
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.profession-page-title span,
+.profession-section-heading h2 span,
+.profession-summary-card h2 span {
+  background: var(--gradient-gold-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.profession-page-intro {
+  width: min(700px, 100%);
+  margin: 20px auto 0;
+  color: var(--color-text-soft);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   EDUCATION + PROFESSION
+   ========================================================= */
+
+.profession-main-section {
+  width: min(calc(100% - 36px), var(--content-width));
+  margin: 0 auto;
+  padding: 20px 0 75px;
+}
+
+.profession-main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.profession-card {
+  position: relative;
+  min-height: 350px;
+  padding: 34px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(212,166,58,.22);
+  border-radius: var(--radius-xl);
+
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(212,166,58,.08),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(59,6,38,.65),
+      rgba(7,0,6,.88)
+    );
+
+  box-shadow: var(--shadow-card);
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.profession-card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(244,212,119,.08);
+  border-radius: calc(var(--radius-xl) - 7px);
+  pointer-events: none;
+}
+
+.profession-card:hover {
+  border-color: rgba(244,212,119,.48);
+  box-shadow:
+    var(--shadow-card),
+    var(--gold-glow);
+  transform: translateY(-5px);
+}
+
+.profession-card-top {
+  position: absolute;
+  top: 25px;
+  left: 28px;
+  right: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profession-card-number {
+  color: var(--color-gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.profession-card-label {
+  color: var(--color-text-muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.profession-card-icon {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-gold-light);
+  font-size: 25px;
+
+  border: 1px solid rgba(244,212,119,.34);
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,166,58,.12),
+      rgba(5,0,6,.15)
+    );
+
+  box-shadow:
+    inset 0 0 25px rgba(212,166,58,.06),
+    var(--gold-glow-small);
+
+  animation: professionIconBreath 4s ease-in-out infinite;
+}
+
+.profession-card-content {
+  width: 100%;
+}
+
+.profession-small-title {
+  color: var(--color-gold);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.profession-card-content h2 {
+  margin: 9px auto 0;
+  color: var(--color-white-soft);
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.profession-card-content p {
+  width: min(430px, 100%);
+  margin: 0 auto;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.profession-divider {
+  width: 150px;
+  margin: 17px auto 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profession-divider span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,166,58,.45)
+  );
+}
+
+.profession-divider span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(212,166,58,.45),
+    transparent
+  );
+}
+
+.profession-divider i {
+  color: var(--color-gold-light);
+  font-style: normal;
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.profession-section-heading {
+  width: min(calc(100% - 36px), var(--content-width));
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.profession-section-heading h2 {
+  margin: 0;
+  color: var(--color-white-soft);
+  font-size: clamp(30px, 4vw, 45px);
+  line-height: 1.15;
+}
+
+.profession-heading-decoration {
+  width: 230px;
+  margin: 17px auto 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profession-heading-decoration span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,166,58,.45)
+  );
+}
+
+.profession-heading-decoration span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(212,166,58,.45),
+    transparent
+  );
+}
+
+.profession-heading-decoration i {
+  color: var(--color-gold-light);
+  font-size: 11px;
+  font-style: normal;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+.experience-section {
+  width: min(calc(100% - 36px), var(--content-width));
+  margin: 0 auto;
+  padding: 20px 0 80px;
+}
+
+.experience-card {
+  position: relative;
+
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 30px 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  border: 1px solid rgba(212,166,58,.18);
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.015)
+    );
+
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(244,212,119,.40);
+}
+
+.experience-icon {
+  width: 70px;
+  height: 70px;
+  flex: 0 0 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-gold-light);
+  font-size: 25px;
+
+  border: 1px solid rgba(212,166,58,.28);
+  border-radius: 18px;
+
+  background: rgba(212,166,58,.055);
+  box-shadow: var(--gold-glow-small);
+}
+
+.experience-label {
+  color: var(--color-gold);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.experience-content h3 {
+  margin: 7px 0 8px;
+  color: var(--color-white-soft);
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.experience-content p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills-section {
+  width: min(calc(100% - 36px), var(--content-width));
+  margin: 0 auto;
+  padding: 20px 0 80px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  position: relative;
+  min-height: 245px;
+  padding: 25px 22px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(212,166,58,.16);
+  border-radius: var(--radius-md);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.05),
+      rgba(255,255,255,.012)
+    );
+
+  box-shadow: var(--glass-shadow-small);
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    background var(--transition-normal);
+}
+
+.skill-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(244,212,119,.40);
+  background: rgba(212,166,58,.035);
+}
+
+.skill-card-number {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+
+  color: rgba(244,212,119,.35);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-gold-light);
+  font-size: 17px;
+
+  border: 1px solid rgba(212,166,58,.28);
+  border-radius: 13px;
+
+  background: rgba(212,166,58,.055);
+  text-shadow: var(--gold-glow);
+}
+
+.skill-content span {
+  color: var(--color-gold);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.skill-content h3 {
+  margin: 7px 0 9px;
+  color: var(--color-white-soft);
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.skill-content p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.skill-line {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 16px;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,166,58,.35),
+    transparent
+  );
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.profession-summary-section {
+  width: min(calc(100% - 36px), 1050px);
+  margin: 0 auto;
+  padding: 10px 0 80px;
+}
+
+.profession-summary-card {
+  position: relative;
+  padding: 60px 65px;
+  text-align: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(212,166,58,.24);
+  border-radius: var(--radius-xl);
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(212,166,58,.10),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(59,6,38,.50),
+      rgba(7,0,6,.75)
+    );
+
+  box-shadow: var(--shadow-card);
+}
+
+.profession-summary-card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+
+  border: 1px solid rgba(244,212,119,.08);
+  border-radius: calc(var(--radius-xl) - 8px);
+
+  pointer-events: none;
+}
+
+.summary-ornament {
+  width: 250px;
+  margin: 0 auto 23px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.summary-ornament span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,166,58,.50)
+  );
+}
+
+.summary-ornament span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(212,166,58,.50),
+    transparent
+  );
+}
+
+.summary-ornament i {
+  color: var(--color-gold-light);
+  font-style: normal;
+}
+
+.profession-summary-card h2 {
+  margin: 0;
+  color: var(--color-white-soft);
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+}
+
+.profession-summary-card > p {
+  width: min(720px, 100%);
+  margin: 20px auto 0;
+
+  color: var(--color-text-soft);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.summary-points {
+  margin-top: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.summary-point {
+  min-height: 55px;
+  padding: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: 1px solid rgba(212,166,58,.14);
+  border-radius: 10px;
+
+  background: rgba(255,255,255,.025);
+}
+
+.summary-point span {
+  color: var(--color-gold-light);
+  font-size: 9px;
+}
+
+.summary-point strong {
+  color: var(--color-text-soft);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.profession-quote-section {
+  width: min(calc(100% - 36px), 900px);
+  margin: 0 auto;
+  padding: 0 0 95px;
+}
+
+.profession-quote {
+  padding: 45px 55px;
+  text-align: center;
+
+  border-top: 1px solid rgba(212,166,58,.18);
+  border-bottom: 1px solid rgba(212,166,58,.18);
+}
+
+.profession-quote-mark {
+  display: block;
+  height: 32px;
+
+  color: var(--color-gold);
+  font-family: Georgia, serif;
+  font-size: 52px;
+  line-height: .8;
+  opacity: .65;
+}
+
+.profession-quote p {
+  margin: 10px auto 0;
+
+  color: var(--color-white-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(16px, 2vw, 21px);
+  font-style: italic;
+  line-height: 1.75;
+}
+
+.profession-quote-decoration {
+  width: 170px;
+  margin: 18px auto 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profession-quote-decoration span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,166,58,.45)
+  );
+}
+
+.profession-quote-decoration span:last-child {
+  background: linear-gradient(
+    90deg,
+    rgba(212,166,58,.45),
+    transparent
+  );
+}
+
+.profession-quote-decoration i {
+  color: var(--color-gold-light);
+  font-style: normal;
+}
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.profession-page .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+
+  transition:
+    opacity .75s var(--ease-luxury),
+    transform .75s var(--ease-luxury);
+}
+
+.profession-page .reveal.is-visible,
+.profession-page .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes professionStar {
+
+  0%,
+  100% {
+    opacity: .55;
+    transform: scale(.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes professionIconBreath {
+
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 25px rgba(212,166,58,.06),
+      0 0 8px rgba(212,166,58,.12);
+  }
+
+  50% {
+    box-shadow:
+      inset 0 0 30px rgba(212,166,58,.13),
+      0 0 23px rgba(212,166,58,.28);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .summary-points {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE — 2 COLUMNS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* BODY EDGE GAP */
+
+  .profession-page {
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+
+  .profession-hero,
+  .profession-main-section,
+  .experience-section,
+  .skills-section,
+  .profession-summary-section,
+  .profession-quote-section {
+    width: calc(100% - 20px);
+  }
+
+
+  /* HERO */
+
+  .profession-hero {
+    padding: 55px 0 35px;
+  }
+
+  .profession-page-title {
+    font-size: 37px;
+  }
+
+  .profession-page-intro {
+    margin-top: 14px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+
+  /* EDUCATION + PROFESSION */
+
+  .profession-main-section {
+    padding-bottom: 55px;
+  }
+
+  .profession-main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .profession-card {
+    min-height: 340px;
+    padding: 24px 13px;
+    border-radius: 20px;
+  }
+
+  .profession-card-top {
+    top: 18px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .profession-card-number,
+  .profession-card-label {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .profession-card-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 17px;
+    font-size: 19px;
+    border-radius: 15px;
+  }
+
+  .profession-small-title {
+    font-size: 6px;
+    letter-spacing: 1.2px;
+  }
+
+  .profession-card-content h2 {
+    font-size: 16px;
+  }
+
+  .profession-card-content p {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+
+  .profession-divider {
+    width: 90px;
+    margin: 13px auto 11px;
+  }
+
+
+  /* SECTION HEADINGS */
+
+  .profession-section-heading {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .profession-section-kicker {
+    font-size: 7px;
+    letter-spacing: 1.7px;
+  }
+
+  .profession-section-heading h2 {
+    font-size: 28px;
+  }
+
+  .profession-heading-decoration {
+    width: 170px;
+    margin-top: 13px;
+  }
+
+
+  /* EXPERIENCE */
+
+  .experience-section {
+    padding-bottom: 60px;
+  }
+
+  .experience-card {
+    padding: 22px 18px;
+    gap: 15px;
+    border-radius: 18px;
+  }
+
+  .experience-icon {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+    font-size: 19px;
+    border-radius: 13px;
+  }
+
+  .experience-label {
+    font-size: 6px;
+    letter-spacing: 1.3px;
+  }
+
+  .experience-content h3 {
+    margin: 5px 0 6px;
+    font-size: 15px;
+  }
+
+  .experience-content p {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+
+
+  /* SKILLS — 2 COLUMNS */
+
+  .skills-section {
+    padding-bottom: 60px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .skill-card {
+    min-height: 185px;
+    padding: 17px 14px;
+    border-radius: 13px;
+  }
+
+  .skill-card-number {
+    top: 13px;
+    right: 14px;
+    font-size: 6px;
+  }
+
+  .skill-icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .skill-content span {
+    font-size: 5px;
+    letter-spacing: 1.2px;
+  }
+
+  .skill-content h3 {
+    margin: 5px 0 7px;
+    font-size: 13px;
+  }
+
+  .skill-content p {
+    font-size: 8px;
+    line-height: 1.55;
+  }
+
+  .skill-line {
+    left: 14px;
+    right: 14px;
+    bottom: 11px;
+  }
+
+
+  /* SUMMARY */
+
+  .profession-summary-section {
+    padding-bottom: 60px;
+  }
+
+  .profession-summary-card {
+    padding: 40px 20px;
+    border-radius: 22px;
+  }
+
+  .summary-ornament {
+    width: 170px;
+    margin-bottom: 18px;
+  }
+
+  .summary-kicker {
+    font-size: 7px;
+    letter-spacing: 1.6px;
+  }
+
+  .profession-summary-card h2 {
+    font-size: 27px;
+  }
+
+  .profession-summary-card > p {
+    margin-top: 14px;
+    font-size: 10px;
+    line-height: 1.75;
+  }
+
+  .summary-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    margin-top: 22px;
+  }
+
+  .summary-point {
+    min-height: 45px;
+    padding: 7px 5px;
+  }
+
+  .summary-point span {
+    font-size: 7px;
+  }
+
+  .summary-point strong {
+    font-size: 7px;
+  }
+
+
+  /* QUOTE */
+
+  .profession-quote-section {
+    padding-bottom: 65px;
+  }
+
+  .profession-quote {
+    padding: 35px 15px;
+  }
+
+  .profession-quote-mark {
+    font-size: 45px;
+  }
+
+  .profession-quote p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE — KEEP EVERYTHING 2 COLUMN
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .profession-page {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .profession-hero,
+  .profession-main-section,
+  .experience-section,
+  .skills-section,
+  .profession-summary-section,
+  .profession-quote-section {
+    width: calc(100% - 12px);
+  }
+
+
+  /* HERO */
+
+  .profession-hero {
+    padding: 45px 0 30px;
+  }
+
+  .profession-page-title {
+    font-size: 32px;
+  }
+
+  .profession-page-intro {
+    font-size: 10px;
+  }
+
+
+  /* MAIN CARDS */
+
+  .profession-main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .profession-card {
+    min-height: 310px;
+    padding: 20px 8px;
+    border-radius: 16px;
+  }
+
+  .profession-card-top {
+    top: 14px;
+    left: 8px;
+    right: 8px;
+  }
+
+  .profession-card-number,
+  .profession-card-label {
+    font-size: 5px;
+  }
+
+  .profession-card-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 14px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  .profession-small-title {
+    font-size: 5px;
+    letter-spacing: .8px;
+  }
+
+  .profession-card-content h2 {
+    font-size: 13px;
+  }
+
+  .profession-card-content p {
+    font-size: 7px;
+    line-height: 1.5;
+  }
+
+  .profession-divider {
+    width: 65px;
+    margin: 10px auto 9px;
+  }
+
+
+  /* EXPERIENCE */
+
+  .experience-card {
+    padding: 17px 12px;
+    gap: 10px;
+  }
+
+  .experience-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    font-size: 15px;
+  }
+
+  .experience-label {
+    font-size: 5px;
+  }
+
+  .experience-content h3 {
+    font-size: 12px;
+  }
+
+  .experience-content p {
+    font-size: 7px;
+  }
+
+
+  /* SKILLS */
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .skill-card {
+    min-height: 160px;
+    padding: 13px 10px;
+    border-radius: 10px;
+  }
+
+  .skill-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 11px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  .skill-content span {
+    font-size: 4.5px;
+  }
+
+  .skill-content h3 {
+    font-size: 11px;
+    margin: 4px 0 5px;
+  }
+
+  .skill-content p {
+    font-size: 6.5px;
+    line-height: 1.45;
+  }
+
+
+  /* SUMMARY */
+
+  .profession-summary-card {
+    padding: 32px 13px;
+    border-radius: 18px;
+  }
+
+  .profession-summary-card h2 {
+    font-size: 22px;
+  }
+
+  .profession-summary-card > p {
+    font-size: 8px;
+  }
+
+  .summary-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .summary-point {
+    min-height: 40px;
+  }
+
+  .summary-point strong {
+    font-size: 6px;
+  }
+
+
+  /* QUOTE */
+
+  .profession-quote {
+    padding: 30px 10px;
+  }
+
+  .profession-quote p {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .profession-page {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .profession-hero,
+  .profession-main-section,
+  .experience-section,
+  .skills-section,
+  .profession-summary-section,
+  .profession-quote-section {
+    width: calc(100% - 8px);
+  }
+
+  .profession-main-grid {
+    gap: 5px;
+  }
+
+  .profession-card {
+    min-height: 290px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .profession-card-content h2 {
+    font-size: 12px;
+  }
+
+  .profession-card-content p {
+    font-size: 6.5px;
+  }
+
+  .skill-card {
+    min-height: 150px;
+    padding: 11px 8px;
+  }
+
+  .skill-content h3 {
+    font-size: 10px;
+  }
+
+  .skill-content p {
+    font-size: 6px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .profession-page *,
+  .profession-page *::before,
+  .profession-page *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .profession-page .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+}

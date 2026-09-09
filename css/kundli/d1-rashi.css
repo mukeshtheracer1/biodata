@@ -1,0 +1,553 @@
+/* =========================================================
+   D1 RASHI MODULE
+========================================================= */
+
+.d1-rashi-module {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.d1-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.d1-eyebrow,
+.d1-card-kicker {
+    display: block;
+    color: #c9a227;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.d1-header h2 {
+    margin: 7px 0 6px;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.d1-header p {
+    margin: 0;
+    color: #b4a9ae;
+    font-size: 14px;
+}
+
+.d1-header-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.d1-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 12px;
+    border: 1px solid rgba(201, 162, 39, 0.28);
+    border-radius: 999px;
+    color: #c8bec2;
+    background: rgba(255, 255, 255, 0.025);
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.d1-badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #61c991;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.d1-card {
+    border: 1px solid rgba(201, 162, 39, 0.21);
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(43, 18, 30, 0.95),
+            rgba(18, 11, 18, 0.98)
+        );
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+.d1-card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 22px 15px;
+}
+
+.d1-card-heading h3 {
+    margin: 5px 0 0;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.d1-table-note {
+    color: #8f858b;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.d1-top-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(300px, 0.75fr);
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.d1-chart-card {
+    min-width: 0;
+}
+
+.d1-chart-legend {
+    color: #8f858b;
+    font-size: 10px;
+}
+
+.d1-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 580px;
+    padding: 8px 25px 30px;
+}
+
+.d1-chart svg {
+    display: block;
+    width: min(100%, 570px);
+    height: auto;
+    overflow: visible;
+}
+
+
+/* SVG chart */
+
+.d1-chart-outer {
+    fill: rgba(15, 9, 15, 0.88);
+    stroke: rgba(201, 162, 39, 0.75);
+    stroke-width: 2;
+}
+
+.d1-chart-line {
+    fill: none;
+    stroke: rgba(201, 162, 39, 0.52);
+    stroke-width: 1.7;
+}
+
+.d1-chart-house {
+    fill: rgba(255, 255, 255, 0.015);
+    stroke: rgba(201, 162, 39, 0.34);
+    stroke-width: 1;
+}
+
+.d1-chart-house.active {
+    fill: rgba(201, 162, 39, 0.055);
+}
+
+.d1-chart-house-number {
+    fill: #8e8389;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.d1-chart-rashi {
+    fill: #c9a227;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.d1-chart-planet {
+    fill: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.d1-chart-planet.retrograde {
+    fill: #e3bd52;
+}
+
+.d1-chart-lagna {
+    fill: #d8b12f;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.d1-chart-degree {
+    fill: #91868c;
+    font-size: 9px;
+}
+
+.d1-chart-empty {
+    fill: #675d63;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   LAGNA SUMMARY
+========================================================= */
+
+.d1-summary-card {
+    min-width: 0;
+}
+
+.d1-lagna-main {
+    margin: 2px 20px 18px;
+    padding: 20px;
+    border: 1px solid rgba(201, 162, 39, 0.18);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.17);
+    text-align: center;
+}
+
+.d1-lagna-rashi {
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.d1-lagna-degree {
+    margin-top: 6px;
+    color: #c9a227;
+    font-size: 12px;
+}
+
+.d1-summary-list {
+    padding: 0 20px 20px;
+}
+
+.d1-summary-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.d1-summary-row:last-child {
+    border-bottom: none;
+}
+
+.d1-summary-row span {
+    color: #8f858b;
+    font-size: 11px;
+}
+
+.d1-summary-row strong {
+    color: #e1dadd;
+    font-size: 12px;
+    text-align: right;
+}
+
+
+/* =========================================================
+   HOUSE GRID
+========================================================= */
+
+.d1-house-card {
+    margin-bottom: 18px;
+}
+
+.d1-house-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 22px 22px;
+}
+
+.d1-house-item {
+    position: relative;
+    min-height: 110px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.065);
+    border-radius: 11px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.d1-house-item.lagna-house {
+    border-color: rgba(201, 162, 39, 0.48);
+    background: rgba(201, 162, 39, 0.045);
+}
+
+.d1-house-number {
+    color: #8f858b;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.d1-house-rashi {
+    margin-top: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.d1-house-rashi-en {
+    margin-top: 2px;
+    color: #81767c;
+    font-size: 9px;
+}
+
+.d1-house-planets {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.d1-house-planet-pill {
+    padding: 4px 6px;
+    border: 1px solid rgba(201, 162, 39, 0.20);
+    border-radius: 5px;
+    color: #d6cfd2;
+    background: rgba(201, 162, 39, 0.045);
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   PLANET TABLE
+========================================================= */
+
+.d1-planet-card {
+    margin-bottom: 18px;
+}
+
+.d1-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 12px 14px;
+}
+
+.d1-planet-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+.d1-planet-table th {
+    padding: 10px;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.20);
+    color: #8e848a;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.d1-planet-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+    color: #d2c9cd;
+    font-size: 12px;
+}
+
+.d1-planet-table tr:last-child td {
+    border-bottom: none;
+}
+
+.d1-planet-name {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.d1-planet-hindi {
+    margin-left: 5px;
+    color: #82777d;
+    font-size: 10px;
+}
+
+.d1-rashi-cell {
+    color: #d6b039;
+    font-weight: 600;
+}
+
+.d1-nakshatra-cell {
+    color: #b5aaaf;
+}
+
+.d1-motion {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 7px;
+    border-radius: 5px;
+    color: #aaa0a5;
+    background: rgba(255, 255, 255, 0.045);
+    font-size: 9px;
+}
+
+.d1-motion.retrograde {
+    color: #e0b94d;
+    background: rgba(201, 162, 39, 0.09);
+}
+
+
+/* =========================================================
+   SPECIAL
+========================================================= */
+
+.d1-special-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.d1-special-card {
+    padding: 20px;
+}
+
+.d1-special-card h3 {
+    margin: 5px 0 15px;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.d1-special-value {
+    color: #d5af30;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.d1-special-note {
+    margin: 7px 0 0;
+    color: #91868c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.d1-disclaimer {
+    padding: 14px 16px;
+    border-left: 2px solid rgba(201, 162, 39, 0.55);
+    border-radius: 8px;
+    background: rgba(201, 162, 39, 0.035);
+    color: #8e8389;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.d1-disclaimer strong {
+    color: #bda04a;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.d1-error {
+    padding: 18px;
+    border: 1px solid rgba(200, 70, 70, 0.30);
+    border-radius: 10px;
+    color: #d7a4a4;
+    background: rgba(120, 30, 30, 0.10);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .d1-top-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .d1-special-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .d1-chart {
+        min-height: auto;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .d1-header {
+        flex-direction: column;
+    }
+
+    .d1-house-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .d1-header h2 {
+        font-size: 24px;
+    }
+
+    .d1-house-grid {
+        grid-template-columns: 1fr;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .d1-chart {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .d1-card-heading {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .d1-lagna-main,
+    .d1-summary-list {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .d1-lagna-main {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+.d1-house-lord{font-size:11px;color:#765f4d;margin-top:4px}.d1-planet-table{min-width:1050px}.d1-table-wrap{overflow:auto}.d1-planet-table th,.d1-planet-table td{white-space:nowrap}

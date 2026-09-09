@@ -1,0 +1,1558 @@
+
+/* =========================================================
+   MUKESH SAH — LUXURY MARRIAGE BIODATA
+   HEADER CSS
+   File: css/header.css
+   ========================================================= */
+
+
+/* =========================================================
+   01. HEADER MAIN
+   ========================================================= */
+
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: var(--z-header);
+
+  transition:
+    height var(--transition-normal),
+    background var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+/* =========================================================
+   02. HEADER INNER
+   ========================================================= */
+
+.header-inner {
+  position: relative;
+
+  width: min(
+    calc(100% - (var(--page-padding-desktop) * 2)),
+    var(--page-width)
+  );
+
+  height: 100%;
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   03. HEADER GLASS BACKGROUND
+   ========================================================= */
+
+.header-shell {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 0, 6, 0.88),
+      rgba(4, 0, 6, 0.48)
+    );
+
+  border-bottom:
+    1px solid rgba(212, 166, 58, 0.12);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    background var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+/* =========================================================
+   TOP SHIMMER
+   ========================================================= */
+
+.header-shell::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -65%;
+
+  width: 55%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 235, 160, 0.95),
+      transparent
+    );
+
+  box-shadow:
+    0 0 14px rgba(244, 212, 119, 0.65);
+
+  animation:
+    headerShimmer 8s linear infinite;
+}
+
+@keyframes headerShimmer {
+  0% {
+    left: -65%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+
+/* =========================================================
+   BOTTOM GOLD LINE
+   ========================================================= */
+
+.header-shell::after {
+  content: "";
+
+  position: absolute;
+
+  left: 8%;
+  right: 8%;
+  bottom: -1px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(212, 166, 58, 0.28),
+      rgba(244, 212, 119, 0.55),
+      rgba(212, 166, 58, 0.28),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   04. SCROLLED HEADER
+   ========================================================= */
+
+#site-header.scrolled,
+#site-header.is-scrolled {
+  height: 70px;
+}
+
+#site-header.scrolled .header-shell,
+#site-header.is-scrolled .header-shell {
+  background:
+    rgba(5, 0, 7, 0.94);
+
+  border-bottom-color:
+    rgba(212, 166, 58, 0.24);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.38),
+    0 1px 18px rgba(212, 166, 58, 0.045);
+}
+
+
+/* =========================================================
+   05. BRAND
+   ========================================================= */
+
+.header-brand {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  flex-shrink: 0;
+
+  z-index: 2;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   BRAND EMBLEM
+   ========================================================= */
+
+.brand-emblem {
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(212, 166, 58, 0.48);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212, 166, 58, 0.16),
+      rgba(212, 166, 58, 0.025) 62%,
+      transparent 70%
+    );
+
+  color: var(--color-gold-light);
+
+  box-shadow:
+    0 0 15px rgba(212, 166, 58, 0.15),
+    inset 0 0 12px rgba(212, 166, 58, 0.06);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.brand-emblem::before {
+  content: "";
+
+  position: absolute;
+  inset: 5px;
+
+  border:
+    1px dashed rgba(244, 212, 119, 0.32);
+
+  border-radius: 50%;
+
+  animation:
+    emblemRotate 14s linear infinite;
+}
+
+@keyframes emblemRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.brand-emblem span {
+  position: relative;
+  z-index: 2;
+
+  font-size: 17px;
+  line-height: 1;
+
+  text-shadow:
+    0 0 10px rgba(244, 212, 119, 0.55);
+}
+
+.header-brand:hover .brand-emblem {
+  transform:
+    rotate(-5deg)
+    scale(1.06);
+
+  box-shadow:
+    0 0 25px rgba(212, 166, 58, 0.30);
+}
+
+
+/* =========================================================
+   06. BRAND TEXT
+   ========================================================= */
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  line-height: 1;
+}
+
+.brand-name {
+  display: block;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 0.20em;
+
+  color: var(--color-white);
+
+  white-space: nowrap;
+}
+
+.brand-subtitle {
+  display: block;
+
+  margin-top: 6px;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.30em;
+
+  color: var(--color-gold-light);
+
+  opacity: 0.78;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   07. DESKTOP NAVIGATION
+   ========================================================= */
+
+.desktop-nav {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-left: auto;
+}
+
+.desktop-nav a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 0 13px;
+
+  color:
+    rgba(247, 243, 234, 0.68);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.desktop-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 3px;
+
+  width: 0;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    var(--gradient-gold-horizontal);
+
+  box-shadow:
+    0 0 9px rgba(244, 212, 119, 0.40);
+
+  transition:
+    width var(--transition-normal);
+}
+
+.desktop-nav a:hover {
+  color: var(--color-gold-light);
+  transform: translateY(-1px);
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
+  width: 65%;
+}
+
+.desktop-nav a.active {
+  color: var(--color-gold-light);
+
+  text-shadow:
+    0 0 12px rgba(244, 212, 119, 0.24);
+}
+
+.desktop-nav a.active::before {
+  content: "";
+
+  position: absolute;
+
+  top: 4px;
+  left: 50%;
+
+  width: 3px;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    var(--color-gold-light);
+
+  box-shadow:
+    0 0 7px rgba(244, 212, 119, 0.85);
+
+  animation:
+    navDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes navDotPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+
+    transform:
+      translateX(-50%)
+      scale(0.75);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      scale(1.25);
+  }
+}
+
+
+/* =========================================================
+   08. HEADER CTA
+   ========================================================= */
+
+.header-cta {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 112px;
+  min-height: 38px;
+
+  padding: 0 15px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid rgba(212, 166, 58, 0.40);
+
+  border-radius:
+    var(--radius-round);
+
+  color:
+    var(--color-gold-light);
+
+  background:
+    rgba(212, 166, 58, 0.045);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    background var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.header-cta::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  transform: skewX(-22deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.32),
+      transparent
+    );
+
+  transition:
+    left 0.75s ease;
+}
+
+.header-cta:hover::before {
+  left: 150%;
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    var(--color-gold-light);
+
+  background:
+    rgba(212, 166, 58, 0.10);
+
+  box-shadow:
+    var(--gold-glow-small);
+}
+
+.header-cta span:first-child {
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   09. MOBILE MENU BUTTON
+   ========================================================= */
+
+#menu-btn {
+  position: relative;
+
+  display: none;
+
+  width: 43px;
+  height: 43px;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  border:
+    1px solid rgba(212, 166, 58, 0.30);
+
+  border-radius: 50%;
+
+  background:
+    rgba(212, 166, 58, 0.045);
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+#menu-btn:hover {
+  transform: scale(1.05);
+
+  border-color:
+    rgba(244, 212, 119, 0.70);
+
+  box-shadow:
+    var(--gold-glow-small);
+}
+
+#menu-btn span {
+  display: block;
+
+  width: 16px;
+  height: 1px;
+
+  background:
+    var(--color-gold-light);
+
+  box-shadow:
+    0 0 5px rgba(244, 212, 119, 0.25);
+
+  transition:
+    transform var(--transition-normal),
+    opacity var(--transition-normal);
+}
+
+#menu-btn[aria-expanded="true"] span:nth-child(1) {
+  transform:
+    translateY(6px)
+    rotate(45deg);
+}
+
+#menu-btn[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-btn[aria-expanded="true"] span:nth-child(3) {
+  transform:
+    translateY(-6px)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   10. MOBILE NAVIGATION
+   ========================================================= */
+
+#mobile-nav {
+  position: fixed;
+
+  top: var(--header-height);
+
+  left: 0;
+  right: 0;
+
+  z-index:
+    calc(var(--z-header) - 1);
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 12px 18px 20px;
+
+  background:
+    rgba(5, 0, 7, 0.97);
+
+  border-bottom:
+    1px solid rgba(212, 166, 58, 0.18);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.48);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateY(-18px);
+
+  pointer-events: none;
+
+  transition:
+    opacity var(--transition-normal),
+    visibility var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+#mobile-nav::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 20%;
+
+  width: 60%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--color-gold),
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(244, 212, 119, 0.35);
+}
+
+#mobile-nav.open {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateY(0);
+
+  pointer-events: auto;
+}
+
+#mobile-nav a {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 48px;
+
+  padding: 0 12px;
+
+  border-bottom:
+    1px solid rgba(212, 166, 58, 0.08);
+
+  color:
+    rgba(247, 243, 234, 0.76);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    color var(--transition-normal),
+    padding-left var(--transition-normal),
+    background var(--transition-normal);
+}
+
+#mobile-nav a::after {
+  content: "✦";
+
+  color:
+    var(--color-gold);
+
+  opacity: 0;
+
+  transform:
+    translateX(-8px);
+
+  transition:
+    opacity var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+#mobile-nav a:hover,
+#mobile-nav a.active {
+  color:
+    var(--color-gold-light);
+
+  padding-left: 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(212, 166, 58, 0.06),
+      transparent
+    );
+}
+
+#mobile-nav a:hover::after,
+#mobile-nav a.active::after {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+
+/* =========================================================
+   11. DECORATIVE CORNERS
+   ========================================================= */
+
+.header-corner {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  pointer-events: none;
+
+  opacity: 0.42;
+}
+
+.header-corner::before,
+.header-corner::after {
+  content: "";
+
+  position: absolute;
+
+  background:
+    var(--color-gold);
+}
+
+.header-corner::before {
+  width: 100%;
+  height: 1px;
+}
+
+.header-corner::after {
+  width: 1px;
+  height: 100%;
+}
+
+.header-corner.top-left {
+  top: 7px;
+  left: 7px;
+}
+
+.header-corner.top-right {
+  top: 7px;
+  right: 7px;
+
+  transform:
+    rotate(90deg);
+}
+
+
+/* =========================================================
+   12. TABLET
+   ========================================================= */
+
+@media (max-width: 1180px) {
+
+  .header-inner {
+    width:
+      calc(
+        100% -
+        (var(--page-padding-tablet) * 2)
+      );
+  }
+
+  .desktop-nav {
+    gap: 0;
+  }
+
+  .desktop-nav a {
+    padding: 0 9px;
+    font-size: 8px;
+  }
+
+  .header-cta {
+    min-width: 98px;
+    padding: 0 12px;
+  }
+}
+
+
+/* =========================================================
+   13. MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  #site-header {
+    height: 72px;
+  }
+
+  #site-header.scrolled,
+  #site-header.is-scrolled {
+    height: 66px;
+  }
+
+  .header-inner {
+    width:
+      calc(
+        100% -
+        (var(--page-padding-mobile) * 2)
+      );
+  }
+
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+
+  #menu-btn {
+    display: flex;
+  }
+
+  .brand-emblem {
+    width: 39px;
+    height: 39px;
+  }
+
+  .brand-name {
+    font-size: 13px;
+  }
+
+  .brand-subtitle {
+    font-size: 6px;
+    letter-spacing: 0.24em;
+  }
+
+  #mobile-nav {
+    top: 72px;
+  }
+}
+
+
+/* =========================================================
+   14. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  #site-header {
+    height: 68px;
+  }
+
+  #site-header.scrolled,
+  #site-header.is-scrolled {
+    height: 62px;
+  }
+
+  .header-inner {
+    width:
+      calc(100% - 30px);
+  }
+
+  .brand-emblem {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-emblem span {
+    font-size: 15px;
+  }
+
+  .brand-name {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+  }
+
+  .brand-subtitle {
+    margin-top: 5px;
+    font-size: 5px;
+    letter-spacing: 0.20em;
+  }
+
+  #menu-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  #mobile-nav {
+    top: 68px;
+  }
+}
+
+
+/* =========================================================
+   15. VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 10px;
+  }
+
+  #menu-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+/* =========================================================
+   16. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .header-shell::before,
+  .brand-emblem::before,
+  .desktop-nav a.active::before {
+    animation: none !important;
+  }
+
+  .header-brand,
+  .brand-emblem,
+  .desktop-nav a,
+  .header-cta,
+  #menu-btn,
+  #mobile-nav,
+  #mobile-nav a {
+    transition: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   MOBILE HEADER — RIGHT TO LEFT DRAWER
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  /* ---------------------------------------------------------
+     HEADER
+     --------------------------------------------------------- */
+
+  #site-header {
+    position: relative !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+  }
+
+  .header-inner {
+    position: relative !important;
+
+    width: 100% !important;
+    min-height: 72px !important;
+
+    padding: 10px 18px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     BRAND
+     --------------------------------------------------------- */
+
+  .header-brand {
+    position: relative !important;
+
+    min-width: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 10px !important;
+
+    text-decoration: none !important;
+  }
+
+  .brand-emblem {
+    flex: 0 0 auto !important;
+
+    width: 38px !important;
+    height: 38px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .brand-emblem span {
+    font-size: 17px !important;
+    line-height: 1 !important;
+  }
+
+  .brand-copy {
+    min-width: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: flex-start !important;
+    justify-content: center !important;
+
+    text-align: left !important;
+  }
+
+  .brand-name {
+    display: block !important;
+
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+
+    letter-spacing: 1.4px !important;
+
+    white-space: nowrap !important;
+  }
+
+  .brand-subtitle {
+    display: block !important;
+
+    margin-top: 3px !important;
+
+    font-size: 7px !important;
+    line-height: 1.3 !important;
+
+    letter-spacing: 1.2px !important;
+
+    white-space: nowrap !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     DESKTOP NAV + CTA HIDDEN
+     --------------------------------------------------------- */
+
+  .desktop-nav,
+  .header-cta {
+    display: none !important;
+  }
+
+
+  /* =========================================================
+     MENU BUTTON
+     ========================================================= */
+
+  #menu-btn {
+    position: relative !important;
+
+    flex: 0 0 auto !important;
+
+    width: 42px !important;
+    height: 42px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 5px !important;
+
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 10px !important;
+
+    cursor: pointer !important;
+
+    z-index: 10002 !important;
+
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  #menu-btn span {
+    display: block !important;
+
+    width: 19px !important;
+    height: 1.5px !important;
+
+    margin: 0 !important;
+
+    transform-origin: center !important;
+
+    transition:
+      transform .35s ease,
+      opacity .25s ease,
+      width .35s ease !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     HAMBURGER → X
+     --------------------------------------------------------- */
+
+  #menu-btn.active span:nth-child(1),
+  #menu-btn[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg) !important;
+  }
+
+  #menu-btn.active span:nth-child(2),
+  #menu-btn[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0 !important;
+    width: 0 !important;
+  }
+
+  #menu-btn.active span:nth-child(3),
+  #menu-btn[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg) !important;
+  }
+
+
+  /* =========================================================
+     MOBILE DRAWER
+     ========================================================= */
+
+  #mobile-nav {
+    position: fixed !important;
+
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    /*
+      Content ke hisaab se width,
+      lekin small screens par safe maximum.
+    */
+    width: min(320px, 82vw) !important;
+
+    height: 100dvh !important;
+
+    margin: 0 !important;
+    padding: 92px 22px 30px !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+
+    gap: 4px !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-sizing: border-box !important;
+
+    /*
+      CLOSED STATE
+      Right se bahar
+    */
+    transform: translateX(105%) !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+
+    pointer-events: none !important;
+
+    transition:
+      transform .45s cubic-bezier(.22,.61,.36,1),
+      opacity .3s ease,
+      visibility 0s linear .45s !important;
+
+    z-index: 10000 !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     OPEN DRAWER
+     --------------------------------------------------------- */
+
+  #mobile-nav.active,
+  #mobile-nav.open,
+  #mobile-nav.is-open {
+    transform: translateX(0) !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+
+    transition:
+      transform .45s cubic-bezier(.22,.61,.36,1),
+      opacity .3s ease,
+      visibility 0s linear 0s !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE LINKS
+     --------------------------------------------------------- */
+
+  #mobile-nav a {
+    position: relative !important;
+
+    width: 100% !important;
+    min-height: 46px !important;
+
+    margin: 0 !important;
+    padding: 0 14px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 10px !important;
+
+    box-sizing: border-box !important;
+
+    text-decoration: none !important;
+
+    text-align: left !important;
+
+    border-radius: 9px !important;
+
+    transform: translateX(25px) !important;
+
+    opacity: 0 !important;
+
+    transition:
+      transform .35s ease,
+      opacity .3s ease,
+      background .25s ease !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     LINKS SLIDE IN AFTER DRAWER
+     --------------------------------------------------------- */
+
+  #mobile-nav.active a,
+  #mobile-nav.open a,
+  #mobile-nav.is-open a {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+
+  #mobile-nav.active a:nth-child(1),
+  #mobile-nav.open a:nth-child(1),
+  #mobile-nav.is-open a:nth-child(1) {
+    transition-delay: .06s !important;
+  }
+
+  #mobile-nav.active a:nth-child(2),
+  #mobile-nav.open a:nth-child(2),
+  #mobile-nav.is-open a:nth-child(2) {
+    transition-delay: .10s !important;
+  }
+
+  #mobile-nav.active a:nth-child(3),
+  #mobile-nav.open a:nth-child(3),
+  #mobile-nav.is-open a:nth-child(3) {
+    transition-delay: .14s !important;
+  }
+
+  #mobile-nav.active a:nth-child(4),
+  #mobile-nav.open a:nth-child(4),
+  #mobile-nav.is-open a:nth-child(4) {
+    transition-delay: .18s !important;
+  }
+
+  #mobile-nav.active a:nth-child(5),
+  #mobile-nav.open a:nth-child(5),
+  #mobile-nav.is-open a:nth-child(5) {
+    transition-delay: .22s !important;
+  }
+
+  #mobile-nav.active a:nth-child(6),
+  #mobile-nav.open a:nth-child(6),
+  #mobile-nav.is-open a:nth-child(6) {
+    transition-delay: .26s !important;
+  }
+
+  #mobile-nav.active a:nth-child(7),
+  #mobile-nav.open a:nth-child(7),
+  #mobile-nav.is-open a:nth-child(7) {
+    transition-delay: .30s !important;
+  }
+
+  #mobile-nav.active a:nth-child(8),
+  #mobile-nav.open a:nth-child(8),
+  #mobile-nav.is-open a:nth-child(8) {
+    transition-delay: .34s !important;
+  }
+
+  #mobile-nav.active a:nth-child(9),
+  #mobile-nav.open a:nth-child(9),
+  #mobile-nav.is-open a:nth-child(9) {
+    transition-delay: .38s !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     LINK TEXT
+     --------------------------------------------------------- */
+
+  #mobile-nav a span {
+    display: block !important;
+
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+
+    letter-spacing: .8px !important;
+
+    white-space: nowrap !important;
+
+    text-align: left !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     ACTIVE PAGE
+     --------------------------------------------------------- */
+
+  #mobile-nav a.active,
+  #mobile-nav a.is-active,
+  #mobile-nav a[data-active="true"] {
+    padding-left: 17px !important;
+  }
+
+
+  /* =========================================================
+     MOBILE DRAWER DECORATION
+     ========================================================= */
+
+  #mobile-nav::before {
+    content: "MUKESH SAH" !important;
+
+    position: absolute !important;
+
+    top: 34px !important;
+    left: 22px !important;
+
+    font-size: 10px !important;
+    line-height: 1 !important;
+
+    letter-spacing: 2px !important;
+
+    pointer-events: none !important;
+  }
+
+  #mobile-nav::after {
+    content: "MARRIAGE BIODATA" !important;
+
+    position: absolute !important;
+
+    top: 51px !important;
+    left: 22px !important;
+
+    font-size: 7px !important;
+    line-height: 1 !important;
+
+    letter-spacing: 1.8px !important;
+
+    pointer-events: none !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     DRAWER SCROLLBAR
+     --------------------------------------------------------- */
+
+  #mobile-nav::-webkit-scrollbar {
+    width: 3px !important;
+  }
+
+  #mobile-nav::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+  }
+
+
+  /* =========================================================
+     BODY WHEN MENU OPEN
+     ========================================================= */
+
+  body.menu-open {
+    overflow: hidden !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .header-inner {
+    min-height: 68px !important;
+    padding: 9px 15px !important;
+  }
+
+  .brand-emblem {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .brand-name {
+    font-size: 13px !important;
+  }
+
+  .brand-subtitle {
+    font-size: 6.5px !important;
+  }
+
+  #menu-btn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  #mobile-nav {
+    width: min(300px, 84vw) !important;
+
+    padding-left: 20px !important;
+    padding-right: 18px !important;
+  }
+
+  #mobile-nav a {
+    min-height: 44px !important;
+  }
+
+  #mobile-nav a span {
+    font-size: 11px !important;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .header-inner {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .brand-name {
+    font-size: 12px !important;
+    letter-spacing: 1.2px !important;
+  }
+
+  .brand-subtitle {
+    font-size: 6px !important;
+  }
+
+  #mobile-nav {
+    width: 86vw !important;
+
+    padding-left: 17px !important;
+    padding-right: 15px !important;
+  }
+
+  #mobile-nav a {
+    min-height: 42px !important;
+    padding-left: 11px !important;
+  }
+
+  #mobile-nav a span {
+    font-size: 10px !important;
+  }
+}

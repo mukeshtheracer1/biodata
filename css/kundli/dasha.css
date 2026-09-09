@@ -1,0 +1,648 @@
+/* =========================================================
+   DASHA MODULE
+   ========================================================= */
+
+.dasha-page {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.dasha-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 24px 26px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #351018,
+            #541923
+        );
+
+    border: 1px solid
+        rgba(197, 158, 67, 0.35);
+
+    color: #fff;
+
+    box-shadow:
+        0 12px 30px
+        rgba(30, 5, 10, 0.18);
+}
+
+.dasha-hero h2 {
+    margin: 4px 0 5px;
+
+    font-size: 28px;
+
+    color: #f0c968;
+}
+
+.dasha-hero p {
+    margin: 0;
+
+    color: #eadfe1;
+
+    font-size: 14px;
+}
+
+.section-kicker {
+    display: block;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #c59e43;
+
+    text-transform: uppercase;
+}
+
+.dasha-hero-badge {
+    min-width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(240, 201, 104, 0.55);
+
+    background:
+        rgba(0, 0, 0, 0.18);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.dasha-hero-badge strong {
+    font-size: 25px;
+
+    color: #f0c968;
+}
+
+.dasha-hero-badge span {
+    font-size: 10px;
+
+    color: #eadfe1;
+}
+
+
+/* =========================================================
+   CURRENT DASHA
+   ========================================================= */
+
+.dasha-current-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+.current-dasha-card {
+    position: relative;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: #fff;
+
+    border: 1px solid #eadfe1;
+
+    box-shadow:
+        0 5px 18px
+        rgba(60, 20, 25, 0.07);
+
+    overflow: hidden;
+}
+
+.current-dasha-card.active {
+    border-color: #c59e43;
+}
+
+.current-dasha-card.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    background: #c59e43;
+}
+
+.current-dasha-label {
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #8a777b;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+.current-dasha-planet {
+    font-size: 19px;
+
+    font-weight: 800;
+
+    color: #351018;
+}
+
+.current-dasha-en {
+    font-size: 11px;
+
+    color: #777;
+
+    margin-top: 2px;
+}
+
+.current-dasha-date {
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    color: #666;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.dasha-card {
+    background: #fff;
+
+    border: 1px solid #eadfe1;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(60, 20, 25, 0.06);
+}
+
+.card-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.card-heading h3 {
+    margin: 4px 0 0;
+
+    color: #351018;
+
+    font-size: 18px;
+}
+
+.card-note {
+    font-size: 11px;
+
+    color: #777;
+
+    background: #f7f1f2;
+
+    padding: 6px 9px;
+
+    border-radius: 8px;
+}
+
+.dasha-system-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    background: #f7f1f2;
+
+    color: #5a202a;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   BIRTH NAKSHATRA
+   ========================================================= */
+
+.birth-nakshatra-box {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.nakshatra-detail {
+    padding: 14px;
+
+    border-radius: 11px;
+
+    background: #faf6f3;
+
+    border-left: 3px solid #c59e43;
+}
+
+.nakshatra-detail-label {
+    font-size: 10px;
+
+    color: #888;
+
+    margin-bottom: 5px;
+}
+
+.nakshatra-detail-value {
+    font-size: 15px;
+
+    font-weight: 800;
+
+    color: #351018;
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.mahadasha-timeline {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.dasha-timeline-item {
+    display: grid;
+
+    grid-template-columns:
+        46px
+        minmax(110px, 160px)
+        1fr
+        110px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    border-radius: 11px;
+
+    background: #faf6f3;
+
+    border: 1px solid #eee2e3;
+}
+
+.dasha-timeline-item.current {
+    background: #f7efe3;
+
+    border-color: #c59e43;
+}
+
+.timeline-number {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #351018;
+
+    color: #f0c968;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.timeline-planet strong {
+    display: block;
+
+    color: #351018;
+
+    font-size: 14px;
+}
+
+.timeline-planet span {
+    display: block;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+.timeline-bar {
+    height: 9px;
+
+    border-radius: 20px;
+
+    background: #e8dddd;
+
+    overflow: hidden;
+}
+
+.timeline-bar-inner {
+    height: 100%;
+
+    width: 100%;
+
+    border-radius: inherit;
+
+    background: #c59e43;
+}
+
+.timeline-duration {
+    text-align: right;
+
+    color: #666;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.dasha-table {
+    width: 100%;
+
+    min-width: 760px;
+
+    border-collapse: collapse;
+}
+
+.dasha-table th {
+    text-align: left;
+
+    padding: 12px;
+
+    background: #f7f1f2;
+
+    color: #5a202a;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    border-bottom:
+        1px solid #e5d7d9;
+}
+
+.dasha-table td {
+    padding: 12px;
+
+    border-bottom:
+        1px solid #eee4e5;
+
+    color: #423438;
+
+    font-size: 12px;
+}
+
+.dasha-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.dasha-table tr.current-row {
+    background: #fcf7ec;
+}
+
+.dasha-planet-hi {
+    display: block;
+
+    font-weight: 800;
+
+    color: #351018;
+}
+
+.dasha-planet-en {
+    display: block;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+.dasha-status {
+    display: inline-flex;
+
+    padding: 4px 7px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+.dasha-status.current {
+    background: #f2dfae;
+
+    color: #624c16;
+}
+
+.dasha-status.past {
+    background: #eee7e8;
+
+    color: #777;
+}
+
+.dasha-status.future {
+    background: #e9f0e7;
+
+    color: #53634f;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+   ========================================================= */
+
+.dasha-highlights {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.dasha-highlight {
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: #faf6f3;
+
+    border-left: 3px solid #c59e43;
+}
+
+.dasha-highlight strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #351018;
+
+    font-size: 13px;
+}
+
+.dasha-highlight span {
+    color: #666;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.dasha-empty {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .dasha-current-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .birth-nakshatra-box {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .dasha-timeline-item {
+        grid-template-columns:
+            40px
+            1fr
+            90px;
+    }
+
+    .timeline-bar {
+        grid-column: 2 / 4;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dasha-hero {
+        padding: 18px;
+    }
+
+    .dasha-hero h2 {
+        font-size: 23px;
+    }
+
+    .dasha-hero-badge {
+        min-width: 68px;
+        height: 68px;
+    }
+
+    .dasha-current-grid {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 9px;
+    }
+
+    .current-dasha-card {
+        padding: 13px;
+    }
+
+    .birth-nakshatra-box {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .dasha-card {
+        padding: 15px;
+    }
+
+    .dasha-highlights {
+        grid-template-columns:
+            1fr;
+    }
+
+    .card-heading {
+        align-items: flex-start;
+    }
+
+}

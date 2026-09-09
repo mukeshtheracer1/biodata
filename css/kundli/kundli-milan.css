@@ -1,0 +1,1558 @@
+/* =========================================================
+   KUNDLI MILAN
+   ========================================================= */
+
+.kundli-milan-module {
+    width: 100%;
+    color: #eee9dc;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.kundli-milan-page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+
+    padding: 28px 26px;
+
+    border: 1px solid rgba(216, 168, 62, 0.28);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.018)
+        );
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.20);
+}
+
+
+.kundli-milan-eyebrow,
+.result-kicker {
+    display: block;
+
+    color: #d8a83e;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+
+.kundli-milan-title-wrap h2 {
+    margin: 7px 0 8px;
+
+    color: #fff;
+
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.1;
+}
+
+
+.kundli-milan-title-wrap p {
+    max-width: 820px;
+
+    margin: 0;
+
+    color: #aaa7a0;
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+.kundli-milan-engine-badge {
+    flex: 0 0 auto;
+
+    padding: 10px 15px;
+
+    border: 1px solid rgba(216,168,62,0.42);
+    border-radius: 999px;
+
+    background: rgba(216,168,62,0.08);
+
+    color: #f4d47a;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.kundli-milan-message {
+    margin-top: 18px;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(216,168,62,0.28);
+    border-radius: 12px;
+
+    background: rgba(216,168,62,0.07);
+
+    color: #f4d47a;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+.kundli-milan-message.error {
+    border-color: rgba(220,80,80,0.45);
+
+    background: rgba(160,40,40,0.12);
+
+    color: #ffb3b3;
+}
+
+
+.kundli-milan-message.success {
+    border-color: rgba(90,180,120,0.35);
+
+    background: rgba(50,140,80,0.10);
+
+    color: #bce8c9;
+}
+
+
+/* =========================================================
+   PERSON GRID
+   ========================================================= */
+
+.kundli-milan-person-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.92fr)
+        minmax(0, 1.08fr);
+
+    gap: 18px;
+
+    margin-top: 20px;
+}
+
+
+.kundli-milan-person-card {
+    min-width: 0;
+
+    padding: 22px;
+
+    border: 1px solid rgba(216,168,62,0.24);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(21,26,41,0.97),
+            rgba(12,15,25,0.98)
+        );
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,0.20);
+}
+
+
+.person-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+
+.person-card-kicker {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #d8a83e;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.person-card-head h3 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 18px;
+}
+
+
+.locked-badge,
+.required-badge {
+    flex: 0 0 auto;
+
+    padding: 7px 10px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.locked-badge {
+    border: 1px solid rgba(216,168,62,0.30);
+
+    background: rgba(216,168,62,0.08);
+
+    color: #f4d47a;
+}
+
+
+.required-badge {
+    border: 1px solid rgba(180,80,80,0.30);
+
+    background: rgba(180,80,80,0.08);
+
+    color: #ffb5b5;
+}
+
+
+/* =========================================================
+   PERSON A DATA
+   ========================================================= */
+
+.person-data-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.person-data-item {
+    padding: 12px 13px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 11px;
+
+    background: rgba(255,255,255,0.025);
+}
+
+
+.person-data-item.full {
+    grid-column: 1 / -1;
+}
+
+
+.person-data-item span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #858797;
+
+    font-size: 10px;
+}
+
+
+.person-data-item strong {
+    display: block;
+
+    color: #f4f1e9;
+
+    font-size: 12px;
+    line-height: 1.45;
+
+    overflow-wrap: anywhere;
+}
+
+
+.person-data-item .calculated-value {
+    color: #f4d47a;
+}
+
+
+.person-empty {
+    grid-column: 1 / -1;
+
+    padding: 24px;
+
+    border: 1px dashed rgba(216,168,62,0.30);
+    border-radius: 12px;
+
+    color: #aaa7a0;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.person-b-form {
+    margin-top: 18px;
+}
+
+
+.milan-form-section {
+    padding: 17px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+
+.milan-form-section:last-of-type {
+    border-bottom: 0;
+}
+
+
+.milan-section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 15px;
+}
+
+
+.milan-section-title > span {
+    display: inline-flex;
+
+    width: 30px;
+    height: 30px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(216,168,62,0.30);
+    border-radius: 8px;
+
+    background: rgba(216,168,62,0.07);
+
+    color: #d8a83e;
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+
+.milan-section-title strong {
+    display: block;
+
+    color: #f4f1e9;
+
+    font-size: 12px;
+}
+
+
+.milan-section-title small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #777a87;
+
+    font-size: 10px;
+}
+
+
+.milan-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+}
+
+
+.milan-form-group {
+    min-width: 0;
+}
+
+
+.milan-form-group.milan-full-field {
+    grid-column: 1 / -1;
+}
+
+
+.milan-form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #c5c1b8;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.milan-form-group label b {
+    color: #d8a83e;
+}
+
+
+.milan-form-group input,
+.milan-form-group select,
+.milan-form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(5,7,14,0.76);
+
+    color: #f4f1e9;
+
+    font: inherit;
+    font-size: 12px;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.milan-form-group input,
+.milan-form-group select {
+    min-height: 43px;
+
+    padding: 10px 12px;
+}
+
+
+.milan-form-group textarea {
+    min-height: 82px;
+
+    padding: 11px 12px;
+
+    resize: vertical;
+}
+
+
+.milan-form-group input:focus,
+.milan-form-group select:focus,
+.milan-form-group textarea:focus {
+    border-color: rgba(216,168,62,0.65);
+
+    box-shadow:
+        0 0 0 3px rgba(216,168,62,0.08);
+}
+
+
+.milan-form-group input[readonly] {
+    background: rgba(255,255,255,0.025);
+
+    color: #aaa7a0;
+}
+
+
+.milan-field-help {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #6f7280;
+
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.milan-location-group {
+    position: relative;
+}
+
+
+.milan-location-results {
+    position: absolute;
+
+    z-index: 30;
+
+    top: 72px;
+    left: 0;
+    right: 0;
+
+    max-height: 300px;
+
+    overflow-y: auto;
+
+    border: 1px solid rgba(216,168,62,0.30);
+    border-radius: 11px;
+
+    background: #10131d;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.45);
+}
+
+
+.milan-location-result {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+
+    background: transparent;
+
+    color: #eee9dc;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.milan-location-result:last-child {
+    border-bottom: 0;
+}
+
+
+.milan-location-result:hover,
+.milan-location-result:focus {
+    background: rgba(216,168,62,0.08);
+
+    outline: none;
+}
+
+
+.milan-location-result strong {
+    display: block;
+
+    color: #f4d47a;
+
+    font-size: 12px;
+}
+
+
+.milan-location-result span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #858797;
+
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+
+.milan-location-actions {
+    display: flex;
+
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 11px;
+}
+
+
+.milan-location-status {
+    color: #777a87;
+
+    font-size: 10px;
+}
+
+
+.milan-location-status.ok {
+    color: #bce8c9;
+}
+
+
+.milan-location-status.error {
+    color: #ffb5b5;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.milan-form-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding-top: 18px;
+}
+
+
+.milan-primary-btn,
+.milan-secondary-btn,
+.milan-calculate-btn {
+    min-height: 43px;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        border-color 0.18s ease;
+}
+
+
+.milan-primary-btn {
+    flex: 1 1 260px;
+
+    border: 1px solid #d8a83e;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8f651d,
+            #d8a83e
+        );
+
+    color: #160f04;
+}
+
+
+.milan-secondary-btn {
+    border: 1px solid rgba(216,168,62,0.35);
+
+    background: rgba(216,168,62,0.06);
+
+    color: #f4d47a;
+}
+
+
+.milan-primary-btn:hover,
+.milan-secondary-btn:hover,
+.milan-calculate-btn:hover {
+    transform: translateY(-1px);
+}
+
+
+.milan-primary-btn:disabled,
+.milan-secondary-btn:disabled,
+.milan-calculate-btn:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   CALCULATED SECTION
+   ========================================================= */
+
+.kundli-milan-calculated-section {
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border: 1px solid rgba(80,170,110,0.30);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(50,140,80,0.10),
+            rgba(255,255,255,0.025)
+        );
+}
+
+
+.calculated-head {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 18px;
+}
+
+
+.calculated-head > div:first-child > span {
+    color: #9bd7ad;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.calculated-head h3 {
+    margin: 6px 0;
+
+    color: #fff;
+
+    font-size: 19px;
+}
+
+
+.calculated-head p {
+    margin: 0;
+
+    color: #aaa7a0;
+
+    font-size: 11px;
+}
+
+
+.calculation-badge {
+    padding: 8px 12px;
+
+    border: 1px solid rgba(90,180,120,0.35);
+    border-radius: 999px;
+
+    background: rgba(50,140,80,0.12);
+
+    color: #bce8c9;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.milan-quick-facts {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.milan-quick-fact {
+    padding: 12px;
+
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+
+    background: rgba(0,0,0,0.16);
+}
+
+
+.milan-quick-fact span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #777a87;
+
+    font-size: 9px;
+}
+
+
+.milan-quick-fact strong {
+    color: #f4d47a;
+
+    font-size: 12px;
+}
+
+
+.milan-calculate-btn {
+    margin-top: 16px;
+
+    border: 1px solid #d8a83e;
+
+    background: #251a09;
+
+    color: #f4d47a;
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.kundli-milan-result {
+    margin-top: 24px;
+}
+
+
+.milan-result-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 24px;
+
+    border: 1px solid rgba(216,168,62,0.32);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(216,168,62,0.09),
+            rgba(255,255,255,0.025)
+        );
+}
+
+
+.milan-result-header h3 {
+    margin: 7px 0;
+
+    color: #fff;
+
+    font-size: 23px;
+}
+
+
+.milan-result-header p {
+    max-width: 800px;
+
+    margin: 0;
+
+    color: #aaa7a0;
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SCORE
+   ========================================================= */
+
+.milan-score-summary {
+    display: grid;
+
+    grid-template-columns:
+        minmax(220px, 0.7fr)
+        minmax(0, 1.3fr);
+
+    gap: 15px;
+
+    margin-top: 18px;
+}
+
+
+.milan-score-main {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 190px;
+
+    padding: 20px;
+
+    border: 1px solid rgba(216,168,62,0.32);
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(216,168,62,0.12),
+            rgba(0,0,0,0.12)
+        );
+
+    text-align: center;
+}
+
+
+.milan-score-number {
+    color: #f4d47a;
+
+    font-size: 48px;
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+.milan-score-label {
+    margin-top: 8px;
+
+    color: #aaa7a0;
+
+    font-size: 11px;
+}
+
+
+.milan-score-verdict {
+    margin-top: 12px;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(216,168,62,0.10);
+
+    color: #f4d47a;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.milan-score-overview {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+
+.milan-score-stat {
+    padding: 14px;
+
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.025);
+}
+
+
+.milan-score-stat span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #777a87;
+
+    font-size: 9px;
+}
+
+
+.milan-score-stat strong {
+    display: block;
+
+    color: #f4f1e9;
+
+    font-size: 13px;
+}
+
+
+.milan-score-stat strong.good {
+    color: #bce8c9;
+}
+
+
+.milan-score-stat strong.warn {
+    color: #f4d47a;
+}
+
+
+.milan-score-stat strong.bad {
+    color: #ffb5b5;
+}
+
+
+/* =========================================================
+   RESULT PERSONS
+   ========================================================= */
+
+.milan-result-persons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+
+.milan-result-person {
+    padding: 17px;
+
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.025);
+}
+
+
+.milan-result-person h4 {
+    margin: 0 0 10px;
+
+    color: #f4d47a;
+
+    font-size: 14px;
+}
+
+
+.milan-result-person-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+
+.milan-result-person-item {
+    padding: 9px;
+
+    border-radius: 8px;
+
+    background: rgba(0,0,0,0.13);
+}
+
+
+.milan-result-person-item span {
+    display: block;
+
+    color: #777a87;
+
+    font-size: 8px;
+}
+
+
+.milan-result-person-item strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #eee9dc;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   RESULT CARD
+   ========================================================= */
+
+.milan-result-card {
+    margin-top: 15px;
+
+    padding: 20px;
+
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(21,26,41,0.94),
+            rgba(12,15,25,0.98)
+        );
+}
+
+
+.result-card-title {
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+
+.result-card-title > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.result-card-title > div > span {
+    display: inline-flex;
+
+    width: 31px;
+    height: 31px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(216,168,62,0.30);
+    border-radius: 8px;
+
+    color: #d8a83e;
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+
+.result-card-title h4 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 14px;
+}
+
+
+.result-card-title small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #777a87;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   KOOTA TABLE
+   ========================================================= */
+
+.milan-table-wrap {
+    overflow-x: auto;
+
+    margin-top: 15px;
+}
+
+
+.milan-koota-table {
+    width: 100%;
+
+    min-width: 760px;
+
+    border-collapse: collapse;
+}
+
+
+.milan-koota-table th {
+    padding: 11px;
+
+    background: rgba(216,168,62,0.07);
+
+    color: #d8a83e;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    text-align: left;
+}
+
+
+.milan-koota-table td {
+    padding: 12px 11px;
+
+    border-top: 1px solid rgba(255,255,255,0.06);
+
+    color: #c5c1b8;
+
+    font-size: 10px;
+
+    vertical-align: top;
+}
+
+
+.milan-koota-table td strong {
+    color: #f4f1e9;
+}
+
+
+.koota-score {
+    color: #f4d47a;
+
+    font-weight: 900;
+}
+
+
+.koota-status {
+    display: inline-block;
+
+    padding: 4px 7px;
+
+    border-radius: 999px;
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+
+.koota-status.good {
+    background: rgba(50,140,80,0.12);
+
+    color: #bce8c9;
+}
+
+
+.koota-status.warn {
+    background: rgba(216,168,62,0.10);
+
+    color: #f4d47a;
+}
+
+
+.koota-status.bad {
+    background: rgba(180,60,60,0.12);
+
+    color: #ffb5b5;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.milan-summary-details {
+    display: grid;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+
+.milan-summary-item {
+    padding: 14px;
+
+    border-left: 3px solid #d8a83e;
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.025);
+}
+
+
+.milan-summary-item h5 {
+    margin: 0 0 5px;
+
+    color: #f4d47a;
+
+    font-size: 11px;
+}
+
+
+.milan-summary-item p {
+    margin: 0;
+
+    color: #aaa7a0;
+
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   SPECIAL CHECKS
+   ========================================================= */
+
+.milan-special-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+
+.milan-special-item {
+    padding: 14px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 11px;
+
+    background: rgba(255,255,255,0.025);
+}
+
+
+.milan-special-item span {
+    display: block;
+
+    color: #777a87;
+
+    font-size: 9px;
+}
+
+
+.milan-special-item strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #eee9dc;
+
+    font-size: 11px;
+}
+
+
+.milan-special-item p {
+    margin: 6px 0 0;
+
+    color: #999ba5;
+
+    font-size: 9px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   CHART CROSS CHECK
+   ========================================================= */
+
+.milan-chart-cross-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+
+.milan-chart-column {
+    padding: 15px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.02);
+}
+
+
+.milan-chart-column h5 {
+    margin: 0 0 12px;
+
+    color: #f4d47a;
+
+    font-size: 12px;
+}
+
+
+.milan-chart-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+
+.milan-chart-row:last-child {
+    border-bottom: 0;
+}
+
+
+.milan-chart-row span {
+    color: #777a87;
+
+    font-size: 9px;
+}
+
+
+.milan-chart-row strong {
+    color: #eee9dc;
+
+    font-size: 10px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   DETAILED ANALYSIS
+   ========================================================= */
+
+.milan-detailed-analysis {
+    display: grid;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+
+.milan-analysis-block {
+    padding: 15px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 11px;
+
+    background: rgba(255,255,255,0.02);
+}
+
+
+.milan-analysis-block h5 {
+    margin: 0 0 7px;
+
+    color: #f4d47a;
+
+    font-size: 11px;
+}
+
+
+.milan-analysis-block p {
+    margin: 0;
+
+    color: #aaa7a0;
+
+    font-size: 10px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.milan-result-note {
+    margin-top: 15px;
+
+    padding: 16px;
+
+    border: 1px solid rgba(216,168,62,0.20);
+    border-radius: 12px;
+
+    background: rgba(216,168,62,0.05);
+}
+
+
+.milan-result-note strong {
+    color: #f4d47a;
+
+    font-size: 11px;
+}
+
+
+.milan-result-note p {
+    margin: 6px 0 0;
+
+    color: #999ba5;
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+    .kundli-milan-person-grid,
+    .milan-score-summary {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 720px) {
+
+    .kundli-milan-page-head,
+    .milan-result-header,
+    .calculated-head {
+        flex-direction: column;
+    }
+
+
+    .person-data-grid,
+    .milan-form-grid,
+    .milan-result-person-grid,
+    .milan-score-overview,
+    .milan-special-grid,
+    .milan-chart-cross-grid,
+    .milan-result-persons {
+        grid-template-columns: 1fr;
+    }
+
+
+    .milan-form-group.milan-full-field,
+    .person-data-item.full {
+        grid-column: auto;
+    }
+
+
+    .milan-quick-facts {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .kundli-milan-person-card,
+    .milan-result-card,
+    .kundli-milan-page-head {
+        padding: 17px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .milan-quick-facts {
+        grid-template-columns: 1fr;
+    }
+
+
+    .milan-location-actions,
+    .milan-form-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .milan-primary-btn,
+    .milan-secondary-btn {
+        width: 100%;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .milan-primary-btn,
+    .milan-secondary-btn,
+    .milan-calculate-btn {
+        transition: none;
+    }
+
+}

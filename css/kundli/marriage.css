@@ -1,0 +1,849 @@
+/* =========================================================
+   MARRIAGE MODULE
+   ========================================================= */
+
+.marriage-module {
+    width: 100%;
+}
+
+.marriage-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.marriage-page-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 24px;
+    margin-bottom: 18px;
+
+    background: #ffffff;
+    border: 1px solid rgba(104, 26, 38, 0.12);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 24px rgba(48, 12, 18, 0.06);
+}
+
+.marriage-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 6px;
+
+    color: #9b7228;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.marriage-page-head h2 {
+    margin: 0;
+
+    color: #4d1520;
+
+    font-size: 26px;
+    line-height: 1.25;
+}
+
+.marriage-page-head p {
+    margin: 8px 0 0;
+
+    color: #75666a;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.marriage-engine-badge {
+    flex-shrink: 0;
+
+    padding: 8px 13px;
+
+    border: 1px solid rgba(155, 114, 40, 0.35);
+    border-radius: 999px;
+
+    background: #fffaf0;
+
+    color: #76551d;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.marriage-card {
+    min-width: 0;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(104, 26, 38, 0.12);
+    border-radius: 16px;
+
+    box-shadow: 0 7px 20px rgba(48, 12, 18, 0.055);
+}
+
+.marriage-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
+.marriage-card-title h3 {
+    margin: 0;
+
+    color: #4d1520;
+
+    font-size: 17px;
+}
+
+.marriage-card-title span {
+    color: #8c7479;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   OVERALL SUMMARY
+   ========================================================= */
+
+.marriage-overview {
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.marriage-overview-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #f8f1df;
+
+    color: #7a581f;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.marriage-overview-main h3 {
+    margin: 0 0 5px;
+
+    color: #4d1520;
+
+    font-size: 21px;
+}
+
+.marriage-overview-main p {
+    margin: 0;
+
+    color: #817276;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.marriage-overview-score {
+    min-width: 110px;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    background: #faf7f4;
+
+    text-align: center;
+}
+
+.marriage-overview-score strong {
+    display: block;
+
+    color: #4d1520;
+
+    font-size: 23px;
+}
+
+.marriage-overview-score span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8d797d;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   KEY FACTS
+   ========================================================= */
+
+.marriage-facts {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.marriage-fact {
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: #faf7f4;
+
+    border: 1px solid rgba(104, 26, 38, 0.08);
+}
+
+.marriage-fact-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #8d797d;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.marriage-fact-value {
+    display: block;
+
+    color: #4d1520;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   PLANET POSITION CARDS
+   ========================================================= */
+
+.marriage-planet-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.marriage-planet {
+    position: relative;
+
+    padding: 17px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(104, 26, 38, 0.11);
+
+    border-radius: 14px;
+}
+
+.marriage-planet::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 4px;
+    height: 100%;
+
+    border-radius: 14px 0 0 14px;
+
+    background: #b9a06a;
+}
+
+.marriage-planet-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+}
+
+.marriage-planet-name {
+    color: #4d1520;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.marriage-planet-hindi {
+    margin-top: 2px;
+
+    color: #8c797d;
+
+    font-size: 11px;
+}
+
+.marriage-planet-house {
+    padding: 5px 8px;
+
+    border-radius: 999px;
+
+    background: #f5efe4;
+
+    color: #74551f;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.marriage-planet-details {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+.marriage-planet-detail {
+    padding: 9px;
+
+    border-radius: 9px;
+
+    background: #faf8f6;
+}
+
+.marriage-planet-detail span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #928083;
+
+    font-size: 10px;
+}
+
+.marriage-planet-detail strong {
+    color: #4d1520;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   7TH HOUSE ANALYSIS
+   ========================================================= */
+
+.marriage-seventh-house {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.marriage-house-box {
+    padding: 16px;
+
+    border-radius: 12px;
+
+    background: #faf7f4;
+
+    border: 1px solid rgba(104, 26, 38, 0.08);
+}
+
+.marriage-house-box-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #8d797d;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.marriage-house-box-value {
+    display: block;
+
+    color: #4d1520;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.marriage-house-box-sub {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #877579;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   INDICATOR GRID
+   ========================================================= */
+
+.marriage-indicator-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.marriage-indicator {
+    padding: 17px;
+
+    border: 1px solid rgba(104, 26, 38, 0.09);
+
+    border-radius: 13px;
+
+    background: #faf8f6;
+}
+
+.marriage-indicator-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.marriage-indicator-name {
+    color: #4d1520;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.marriage-indicator-status {
+    flex-shrink: 0;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    background: #f4efe6;
+
+    color: #72551e;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.marriage-indicator-status.supportive {
+    background: #eaf3ed;
+
+    color: #2f6540;
+}
+
+.marriage-indicator-status.challenging {
+    background: #f7e6e8;
+
+    color: #7c1d2b;
+}
+
+.marriage-indicator-status.neutral {
+    background: #f0f0ef;
+
+    color: #66605f;
+}
+
+.marriage-indicator p {
+    margin: 9px 0 0;
+
+    color: #76686b;
+
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   CONNECTION TABLE
+   ========================================================= */
+
+.marriage-table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.marriage-table {
+    width: 100%;
+
+    min-width: 650px;
+
+    border-collapse: collapse;
+}
+
+.marriage-table th,
+.marriage-table td {
+    padding: 12px 10px;
+
+    border-bottom: 1px solid rgba(104, 26, 38, 0.09);
+
+    text-align: left;
+
+    vertical-align: top;
+}
+
+.marriage-table th {
+    background: #faf7f4;
+
+    color: #715e63;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.marriage-table td {
+    color: #4d4044;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.marriage-table-badge {
+    display: inline-block;
+
+    padding: 5px 8px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.marriage-table-badge.supportive {
+    background: #eaf3ed;
+    color: #2f6540;
+}
+
+.marriage-table-badge.challenging {
+    background: #f7e6e8;
+    color: #7c1d2b;
+}
+
+.marriage-table-badge.neutral {
+    background: #f0f0ef;
+    color: #66605f;
+}
+
+
+/* =========================================================
+   ASPECTS
+   ========================================================= */
+
+.marriage-aspect-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.marriage-aspect-row {
+    display: grid;
+
+    grid-template-columns: 130px 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 12px;
+
+    border-radius: 10px;
+
+    background: #faf8f6;
+}
+
+.marriage-aspect-source {
+    color: #4d1520;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.marriage-aspect-description {
+    color: #786a6e;
+
+    font-size: 12px;
+}
+
+.marriage-aspect-house {
+    padding: 5px 8px;
+
+    border-radius: 999px;
+
+    background: #f5efe4;
+
+    color: #74551f;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   SUMMARY LIST
+   ========================================================= */
+
+.marriage-analysis-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.marriage-analysis-item {
+    display: grid;
+
+    grid-template-columns: 28px 1fr;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #faf8f6;
+}
+
+.marriage-analysis-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #f4efe6;
+
+    color: #76551d;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.marriage-analysis-item.supportive .marriage-analysis-dot {
+    background: #eaf3ed;
+    color: #2f6540;
+}
+
+.marriage-analysis-item.challenging .marriage-analysis-dot {
+    background: #f7e6e8;
+    color: #7c1d2b;
+}
+
+.marriage-analysis-item strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #4d1520;
+
+    font-size: 12px;
+}
+
+.marriage-analysis-item p {
+    margin: 0;
+
+    color: #786a6e;
+
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.marriage-note {
+    padding: 18px 20px;
+
+    border-left: 4px solid #9b7228;
+
+    border-radius: 10px;
+
+    background: #fffaf0;
+}
+
+.marriage-note strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #63491a;
+
+    font-size: 13px;
+}
+
+.marriage-note p {
+    margin: 0;
+
+    color: #6f625f;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.marriage-empty {
+    padding: 45px 25px;
+
+    border: 1px dashed rgba(104, 26, 38, 0.2);
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    text-align: center;
+}
+
+.marriage-empty h3 {
+    margin: 0 0 8px;
+
+    color: #4d1520;
+
+    font-size: 18px;
+}
+
+.marriage-empty p {
+    margin: 0;
+
+    color: #806f73;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .marriage-planet-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .marriage-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 850px) {
+
+    .marriage-overview {
+        grid-template-columns: auto 1fr;
+    }
+
+    .marriage-overview-score {
+        grid-column: 1 / -1;
+
+        text-align: left;
+    }
+
+    .marriage-seventh-house {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .marriage-indicator-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .marriage-page-head {
+        flex-direction: column;
+
+        padding: 18px;
+    }
+
+    .marriage-planet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .marriage-seventh-house {
+        grid-template-columns: 1fr;
+    }
+
+    .marriage-aspect-row {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .marriage-card {
+        padding: 16px;
+    }
+
+    .marriage-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .marriage-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .marriage-overview-score {
+        grid-column: auto;
+    }
+
+    .marriage-page-head h2 {
+        font-size: 22px;
+    }
+
+}

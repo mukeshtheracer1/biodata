@@ -1,0 +1,1481 @@
+/* ============================================================
+   KUNDLI RECORDS
+   File: css/kundli-records.css
+   ============================================================ */
+
+
+/* ============================================================
+   1. ROOT / BASE
+   ============================================================ */
+
+.kundli-app {
+    --kundli-border: rgba(80, 65, 45, 0.14);
+    --kundli-muted: #6f6a62;
+    --kundli-text: #292621;
+    --kundli-heading: #211d18;
+    --kundli-surface: #ffffff;
+    --kundli-soft: #f7f4ef;
+    --kundli-soft-2: #fbfaf8;
+    --kundli-accent: #8b5e34;
+    --kundli-accent-dark: #68421f;
+    --kundli-success: #35704b;
+    --kundli-warning: #a66a20;
+    --kundli-danger: #9b3d35;
+
+    color: var(--kundli-text);
+    min-height: 100vh;
+    background: var(--kundli-soft-2);
+}
+
+
+/* ============================================================
+   2. APP HEADER
+   ============================================================ */
+
+.kundli-app-header {
+    border-bottom: 1px solid var(--kundli-border);
+    background: var(--kundli-surface);
+}
+
+.kundli-header-inner {
+    width: min(1500px, calc(100% - 40px));
+    margin: 0 auto;
+    min-height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.kundli-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.kundli-brand-symbol {
+    width: 54px;
+    height: 54px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 14px;
+
+    font-size: 28px;
+    background: var(--kundli-soft);
+}
+
+.kundli-brand .eyebrow {
+    margin: 0 0 3px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--kundli-accent);
+}
+
+.kundli-brand h1 {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.15;
+    color: var(--kundli-heading);
+}
+
+.kundli-brand p:last-child {
+    margin: 4px 0 0;
+    color: var(--kundli-muted);
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   3. COMMON BUTTONS
+   ============================================================ */
+
+.kundli-app .btn {
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    min-height: 42px;
+    padding: 9px 16px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.kundli-app .btn:hover {
+    transform: translateY(-1px);
+}
+
+.kundli-app .btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.kundli-app .btn-primary {
+    color: #fff;
+    background: var(--kundli-accent);
+}
+
+.kundli-app .btn-primary:hover {
+    background: var(--kundli-accent-dark);
+}
+
+.kundli-app .btn-secondary {
+    color: var(--kundli-text);
+    background: var(--kundli-surface);
+    border-color: var(--kundli-border);
+}
+
+.kundli-app .btn-large {
+    min-height: 48px;
+    padding-inline: 24px;
+}
+
+
+/* ============================================================
+   4. MODULE NAVIGATION
+   ============================================================ */
+
+.kundli-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--kundli-border);
+
+    backdrop-filter: blur(12px);
+}
+
+.kundli-navigation-inner {
+    width: min(1500px, calc(100% - 40px));
+    margin: 0 auto;
+
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.module-tabs {
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    overflow-x: auto;
+    scrollbar-width: thin;
+
+    padding: 5px 2px;
+}
+
+.module-tab {
+    flex: 0 0 auto;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    padding: 7px 10px;
+
+    background: transparent;
+    color: var(--kundli-muted);
+
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.module-tab span {
+    display: block;
+    margin-bottom: 1px;
+
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+}
+
+.module-tab:hover {
+    background: var(--kundli-soft);
+    color: var(--kundli-text);
+}
+
+.module-tab.active {
+    color: var(--kundli-accent-dark);
+    background: #f1e8dc;
+    border-color: rgba(139, 94, 52, 0.18);
+}
+
+.nav-control {
+    flex: 0 0 auto;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 8px;
+
+    min-height: 36px;
+    padding: 7px 11px;
+
+    background: var(--kundli-surface);
+    color: var(--kundli-text);
+
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   5. STATUS
+   ============================================================ */
+
+.kundli-status {
+    width: min(1500px, calc(100% - 40px));
+    margin: 14px auto 0;
+
+    padding: 11px 14px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 9px;
+
+    background: var(--kundli-soft);
+    color: var(--kundli-text);
+
+    font-size: 13px;
+}
+
+.kundli-status.is-error {
+    color: var(--kundli-danger);
+    background: #fff4f2;
+    border-color: rgba(155, 61, 53, 0.2);
+}
+
+.kundli-status.is-success {
+    color: var(--kundli-success);
+    background: #f1f8f3;
+    border-color: rgba(53, 112, 75, 0.2);
+}
+
+
+/* ============================================================
+   6. MAIN CONTAINER
+   ============================================================ */
+
+.kundli-container {
+    width: min(1500px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 32px 0 20px;
+}
+
+
+/* ============================================================
+   7. SCREENS
+   ============================================================ */
+
+.kundli-screen {
+    display: none;
+    animation: kundliScreenIn 0.18s ease;
+}
+
+.kundli-screen.active {
+    display: block;
+}
+
+@keyframes kundliScreenIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================================
+   8. SCREEN HEADING
+   ============================================================ */
+
+.screen-heading {
+    margin-bottom: 24px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.section-kicker {
+    display: block;
+    margin-bottom: 6px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+
+    color: var(--kundli-accent);
+}
+
+.screen-heading h2 {
+    margin: 0;
+
+    color: var(--kundli-heading);
+    font-size: clamp(23px, 3vw, 34px);
+    line-height: 1.2;
+}
+
+.screen-heading p {
+    max-width: 720px;
+    margin: 8px 0 0;
+
+    color: var(--kundli-muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+
+/* ============================================================
+   9. BIRTH FORM
+   ============================================================ */
+
+.birth-form,
+.milan-form-wrapper {
+    padding: 24px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 14px;
+
+    background: var(--kundli-surface);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-field {
+    min-width: 0;
+}
+
+.form-field-wide {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 7px;
+
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--kundli-heading);
+}
+
+.form-field label span {
+    color: var(--kundli-danger);
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    min-height: 44px;
+
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #fff;
+    color: var(--kundli-text);
+
+    font: inherit;
+    font-size: 13px;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    border-color: rgba(139, 94, 52, 0.6);
+
+    box-shadow:
+        0 0 0 3px rgba(139, 94, 52, 0.09);
+}
+
+.form-field small {
+    display: block;
+    margin-top: 6px;
+
+    color: var(--kundli-muted);
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.form-actions {
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+/* ============================================================
+   10. LOCATION SUGGESTIONS
+   ============================================================ */
+
+.location-suggestions {
+    position: relative;
+    z-index: 20;
+}
+
+.location-suggestion-list {
+    margin-top: 5px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 9px;
+
+    background: #fff;
+
+    box-shadow: 0 12px 30px rgba(35, 29, 22, 0.08);
+}
+
+.location-suggestion {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border: 0;
+    border-bottom: 1px solid var(--kundli-border);
+
+    background: #fff;
+    color: var(--kundli-text);
+
+    text-align: left;
+    font: inherit;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.location-suggestion:last-child {
+    border-bottom: 0;
+}
+
+.location-suggestion:hover {
+    background: var(--kundli-soft);
+}
+
+
+/* ============================================================
+   11. LOCATION META
+   ============================================================ */
+
+.location-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 20px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.location-meta > div {
+    padding: 13px 15px;
+
+    border-right: 1px solid var(--kundli-border);
+    background: var(--kundli-soft-2);
+}
+
+.location-meta > div:last-child {
+    border-right: 0;
+}
+
+.location-meta span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--kundli-muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.location-meta strong {
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   12. SAVED PROFILE
+   ============================================================ */
+
+.saved-profile-card {
+    margin-top: 18px;
+    padding: 18px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border: 1px solid rgba(53, 112, 75, 0.2);
+    border-radius: 12px;
+
+    background: #f3f9f5;
+}
+
+.saved-profile-card > div > span {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--kundli-success);
+}
+
+.saved-profile-card h3 {
+    margin: 5px 0 3px;
+    font-size: 18px;
+}
+
+.saved-profile-card p {
+    margin: 0;
+    color: var(--kundli-muted);
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   13. DASHBOARD PERSON SUMMARY
+   ============================================================ */
+
+.person-summary {
+    display: grid;
+    grid-template-columns: minmax(250px, 2fr) repeat(4, minmax(130px, 1fr));
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 14px;
+
+    overflow: hidden;
+    background: var(--kundli-surface);
+}
+
+.person-summary-main,
+.summary-stat {
+    padding: 18px;
+    border-right: 1px solid var(--kundli-border);
+}
+
+.summary-stat:last-child {
+    border-right: 0;
+}
+
+.person-summary-main > span,
+.summary-stat > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--kundli-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.person-summary-main h2 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.person-summary-main p {
+    margin: 5px 0 0;
+
+    color: var(--kundli-muted);
+    font-size: 11px;
+}
+
+.summary-stat strong {
+    display: block;
+
+    color: var(--kundli-heading);
+    font-size: 17px;
+}
+
+.summary-stat small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--kundli-muted);
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   14. DASHBOARD MODULE GRID
+   ============================================================ */
+
+.dashboard-module-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-top: 20px;
+}
+
+.dashboard-module-card {
+    min-height: 145px;
+
+    padding: 18px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 12px;
+
+    background: var(--kundli-surface);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.dashboard-module-card:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(139, 94, 52, 0.35);
+
+    box-shadow:
+        0 12px 30px rgba(35, 29, 22, 0.07);
+}
+
+.dashboard-module-card .module-number {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--kundli-accent);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.dashboard-module-card h3 {
+    margin: 0;
+
+    font-size: 16px;
+    color: var(--kundli-heading);
+}
+
+.dashboard-module-card p {
+    margin: 7px 0 0;
+
+    color: var(--kundli-muted);
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+
+/* ============================================================
+   15. CHART LAYOUT
+   ============================================================ */
+
+.chart-layout {
+    display: grid;
+    grid-template-columns: minmax(420px, 0.95fr) minmax(320px, 1.05fr);
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+.chart-card {
+    min-width: 0;
+
+    padding: 20px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 14px;
+
+    background: #fff;
+}
+
+.kundli-chart {
+    width: 100%;
+    min-height: 480px;
+
+    display: grid;
+    place-items: center;
+}
+
+.kundli-chart svg {
+    width: 100%;
+    max-width: 580px;
+    height: auto;
+}
+
+
+/* ============================================================
+   16. MODULE CONTENT
+   ============================================================ */
+
+.module-content {
+    min-width: 0;
+}
+
+
+/* ============================================================
+   17. DATA TABLE
+   ============================================================ */
+
+.kundli-data-card {
+    overflow: hidden;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 12px;
+
+    background: #fff;
+}
+
+.kundli-data-card-header {
+    padding: 16px 18px;
+
+    border-bottom: 1px solid var(--kundli-border);
+    background: var(--kundli-soft-2);
+}
+
+.kundli-data-card-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.kundli-data-card-header p {
+    margin: 5px 0 0;
+
+    color: var(--kundli-muted);
+    font-size: 11px;
+}
+
+.kundli-table-wrap {
+    overflow-x: auto;
+}
+
+.kundli-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 12px;
+}
+
+.kundli-table th,
+.kundli-table td {
+    padding: 11px 12px;
+
+    border-bottom: 1px solid var(--kundli-border);
+
+    text-align: left;
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+.kundli-table th {
+    background: var(--kundli-soft);
+
+    color: var(--kundli-heading);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.kundli-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.kundli-table tbody tr:hover {
+    background: #fcfbf9;
+}
+
+
+/* ============================================================
+   18. ANALYSIS GRID
+   ============================================================ */
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.analysis-card {
+    padding: 18px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 12px;
+
+    background: #fff;
+}
+
+.analysis-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.analysis-card h3 {
+    margin: 0;
+
+    color: var(--kundli-heading);
+    font-size: 16px;
+}
+
+.analysis-card p {
+    margin: 8px 0 0;
+
+    color: var(--kundli-muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.analysis-card .analysis-value {
+    margin-top: 12px;
+
+    color: var(--kundli-heading);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.analysis-card .analysis-label {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--kundli-muted);
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   19. STATUS BADGES
+   ============================================================ */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 25px;
+
+    padding: 4px 9px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.status-badge.good {
+    color: var(--kundli-success);
+    background: #edf7f0;
+}
+
+.status-badge.warning {
+    color: var(--kundli-warning);
+    background: #fff5e7;
+}
+
+.status-badge.danger {
+    color: var(--kundli-danger);
+    background: #fff0ee;
+}
+
+.status-badge.neutral {
+    color: var(--kundli-muted);
+    background: #f1f0ed;
+}
+
+
+/* ============================================================
+   20. MILAN
+   ============================================================ */
+
+.milan-form-wrapper {
+    margin-bottom: 20px;
+}
+
+.milan-person-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.milan-person-card {
+    padding: 18px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 12px;
+
+    background: #fff;
+}
+
+.milan-person-card h3 {
+    margin: 0 0 5px;
+
+    font-size: 17px;
+}
+
+.milan-person-card p {
+    margin: 0;
+
+    color: var(--kundli-muted);
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   21. GUN MILAN
+   ============================================================ */
+
+.guna-total {
+    padding: 24px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 14px;
+
+    background: #fff;
+
+    text-align: center;
+}
+
+.guna-total strong {
+    display: block;
+
+    color: var(--kundli-heading);
+
+    font-size: 42px;
+    line-height: 1;
+}
+
+.guna-total span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--kundli-muted);
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   22. COMPATIBILITY
+   ============================================================ */
+
+.compatibility-score {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 14px;
+
+    background: #fff;
+}
+
+.compatibility-score-main {
+    display: grid;
+    place-items: center;
+
+    min-height: 150px;
+
+    border-radius: 12px;
+    background: var(--kundli-soft);
+}
+
+.compatibility-score-main strong {
+    font-size: 38px;
+}
+
+.compatibility-score-main span {
+    color: var(--kundli-muted);
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   23. REPORT
+   ============================================================ */
+
+.detailed-report {
+    padding: 28px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 14px;
+
+    background: #fff;
+}
+
+.report-section {
+    padding: 0 0 22px;
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid var(--kundli-border);
+}
+
+.report-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.report-section h3 {
+    margin: 0 0 9px;
+
+    color: var(--kundli-heading);
+    font-size: 18px;
+}
+
+.report-section p,
+.report-section li {
+    color: var(--kundli-muted);
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.report-section ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+}
+
+
+/* ============================================================
+   24. BOTTOM NAVIGATION
+   ============================================================ */
+
+.bottom-navigation {
+    width: min(1500px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 20px 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* ============================================================
+   25. DISCLAIMER
+   ============================================================ */
+
+.kundli-disclaimer {
+    width: min(1500px, calc(100% - 40px));
+    margin: 0 auto 30px;
+
+    padding: 16px 18px;
+
+    border: 1px solid rgba(166, 106, 32, 0.18);
+    border-radius: 10px;
+
+    background: #fff9ef;
+}
+
+.kundli-disclaimer strong {
+    font-size: 12px;
+    color: var(--kundli-warning);
+}
+
+.kundli-disclaimer p {
+    margin: 7px 0 0;
+
+    color: var(--kundli-muted);
+
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+
+/* ============================================================
+   26. TOAST
+   ============================================================ */
+
+.toast {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    max-width: min(380px, calc(100vw - 44px));
+
+    padding: 11px 14px;
+
+    border: 1px solid var(--kundli-border);
+    border-radius: 10px;
+
+    background: #fff;
+
+    box-shadow:
+        0 15px 40px rgba(35, 29, 22, 0.14);
+
+    font-size: 12px;
+
+    animation: toastIn 0.2s ease;
+}
+
+.toast-icon {
+    width: 22px;
+    height: 22px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+    background: var(--kundli-success);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================================
+   27. EMPTY / LOADING STATES
+   ============================================================ */
+
+.kundli-empty {
+    padding: 45px 20px;
+
+    border: 1px dashed var(--kundli-border);
+    border-radius: 12px;
+
+    background: #fff;
+
+    text-align: center;
+}
+
+.kundli-empty strong {
+    display: block;
+
+    color: var(--kundli-heading);
+    font-size: 15px;
+}
+
+.kundli-empty p {
+    margin: 7px 0 0;
+
+    color: var(--kundli-muted);
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   28. PRINT
+   ============================================================ */
+
+@media print {
+
+    .kundli-app-header,
+    .kundli-navigation,
+    .bottom-navigation,
+    .kundli-disclaimer,
+    .kundli-header-actions,
+    .form-actions {
+        display: none !important;
+    }
+
+    .kundli-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .kundli-screen {
+        display: none !important;
+    }
+
+    #screen-report {
+        display: block !important;
+    }
+
+    .detailed-report {
+        border: 0;
+        padding: 0;
+    }
+
+    .kundli-app {
+        background: #fff;
+    }
+}
+
+
+/* ============================================================
+   29. TABLET
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+    .dashboard-module-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .person-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .person-summary-main {
+        grid-column: 1 / -1;
+    }
+
+    .summary-stat {
+        border-bottom: 1px solid var(--kundli-border);
+    }
+
+    .chart-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ============================================================
+   30. MOBILE
+   ============================================================ */
+
+@media (max-width: 760px) {
+
+    .kundli-header-inner,
+    .kundli-navigation-inner,
+    .kundli-container,
+    .kundli-status,
+    .bottom-navigation,
+    .kundli-disclaimer {
+        width: min(100% - 24px, 1500px);
+    }
+
+    .kundli-header-inner {
+        min-height: auto;
+        padding: 15px 0;
+        align-items: flex-start;
+    }
+
+    .kundli-brand-symbol {
+        width: 45px;
+        height: 45px;
+        font-size: 23px;
+    }
+
+    .kundli-brand h1 {
+        font-size: 20px;
+    }
+
+    .kundli-header-actions {
+        display: none;
+    }
+
+    .kundli-navigation-inner {
+        min-height: 52px;
+    }
+
+    .nav-control {
+        display: none;
+    }
+
+    .kundli-container {
+        padding-top: 22px;
+    }
+
+    .screen-heading {
+        margin-bottom: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .form-field-wide {
+        grid-column: auto;
+    }
+
+    .birth-form,
+    .milan-form-wrapper {
+        padding: 17px;
+    }
+
+    .form-actions {
+        justify-content: stretch;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .location-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .location-meta > div {
+        border-right: 0;
+        border-bottom: 1px solid var(--kundli-border);
+    }
+
+    .location-meta > div:last-child {
+        border-bottom: 0;
+    }
+
+    .person-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .person-summary-main {
+        grid-column: 1 / -1;
+    }
+
+    .dashboard-module-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-card.full-width {
+        grid-column: auto;
+    }
+
+    .milan-person-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .compatibility-score {
+        grid-template-columns: 1fr;
+    }
+
+    .kundli-chart {
+        min-height: 340px;
+    }
+
+    .chart-card {
+        padding: 10px;
+    }
+
+    .detailed-report {
+        padding: 18px;
+    }
+
+    .saved-profile-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .saved-profile-card .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* ============================================================
+   31. SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .dashboard-module-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .person-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .person-summary-main {
+        grid-column: auto;
+    }
+
+    .summary-stat {
+        border-right: 0;
+    }
+
+    .kundli-brand {
+        gap: 10px;
+    }
+
+    .kundli-brand .eyebrow {
+        font-size: 9px;
+    }
+
+    .kundli-brand h1 {
+        font-size: 18px;
+    }
+
+    .kundli-brand p:last-child {
+        font-size: 11px;
+    }
+
+}

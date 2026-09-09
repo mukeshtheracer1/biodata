@@ -1,0 +1,1158 @@
+/* =========================================================
+   VEDIC KUNDLI
+   MAIN SHELL STYLES
+   ---------------------------------------------------------
+   File:
+   css/kundli/kundli-shell.css
+
+   This file styles ONLY the Kundli application shell.
+
+   It does NOT redesign:
+   - Global website header
+   - Global website footer
+   - Individual module forms/charts
+
+   Individual modules will have their own CSS files.
+   ========================================================= */
+
+
+/* =========================================================
+   01. KUNDLI APP ROOT
+   ========================================================= */
+
+.kundli-app {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 24px 60px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   02. KUNDLI APP HEADER
+   ========================================================= */
+
+.kundli-app-header {
+    width: 100%;
+    min-height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 28px 30px;
+    margin: 0 0 18px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   03. KUNDLI HEADER TEXT
+   ========================================================= */
+
+.kundli-app-header > div:first-child {
+    min-width: 0;
+}
+
+
+.kundli-app-header h1 {
+    margin: 0 0 7px;
+
+    font-size: 38px;
+    line-height: 1.1;
+
+    font-weight: 800;
+    letter-spacing: -0.5px;
+
+    color: #151515;
+}
+
+
+.kundli-app-header p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: #666666;
+}
+
+
+/* =========================================================
+   04. HEADER ACTION AREA
+   ========================================================= */
+
+#kundliHeaderActions {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.kundli-header-status {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 38px;
+    padding: 8px 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(180, 132, 20, 0.35);
+    border-radius: 8px;
+
+    background: rgba(180, 132, 20, 0.06);
+}
+
+
+.kundli-header-status-text {
+    font-size: 12px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #8a6510;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   05. KUNDLI NAVIGATION OUTER BOX
+   ========================================================= */
+
+.kundli-navigation {
+    width: 100%;
+
+    margin: 0 0 34px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.14);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   06. NAVIGATION LIST
+   ========================================================= */
+
+.kundli-navigation-list {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+
+    gap: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: #b88916 #f0ece4;
+}
+
+
+/* Chrome / Edge / Safari scrollbar */
+
+.kundli-navigation-list::-webkit-scrollbar {
+    height: 7px;
+}
+
+
+.kundli-navigation-list::-webkit-scrollbar-track {
+    background: #f0ece4;
+}
+
+
+.kundli-navigation-list::-webkit-scrollbar-thumb {
+    background: #b88916;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   07. NAVIGATION BUTTON
+   ========================================================= */
+
+.kundli-nav-item {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    min-height: 58px;
+    min-width: 118px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 13px;
+
+    box-sizing: border-box;
+
+    border: 0;
+    border-right: 1px solid #ece7df;
+
+    background: #ffffff;
+
+    color: #373737;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.kundli-nav-item:last-child {
+    border-right: 0;
+}
+
+
+/* =========================================================
+   08. NAVIGATION BUTTON HOVER
+   ========================================================= */
+
+.kundli-nav-item:hover {
+    background: #faf7f0;
+
+    color: #805d0d;
+}
+
+
+.kundli-nav-item:focus-visible {
+    outline: 2px solid #b88916;
+    outline-offset: -3px;
+}
+
+
+/* =========================================================
+   09. NAVIGATION NUMBER
+   ========================================================= */
+
+.kundli-nav-number {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 25px;
+    height: 25px;
+
+    padding: 0 5px;
+
+    box-sizing: border-box;
+
+    border-radius: 6px;
+
+    background: #f4efe4;
+
+    color: #8a6510;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   10. NAVIGATION LABEL
+   ========================================================= */
+
+.kundli-nav-label {
+    display: inline-block;
+
+    white-space: nowrap;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   11. ACTIVE NAVIGATION
+   ========================================================= */
+
+.kundli-nav-item.is-active {
+    background: #4b1228;
+
+    color: #ffffff;
+
+    box-shadow:
+        inset 0 -3px 0 #c99a24;
+}
+
+
+.kundli-nav-item.is-active .kundli-nav-number {
+    background: #c99a24;
+
+    color: #ffffff;
+}
+
+
+.kundli-nav-item.is-active .kundli-nav-label {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   12. KUNDLI SCREEN
+   ========================================================= */
+
+.kundli-screen {
+    width: 100%;
+    min-height: 420px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   13. MODULE SECTION
+   ---------------------------------------------------------
+   These classes are intended for the module HTML files.
+   They give every module a consistent shell-level structure.
+   ========================================================= */
+
+.kundli-module {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.kundli-module-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin: 0 0 24px;
+
+    box-sizing: border-box;
+}
+
+
+.kundli-module-number {
+    flex: 0 0 auto;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(201, 154, 36, 0.75);
+    border-radius: 14px;
+
+    background: rgba(42, 10, 27, 0.9);
+
+    color: #c99a24;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+.kundli-module-heading {
+    min-width: 0;
+}
+
+
+.kundli-module-eyebrow {
+    margin: 0 0 4px;
+
+    font-size: 11px;
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #d0a52f;
+}
+
+
+.kundli-module-title {
+    margin: 0;
+
+    font-size: 30px;
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+
+.kundli-module-description {
+    margin: 6px 0 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   14. MODULE CONTENT AREA
+   ========================================================= */
+
+.kundli-module-content {
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   15. COMMON MODULE CARD
+   ---------------------------------------------------------
+   Individual module CSS can extend this.
+   ========================================================= */
+
+.kundli-module-card {
+    width: 100%;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57, 16, 35, 0.98),
+            rgba(42, 10, 27, 0.98)
+        );
+
+    border: 1px solid rgba(201, 154, 36, 0.28);
+    border-radius: 16px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   16. COMMON MODULE CARD HEADER
+   ========================================================= */
+
+.kundli-module-card-header {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+
+.kundli-module-card-number {
+    width: 36px;
+    height: 36px;
+
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(201, 154, 36, 0.5);
+    border-radius: 9px;
+
+    background: rgba(201, 154, 36, 0.08);
+
+    color: #d2a72e;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.kundli-module-card-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 19px;
+    line-height: 1.3;
+
+    font-weight: 800;
+}
+
+
+.kundli-module-card-subtitle {
+    margin: 3px 0 0;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   17. LOADING STATE
+   ========================================================= */
+
+.kundli-module-loading {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 20px 0;
+}
+
+
+.kundli-module-loading-card {
+    width: 100%;
+
+    min-height: 180px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57, 16, 35, 0.96),
+            rgba(42, 10, 27, 0.96)
+        );
+
+    border: 1px solid rgba(201, 154, 36, 0.28);
+    border-radius: 16px;
+}
+
+
+.kundli-module-loading-number {
+    width: 56px;
+    height: 56px;
+
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(201, 154, 36, 0.7);
+    border-radius: 14px;
+
+    color: #d0a52f;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+.kundli-module-loading-content h2 {
+    margin: 0 0 7px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+
+.kundli-module-loading-content p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   18. ERROR STATE
+   ========================================================= */
+
+.kundli-module-error {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 20px 0;
+}
+
+
+.kundli-module-error-card {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(65, 17, 37, 0.98),
+            rgba(42, 10, 27, 0.98)
+        );
+
+    border: 1px solid rgba(201, 154, 36, 0.30);
+    border-radius: 16px;
+}
+
+
+.kundli-module-error-number {
+    width: 56px;
+    height: 56px;
+
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(201, 154, 36, 0.65);
+    border-radius: 14px;
+
+    color: #d0a52f;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.kundli-module-error-content {
+    min-width: 0;
+}
+
+
+.kundli-module-error-content h2 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+
+.kundli-module-error-content p {
+    margin: 0 0 18px;
+
+    color: rgba(255, 255, 255, 0.70);
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   19. RETRY BUTTON
+   ========================================================= */
+
+.kundli-module-retry {
+    min-height: 40px;
+
+    padding: 9px 18px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #c99a24;
+    border-radius: 8px;
+
+    background: #c99a24;
+
+    color: #2a0a1b;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.kundli-module-retry:hover {
+    background: #ddb441;
+
+    transform: translateY(-1px);
+}
+
+
+.kundli-module-retry:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   20. PAGER
+   ========================================================= */
+
+.kundli-pager {
+    width: 100%;
+
+    margin-top: 28px;
+
+    box-sizing: border-box;
+}
+
+
+.kundli-pager-inner {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   21. PAGER BUTTON
+   ========================================================= */
+
+.kundli-pager-button {
+    min-width: 130px;
+    min-height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 10px 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(201, 154, 36, 0.55);
+    border-radius: 9px;
+
+    background: rgba(55, 15, 34, 0.90);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.kundli-pager-button:hover:not(:disabled) {
+    background: #5a1933;
+
+    border-color: #c99a24;
+
+    transform: translateY(-1px);
+}
+
+
+.kundli-pager-button:focus-visible {
+    outline: 2px solid #d0a52f;
+    outline-offset: 2px;
+}
+
+
+.kundli-pager-button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   22. PAGER ARROW
+   ========================================================= */
+
+.kundli-pager-arrow {
+    font-size: 17px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   23. PAGER STATUS
+   ========================================================= */
+
+.kundli-pager-status {
+    flex: 1 1 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-width: 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 12px;
+}
+
+
+.kundli-pager-current {
+    color: #d0a52f;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+.kundli-pager-separator {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+
+.kundli-pager-total {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-weight: 700;
+}
+
+
+.kundli-pager-module-name {
+    margin-left: 5px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   24. GENERAL ACCESSIBILITY
+   ========================================================= */
+
+.kundli-app button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.kundli-app button:focus-visible,
+.kundli-app input:focus-visible,
+.kundli-app select:focus-visible,
+.kundli-app textarea:focus-visible {
+    outline: 2px solid #c99a24;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   25. TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .kundli-app {
+        max-width: 100%;
+
+        padding:
+            26px 18px 48px;
+    }
+
+
+    .kundli-app-header {
+        padding: 24px;
+
+        gap: 20px;
+    }
+
+
+    .kundli-app-header h1 {
+        font-size: 32px;
+    }
+
+
+    .kundli-nav-item {
+        min-width: 110px;
+    }
+
+
+    .kundli-module-title {
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================================
+   26. MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .kundli-app {
+        padding:
+            20px 12px 40px;
+    }
+
+
+    .kundli-app-header {
+        min-height: auto;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 20px;
+
+        border-radius: 12px;
+    }
+
+
+    .kundli-app-header h1 {
+        font-size: 28px;
+    }
+
+
+    .kundli-app-header p {
+        font-size: 13px;
+    }
+
+
+    #kundliHeaderActions {
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+
+    .kundli-header-status {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .kundli-navigation {
+        border-radius: 10px;
+
+        margin-bottom: 26px;
+    }
+
+
+    .kundli-nav-item {
+        min-width: 105px;
+        min-height: 54px;
+
+        padding:
+            9px 11px;
+    }
+
+
+    .kundli-nav-label {
+        font-size: 12px;
+    }
+
+
+    .kundli-module-header {
+        align-items: flex-start;
+
+        gap: 13px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .kundli-module-number {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 11px;
+
+        font-size: 15px;
+    }
+
+
+    .kundli-module-eyebrow {
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .kundli-module-title {
+        font-size: 24px;
+    }
+
+
+    .kundli-module-description {
+        font-size: 12px;
+    }
+
+
+    .kundli-module-card {
+        padding: 20px;
+
+        border-radius: 13px;
+    }
+
+
+    .kundli-module-loading-card,
+    .kundli-module-error-card {
+        padding: 20px;
+
+        align-items: flex-start;
+    }
+
+
+    .kundli-pager-inner {
+        gap: 10px;
+    }
+
+
+    .kundli-pager-button {
+        min-width: 45px;
+
+        padding:
+            10px 12px;
+    }
+
+
+    .kundli-pager-text {
+        display: none;
+    }
+
+
+    .kundli-pager-module-name {
+        max-width: 100px;
+    }
+
+}
+
+
+/* =========================================================
+   27. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .kundli-app-header h1 {
+        font-size: 25px;
+    }
+
+
+    .kundli-module-title {
+        font-size: 21px;
+    }
+
+
+    .kundli-module-number {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .kundli-module-card {
+        padding: 16px;
+    }
+
+
+    .kundli-pager-current,
+    .kundli-pager-total {
+        font-size: 11px;
+    }
+
+}
+
+
+
+
+
+/* Fixed website header ke neeche Kundli app ko space */
+.kundli-app {
+    margin-top: 90px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

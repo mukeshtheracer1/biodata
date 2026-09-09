@@ -1,0 +1,347 @@
+/* =========================================================
+   MUKESH SAH — LUXURY MARRIAGE BIODATA
+   GLOBAL DESIGN VARIABLES
+   File: css/variables.css
+   ========================================================= */
+
+:root {
+
+  /* -------------------------------------------------------
+     01. FONT
+     ------------------------------------------------------- */
+
+  --font-main:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+
+  /* -------------------------------------------------------
+     02. MAIN COLORS
+     ------------------------------------------------------- */
+
+  --color-black: #050006;
+  --color-black-soft: #09000d;
+  --color-black-deep: #020003;
+
+  --color-maroon-deep: #17000f;
+  --color-maroon: #2b001b;
+  --color-maroon-light: #4b062d;
+
+  --color-gold-dark: #8b5e12;
+  --color-gold-deep: #a66c14;
+  --color-gold: #d4a63a;
+  --color-gold-light: #f4d477;
+  --color-gold-bright: #ffe9a3;
+  --color-gold-white: #fff4c7;
+
+  --color-white: #ffffff;
+  --color-white-soft: #f7f3ea;
+  --color-text: #eee8dc;
+  --color-text-soft: #cfc5b4;
+  --color-text-muted: #a99d8e;
+
+  --color-success: #b7d98b;
+  --color-danger: #e08b8b;
+
+
+  /* -------------------------------------------------------
+     03. GRADIENTS
+     ------------------------------------------------------- */
+
+  --gradient-page:
+    radial-gradient(
+      circle at 50% 20%,
+      #260018 0%,
+      #10000c 38%,
+      #050006 75%,
+      #020003 100%
+    );
+
+  --gradient-gold:
+    linear-gradient(
+      135deg,
+      #7d500c 0%,
+      #c89427 22%,
+      #ffe69a 48%,
+      #d5a33a 68%,
+      #80530e 100%
+    );
+
+  --gradient-gold-horizontal:
+    linear-gradient(
+      90deg,
+      #81520e 0%,
+      #d5a43d 25%,
+      #fff0aa 50%,
+      #d5a43d 75%,
+      #81520e 100%
+    );
+
+  --gradient-gold-text:
+    linear-gradient(
+      90deg,
+      #a86d16 0%,
+      #f1c95d 22%,
+      #fff1ac 42%,
+      #d79f2d 65%,
+      #fff0a5 82%,
+      #9b6413 100%
+    );
+
+  --gradient-maroon:
+    linear-gradient(
+      145deg,
+      #3b0626 0%,
+      #1b0011 50%,
+      #070006 100%
+    );
+
+  --gradient-glass:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.075),
+      rgba(255,255,255,0.018)
+    );
+
+
+  /* -------------------------------------------------------
+     04. GLASS EFFECT
+     ------------------------------------------------------- */
+
+  --glass-bg:
+    rgba(255, 255, 255, 0.035);
+
+  --glass-bg-strong:
+    rgba(255, 255, 255, 0.065);
+
+  --glass-border:
+    rgba(212, 166, 58, 0.24);
+
+  --glass-border-bright:
+    rgba(244, 212, 119, 0.48);
+
+  --glass-blur: 18px;
+
+  --glass-shadow:
+    0 20px 70px rgba(0, 0, 0, 0.48);
+
+  --glass-shadow-small:
+    0 10px 35px rgba(0, 0, 0, 0.35);
+
+
+  /* -------------------------------------------------------
+     05. GOLD GLOW
+     ------------------------------------------------------- */
+
+  --gold-glow-small:
+    0 0 10px rgba(212, 166, 58, 0.30);
+
+  --gold-glow:
+    0 0 25px rgba(212, 166, 58, 0.32);
+
+  --gold-glow-strong:
+    0 0 45px rgba(244, 212, 119, 0.42);
+
+  --gold-glow-extreme:
+    0 0 75px rgba(244, 212, 119, 0.52);
+
+
+  /* -------------------------------------------------------
+     06. PROFILE PHOTO GLOW
+     ------------------------------------------------------- */
+
+  --photo-neon:
+    0 0 8px rgba(244, 212, 119, 0.72),
+    0 0 20px rgba(212, 166, 58, 0.50),
+    0 0 42px rgba(212, 166, 58, 0.30);
+
+  --photo-neon-strong:
+    0 0 10px rgba(255, 233, 163, 0.95),
+    0 0 25px rgba(244, 212, 119, 0.70),
+    0 0 55px rgba(212, 166, 58, 0.48),
+    0 0 90px rgba(120, 30, 110, 0.22);
+
+
+  /* -------------------------------------------------------
+     07. BORDER
+     ------------------------------------------------------- */
+
+  --border-thin:
+    1px solid rgba(212, 166, 58, 0.20);
+
+  --border-gold:
+    1px solid rgba(212, 166, 58, 0.42);
+
+  --border-gold-bright:
+    1px solid rgba(244, 212, 119, 0.72);
+
+
+  /* -------------------------------------------------------
+     08. BORDER RADIUS
+     ------------------------------------------------------- */
+
+  --radius-xs: 5px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 34px;
+  --radius-round: 999px;
+
+
+  /* -------------------------------------------------------
+     09. PAGE WIDTH
+     ------------------------------------------------------- */
+
+  --page-width: 1440px;
+  --content-width: 1240px;
+  --narrow-width: 960px;
+
+
+  /* -------------------------------------------------------
+     10. PAGE PADDING
+     ------------------------------------------------------- */
+
+  --page-padding-desktop: 48px;
+  --page-padding-tablet: 32px;
+  --page-padding-mobile: 18px;
+
+
+  /* -------------------------------------------------------
+     11. SPACING
+     ------------------------------------------------------- */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 40px;
+  --space-10: 48px;
+  --space-11: 56px;
+  --space-12: 64px;
+  --space-13: 80px;
+  --space-14: 96px;
+  --space-15: 120px;
+
+
+  /* -------------------------------------------------------
+     12. TRANSITIONS
+     ------------------------------------------------------- */
+
+  --transition-fast:
+    0.18s ease;
+
+  --transition-normal:
+    0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+  --transition-smooth:
+    0.65s cubic-bezier(0.22, 1, 0.36, 1);
+
+  --transition-luxury:
+    1s cubic-bezier(0.16, 1, 0.3, 1);
+
+
+  /* -------------------------------------------------------
+     13. ANIMATION SPEED
+     ------------------------------------------------------- */
+
+  --speed-fast: 2s;
+  --speed-normal: 4s;
+  --speed-slow: 7s;
+  --speed-ultra: 12s;
+
+
+  /* -------------------------------------------------------
+     14. Z-INDEX SYSTEM
+     ------------------------------------------------------- */
+
+  --z-background: 0;
+  --z-content: 10;
+  --z-decoration: 20;
+  --z-header: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+
+
+  /* -------------------------------------------------------
+     15. HEADER
+     ------------------------------------------------------- */
+
+  --header-height: 82px;
+
+
+  /* -------------------------------------------------------
+     16. SHADOWS
+     ------------------------------------------------------- */
+
+  --shadow-deep:
+    0 25px 80px rgba(0, 0, 0, 0.65);
+
+  --shadow-card:
+    0 18px 55px rgba(0, 0, 0, 0.42);
+
+  --shadow-floating:
+    0 30px 90px rgba(0, 0, 0, 0.55);
+
+
+  /* -------------------------------------------------------
+     17. OVERLAY COLORS
+     ------------------------------------------------------- */
+
+  --overlay-black:
+    rgba(0, 0, 0, 0.45);
+
+  --overlay-black-heavy:
+    rgba(0, 0, 0, 0.72);
+
+  --overlay-gold:
+    rgba(212, 166, 58, 0.08);
+
+
+  /* -------------------------------------------------------
+     18. BREAKPOINT REFERENCE
+     
+     CSS variables cannot be used directly inside media
+     queries, so these values are kept here only as
+     documentation/reference.
+     ------------------------------------------------------- */
+
+  --breakpoint-mobile: 576px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1280px;
+  --breakpoint-large: 1440px;
+
+
+  /* -------------------------------------------------------
+     19. ANIMATION CUSTOM PROPERTIES
+     ------------------------------------------------------- */
+
+  --ease-luxury:
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+  --ease-soft:
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  --ease-bounce:
+    cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* =========================================================
+   GLOBAL REDUCED MOTION SUPPORT
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  :root {
+    --speed-fast: 0s;
+    --speed-normal: 0s;
+    --speed-slow: 0s;
+    --speed-ultra: 0s;
+  }
+}

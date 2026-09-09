@@ -1,0 +1,526 @@
+/* =========================================================
+   NAKSHATRA MODULE
+========================================================= */
+
+.nakshatra-module {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.nakshatra-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.nakshatra-eyebrow,
+.nakshatra-card-kicker {
+    display: block;
+    color: #c9a227;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.nakshatra-header h2 {
+    margin: 7px 0 6px;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.nakshatra-header p {
+    margin: 0;
+    color: #afa4a9;
+    font-size: 13px;
+}
+
+.nakshatra-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.nakshatra-badge {
+    padding: 8px 12px;
+    border: 1px solid rgba(201, 162, 39, 0.20);
+    border-radius: 999px;
+    color: #8d8288;
+    background: rgba(255, 255, 255, 0.025);
+    font-size: 10px;
+}
+
+.nakshatra-badge-active {
+    color: #d6b43a;
+    border-color: rgba(201, 162, 39, 0.45);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.nakshatra-hero {
+    display: grid;
+    grid-template-columns: 105px minmax(0, 1fr) 170px;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(201, 162, 39, 0.30);
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57, 25, 39, 0.97),
+            rgba(23, 13, 21, 0.99)
+        );
+    box-shadow:
+        0 16px 38px rgba(0, 0, 0, 0.18);
+}
+
+.nakshatra-star {
+    text-align: center;
+}
+
+.nakshatra-star-ring {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 8px;
+    border: 1px solid rgba(201, 162, 39, 0.48);
+    border-radius: 50%;
+    color: #d7b438;
+    background: rgba(201, 162, 39, 0.07);
+    font-size: 28px;
+    box-shadow:
+        0 0 0 7px rgba(201, 162, 39, 0.025);
+}
+
+.nakshatra-star span {
+    color: #81767c;
+    font-size: 9px;
+}
+
+.nakshatra-small-label {
+    color: #82777d;
+    font-size: 9px;
+    letter-spacing: 1.3px;
+}
+
+.nakshatra-hero-content h3 {
+    margin: 5px 0 2px;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.nakshatra-hero-content p {
+    margin: 0;
+    color: #a2969c;
+    font-size: 12px;
+}
+
+.nakshatra-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.nakshatra-hero-meta span {
+    color: #766b71;
+    font-size: 10px;
+}
+
+.nakshatra-hero-meta strong {
+    margin-left: 4px;
+    color: #d1b039;
+    font-size: 11px;
+}
+
+.nakshatra-degree-box {
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 11px;
+    background: rgba(0, 0, 0, 0.16);
+    text-align: center;
+}
+
+.nakshatra-degree-box span {
+    display: block;
+    color: #756a70;
+    font-size: 9px;
+}
+
+.nakshatra-degree-box strong {
+    display: block;
+    margin-top: 7px;
+    color: #d6b33a;
+    font-size: 19px;
+}
+
+.nakshatra-degree-box small {
+    display: block;
+    margin-top: 4px;
+    color: #62585e;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   PROFILE GRID
+========================================================= */
+
+.nakshatra-profile-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.nakshatra-profile-card {
+    padding: 17px;
+    border: 1px solid rgba(201, 162, 39, 0.16);
+    border-radius: 12px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(45, 19, 31, 0.94),
+            rgba(18, 11, 18, 0.98)
+        );
+}
+
+.nakshatra-profile-card > span {
+    display: block;
+    color: #80757b;
+    font-size: 10px;
+}
+
+.nakshatra-profile-card strong {
+    display: block;
+    margin-top: 7px;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.nakshatra-profile-card small {
+    display: block;
+    margin-top: 3px;
+    color: #655b61;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.nakshatra-card {
+    margin-bottom: 18px;
+    border: 1px solid rgba(201, 162, 39, 0.19);
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(43, 18, 30, 0.95),
+            rgba(18, 11, 18, 0.98)
+        );
+}
+
+.nakshatra-card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 22px 15px;
+}
+
+.nakshatra-card-heading h3 {
+    margin: 5px 0 0;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.nakshatra-card-note {
+    color: #776c72;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   POSITION GRID
+========================================================= */
+
+.nakshatra-position-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 22px 22px;
+}
+
+.nakshatra-data-item {
+    padding: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.045);
+    border-radius: 9px;
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.nakshatra-data-item span {
+    display: block;
+    color: #6e646a;
+    font-size: 9px;
+}
+
+.nakshatra-data-item strong {
+    display: block;
+    margin-top: 6px;
+    color: #d0c5ca;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   QUALITY
+========================================================= */
+
+.nakshatra-quality-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 22px 22px;
+}
+
+.nakshatra-quality {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.045);
+    border-radius: 9px;
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.nakshatra-quality-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    flex: 0 0 31px;
+    border: 1px solid rgba(201, 162, 39, 0.27);
+    border-radius: 50%;
+    color: #cdaa35;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.nakshatra-quality strong {
+    display: block;
+    color: #cfc4c9;
+    font-size: 10px;
+}
+
+.nakshatra-quality small {
+    display: block;
+    margin-top: 3px;
+    color: #756a70;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.nakshatra-table-wrap {
+    overflow-x: auto;
+    padding: 0 12px 16px;
+}
+
+.nakshatra-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+.nakshatra-table th {
+    padding: 11px 9px;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.21);
+    color: #81767c;
+    font-size: 9px;
+    letter-spacing: 0.7px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.nakshatra-table td {
+    padding: 13px 9px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+    color: #c5bbc0;
+    font-size: 11px;
+}
+
+.nakshatra-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.nakshatra-planet {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.nakshatra-planet-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    border: 1px solid rgba(201, 162, 39, 0.28);
+    border-radius: 50%;
+    color: #d2ad35;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.nakshatra-planet-name {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.nakshatra-planet-en {
+    margin-top: 2px;
+    color: #6e646a;
+    font-size: 8px;
+}
+
+.nakshatra-table-degree {
+    color: #d1ad36;
+    font-weight: 700;
+}
+
+.nakshatra-table-pada {
+    display: inline-flex;
+    padding: 4px 7px;
+    border-radius: 5px;
+    color: #d4b13a;
+    background: rgba(201, 162, 39, 0.06);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.nakshatra-note {
+    padding: 14px 16px;
+    border-left: 2px solid rgba(201, 162, 39, 0.50);
+    border-radius: 8px;
+    color: #897e84;
+    background: rgba(201, 162, 39, 0.035);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.nakshatra-note strong {
+    color: #c1a047;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .nakshatra-hero {
+        grid-template-columns: 90px minmax(0, 1fr);
+    }
+
+    .nakshatra-degree-box {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .nakshatra-profile-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .nakshatra-quality-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .nakshatra-header {
+        flex-direction: column;
+    }
+
+    .nakshatra-badges {
+        justify-content: flex-start;
+    }
+
+    .nakshatra-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .nakshatra-degree-box {
+        grid-column: auto;
+        text-align: center;
+    }
+
+    .nakshatra-hero-meta {
+        justify-content: center;
+    }
+
+    .nakshatra-position-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .nakshatra-header h2 {
+        font-size: 24px;
+    }
+
+    .nakshatra-profile-grid,
+    .nakshatra-quality-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nakshatra-position-grid,
+    .nakshatra-quality-grid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .nakshatra-card-heading {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+}

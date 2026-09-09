@@ -1,0 +1,791 @@
+/* =========================================================
+   GUN MILAN
+   Ashtakoota / 36 Guna
+========================================================= */
+
+.gun-milan-module {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.gun-milan-page-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 28px 24px;
+
+    background: #ffffff;
+    border: 1px solid rgba(122, 83, 16, 0.14);
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
+    margin-bottom: 20px;
+}
+
+.gun-milan-title-wrap {
+    min-width: 0;
+}
+
+.gun-milan-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #9a711d;
+}
+
+.gun-milan-title-wrap h2 {
+    margin: 0;
+
+    color: #3b071b;
+
+    font-size: clamp(25px, 3vw, 34px);
+
+    line-height: 1.15;
+}
+
+.gun-milan-title-wrap p {
+    max-width: 850px;
+
+    margin: 10px 0 0;
+
+    color: #6f6870;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.gun-milan-engine-badge {
+    flex: 0 0 auto;
+
+    padding: 10px 15px;
+
+    border: 1px solid #d8b45a;
+    border-radius: 999px;
+
+    background: #fffaf0;
+
+    color: #805d15;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.gun-milan-content {
+    width: 100%;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.gun-card {
+    background: #ffffff;
+
+    border: 1px solid rgba(122, 83, 16, 0.14);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.05);
+
+    overflow: hidden;
+}
+
+.gun-card + .gun-card {
+    margin-top: 18px;
+}
+
+.gun-card-head {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #eee7dc;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffdf9 0%,
+            #fffaf1 100%
+        );
+}
+
+.gun-card-head h3 {
+    margin: 0;
+
+    color: #3b071b;
+
+    font-size: 18px;
+}
+
+.gun-card-head p {
+    margin: 5px 0 0;
+
+    color: #756d73;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.gun-card-body {
+    padding: 20px;
+}
+
+
+/* =========================================================
+   PERSON COMPARISON
+========================================================= */
+
+.gun-person-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.gun-person-card {
+    padding: 20px;
+
+    border: 1px solid #eadfce;
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf9,
+            #fff9ef
+        );
+}
+
+.gun-person-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 16px;
+}
+
+.gun-person-avatar {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 48px;
+
+    border-radius: 50%;
+
+    background: #3b071b;
+
+    color: #f2cc69;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.gun-person-top h4 {
+    margin: 0;
+
+    color: #3b071b;
+
+    font-size: 17px;
+}
+
+.gun-person-top span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8a777f;
+
+    font-size: 11px;
+}
+
+.gun-person-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.gun-detail-box {
+    padding: 12px;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    border: 1px solid #eee5d8;
+}
+
+.gun-detail-box small {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #8a7d83;
+
+    font-size: 10px;
+}
+
+.gun-detail-box strong {
+    display: block;
+
+    color: #3b071b;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   SCORE SUMMARY
+========================================================= */
+
+.gun-score-card {
+    display: grid;
+
+    grid-template-columns:
+        230px minmax(0, 1fr);
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+.gun-score-main {
+    min-height: 220px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 24px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b071b,
+            #570b29
+        );
+
+    border: 1px solid #7d5212;
+}
+
+.gun-score-main small {
+    color: #e9cf8a;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+.gun-score-number {
+    margin: 8px 0;
+
+    color: #f3d16e;
+
+    font-size: 54px;
+
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+.gun-score-number span {
+    font-size: 20px;
+
+    color: #d9c8a2;
+}
+
+.gun-score-verdict {
+    margin-top: 6px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    line-height: 1.5;
+}
+
+.gun-score-summary {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 14px;
+}
+
+.gun-summary-title {
+    color: #3b071b;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.gun-summary-text {
+    color: #5f565c;
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.gun-summary-points {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.gun-summary-point {
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    background: #fffaf1;
+
+    border: 1px solid #ead9b6;
+}
+
+.gun-summary-point small {
+    display: block;
+
+    color: #8a777f;
+
+    font-size: 10px;
+}
+
+.gun-summary-point strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #3b071b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   KOOTA TABLE
+========================================================= */
+
+.gun-table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.gun-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 760px;
+}
+
+.gun-table th {
+    padding: 13px 12px;
+
+    background: #3b071b;
+
+    color: #f4d27b;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+.gun-table td {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid #eee8df;
+
+    color: #554d53;
+
+    font-size: 12px;
+
+    vertical-align: top;
+}
+
+.gun-table tbody tr:hover {
+    background: #fffaf2;
+}
+
+.gun-koota-name strong {
+    display: block;
+
+    color: #3b071b;
+
+    font-size: 13px;
+}
+
+.gun-koota-name span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8b7e84;
+
+    font-size: 10px;
+}
+
+.gun-score-cell {
+    color: #3b071b;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+.gun-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 72px;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.gun-status.good {
+    color: #17653b;
+
+    background: #eaf7ef;
+
+    border: 1px solid #bfe4cc;
+}
+
+.gun-status.medium {
+    color: #815c0d;
+
+    background: #fff7df;
+
+    border: 1px solid #efd58d;
+}
+
+.gun-status.low {
+    color: #8c2737;
+
+    background: #fff0f2;
+
+    border: 1px solid #edc2ca;
+}
+
+
+/* =========================================================
+   DETAIL GRID
+========================================================= */
+
+.gun-detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.gun-analysis-card {
+    padding: 18px;
+
+    border-radius: 15px;
+
+    border: 1px solid #eadfce;
+
+    background: #fffdf9;
+}
+
+.gun-analysis-card h4 {
+    margin: 0 0 8px;
+
+    color: #3b071b;
+
+    font-size: 15px;
+}
+
+.gun-analysis-card p {
+    margin: 0;
+
+    color: #62595f;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+}
+
+.gun-analysis-card strong {
+    color: #805d15;
+}
+
+
+/* =========================================================
+   DOSHA / IMPORTANT FLAGS
+========================================================= */
+
+.gun-flag-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.gun-flag {
+    padding: 16px;
+
+    border-radius: 14px;
+
+    border: 1px solid #eadfce;
+
+    background: #fffdf9;
+}
+
+.gun-flag-title {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 7px;
+}
+
+.gun-flag-title strong {
+    color: #3b071b;
+
+    font-size: 13px;
+}
+
+.gun-flag p {
+    margin: 0;
+
+    color: #6b6268;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+}
+
+.gun-flag-badge {
+    flex: 0 0 auto;
+
+    padding: 4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.gun-flag-badge.alert {
+    color: #8d2738;
+
+    background: #fff0f2;
+
+    border: 1px solid #edc4cb;
+}
+
+.gun-flag-badge.ok {
+    color: #17653b;
+
+    background: #eaf7ef;
+
+    border: 1px solid #bfe4cc;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.gun-note {
+    padding: 17px 18px;
+
+    border-left: 4px solid #b88a26;
+
+    border-radius: 10px;
+
+    background: #fffaf0;
+
+    color: #665b60;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+}
+
+.gun-note strong {
+    color: #5f4210;
+}
+
+
+/* =========================================================
+   EMPTY / DATA MISSING
+========================================================= */
+
+.gun-empty {
+    padding: 55px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(122, 83, 16, 0.14);
+
+    border-radius: 18px;
+}
+
+.gun-empty-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff8e7;
+
+    color: #9a711d;
+
+    font-size: 25px;
+}
+
+.gun-empty h3 {
+    margin: 0;
+
+    color: #3b071b;
+
+    font-size: 20px;
+}
+
+.gun-empty p {
+    max-width: 600px;
+
+    margin: 9px auto 0;
+
+    color: #746a70;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .gun-milan-page-head {
+        flex-direction: column;
+    }
+
+    .gun-score-card {
+        grid-template-columns: 1fr;
+    }
+
+    .gun-score-main {
+        min-height: 180px;
+    }
+
+}
+
+
+@media (max-width: 720px) {
+
+    .gun-person-grid,
+    .gun-detail-grid,
+    .gun-flag-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gun-summary-points {
+        grid-template-columns: 1fr;
+    }
+
+    .gun-milan-page-head {
+        padding: 21px 17px;
+    }
+
+    .gun-card-body {
+        padding: 15px;
+    }
+
+    .gun-person-card {
+        padding: 15px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .gun-person-details {
+        grid-template-columns: 1fr;
+    }
+
+    .gun-score-number {
+        font-size: 46px;
+    }
+
+}

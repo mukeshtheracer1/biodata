@@ -1,0 +1,1192 @@
+/* =========================================================
+   VEDIC KUNDLI
+   MODULE 01 - BIRTH DETAILS
+   ---------------------------------------------------------
+   File:
+   css/kundli/birth-details.css
+   ========================================================= */
+
+
+/* =========================================================
+   01. MODULE
+   ========================================================= */
+
+.birth-details-module {
+    width: 100%;
+}
+
+
+/* =========================================================
+   02. FORM
+   ========================================================= */
+
+.birth-details-form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   03. CARD
+   ========================================================= */
+
+.birth-details-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57, 16, 35, 0.98),
+            rgba(42, 10, 27, 0.98)
+        );
+
+    border-color:
+        rgba(201, 154, 36, 0.30);
+}
+
+
+/* =========================================================
+   04. FORM GRID
+   ========================================================= */
+
+.birth-details-form-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   05. FULL WIDTH FIELD
+   ========================================================= */
+
+.birth-details-field-full {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   06. FIELD
+   ========================================================= */
+
+.birth-details-field {
+    position: relative;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   07. LABEL
+   ========================================================= */
+
+.birth-details-label {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    font-weight: 700;
+}
+
+
+.birth-details-required {
+    margin-left: 3px;
+
+    color: #d5a52b;
+}
+
+
+/* =========================================================
+   08. INPUT / SELECT / TEXTAREA
+   ========================================================= */
+
+.birth-details-input,
+.birth-details-select,
+.birth-details-textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 9px;
+
+    background:
+        rgba(18, 6, 13, 0.58);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.birth-details-input,
+.birth-details-select {
+    min-height: 46px;
+
+    padding:
+        11px 13px;
+}
+
+
+.birth-details-textarea {
+    min-height: 120px;
+
+    padding:
+        12px 13px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   09. PLACEHOLDER
+   ========================================================= */
+
+.birth-details-input::placeholder,
+.birth-details-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+
+/* =========================================================
+   10. SELECT
+   ========================================================= */
+
+.birth-details-select {
+    cursor: pointer;
+}
+
+
+.birth-details-select option {
+    background: #2a0a1b;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   11. DATE / TIME
+   ========================================================= */
+
+.birth-details-input[type="date"],
+.birth-details-input[type="time"] {
+    color-scheme: dark;
+}
+
+
+/* =========================================================
+   12. FOCUS
+   ========================================================= */
+
+.birth-details-input:focus,
+.birth-details-select:focus,
+.birth-details-textarea:focus {
+    border-color: #c99a24;
+
+    background:
+        rgba(18, 6, 13, 0.82);
+
+    box-shadow:
+        0 0 0 3px rgba(201, 154, 36, 0.10);
+
+    outline: none;
+}
+
+
+/* =========================================================
+   13. INVALID
+   ========================================================= */
+
+.birth-details-input.is-invalid,
+.birth-details-select.is-invalid,
+.birth-details-textarea.is-invalid {
+    border-color: #c56b6b;
+
+    box-shadow:
+        0 0 0 3px rgba(197, 107, 107, 0.08);
+}
+
+
+/* =========================================================
+   14. HELP TEXT
+   ========================================================= */
+
+.birth-details-help {
+    display: block;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   15. LOCATION SEARCH
+   ========================================================= */
+
+.birth-details-location-search {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+.birth-details-search-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.birth-details-search-input {
+    padding-left: 42px;
+    padding-right: 45px;
+}
+
+
+.birth-details-search-icon {
+    position: absolute;
+
+    left: 14px;
+    top: 50%;
+
+    z-index: 2;
+
+    transform: translateY(-50%);
+
+    color: #c99a24;
+
+    font-size: 20px;
+
+    pointer-events: none;
+}
+
+
+.birth-details-search-spinner {
+    position: absolute;
+
+    right: 14px;
+    top: 50%;
+
+    width: 18px;
+    height: 18px;
+
+    transform: translateY(-50%);
+
+    border:
+        2px solid rgba(255, 255, 255, 0.18);
+
+    border-top-color: #c99a24;
+
+    border-radius: 50%;
+
+    animation:
+        birthDetailsSpin 0.8s linear infinite;
+}
+
+
+@keyframes birthDetailsSpin {
+
+    from {
+        transform:
+            translateY(-50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(-50%)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   16. LOCATION RESULTS
+   ========================================================= */
+
+.birth-details-location-results {
+    width: 100%;
+
+    max-height: 320px;
+
+    margin-top: 8px;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid rgba(201, 154, 36, 0.28);
+
+    border-radius: 10px;
+
+    background: #24101b;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.28);
+}
+
+
+.birth-details-location-result {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 13px 14px;
+
+    box-sizing: border-box;
+
+    border: 0;
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    background: transparent;
+
+    color: #ffffff;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.birth-details-location-result:last-child {
+    border-bottom: 0;
+}
+
+
+.birth-details-location-result:hover,
+.birth-details-location-result:focus-visible {
+    background:
+        rgba(201, 154, 36, 0.10);
+
+    outline: none;
+}
+
+
+.birth-details-location-result-icon {
+    flex: 0 0 auto;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(201, 154, 36, 0.35);
+
+    border-radius: 7px;
+
+    color: #d1a52e;
+
+    font-size: 13px;
+}
+
+
+.birth-details-location-result-content {
+    min-width: 0;
+}
+
+
+.birth-details-location-result-name {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+.birth-details-location-result-meta {
+    display: block;
+
+    color:
+        rgba(255, 255, 255, 0.52);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   17. NO LOCATION RESULT
+   ========================================================= */
+
+.birth-details-location-empty {
+    padding: 18px;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   18. SELECTED LOCATION
+   ========================================================= */
+
+.birth-details-selected-location {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+    padding: 16px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid rgba(201, 154, 36, 0.35);
+
+    border-radius: 10px;
+
+    background:
+        rgba(201, 154, 36, 0.07);
+}
+
+
+.birth-details-selected-location-main {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.birth-details-selected-location-label {
+    color: #c99a24;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+
+.birth-details-selected-location-name {
+    color: #ffffff;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+}
+
+
+.birth-details-selected-location-meta {
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+.birth-details-change-location {
+    flex: 0 0 auto;
+
+    min-height: 36px;
+
+    padding:
+        7px 13px;
+
+    border:
+        1px solid rgba(201, 154, 36, 0.45);
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #d1a52e;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.birth-details-change-location:hover {
+    background:
+        rgba(201, 154, 36, 0.10);
+}
+
+
+/* =========================================================
+   19. LOCATION MESSAGE
+   ========================================================= */
+
+.birth-details-location-message {
+    margin-top: 18px;
+
+    padding: 11px 13px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+.birth-details-location-message.is-success {
+    border:
+        1px solid rgba(86, 168, 115, 0.35);
+
+    background:
+        rgba(86, 168, 115, 0.08);
+
+    color: #a9dfbb;
+}
+
+
+.birth-details-location-message.is-error {
+    border:
+        1px solid rgba(197, 107, 107, 0.35);
+
+    background:
+        rgba(197, 107, 107, 0.08);
+
+    color: #efb0b0;
+}
+
+
+/* =========================================================
+   20. UTC PREVIEW
+   ========================================================= */
+
+.birth-details-info-box {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    padding: 13px 15px;
+
+    border:
+        1px solid rgba(201, 154, 36, 0.25);
+
+    border-radius: 9px;
+
+    background:
+        rgba(201, 154, 36, 0.06);
+}
+
+
+.birth-details-info-icon {
+    flex: 0 0 auto;
+
+    min-width: 42px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background:
+        rgba(201, 154, 36, 0.12);
+
+    color: #d0a52f;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.birth-details-info-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.birth-details-info-content strong {
+    color: #ffffff;
+
+    font-size: 11px;
+}
+
+
+.birth-details-info-content span {
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   21. ASTROLOGY SETTINGS
+   ========================================================= */
+
+.birth-details-setting-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+.birth-details-setting-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 16px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 9px;
+
+    background:
+        rgba(18, 6, 13, 0.35);
+}
+
+
+.birth-details-setting-label {
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.birth-details-setting-value {
+    color: #d1a52e;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   22. NOTES COUNTER
+   ========================================================= */
+
+.birth-details-counter {
+    align-self: flex-end;
+
+    color:
+        rgba(255, 255, 255, 0.38);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   23. FORM MESSAGE
+   ========================================================= */
+
+.birth-details-form-message {
+    padding: 14px 16px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+.birth-details-form-message.is-error {
+    border:
+        1px solid rgba(197, 107, 107, 0.38);
+
+    background:
+        rgba(197, 107, 107, 0.08);
+
+    color: #efb0b0;
+}
+
+
+.birth-details-form-message.is-success {
+    border:
+        1px solid rgba(86, 168, 115, 0.38);
+
+    background:
+        rgba(86, 168, 115, 0.08);
+
+    color: #a9dfbb;
+}
+
+
+.birth-details-form-message.is-info {
+    border:
+        1px solid rgba(201, 154, 36, 0.30);
+
+    background:
+        rgba(201, 154, 36, 0.07);
+
+    color: #dfc681;
+}
+
+
+/* =========================================================
+   24. SAVE NOTE
+   ========================================================= */
+
+.birth-details-save-note {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    padding:
+        13px 15px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid rgba(201, 154, 36, 0.20);
+
+    border-radius: 9px;
+
+    background:
+        rgba(201, 154, 36, 0.045);
+}
+
+
+.birth-details-save-note-icon {
+    flex: 0 0 auto;
+
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(201, 154, 36, 0.14);
+
+    color: #d0a52f;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.birth-details-save-note p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   25. FORM ACTIONS
+   ========================================================= */
+
+.birth-details-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    padding-top: 4px;
+}
+
+
+/* =========================================================
+   26. BUTTON
+   ========================================================= */
+
+.birth-details-button {
+    min-height: 46px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        11px 18px;
+
+    box-sizing: border-box;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.birth-details-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+
+.birth-details-button:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+.birth-details-button-secondary {
+    border:
+        1px solid rgba(255, 255, 255, 0.16);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color:
+        rgba(255, 255, 255, 0.78);
+}
+
+
+.birth-details-button-secondary:hover:not(:disabled) {
+    border-color:
+        rgba(255, 255, 255, 0.28);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.birth-details-button-primary {
+    min-width: 220px;
+
+    border:
+        1px solid #c99a24;
+
+    background: #c99a24;
+
+    color: #2a0a1b;
+}
+
+
+.birth-details-button-primary:hover:not(:disabled) {
+    background: #ddb441;
+}
+
+
+/* =========================================================
+   27. BUTTON SPINNER
+   ========================================================= */
+
+.birth-details-button-spinner {
+    width: 15px;
+    height: 15px;
+
+    border:
+        2px solid rgba(42, 10, 27, 0.28);
+
+    border-top-color: #2a0a1b;
+
+    border-radius: 50%;
+
+    animation:
+        birthDetailsButtonSpin 0.75s linear infinite;
+}
+
+
+@keyframes birthDetailsButtonSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   28. SAVED PANEL
+   ========================================================= */
+
+.birth-details-saved-panel {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    margin-top: 18px;
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid rgba(86, 168, 115, 0.35);
+
+    border-radius: 12px;
+
+    background:
+        rgba(86, 168, 115, 0.07);
+}
+
+
+.birth-details-saved-icon {
+    flex: 0 0 auto;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(86, 168, 115, 0.14);
+
+    color: #9bd3ad;
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+
+.birth-details-saved-content {
+    min-width: 0;
+}
+
+
+.birth-details-saved-content h3 {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+
+.birth-details-saved-content p {
+    margin: 0 0 13px;
+
+    color:
+        rgba(255, 255, 255, 0.60);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+.birth-details-saved-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+
+.birth-details-saved-summary-item {
+    padding: 9px 10px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 7px;
+
+    background:
+        rgba(0, 0, 0, 0.12);
+}
+
+
+.birth-details-saved-summary-label {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color:
+        rgba(255, 255, 255, 0.40);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+
+.birth-details-saved-summary-value {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   29. RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .birth-details-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .birth-details-setting-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .birth-details-field-full {
+        grid-column: auto;
+    }
+
+
+    .birth-details-form-actions {
+        justify-content: stretch;
+    }
+
+
+    .birth-details-button {
+        flex: 1 1 0;
+    }
+
+}
+
+
+/* =========================================================
+   30. RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .birth-details-card {
+        padding: 18px;
+    }
+
+
+    .birth-details-selected-location {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .birth-details-change-location {
+        width: 100%;
+    }
+
+
+    .birth-details-form-actions {
+        flex-direction: column;
+    }
+
+
+    .birth-details-button {
+        width: 100%;
+    }
+
+
+    .birth-details-button-primary {
+        min-width: 0;
+    }
+
+
+    .birth-details-saved-summary {
+        grid-template-columns: 1fr;
+    }
+
+}

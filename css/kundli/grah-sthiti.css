@@ -1,0 +1,643 @@
+/* =========================================================
+   GRAH STHITI MODULE
+========================================================= */
+
+.grah-sthiti-module {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.grah-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.grah-eyebrow,
+.grah-card-kicker {
+    display: block;
+    color: #c9a227;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.grah-header h2 {
+    margin: 7px 0 6px;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.grah-header p {
+    margin: 0;
+    color: #afa4a9;
+    font-size: 13px;
+}
+
+.grah-header-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.grah-badge {
+    padding: 8px 12px;
+    border: 1px solid rgba(201, 162, 39, 0.20);
+    border-radius: 999px;
+    color: #8d8288;
+    background: rgba(255, 255, 255, 0.025);
+    font-size: 10px;
+}
+
+.grah-badge-active {
+    color: #d6b43a;
+    border-color: rgba(201, 162, 39, 0.45);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.grah-summary-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.grah-summary-card {
+    padding: 17px 18px;
+    border: 1px solid rgba(201, 162, 39, 0.17);
+    border-radius: 13px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(46, 19, 31, 0.92),
+            rgba(18, 11, 18, 0.97)
+        );
+}
+
+.grah-summary-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #81767c;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.grah-summary-card strong {
+    display: block;
+    color: #ffffff;
+    font-size: 19px;
+}
+
+.grah-summary-card small {
+    display: block;
+    margin-top: 5px;
+    color: #9c9196;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.grah-card {
+    margin-bottom: 18px;
+    border: 1px solid rgba(201, 162, 39, 0.20);
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(43, 18, 30, 0.95),
+            rgba(18, 11, 18, 0.98)
+        );
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+.grah-card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 22px 15px;
+}
+
+.grah-card-heading h3 {
+    margin: 5px 0 0;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.grah-heading-note {
+    color: #80757b;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.grah-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 12px 16px;
+}
+
+.grah-table {
+    width: 100%;
+    min-width: 1120px;
+    border-collapse: collapse;
+}
+
+.grah-table th {
+    padding: 11px 9px;
+    border-bottom:
+        1px solid rgba(201, 162, 39, 0.22);
+    color: #81767c;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.grah-table td {
+    padding: 14px 9px;
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+    color: #c9c0c4;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.grah-table tbody tr {
+    transition:
+        background 0.18s ease;
+}
+
+.grah-table tbody tr:hover {
+    background:
+        rgba(201, 162, 39, 0.025);
+}
+
+.grah-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   PLANET CELL
+========================================================= */
+
+.grah-planet-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 115px;
+}
+
+.grah-planet-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    flex: 0 0 31px;
+    border: 1px solid rgba(201, 162, 39, 0.32);
+    border-radius: 50%;
+    color: #d3b039;
+    background: rgba(201, 162, 39, 0.055);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.grah-planet-name {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.grah-planet-en {
+    margin-top: 2px;
+    color: #756a70;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   RASHI
+========================================================= */
+
+.grah-rashi-name {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.grah-rashi-en {
+    margin-top: 2px;
+    color: #766c72;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   DEGREE
+========================================================= */
+
+.grah-degree {
+    color: #d4b13a;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.grah-longitude {
+    margin-top: 2px;
+    color: #6e646a;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   NAKSHATRA
+========================================================= */
+
+.grah-nakshatra {
+    color: #d0c5ca;
+}
+
+.grah-pada {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    padding: 4px 6px;
+    border-radius: 5px;
+    color: #d5b23a;
+    background: rgba(201, 162, 39, 0.06);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HOUSE
+========================================================= */
+
+.grah-house-number {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.grah-house-label {
+    margin-top: 2px;
+    color: #756a70;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   MOTION
+========================================================= */
+
+.grah-motion-normal {
+    color: #bdb2b7;
+}
+
+.grah-motion-retro {
+    color: #d6a54a;
+    font-weight: 700;
+}
+
+.grah-motion-value {
+    display: block;
+    margin-top: 3px;
+    color: #71666c;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.grah-status-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    max-width: 190px;
+}
+
+.grah-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 6px;
+    border-radius: 5px;
+    font-size: 8px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.grah-status-own {
+    color: #d5b53f;
+    background: rgba(201, 162, 39, 0.09);
+    border: 1px solid rgba(201, 162, 39, 0.17);
+}
+
+.grah-status-exalted {
+    color: #e2c65b;
+    background: rgba(220, 180, 50, 0.11);
+    border: 1px solid rgba(220, 180, 50, 0.20);
+}
+
+.grah-status-debilitated {
+    color: #c99595;
+    background: rgba(150, 60, 60, 0.10);
+    border: 1px solid rgba(150, 60, 60, 0.18);
+}
+
+.grah-status-mooltrikona {
+    color: #bda7cf;
+    background: rgba(120, 80, 150, 0.09);
+    border: 1px solid rgba(120, 80, 150, 0.16);
+}
+
+.grah-status-combust {
+    color: #d89168;
+    background: rgba(170, 75, 40, 0.09);
+    border: 1px solid rgba(170, 75, 40, 0.17);
+}
+
+.grah-status-retro {
+    color: #c8a4d2;
+    background: rgba(120, 70, 145, 0.08);
+    border: 1px solid rgba(120, 70, 145, 0.15);
+}
+
+
+/* =========================================================
+   OVERVIEW CARDS
+========================================================= */
+
+.grah-overview-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 22px 22px;
+}
+
+.grah-overview-card {
+    padding: 17px;
+    border:
+        1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 12px;
+    background:
+        rgba(0, 0, 0, 0.14);
+}
+
+.grah-overview-top {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.grah-overview-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 37px;
+    border:
+        1px solid rgba(201, 162, 39, 0.28);
+    border-radius: 50%;
+    color: #d2ad35;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.grah-overview-name {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.grah-overview-sub {
+    margin-top: 2px;
+    color: #756b71;
+    font-size: 9px;
+}
+
+.grah-overview-data {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.grah-data-box {
+    padding: 9px;
+    border-radius: 7px;
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+.grah-data-label {
+    display: block;
+    color: #6f656b;
+    font-size: 8px;
+}
+
+.grah-data-value {
+    display: block;
+    margin-top: 4px;
+    color: #cfc4c9;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.grah-legend-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 22px 22px;
+}
+
+.grah-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px;
+    border:
+        1px solid rgba(255, 255, 255, 0.045);
+    border-radius: 9px;
+    background:
+        rgba(0, 0, 0, 0.10);
+}
+
+.grah-legend-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-radius: 50%;
+    background: #81767c;
+}
+
+.grah-legend-dot.own {
+    background: #c9a227;
+}
+
+.grah-legend-dot.exalted {
+    background: #dfc250;
+}
+
+.grah-legend-dot.debilitated {
+    background: #a66565;
+}
+
+.grah-legend-dot.mooltrikona {
+    background: #9274a8;
+}
+
+.grah-legend-dot.combust {
+    background: #c47a52;
+}
+
+.grah-legend-dot.retro {
+    background: #9b75aa;
+}
+
+.grah-legend-item strong {
+    display: block;
+    color: #cfc4c9;
+    font-size: 10px;
+}
+
+.grah-legend-item small {
+    display: block;
+    margin-top: 2px;
+    color: #6e646a;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.grah-note {
+    padding: 14px 16px;
+    border-left:
+        2px solid rgba(201, 162, 39, 0.52);
+    border-radius: 8px;
+    color: #8c8187;
+    background:
+        rgba(201, 162, 39, 0.035);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.grah-note strong {
+    color: #c0a046;
+}
+
+
+/* =========================================================
+   EMPTY / ERROR
+========================================================= */
+
+.grah-error {
+    padding: 18px;
+    border:
+        1px solid rgba(190, 70, 70, 0.30);
+    border-radius: 10px;
+    color: #d2a1a1;
+    background:
+        rgba(100, 25, 25, 0.10);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .grah-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .grah-overview-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .grah-legend-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .grah-header {
+        flex-direction: column;
+    }
+
+    .grah-header-badges {
+        justify-content: flex-start;
+    }
+
+    .grah-overview-grid,
+    .grah-legend-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .grah-header h2 {
+        font-size: 24px;
+    }
+
+    .grah-card-heading {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .grah-overview-grid,
+    .grah-legend-grid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+}

@@ -1,0 +1,509 @@
+/* =========================================================
+   TIMING MODULE
+   Marriage Timing / विवाह समय
+   ========================================================= */
+
+.timing-module {
+    width: 100%;
+    color: #241b1b;
+}
+
+.timing-page-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 24px 26px;
+    margin-bottom: 20px;
+
+    background: #ffffff;
+    border: 1px solid #eadfd9;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 24px rgba(45, 18, 18, 0.06);
+}
+
+.timing-title-wrap {
+    min-width: 0;
+}
+
+.timing-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: #9b6b19;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.timing-page-head h2 {
+    margin: 0 0 8px;
+
+    color: #4b1118;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.timing-page-head p {
+    max-width: 800px;
+
+    margin: 0;
+
+    color: #6e5d5a;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.timing-engine-badge {
+    flex: 0 0 auto;
+
+    padding: 9px 14px;
+
+    border: 1px solid #e1c78f;
+    border-radius: 999px;
+
+    background: #fffaf0;
+    color: #79520c;
+
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.timing-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* ---------------------------------------------------------
+   COMMON CARD
+   --------------------------------------------------------- */
+
+.timing-card {
+    padding: 20px 22px;
+
+    background: #ffffff;
+    border: 1px solid #eadfd9;
+    border-radius: 17px;
+
+    box-shadow: 0 7px 22px rgba(45, 18, 18, 0.05);
+}
+
+.timing-card-head {
+    margin-bottom: 17px;
+}
+
+.timing-card-title {
+    margin: 0;
+
+    color: #4b1118;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 800;
+}
+
+.timing-card-subtitle {
+    margin: 5px 0 0;
+
+    color: #796b67;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+/* ---------------------------------------------------------
+   SUMMARY
+   --------------------------------------------------------- */
+
+.timing-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.timing-summary-item {
+    padding: 16px;
+
+    border: 1px solid #eee3dd;
+    border-radius: 13px;
+
+    background: #fffdfb;
+}
+
+.timing-summary-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #8a7772;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.timing-summary-value {
+    display: block;
+
+    color: #4b1118;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 800;
+}
+
+.timing-summary-value small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8a7772;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   STATUS
+   --------------------------------------------------------- */
+
+.timing-status-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 17px;
+
+    background: #fffaf1;
+    border: 1px solid #ead7ae;
+    border-radius: 14px;
+}
+
+.timing-status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+
+    border-radius: 50%;
+
+    background: #f7e8c3;
+    color: #79520c;
+
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.timing-status-title {
+    margin: 0 0 4px;
+
+    color: #4b1118;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.timing-status-text {
+    margin: 0;
+
+    color: #665753;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   FACTORS
+   --------------------------------------------------------- */
+
+.timing-factor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+}
+
+.timing-factor {
+    padding: 14px;
+
+    border: 1px solid #eadfd9;
+    border-radius: 12px;
+
+    background: #fffdfb;
+}
+
+.timing-factor-title {
+    margin: 0 0 4px;
+
+    color: #4b1118;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.timing-factor-text {
+    margin: 0;
+
+    color: #756764;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.timing-factor-badge {
+    display: inline-block;
+
+    margin-top: 9px;
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.timing-factor-badge.supportive {
+    background: #edf5e9;
+    color: #4b6b39;
+}
+
+.timing-factor-badge.attention {
+    background: #fff0e8;
+    color: #a34e27;
+}
+
+.timing-factor-badge.neutral {
+    background: #f1eeee;
+    color: #6d6260;
+}
+
+/* ---------------------------------------------------------
+   DASHA TABLE
+   --------------------------------------------------------- */
+
+.timing-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid #eadfd9;
+    border-radius: 13px;
+}
+
+.timing-table {
+    width: 100%;
+    min-width: 720px;
+
+    border-collapse: collapse;
+}
+
+.timing-table th {
+    padding: 12px 13px;
+
+    background: #4b1118;
+    color: #ffffff;
+
+    text-align: left;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.timing-table td {
+    padding: 12px 13px;
+
+    border-top: 1px solid #eee5e0;
+
+    color: #5d4e4a;
+
+    font-size: 12px;
+    line-height: 1.55;
+    vertical-align: top;
+}
+
+.timing-table tr:nth-child(even) td {
+    background: #fffdfb;
+}
+
+.timing-period-name {
+    color: #4b1118;
+    font-weight: 800;
+}
+
+.timing-period-badge {
+    display: inline-block;
+
+    padding: 5px 8px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.timing-period-badge.favorable {
+    background: #edf5e9;
+    color: #4b6b39;
+}
+
+.timing-period-badge.attention {
+    background: #fff0e8;
+    color: #a34e27;
+}
+
+.timing-period-badge.neutral {
+    background: #f1eeee;
+    color: #6d6260;
+}
+
+/* ---------------------------------------------------------
+   ANALYSIS
+   --------------------------------------------------------- */
+
+.timing-analysis-box {
+    padding: 19px;
+
+    background: linear-gradient(
+        135deg,
+        #fffaf0,
+        #fffdf9
+    );
+
+    border: 1px solid #e5cf9c;
+    border-radius: 14px;
+}
+
+.timing-analysis-title {
+    margin: 0 0 9px;
+
+    color: #4b1118;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.timing-analysis-text {
+    margin: 0;
+
+    color: #5f504d;
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.timing-analysis-text + .timing-analysis-text {
+    margin-top: 10px;
+}
+
+/* ---------------------------------------------------------
+   NOTE
+   --------------------------------------------------------- */
+
+.timing-note {
+    padding: 15px 17px;
+
+    background: #f8f5f3;
+    border: 1px solid #e8dfdb;
+    border-radius: 12px;
+}
+
+.timing-note-title {
+    margin: 0 0 5px;
+
+    color: #4b1118;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.timing-note-text {
+    margin: 0;
+
+    color: #746865;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   EMPTY
+   --------------------------------------------------------- */
+
+.timing-empty {
+    padding: 36px 22px;
+
+    text-align: center;
+
+    background: #fffdfb;
+    border: 1px dashed #d9cbc5;
+    border-radius: 16px;
+}
+
+.timing-empty-title {
+    margin: 0 0 8px;
+
+    color: #4b1118;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.timing-empty-text {
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    color: #776965;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .timing-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timing-factor-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .timing-page-head {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .timing-page-head h2 {
+        font-size: 23px;
+    }
+
+    .timing-card {
+        padding: 17px;
+    }
+
+    .timing-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .timing-status-box {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .timing-page-head {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .timing-card {
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    .timing-status-icon {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+}

@@ -1,0 +1,4216 @@
+
+/* ============================================================
+   MUKESH SAH — FINAL MOBILE.CSS
+   ============================================================
+   IMPORTANT:
+   This file is loaded LAST after:
+   variables.css
+   main.css
+   header.css
+   footer.css
+   home.css
+
+   Therefore these rules intentionally override desktop/mobile
+   conflicts from the previous files.
+
+   Existing luxury animations, glow, shimmer, rings, particles,
+   footer effects etc. are NOT globally disabled.
+   ============================================================ */
+
+
+/* ============================================================
+   01. GLOBAL MOBILE FOUNDATION
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    html {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    a {
+        max-width: 100%;
+    }
+
+    .container,
+    .section-inner {
+        width: calc(100% - 36px) !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .page-wrapper {
+        width: 100% !important;
+        padding-top: 88px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .section {
+        width: 100% !important;
+        padding-top: 62px !important;
+        padding-bottom: 62px !important;
+    }
+
+    .glass-card {
+        max-width: 100% !important;
+        border-radius: var(--radius-md) !important;
+    }
+}
+
+
+/* ============================================================
+   02. HEADER
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    #site-header {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+        height: 68px !important;
+        min-height: 68px !important;
+
+        z-index: 9999 !important;
+    }
+
+    .header-inner {
+        width: 100% !important;
+        height: 68px !important;
+        min-height: 68px !important;
+
+        padding: 8px 16px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        gap: 10px !important;
+    }
+
+    .header-brand {
+        min-width: 0 !important;
+
+        flex: 1 1 auto !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: 9px !important;
+    }
+
+    .brand-emblem {
+        width: 36px !important;
+        height: 36px !important;
+
+        min-width: 36px !important;
+
+        flex: 0 0 36px !important;
+    }
+
+    .brand-copy {
+        min-width: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: flex-start !important;
+        justify-content: center !important;
+
+        text-align: left !important;
+    }
+
+    .brand-name {
+        display: block !important;
+
+        margin: 0 !important;
+
+        font-size: 13px !important;
+        line-height: 1.15 !important;
+
+        letter-spacing: 1.2px !important;
+
+        white-space: nowrap !important;
+    }
+
+    .brand-subtitle {
+        display: block !important;
+
+        margin-top: 3px !important;
+
+        font-size: 6.5px !important;
+        line-height: 1.2 !important;
+
+        letter-spacing: 1px !important;
+
+        white-space: nowrap !important;
+    }
+
+    .desktop-nav,
+    .header-cta {
+        display: none !important;
+    }
+
+    #menu-btn {
+        position: relative !important;
+
+        width: 40px !important;
+        height: 40px !important;
+
+        min-width: 40px !important;
+        min-height: 40px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 5px !important;
+
+        z-index: 10002 !important;
+    }
+
+    #menu-btn span {
+        display: block !important;
+
+        width: 17px !important;
+        height: 1px !important;
+    }
+
+
+    /* --------------------------------------------------------
+       RIGHT TO LEFT MOBILE DRAWER
+       -------------------------------------------------------- */
+
+    #mobile-nav {
+        position: fixed !important;
+
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+
+        width: min(310px, 84vw) !important;
+        height: 100dvh !important;
+
+        padding: 82px 18px 24px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 4px !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+
+        transform: translateX(105%) !important;
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+
+        z-index: 10000 !important;
+
+        transition:
+            transform .55s var(--ease-luxury),
+            opacity .30s ease,
+            visibility .30s ease !important;
+    }
+
+    #mobile-nav.active,
+    #mobile-nav.open,
+    #mobile-nav.is-open {
+        transform: translateX(0) !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    #mobile-nav::before {
+        content: "MUKESH SAH" !important;
+
+        position: absolute !important;
+
+        top: 30px !important;
+        left: 18px !important;
+
+        color: var(--color-gold-light) !important;
+
+        font-size: 14px !important;
+        font-weight: 700 !important;
+
+        letter-spacing: 2px !important;
+    }
+
+    #mobile-nav::after {
+        content: "MARRIAGE BIODATA" !important;
+
+        position: absolute !important;
+
+        top: 50px !important;
+        left: 18px !important;
+
+        color: var(--color-text-muted) !important;
+
+        font-size: 7px !important;
+
+        letter-spacing: 1.6px !important;
+    }
+
+    #mobile-nav a {
+        width: 100% !important;
+
+        min-height: 43px !important;
+
+        padding: 0 13px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        transform: translateX(25px) !important;
+
+        opacity: 0 !important;
+
+        border-radius: 9px !important;
+
+        transition:
+            transform .45s var(--ease-luxury),
+            opacity .30s ease,
+            background .20s ease !important;
+    }
+
+    #mobile-nav.active a,
+    #mobile-nav.open a,
+    #mobile-nav.is-open a {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+    }
+
+    #mobile-nav a span {
+        font-size: 11px !important;
+        line-height: 1.3 !important;
+
+        letter-spacing: .7px !important;
+
+        white-space: nowrap !important;
+    }
+
+    body.menu-open {
+        overflow: hidden !important;
+    }
+}
+
+
+/* ============================================================
+   03. GANESH INTRO
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .ganesh-intro {
+        width: 100% !important;
+
+        padding:
+            20px 0 35px !important;
+
+        overflow: visible !important;
+
+        text-align: center !important;
+    }
+
+    .ganesh-stars {
+        width: 100% !important;
+
+        overflow: visible !important;
+    }
+
+    .ganesh-frame {
+        position: relative !important;
+
+        width: min(210px, 58vw) !important;
+        height: min(210px, 58vw) !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .ganesh-image-box {
+        width: min(175px, 50vw) !important;
+        height: min(175px, 50vw) !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .ganesh-mantra-wrap {
+        width: 100% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .ganesh-mantra {
+        max-width: 100% !important;
+
+        font-size: clamp(18px, 6vw, 25px) !important;
+
+        line-height: 1.5 !important;
+
+        white-space: nowrap !important;
+    }
+
+    .mantra-line {
+        max-width: 80px !important;
+    }
+
+    .ganesh-subtitle {
+        width: 100% !important;
+
+        max-width: 90% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        line-height: 1.7 !important;
+
+        text-align: center !important;
+    }
+}
+
+
+/* ============================================================
+   04. HERO MAIN STRUCTURE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .hero-section {
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        overflow: visible !important;
+    }
+
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        text-align: center !important;
+
+        overflow: visible !important;
+    }
+
+    .hero-label {
+        width: 100% !important;
+
+        justify-content: center !important;
+
+        text-align: center !important;
+    }
+
+    .hero-name {
+        width: 100% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        text-align: center !important;
+
+        overflow: visible !important;
+    }
+
+    .name-decoration {
+        width: 100% !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .hero-tagline {
+        width: 100% !important;
+
+        text-align: center !important;
+
+        line-height: 1.7 !important;
+    }
+
+    .hero-description {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        line-height: 1.75 !important;
+
+        text-align: center !important;
+    }
+}
+
+
+/* ============================================================
+   05. *** EXACT HERO DETAILS GRID ***
+   DOB / AGE / HEIGHT / LOCATION / PROFESSION / RASHI
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    /*
+       THIS IS THE ACTUAL CLASS FROM index.html:
+       .hero-details-grid
+
+       Therefore no generic guessing here.
+    */
+
+    .hero-details-grid {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 22px auto 0 !important;
+        padding: 0 !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        grid-template-rows: auto !important;
+
+        grid-auto-flow: row !important;
+
+        gap: 10px !important;
+
+        align-items: stretch !important;
+
+        justify-content: stretch !important;
+    }
+
+
+    /*
+       EXACT CHILD:
+       .hero-details-grid .detail-box
+    */
+
+    .hero-details-grid > .detail-box {
+
+        position: relative !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        min-height: 78px !important;
+
+        margin: 0 !important;
+        padding: 12px 10px !important;
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: 9px !important;
+
+        overflow: hidden !important;
+
+        text-align: left !important;
+
+        /*
+           Important:
+           box border stays around the complete card.
+           Content never gets positioned over the border.
+        */
+
+        isolation: isolate !important;
+    }
+
+
+    /*
+       ICON
+    */
+
+    .hero-details-grid > .detail-box > .detail-icon {
+
+        position: relative !important;
+
+        flex: 0 0 16px !important;
+
+        width: 16px !important;
+        min-width: 16px !important;
+
+        height: 16px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 10px !important;
+
+        line-height: 1 !important;
+
+        z-index: 3 !important;
+    }
+
+
+    /*
+       INNER TEXT WRAPPER
+       This is the anonymous <div> inside each detail-box.
+    */
+
+    .hero-details-grid > .detail-box > div {
+
+        position: relative !important;
+
+        flex: 1 1 auto !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: flex-start !important;
+        justify-content: center !important;
+
+        text-align: left !important;
+
+        z-index: 3 !important;
+    }
+
+
+    /*
+       LABEL
+       DATE OF BIRTH / AGE / HEIGHT / etc.
+    */
+
+    .hero-details-grid > .detail-box small {
+
+        position: relative !important;
+
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 0 5px !important;
+        padding: 0 !important;
+
+        font-size: 7px !important;
+
+        line-height: 1.25 !important;
+
+        letter-spacing: .85px !important;
+
+        text-align: left !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: anywhere !important;
+
+        z-index: 4 !important;
+    }
+
+
+    /*
+       VALUE
+       05 July 1992 / 34 Years / etc.
+    */
+
+    .hero-details-grid > .detail-box strong {
+
+        position: relative !important;
+
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 10px !important;
+
+        line-height: 1.35 !important;
+
+        text-align: left !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: anywhere !important;
+
+        word-break: normal !important;
+
+        z-index: 4 !important;
+    }
+
+
+    /*
+       KILL ANY ABSOLUTE POSITIONING ON INNER CONTENT
+       which could cause line/text overlap.
+    */
+
+    .hero-details-grid > .detail-box > div,
+    .hero-details-grid > .detail-box > div > small,
+    .hero-details-grid > .detail-box > div > strong {
+
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        transform: none !important;
+    }
+}
+
+
+/* ============================================================
+   06. DETAIL BOX BORDER SAFETY
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    /*
+       Existing decorative border lines can remain,
+       but they must stay behind the actual text.
+    */
+
+    .hero-details-grid > .detail-box::before,
+    .hero-details-grid > .detail-box::after {
+
+        pointer-events: none !important;
+
+        z-index: 0 !important;
+    }
+
+    .hero-details-grid > .detail-box > * {
+
+        position: relative !important;
+
+        z-index: 2 !important;
+    }
+
+    /*
+       Prevent decorative horizontal line from sitting
+       through the middle of the card content.
+    */
+
+    .hero-details-grid > .detail-box .detail-line,
+    .hero-details-grid > .detail-box .box-line,
+    .hero-details-grid > .detail-box .line {
+
+        position: absolute !important;
+
+        pointer-events: none !important;
+
+        z-index: 0 !important;
+    }
+}
+
+
+/* ============================================================
+   07. HERO BUTTONS
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .hero-buttons {
+
+        width: 100% !important;
+
+        margin-top: 20px !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 9px !important;
+    }
+
+    .hero-buttons .hero-button {
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        min-height: 46px !important;
+
+        margin: 0 !important;
+        padding: 10px 8px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 7px !important;
+
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+    }
+
+    .hero-buttons .hero-button strong {
+
+        min-width: 0 !important;
+
+        font-size: 8px !important;
+
+        white-space: nowrap !important;
+    }
+}
+
+
+/* ============================================================
+   08. *** EXACT HERO STATUS ROW ***
+   34 / YEARS
+   5'3" / HEIGHT
+   LEO / RASHI
+   NON / MANGLIK
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    /*
+       EXACT CLASS FROM index.html:
+       .hero-status-row
+    */
+
+    .hero-status-row {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 22px auto 0 !important;
+        padding: 0 !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        grid-template-rows:
+            minmax(76px, auto)
+            minmax(76px, auto) !important;
+
+        gap: 8px !important;
+
+        align-items: stretch !important;
+        justify-content: stretch !important;
+    }
+
+
+    /*
+       EXACT .status-item
+    */
+
+    .hero-status-row > .status-item {
+
+        position: relative !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        min-height: 76px !important;
+
+        margin: 0 !important;
+        padding: 12px 8px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        overflow: hidden !important;
+
+        isolation: isolate !important;
+    }
+
+
+    /*
+       VALUE:
+       34
+       5'3"
+       LEO
+       NON
+    */
+
+    .hero-status-row > .status-item > strong {
+
+        position: relative !important;
+
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 19px !important;
+
+        line-height: 1.05 !important;
+
+        text-align: center !important;
+
+        white-space: nowrap !important;
+
+        z-index: 3 !important;
+    }
+
+
+    /*
+       LABEL:
+       YEARS
+       HEIGHT
+       RASHI
+       MANGLIK
+    */
+
+    .hero-status-row > .status-item > span {
+
+        position: relative !important;
+
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 6px 0 0 !important;
+        padding: 0 !important;
+
+        font-size: 7px !important;
+
+        line-height: 1.25 !important;
+
+        letter-spacing: 1px !important;
+
+        text-align: center !important;
+
+        white-space: nowrap !important;
+
+        z-index: 3 !important;
+    }
+
+
+    /*
+       IMPORTANT:
+       Desktop uses divider elements between every stat.
+
+       On mobile these dividers are NOT needed because
+       the 2x2 grid itself creates the separation.
+    */
+
+    .hero-status-row > .status-divider {
+
+        display: none !important;
+
+        width: 0 !important;
+        height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+
+/* ============================================================
+   09. STATUS BORDER / LINE SAFETY
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .hero-status-row > .status-item::before,
+    .hero-status-row > .status-item::after {
+
+        pointer-events: none !important;
+
+        z-index: 0 !important;
+    }
+
+    .hero-status-row > .status-item > * {
+
+        position: relative !important;
+
+        z-index: 2 !important;
+    }
+}
+
+
+/* ============================================================
+   10. HERO PROFILE AREA
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .hero-profile-area {
+
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin-top: 45px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        overflow: visible !important;
+    }
+
+    .profile-photo-stage {
+
+        position: relative !important;
+
+        width: min(290px, 78vw) !important;
+        height: min(290px, 78vw) !important;
+
+        min-width: 0 !important;
+        min-height: 0 !important;
+
+        margin: 0 auto !important;
+
+        flex: 0 0 auto !important;
+    }
+
+
+    /*
+       Keep orbit/stars positioned relative to photo area.
+       Do NOT remove their animations.
+    */
+
+    .profile-orbit,
+    .profile-stars {
+
+        pointer-events: none !important;
+    }
+}
+
+
+/* ============================================================
+   11. PROFILE CAPTION — NO OVERLAP
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .profile-caption {
+
+        position: relative !important;
+
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        transform: none !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 25px auto 0 !important;
+        padding: 0 8px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        overflow: visible !important;
+    }
+
+    .profile-caption .caption-line {
+
+        position: relative !important;
+
+        width: min(220px, 70vw) !important;
+
+        height: 1px !important;
+
+        margin: 0 auto !important;
+
+        flex: 0 0 auto !important;
+    }
+
+    .profile-caption h2 {
+
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        margin: 10px 0 7px !important;
+        padding: 0 !important;
+
+        font-size: clamp(20px, 7vw, 30px) !important;
+
+        line-height: 1.15 !important;
+
+        text-align: center !important;
+
+        white-space: nowrap !important;
+    }
+
+    .profile-caption p {
+
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 8px !important;
+
+        line-height: 1.7 !important;
+
+        letter-spacing: 1px !important;
+
+        text-align: center !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: anywhere !important;
+    }
+}
+
+
+/* ============================================================
+   12. SCROLL INDICATOR — BELOW CAPTION
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .home-scroll-indicator {
+
+        position: relative !important;
+
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        transform: none !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 42px auto 0 !important;
+        padding: 0 10px 28px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        clear: both !important;
+
+        overflow: visible !important;
+    }
+
+    .home-scroll-indicator > span {
+
+        position: relative !important;
+
+        display: block !important;
+
+        margin: 0 !important;
+
+        font-size: 7px !important;
+
+        line-height: 1.5 !important;
+
+        letter-spacing: 1.8px !important;
+
+        white-space: nowrap !important;
+    }
+
+    .home-scroll-indicator .scroll-line {
+
+        position: relative !important;
+
+        margin: 10px auto 0 !important;
+    }
+}
+
+
+/* ============================================================
+   13. FOOTER — MAIN FRAME
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    #site-footer,
+    .luxury-footer {
+
+        position: relative !important;
+
+        width: 100% !important;
+
+        margin: 30px 0 0 !important;
+
+        padding: 60px 18px 28px !important;
+
+        overflow: hidden !important;
+    }
+
+    .footer-inner {
+
+        width: 100% !important;
+
+        max-width: 650px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .footer-ornament {
+
+        width: min(430px, 90%) !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        margin-bottom: 45px !important;
+    }
+}
+
+
+/* ============================================================
+   14. FOOTER GRID
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .footer-grid {
+
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        column-gap: 22px !important;
+
+        row-gap: 38px !important;
+
+        align-items: start !important;
+    }
+
+
+    /*
+       BRAND = FULL WIDTH
+    */
+
+    .footer-brand {
+
+        grid-column: 1 / -1 !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: flex-start !important;
+
+        text-align: left !important;
+    }
+
+    .footer-brand-heading {
+
+        width: 100% !important;
+
+        margin-top: 12px !important;
+
+        text-align: left !important;
+    }
+
+    .footer-brand-name {
+
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 22px !important;
+
+        line-height: 1.15 !important;
+
+        text-align: left !important;
+
+        white-space: nowrap !important;
+    }
+
+    .footer-brand-subtitle {
+
+        margin: 5px 0 0 !important;
+
+        font-size: 7px !important;
+
+        letter-spacing: 1.6px !important;
+
+        text-align: left !important;
+    }
+
+    .footer-description {
+
+        width: 100% !important;
+
+        margin: 14px 0 0 !important;
+        padding: 0 !important;
+
+        font-size: 10px !important;
+
+        line-height: 1.7 !important;
+
+        text-align: left !important;
+    }
+}
+
+
+/* ============================================================
+   15. FOOTER ACTIONS
+   PHONE / WHATSAPP / EMAIL = SAME ROW
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .footer-actions {
+
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 6px !important;
+
+        margin: 18px 0 0 !important;
+        padding: 0 !important;
+    }
+
+    .footer-action {
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        min-height: 40px !important;
+
+        margin: 0 !important;
+        padding: 8px 3px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 4px !important;
+
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+    }
+
+    .footer-action-icon {
+
+        flex: 0 0 auto !important;
+
+        font-size: 11px !important;
+
+        line-height: 1 !important;
+    }
+
+    .footer-action-text {
+
+        min-width: 0 !important;
+
+        max-width: 100% !important;
+
+        flex: 0 1 auto !important;
+
+        font-size: 6.8px !important;
+
+        line-height: 1.2 !important;
+
+        letter-spacing: .2px !important;
+
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+
+        text-overflow: clip !important;
+    }
+}
+
+
+/* ============================================================
+   16. FOOTER QUICK LINKS + BIODATA
+   TWO COLUMNS
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .footer-column {
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        text-align: left !important;
+    }
+
+    .footer-column-heading {
+
+        width: 100% !important;
+
+        min-height: 20px !important;
+
+        margin: 0 0 8px !important;
+        padding: 0 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: 6px !important;
+
+        text-align: left !important;
+    }
+
+    .footer-column-heading h3 {
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 9px !important;
+
+        line-height: 1.25 !important;
+
+        letter-spacing: 1px !important;
+
+        text-align: left !important;
+    }
+
+    .footer-column-icon {
+
+        flex: 0 0 auto !important;
+
+        font-size: 9px !important;
+    }
+
+
+    /*
+       LINE IS BELOW HEADING.
+       It cannot cross through the heading text.
+    */
+
+    .footer-column-line {
+
+        position: relative !important;
+
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        transform: none !important;
+
+        display: block !important;
+
+        width: 100% !important;
+
+        height: 1px !important;
+
+        margin: 0 0 10px !important;
+        padding: 0 !important;
+    }
+
+
+    .footer-links {
+
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+
+        gap: 8px !important;
+    }
+
+    .footer-links a {
+
+        position: relative !important;
+
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 8px !important;
+
+        line-height: 1.5 !important;
+
+        text-align: left !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: anywhere !important;
+    }
+}
+
+
+/* ============================================================
+   17. FOOTER CONTACT
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .footer-contact-column {
+
+        grid-column: 1 / -1 !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .footer-contact {
+
+        width: 100% !important;
+
+        margin: 12px 0 0 !important;
+        padding: 0 !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        column-gap: 18px !important;
+
+        row-gap: 18px !important;
+
+        align-items: start !important;
+    }
+
+
+    /*
+       Whatever the actual contact child class is,
+       direct children get proper grid placement.
+    */
+
+    .footer-contact > * {
+
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /*
+       CURRENT LOCATION is normally the last contact item.
+       Make the last item full width.
+    */
+
+    .footer-contact > :last-child {
+
+        grid-column: 1 / -1 !important;
+
+        width: 100% !important;
+    }
+
+
+    .footer-contact-item,
+    .contact-item {
+
+        position: relative !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        display: flex !important;
+
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+
+        gap: 8px !important;
+
+        text-align: left !important;
+
+        overflow: visible !important;
+    }
+
+
+    .footer-contact-icon,
+    .contact-icon {
+
+        flex: 0 0 auto !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.5 !important;
+    }
+
+
+    .footer-contact-content,
+    .contact-content {
+
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: flex-start !important;
+
+        text-align: left !important;
+    }
+
+
+    .footer-contact-label,
+    .contact-label {
+
+        display: block !important;
+
+        margin: 0 0 3px !important;
+        padding: 0 !important;
+
+        font-size: 7px !important;
+
+        line-height: 1.3 !important;
+
+        letter-spacing: .8px !important;
+
+        text-align: left !important;
+    }
+
+
+    .footer-contact-value,
+    .contact-value {
+
+        display: block !important;
+
+        width: auto !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 8px !important;
+
+        line-height: 1.5 !important;
+
+        text-align: left !important;
+
+        overflow-wrap: anywhere !important;
+
+        word-break: break-word !important;
+    }
+}
+
+
+/* ============================================================
+   18. FOOTER CONTACT — PROTECT TEXT FROM DECORATIVE LINES
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .footer-contact > *,
+    .footer-contact-item,
+    .contact-item {
+
+        isolation: isolate !important;
+    }
+
+    .footer-contact > *::before,
+    .footer-contact > *::after,
+    .footer-contact-item::before,
+    .footer-contact-item::after,
+    .contact-item::before,
+    .contact-item::after {
+
+        pointer-events: none !important;
+
+        z-index: 0 !important;
+    }
+
+    .footer-contact > * > *,
+    .footer-contact-item > *,
+    .contact-item > * {
+
+        position: relative !important;
+
+        z-index: 2 !important;
+    }
+}
+
+
+/* ============================================================
+   19. FOOTER BOTTOM
+   COPYRIGHT CENTER
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .footer-divider {
+
+        width: 100% !important;
+
+        margin: 40px 0 22px !important;
+    }
+
+    .footer-bottom {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 16px !important;
+
+        text-align: center !important;
+    }
+
+    .footer-bottom-left {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        text-align: center !important;
+    }
+
+    .footer-copy {
+
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 8px !important;
+
+        line-height: 1.5 !important;
+
+        text-align: center !important;
+    }
+
+    .footer-note {
+
+        width: 100% !important;
+
+        margin: 5px 0 0 !important;
+        padding: 0 !important;
+
+        font-size: 7px !important;
+
+        line-height: 1.5 !important;
+
+        text-align: center !important;
+    }
+
+    .footer-bottom-right {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+    }
+
+    .footer-status-text {
+
+        font-size: 7px !important;
+
+        letter-spacing: 1px !important;
+
+        text-align: center !important;
+    }
+
+    .footer-top-button {
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+
+/* ============================================================
+   20. GENERIC OTHER PAGE GRIDS
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .cards-grid,
+    .card-grid,
+    .profile-grid,
+    .profession-grid,
+    .preference-grid,
+    .gallery-grid {
+
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 10px !important;
+    }
+
+    .cards-grid > *,
+    .card-grid > *,
+    .profile-grid > *,
+    .profession-grid > *,
+    .preference-grid > *,
+    .gallery-grid > * {
+
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+}
+
+
+/* ============================================================
+   21. TABLE / HORIZONTAL CONTENT
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .table-wrapper,
+    .table-scroll,
+    .responsive-table,
+    .horizontal-scroll {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .table-wrapper table,
+    .table-scroll table,
+    .responsive-table table {
+
+        min-width: 560px;
+    }
+}
+
+
+/* ============================================================
+   22. ORNAMENTS
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .ornament {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 8px !important;
+    }
+
+    .ornament::before,
+    .ornament::after {
+
+        width: 48px !important;
+
+        max-width: 16vw !important;
+
+        flex: 0 1 48px !important;
+    }
+}
+
+
+/* ============================================================
+   23. 480px MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    #site-header {
+
+        height: 64px !important;
+        min-height: 64px !important;
+    }
+
+    .header-inner {
+
+        height: 64px !important;
+        min-height: 64px !important;
+
+        padding:
+            7px 14px !important;
+    }
+
+    .brand-emblem {
+
+        width: 34px !important;
+        height: 34px !important;
+
+        min-width: 34px !important;
+        flex-basis: 34px !important;
+    }
+
+    .brand-name {
+
+        font-size: 12px !important;
+
+        letter-spacing: 1px !important;
+    }
+
+    .brand-subtitle {
+
+        font-size: 6px !important;
+    }
+
+    #menu-btn {
+
+        width: 38px !important;
+        height: 38px !important;
+
+        min-width: 38px !important;
+        min-height: 38px !important;
+    }
+
+    #mobile-nav {
+
+        width: min(300px, 86vw) !important;
+
+        padding:
+            78px 16px 22px !important;
+    }
+
+    .page-wrapper {
+
+        padding-top: 80px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .container,
+    .section-inner {
+
+        width: calc(100% - 30px) !important;
+    }
+
+    .section {
+
+        padding-top: 54px !important;
+        padding-bottom: 54px !important;
+    }
+
+
+    /* --------------------------------------------------------
+       EXACT HERO DETAILS — 2 COLUMNS
+       -------------------------------------------------------- */
+
+    .hero-details-grid {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 8px !important;
+
+        margin-top: 20px !important;
+    }
+
+    .hero-details-grid > .detail-box {
+
+        min-height: 72px !important;
+
+        padding:
+            11px 8px !important;
+
+        gap: 7px !important;
+    }
+
+    .hero-details-grid > .detail-box > .detail-icon {
+
+        flex-basis: 14px !important;
+
+        width: 14px !important;
+        min-width: 14px !important;
+
+        height: 14px !important;
+
+        font-size: 9px !important;
+    }
+
+    .hero-details-grid > .detail-box small {
+
+        margin-bottom: 4px !important;
+
+        font-size: 6.5px !important;
+
+        letter-spacing: .7px !important;
+    }
+
+    .hero-details-grid > .detail-box strong {
+
+        font-size: 9px !important;
+
+        line-height: 1.3 !important;
+    }
+
+
+    /* --------------------------------------------------------
+       EXACT HERO STATUS — 2 × 2
+       -------------------------------------------------------- */
+
+    .hero-status-row {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        grid-template-rows:
+            minmax(72px, auto)
+            minmax(72px, auto) !important;
+
+        gap: 7px !important;
+
+        margin-top: 20px !important;
+    }
+
+    .hero-status-row > .status-item {
+
+        min-height: 72px !important;
+
+        padding:
+            10px 6px !important;
+    }
+
+    .hero-status-row > .status-item > strong {
+
+        font-size: 17px !important;
+    }
+
+    .hero-status-row > .status-item > span {
+
+        margin-top: 5px !important;
+
+        font-size: 6.5px !important;
+
+        letter-spacing: .8px !important;
+    }
+
+
+    /* --------------------------------------------------------
+       HERO BUTTONS
+       -------------------------------------------------------- */
+
+    .hero-buttons {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 7px !important;
+    }
+
+    .hero-buttons .hero-button {
+
+        min-height: 43px !important;
+
+        padding:
+            9px 5px !important;
+
+        gap: 5px !important;
+    }
+
+    .hero-buttons .hero-button strong {
+
+        font-size: 7px !important;
+    }
+
+
+    /* --------------------------------------------------------
+       PHOTO
+       -------------------------------------------------------- */
+
+    .hero-profile-area {
+
+        margin-top: 40px !important;
+    }
+
+    .profile-photo-stage {
+
+        width: min(275px, 76vw) !important;
+        height: min(275px, 76vw) !important;
+    }
+
+    .profile-caption {
+
+        margin-top: 22px !important;
+    }
+
+
+    /* --------------------------------------------------------
+       FOOTER
+       -------------------------------------------------------- */
+
+    #site-footer,
+    .luxury-footer {
+
+        padding:
+            54px 15px 25px !important;
+    }
+
+    .footer-grid {
+
+        column-gap: 16px !important;
+        row-gap: 34px !important;
+    }
+
+    .footer-brand-name {
+
+        font-size: 20px !important;
+    }
+
+    .footer-description {
+
+        font-size: 9px !important;
+
+        line-height: 1.7 !important;
+    }
+
+
+    /*
+       Phone / WhatsApp / Email:
+       NEVER STACK.
+    */
+
+    .footer-actions {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 5px !important;
+    }
+
+    .footer-action {
+
+        min-height: 38px !important;
+
+        padding:
+            7px 2px !important;
+
+        gap: 3px !important;
+    }
+
+    .footer-action-icon {
+
+        font-size: 10px !important;
+    }
+
+    .footer-action-text {
+
+        font-size: 6.2px !important;
+
+        letter-spacing: .1px !important;
+    }
+
+
+    /*
+       CONTACT:
+       TWO COLUMNS.
+    */
+
+    .footer-contact {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        column-gap: 13px !important;
+
+        row-gap: 16px !important;
+    }
+}
+
+
+/* ============================================================
+   24. 360px — VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+    .container,
+    .section-inner {
+
+        width: calc(100% - 24px) !important;
+    }
+
+    .header-inner {
+
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .brand-name {
+
+        font-size: 11px !important;
+    }
+
+    .brand-subtitle {
+
+        display: none !important;
+    }
+
+
+    /* --------------------------------------------------------
+       DETAILS — STILL 2 COLUMNS
+       -------------------------------------------------------- */
+
+    .hero-details-grid {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 6px !important;
+    }
+
+    .hero-details-grid > .detail-box {
+
+        min-height: 66px !important;
+
+        padding:
+            9px 5px !important;
+
+        gap: 5px !important;
+    }
+
+    .hero-details-grid > .detail-box > .detail-icon {
+
+        flex-basis: 12px !important;
+
+        width: 12px !important;
+        min-width: 12px !important;
+
+        font-size: 8px !important;
+    }
+
+    .hero-details-grid > .detail-box small {
+
+        font-size: 5.8px !important;
+
+        letter-spacing: .55px !important;
+    }
+
+    .hero-details-grid > .detail-box strong {
+
+        font-size: 8px !important;
+    }
+
+
+    /* --------------------------------------------------------
+       STATUS — STILL 2 × 2
+       -------------------------------------------------------- */
+
+    .hero-status-row {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        grid-template-rows:
+            minmax(66px, auto)
+            minmax(66px, auto) !important;
+
+        gap: 6px !important;
+    }
+
+    .hero-status-row > .status-item {
+
+        min-height: 66px !important;
+
+        padding:
+            8px 4px !important;
+    }
+
+    .hero-status-row > .status-item > strong {
+
+        font-size: 16px !important;
+    }
+
+    .hero-status-row > .status-item > span {
+
+        font-size: 6px !important;
+
+        letter-spacing: .5px !important;
+    }
+
+
+    /* --------------------------------------------------------
+       PHOTO
+       -------------------------------------------------------- */
+
+    .profile-photo-stage {
+
+        width: min(255px, 74vw) !important;
+        height: min(255px, 74vw) !important;
+    }
+
+
+    /* --------------------------------------------------------
+       FOOTER ACTIONS — 3 COLUMNS
+       -------------------------------------------------------- */
+
+    .footer-actions {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 4px !important;
+    }
+
+    .footer-action {
+
+        min-height: 36px !important;
+
+        padding:
+            6px 1px !important;
+
+        gap: 2px !important;
+    }
+
+    .footer-action-icon {
+
+        font-size: 9px !important;
+    }
+
+    .footer-action-text {
+
+        font-size: 5.8px !important;
+
+        letter-spacing: 0 !important;
+    }
+
+
+    /* --------------------------------------------------------
+       FOOTER CONTACT — 2 COLUMNS
+       -------------------------------------------------------- */
+
+    .footer-contact {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        column-gap: 9px !important;
+    }
+}
+
+
+/* ============================================================
+   25. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #mobile-nav,
+    #mobile-nav a,
+    #menu-btn span {
+
+        transition: none !important;
+    }
+
+    .reveal {
+
+        opacity: 1 !important;
+
+        transform: none !important;
+    }
+}
+
+/* =========================================================
+MUKESH SAH — MOBILE SYSTEM
+Final responsive overrides
+Existing desktop CSS + animations remain untouched
+========================================================= */
+
+/* =========================================================
+GLOBAL MOBILE GUTTER
+========================================================= */
+
+@media (max-width: 900px) {
+
+html,
+body {
+width: 100%;
+max-width: 100%;
+min-width: 0;
+overflow-x: hidden;
+}
+
+#site-header,
+#site-footer {
+width: 100%;
+max-width: 100%;
+}
+
+/*
+Main page itself remains full width so background effects
+stay full-screen. Actual content receives the gutter.
+*/
+.home-page {
+width: 100%;
+max-width: 100%;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/*
+These are the visible content blocks.
+They get a proper 16px breathing space from viewport.
+*/
+.hero-section,
+.home-scroll-indicator {
+width: calc(100% - 32px) !important;
+max-width: 1240px;
+margin-left: auto !important;
+margin-right: auto !important;
+box-sizing: border-box;
+}
+
+.hero-content,
+.hero-profile-area {
+min-width: 0;
+max-width: 100%;
+box-sizing: border-box;
+}
+
+}
+
+/* =========================================================
+TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+.hero-section {
+display: flex;
+flex-direction: column;
+align-items: stretch;
+gap: 55px;
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+.hero-content {
+width: 100%;
+text-align: center;
+}
+
+.hero-label {
+justify-content: center;
+}
+
+.hero-name {
+text-align: center;
+}
+
+.name-decoration {
+justify-content: center;
+}
+
+.hero-tagline,
+.hero-description {
+text-align: center;
+}
+
+.hero-description {
+max-width: 720px;
+margin-left: auto;
+margin-right: auto;
+}
+
+/* -----------------------------------------
+DETAILS — 2 COLUMN
+----------------------------------------- */
+
+.hero-details-grid {
+width: 100%;
+display: grid !important;
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 12px !important;
+margin-top: 25px;
+}
+
+.detail-box {
+width: 100%;
+min-width: 0;
+min-height: 68px;
+box-sizing: border-box;
+}
+
+.detail-box > div {
+min-width: 0;
+}
+
+.detail-box small,
+.detail-box strong {
+display: block;
+max-width: 100%;
+overflow-wrap: anywhere;
+}
+
+/* -----------------------------------------
+BUTTONS
+----------------------------------------- */
+
+.hero-buttons {
+width: 100%;
+display: grid !important;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 12px;
+margin-top: 24px;
+}
+
+.hero-button {
+width: 100%;
+min-width: 0;
+box-sizing: border-box;
+}
+
+/* -----------------------------------------
+STATUS
+----------------------------------------- */
+
+.hero-status-row {
+width: 100%;
+display: grid !important;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 8px;
+margin-top: 28px;
+padding: 16px 10px;
+box-sizing: border-box;
+}
+
+.status-divider {
+display: none !important;
+}
+
+.status-item {
+min-width: 0;
+text-align: center;
+}
+
+.status-item strong,
+.status-item span {
+display: block;
+}
+
+/* -----------------------------------------
+PHOTO AREA
+----------------------------------------- */
+
+.hero-profile-area {
+width: 100%;
+min-width: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.profile-photo-stage {
+max-width: 100%;
+}
+
+.profile-caption {
+position: relative !important;
+inset: auto !important;
+width: 100%;
+max-width: 500px;
+margin: 24px auto 0 !important;
+text-align: center;
+box-sizing: border-box;
+}
+
+.profile-caption h2 {
+margin: 8px 0;
+}
+
+.profile-caption p {
+max-width: 100%;
+overflow-wrap: anywhere;
+}
+
+/* -----------------------------------------
+SCROLL INDICATOR
+----------------------------------------- */
+
+.home-scroll-indicator {
+position: relative !important;
+left: auto !important;
+right: auto !important;
+bottom: auto !important;
+margin-top: 25px !important;
+margin-bottom: 10px !important;
+text-align: center;
+}
+
+}
+
+/* =========================================================
+FOOTER — MAIN MOBILE GUTTER
+========================================================= */
+
+@media (max-width: 900px) {
+
+#site-footer.luxury-footer {
+width: 100%;
+margin: 0;
+box-sizing: border-box;
+overflow: hidden;
+}
+
+#site-footer .footer-inner {
+width: calc(100% - 32px) !important;
+max-width: 1400px;
+margin-left: auto !important;
+margin-right: auto !important;
+padding-left: 0 !important;
+padding-right: 0 !important;
+box-sizing: border-box;
+}
+
+/* -----------------------------------------
+TOP ORNAMENT
+----------------------------------------- */
+
+#site-footer .footer-ornament {
+width: min(500px, 100%) !important;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 45px;
+}
+
+/* -----------------------------------------
+FOOTER GRID
+----------------------------------------- */
+
+#site-footer .footer-grid {
+width: 100%;
+display: grid !important;
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 42px 28px !important;
+align-items: start;
+}
+
+/* -----------------------------------------
+BRAND
+----------------------------------------- */
+
+#site-footer .footer-brand {
+grid-column: 1 / -1 !important;
+width: 100%;
+max-width: 650px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+#site-footer .footer-brand-emblem {
+margin-left: auto;
+margin-right: auto;
+}
+
+#site-footer .footer-brand-heading {
+width: 100%;
+text-align: center;
+}
+
+#site-footer .footer-description {
+max-width: 620px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+/* -----------------------------------------
+WHATSAPP / CALL / EMAIL
+ALWAYS ONE ROW
+----------------------------------------- */
+
+#site-footer .footer-actions {
+width: 100%;
+display: grid !important;
+grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+gap: 9px !important;
+margin-left: auto;
+margin-right: auto;
+}
+
+#site-footer .footer-action {
+width: 100%;
+min-width: 0;
+min-height: 48px;
+box-sizing: border-box;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 7px;
+padding: 8px 6px;
+}
+
+#site-footer .footer-action-icon {
+flex: 0 0 auto;
+}
+
+#site-footer .footer-action-text {
+min-width: 0;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+/* -----------------------------------------
+QUICK LINKS + BIODATA
+SIDE BY SIDE
+----------------------------------------- */
+
+#site-footer .footer-column {
+width: 100%;
+min-width: 0;
+box-sizing: border-box;
+}
+
+#site-footer .footer-column-heading {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+gap: 9px;
+margin-bottom: 12px;
+}
+
+#site-footer .footer-column-heading h3 {
+margin: 0;
+line-height: 1.3;
+}
+
+#site-footer .footer-column-icon {
+flex: 0 0 auto;
+}
+
+/*
+Heading and its own links stay together.
+*/
+#site-footer .footer-column-line {
+width: 100%;
+margin-bottom: 12px;
+}
+
+#site-footer .footer-links {
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 2px;
+}
+
+#site-footer .footer-links a {
+width: 100%;
+min-height: 38px;
+display: flex;
+align-items: center;
+gap: 7px;
+padding: 5px 4px;
+box-sizing: border-box;
+}
+
+#site-footer .footer-link-arrow {
+flex: 0 0 auto;
+}
+
+/* -----------------------------------------
+CONTACT
+FULL WIDTH — CLEAN BLOCK
+----------------------------------------- */
+
+#site-footer .footer-contact-column {
+grid-column: 1 / -1 !important;
+width: 100%;
+max-width: 720px;
+margin-left: auto;
+margin-right: auto;
+}
+
+#site-footer .footer-contact-column .footer-column-heading {
+justify-content: center;
+}
+
+#site-footer .footer-contact-column .footer-column-line {
+margin-left: auto;
+margin-right: auto;
+}
+
+#site-footer .footer-contact {
+width: 100%;
+display: grid !important;
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 10px !important;
+}
+
+#site-footer .footer-contact-item {
+width: 100%;
+min-width: 0;
+min-height: 66px;
+box-sizing: border-box;
+display: flex !important;
+align-items: center;
+gap: 11px;
+padding: 11px 12px;
+}
+
+#site-footer .footer-contact-item:nth-child(3),
+#site-footer .footer-contact-item:nth-child(4) {
+grid-column: auto;
+}
+
+#site-footer .footer-contact-icon {
+flex: 0 0 32px;
+width: 32px;
+height: 32px;
+display: grid;
+place-items: center;
+}
+
+#site-footer .footer-contact-text {
+min-width: 0;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 3px;
+}
+
+#site-footer .footer-contact-text small {
+line-height: 1.2;
+}
+
+#site-footer .footer-contact-text strong {
+max-width: 100%;
+line-height: 1.35;
+overflow-wrap: anywhere;
+word-break: break-word;
+}
+
+/* -----------------------------------------
+DIVIDER
+----------------------------------------- */
+
+#site-footer .footer-divider {
+width: 100%;
+margin-top: 48px;
+margin-bottom: 32px;
+}
+
+/* -----------------------------------------
+FOOTER BOTTOM
+----------------------------------------- */
+
+#site-footer .footer-bottom {
+width: 100%;
+display: flex !important;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 22px;
+text-align: center;
+}
+
+#site-footer .footer-bottom-left {
+width: 100%;
+text-align: center;
+}
+
+#site-footer .footer-copy,
+#site-footer .footer-note {
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+#site-footer .footer-bottom-right {
+width: 100%;
+justify-content: center;
+text-align: center;
+}
+
+#site-footer .footer-top-button {
+margin-left: auto;
+margin-right: auto;
+}
+
+}
+
+/* =========================================================
+MOBILE — 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+/* -----------------------------------------
+PAGE GUTTER
+----------------------------------------- */
+
+.hero-section,
+.home-scroll-indicator {
+width: calc(100% - 30px) !important;
+}
+
+/* -----------------------------------------
+HERO
+----------------------------------------- */
+
+.hero-section {
+gap: 45px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.hero-details-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 9px !important;
+}
+
+.detail-box {
+min-height: 64px;
+padding: 10px !important;
+gap: 8px;
+}
+
+.detail-box small {
+font-size: 7px;
+}
+
+.detail-box strong {
+font-size: 10px;
+line-height: 1.3;
+}
+
+.detail-icon {
+flex: 0 0 auto;
+}
+
+/* -----------------------------------------
+HERO BUTTONS
+----------------------------------------- */
+
+.hero-buttons {
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 9px;
+}
+
+.hero-button {
+min-height: 46px;
+padding: 9px 8px;
+}
+
+/* -----------------------------------------
+STATUS — 2 x 2
+----------------------------------------- */
+
+.hero-status-row {
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 0 !important;
+padding: 14px 8px;
+}
+
+.status-item {
+min-height: 54px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+/* -----------------------------------------
+PROFILE
+----------------------------------------- */
+
+.hero-profile-area {
+width: 100%;
+}
+
+.profile-photo-stage {
+width: min(100%, 360px);
+}
+
+.profile-caption {
+max-width: 100%;
+padding: 0 5px;
+}
+
+.profile-caption p {
+font-size: 9px;
+line-height: 1.6;
+}
+
+/* -----------------------------------------
+FOOTER
+----------------------------------------- */
+
+#site-footer .footer-inner {
+width: calc(100% - 30px) !important;
+}
+
+#site-footer .footer-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 36px 18px !important;
+}
+
+#site-footer .footer-brand {
+grid-column: 1 / -1 !important;
+}
+
+#site-footer .footer-description {
+font-size: 11px;
+line-height: 1.8;
+}
+
+/* -----------------------------------------
+ACTIONS — NEVER STACK
+----------------------------------------- */
+
+#site-footer .footer-actions {
+grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+gap: 6px !important;
+}
+
+#site-footer .footer-action {
+min-height: 46px;
+padding: 7px 4px;
+gap: 5px;
+}
+
+#site-footer .footer-action-text {
+font-size: 9px;
+}
+
+/* -----------------------------------------
+QUICK / BIODATA
+----------------------------------------- */
+
+#site-footer .footer-column-heading {
+gap: 7px;
+}
+
+#site-footer .footer-column-heading h3 {
+font-size: 10px;
+letter-spacing: .12em;
+}
+
+#site-footer .footer-links a {
+min-height: 35px;
+font-size: 10px;
+padding-left: 2px;
+}
+
+/* -----------------------------------------
+CONTACT — 2 x 2
+----------------------------------------- */
+
+#site-footer .footer-contact-column {
+grid-column: 1 / -1 !important;
+}
+
+#site-footer .footer-contact {
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 8px !important;
+}
+
+#site-footer .footer-contact-item {
+min-height: 62px;
+padding: 9px;
+gap: 8px;
+}
+
+#site-footer .footer-contact-icon {
+flex: 0 0 28px;
+width: 28px;
+height: 28px;
+font-size: 11px;
+}
+
+#site-footer .footer-contact-text small {
+font-size: 7px;
+letter-spacing: .10em;
+}
+
+#site-footer .footer-contact-text strong {
+font-size: 9px;
+}
+
+/* -----------------------------------------
+BOTTOM
+----------------------------------------- */
+
+#site-footer .footer-bottom {
+gap: 18px;
+}
+
+#site-footer .footer-copy {
+font-size: 10px;
+}
+
+#site-footer .footer-note {
+font-size: 9px;
+}
+
+}
+
+/* =========================================================
+SMALL PHONE — 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+/* -----------------------------------------
+GLOBAL
+----------------------------------------- */
+
+.hero-section,
+.home-scroll-indicator {
+width: calc(100% - 24px) !important;
+}
+
+#site-footer .footer-inner {
+width: calc(100% - 24px) !important;
+}
+
+/* -----------------------------------------
+HERO DETAILS
+----------------------------------------- */
+
+.hero-details-grid {
+gap: 8px !important;
+}
+
+.detail-box {
+min-height: 61px;
+padding: 8px !important;
+}
+
+.detail-box small {
+font-size: 6.5px;
+letter-spacing: .08em;
+}
+
+.detail-box strong {
+font-size: 9px;
+}
+
+/* -----------------------------------------
+HERO BUTTONS
+----------------------------------------- */
+
+.hero-buttons {
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.hero-button {
+font-size: 9px;
+}
+
+/* -----------------------------------------
+PROFILE CAPTION
+----------------------------------------- */
+
+.profile-caption {
+margin-top: 20px !important;
+}
+
+.profile-caption h2 {
+font-size: 17px;
+}
+
+.profile-caption p {
+font-size: 8px;
+}
+
+/* -----------------------------------------
+FOOTER ACTIONS
+----------------------------------------- */
+
+#site-footer .footer-actions {
+grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+gap: 5px !important;
+}
+
+#site-footer .footer-action {
+min-height: 43px;
+padding: 6px 3px;
+}
+
+#site-footer .footer-action-icon {
+font-size: 10px;
+}
+
+#site-footer .footer-action-text {
+font-size: 8px;
+}
+
+/* -----------------------------------------
+FOOTER COLUMNS
+----------------------------------------- */
+
+#site-footer .footer-grid {
+gap: 32px 14px !important;
+}
+
+#site-footer .footer-links a {
+font-size: 9px;
+min-height: 33px;
+}
+
+/* -----------------------------------------
+CONTACT
+----------------------------------------- */
+
+#site-footer .footer-contact {
+grid-template-columns: 1fr !important;
+gap: 7px !important;
+}
+
+#site-footer .footer-contact-item {
+min-height: 56px;
+}
+
+#site-footer .footer-contact-text strong {
+font-size: 9px;
+}
+
+}
+
+/* =========================================================
+VERY SMALL PHONE — 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+.hero-section,
+.home-scroll-indicator {
+width: calc(100% - 20px) !important;
+}
+
+#site-footer .footer-inner {
+width: calc(100% - 20px) !important;
+}
+
+.hero-details-grid {
+grid-template-columns: 1fr 1fr !important;
+}
+
+.detail-box {
+gap: 6px;
+padding: 7px !important;
+}
+
+.detail-box strong {
+font-size: 8.5px;
+}
+
+/*
+Actions STILL remain in one row.
+They never become vertical.
+*/
+#site-footer .footer-actions {
+grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+#site-footer .footer-action {
+min-width: 0;
+padding: 5px 2px;
+gap: 3px;
+}
+
+#site-footer .footer-action-text {
+font-size: 7px;
+}
+
+#site-footer .footer-action-icon {
+font-size: 9px;
+}
+
+/*
+Quick Links + Biodata stay side-by-side.
+*/
+#site-footer .footer-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 28px 10px !important;
+}
+
+#site-footer .footer-column-heading h3 {
+font-size: 8.5px;
+}
+
+#site-footer .footer-links a {
+font-size: 8px;
+min-height: 31px;
+}
+
+/*
+Contact remains clean one-column.
+*/
+#site-footer .footer-contact {
+grid-template-columns: 1fr !important;
+}
+
+}
+
+/* =========================================================
+REDUCED MOTION
+Existing animation rules remain untouched.
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+.hero-section,
+.hero-content,
+.hero-profile-area,
+.profile-caption,
+.footer-action,
+.footer-contact-item,
+.footer-column,
+.footer-links a {
+transition-duration: .01ms !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   PROFILE PAGE — MOBILE 2 COLUMN VERSION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* -----------------------------------------
+     MAIN PAGE GUTTER
+     ----------------------------------------- */
+
+  .profile-page {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .profile-hero,
+  .profile-details-section,
+  .profile-background-section,
+  .profile-lifestyle-section,
+  .profile-quote-section {
+    width: calc(100% - 30px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /* -----------------------------------------
+     HERO
+     ----------------------------------------- */
+
+  .profile-hero {
+    padding: 55px 0 35px;
+    text-align: center;
+  }
+
+  .profile-page-title {
+    font-size: 38px;
+    line-height: 1.08;
+  }
+
+  .profile-page-intro {
+    max-width: 600px;
+    margin-top: 15px;
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+
+  /* -----------------------------------------
+     MAIN PROFILE LAYOUT
+     IDENTITY + INFORMATION
+     ----------------------------------------- */
+
+  .profile-details-section {
+    padding: 15px 0 55px;
+  }
+
+  .profile-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.45fr;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+
+  /* -----------------------------------------
+     IDENTITY CARD
+     ----------------------------------------- */
+
+  .profile-identity-card {
+    min-height: 430px;
+    height: 100%;
+    padding: 24px 14px;
+    border-radius: 22px;
+  }
+
+  .profile-card-top {
+    top: 18px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .profile-card-number,
+  .profile-card-label {
+    font-size: 7px;
+    letter-spacing: 1.2px;
+  }
+
+  .profile-emblem {
+    width: 105px;
+    height: 105px;
+    margin-bottom: 20px;
+  }
+
+  .profile-emblem-ring.ring-one {
+    inset: 5px;
+  }
+
+  .profile-emblem-ring.ring-two {
+    inset: 15px;
+  }
+
+  .profile-emblem-symbol {
+    width: 62px;
+    height: 62px;
+    font-size: 32px;
+  }
+
+  .profile-identity-card h2 {
+    font-size: 20px;
+  }
+
+  .profile-card-subtitle {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .profile-mini-divider {
+    width: 105px;
+    margin: 17px 0 13px;
+  }
+
+  .profile-card-description {
+    max-width: 130px;
+    font-size: 8px;
+    line-height: 1.6;
+  }
+
+  .profile-status {
+    margin-top: 18px;
+    padding: 6px 11px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .status-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+
+  /* -----------------------------------------
+     INFORMATION CARD
+     ----------------------------------------- */
+
+  .profile-information {
+    min-width: 0;
+    padding: 18px 14px;
+    border-radius: 22px;
+  }
+
+  .profile-section-heading {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .profile-heading-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    font-size: 11px;
+    border-radius: 9px;
+  }
+
+  .profile-section-heading span {
+    margin-bottom: 3px;
+    font-size: 6px;
+    letter-spacing: 1.3px;
+  }
+
+  .profile-section-heading h2 {
+    font-size: 17px;
+  }
+
+
+  /* -----------------------------------------
+     PERSONAL DETAILS — 2 COLUMNS
+     ----------------------------------------- */
+
+  .profile-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .profile-detail-item {
+    min-width: 0;
+    min-height: 67px;
+    padding: 11px 10px;
+    border-radius: 9px;
+  }
+
+  .profile-detail-item::before {
+    top: 11px;
+    bottom: 11px;
+    width: 1px;
+  }
+
+  .detail-label {
+    margin-bottom: 5px;
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .profile-detail-item strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+
+  /* -----------------------------------------
+     SECTION HEADINGS
+     ----------------------------------------- */
+
+  .profile-section-header {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .profile-section-header h2 {
+    font-size: 28px;
+  }
+
+  .section-kicker {
+    font-size: 7px;
+    letter-spacing: 1.8px;
+  }
+
+  .section-decoration {
+    width: 160px;
+    margin-top: 13px;
+  }
+
+
+  /* -----------------------------------------
+     BACKGROUND CARDS — 2 COLUMNS
+     ----------------------------------------- */
+
+  .profile-background-section {
+    padding: 15px 0 60px;
+  }
+
+  .profile-background-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .background-card {
+    min-width: 0;
+    min-height: 170px;
+    padding: 17px 14px;
+    border-radius: 13px;
+  }
+
+  .background-card-icon {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 13px;
+    font-size: 14px;
+    border-radius: 9px;
+  }
+
+  .background-card-content span {
+    font-size: 6px;
+    letter-spacing: 1.2px;
+  }
+
+  .background-card-content h3 {
+    margin: 5px 0 6px;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .background-card-content p {
+    font-size: 8px;
+    line-height: 1.55;
+  }
+
+
+  /* -----------------------------------------
+     VALUES — 2 COLUMNS
+     ----------------------------------------- */
+
+  .profile-values-section {
+    width: calc(100% - 30px);
+    padding: 10px 0 60px;
+  }
+
+  .profile-values-card {
+    padding: 40px 20px;
+    border-radius: 22px;
+  }
+
+  .values-card-ornament {
+    width: 170px;
+    margin-bottom: 18px;
+  }
+
+  .values-kicker {
+    font-size: 7px;
+    letter-spacing: 1.7px;
+  }
+
+  .profile-values-card h2 {
+    font-size: 27px;
+    line-height: 1.2;
+  }
+
+  .values-description {
+    margin-top: 14px;
+    font-size: 11px;
+    line-height: 1.75;
+  }
+
+  .values-points {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    margin-top: 22px;
+  }
+
+  .value-point {
+    min-width: 0;
+    min-height: 45px;
+    padding: 7px 6px;
+    gap: 5px;
+    border-radius: 8px;
+  }
+
+  .value-point span {
+    font-size: 7px;
+  }
+
+  .value-point strong {
+    font-size: 7px;
+    line-height: 1.25;
+  }
+
+
+  /* -----------------------------------------
+     LIFESTYLE — 2 COLUMNS
+     ----------------------------------------- */
+
+  .profile-lifestyle-section {
+    padding: 10px 0 60px;
+  }
+
+  .profile-lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .lifestyle-card {
+    min-width: 0;
+    min-height: 155px;
+    padding: 17px 14px;
+    border-radius: 13px;
+  }
+
+  .lifestyle-icon {
+    margin-bottom: 13px;
+    font-size: 20px;
+  }
+
+  .lifestyle-card > span:not(.lifestyle-icon) {
+    font-size: 6px;
+    letter-spacing: 1.2px;
+  }
+
+  .lifestyle-card h3 {
+    margin: 6px 0;
+    font-size: 14px;
+  }
+
+  .lifestyle-card p {
+    font-size: 8px;
+    line-height: 1.55;
+  }
+
+
+  /* -----------------------------------------
+     QUOTE
+     ----------------------------------------- */
+
+  .profile-quote-section {
+    padding-bottom: 65px;
+  }
+
+  .profile-quote {
+    padding: 35px 15px;
+  }
+
+  .quote-mark {
+    height: 28px;
+    font-size: 45px;
+  }
+
+  .profile-quote p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .quote-decoration {
+    width: 140px;
+    margin-top: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE — STILL 2 COLUMNS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .profile-hero,
+  .profile-details-section,
+  .profile-background-section,
+  .profile-lifestyle-section,
+  .profile-quote-section,
+  .profile-values-section {
+    width: calc(100% - 24px);
+  }
+
+
+  /* Hero */
+
+  .profile-hero {
+    padding: 45px 0 30px;
+  }
+
+  .profile-page-title {
+    font-size: 32px;
+  }
+
+  .profile-page-intro {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+
+  /* Main two-column layout */
+
+  .profile-layout {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 9px;
+  }
+
+
+  /* Identity */
+
+  .profile-identity-card {
+    min-height: 390px;
+    padding: 22px 8px;
+    border-radius: 18px;
+  }
+
+  .profile-card-top {
+    top: 15px;
+    left: 8px;
+    right: 8px;
+  }
+
+  .profile-card-number,
+  .profile-card-label {
+    font-size: 5px;
+    letter-spacing: .8px;
+  }
+
+  .profile-emblem {
+    width: 78px;
+    height: 78px;
+    margin-bottom: 15px;
+  }
+
+  .profile-emblem-ring.ring-one {
+    inset: 3px;
+  }
+
+  .profile-emblem-ring.ring-two {
+    inset: 11px;
+  }
+
+  .profile-emblem-symbol {
+    width: 47px;
+    height: 47px;
+    font-size: 24px;
+  }
+
+  .profile-identity-card h2 {
+    font-size: 15px;
+  }
+
+  .profile-card-subtitle {
+    font-size: 5px;
+    letter-spacing: 1px;
+  }
+
+  .profile-mini-divider {
+    width: 70px;
+    margin: 13px 0 10px;
+  }
+
+  .profile-card-description {
+    max-width: 82px;
+    font-size: 6px;
+  }
+
+  .profile-status {
+    margin-top: 14px;
+    padding: 5px 8px;
+    font-size: 5px;
+  }
+
+
+  /* Information */
+
+  .profile-information {
+    padding: 14px 9px;
+    border-radius: 18px;
+  }
+
+  .profile-section-heading {
+    gap: 7px;
+    margin-bottom: 12px;
+  }
+
+  .profile-heading-icon {
+    width: 27px;
+    height: 27px;
+    flex-basis: 27px;
+    font-size: 9px;
+    border-radius: 7px;
+  }
+
+  .profile-section-heading span {
+    font-size: 5px;
+    letter-spacing: .9px;
+  }
+
+  .profile-section-heading h2 {
+    font-size: 14px;
+  }
+
+
+  /* Details remain 2 columns */
+
+  .profile-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .profile-detail-item {
+    min-height: 61px;
+    padding: 8px 7px;
+    border-radius: 7px;
+  }
+
+  .profile-detail-item::before {
+    top: 9px;
+    bottom: 9px;
+  }
+
+  .detail-label {
+    margin-bottom: 4px;
+    font-size: 5px;
+    letter-spacing: .7px;
+  }
+
+  .profile-detail-item strong {
+    font-size: 8px;
+  }
+
+
+  /* Background */
+
+  .profile-background-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .background-card {
+    min-height: 145px;
+    padding: 13px 10px;
+    border-radius: 10px;
+  }
+
+  .background-card-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 9px;
+    font-size: 12px;
+    border-radius: 7px;
+  }
+
+  .background-card-content span {
+    font-size: 5px;
+  }
+
+  .background-card-content h3 {
+    font-size: 12px;
+  }
+
+  .background-card-content p {
+    font-size: 7px;
+    line-height: 1.45;
+  }
+
+
+  /* Values */
+
+  .profile-values-card {
+    padding: 32px 13px;
+    border-radius: 18px;
+  }
+
+  .profile-values-card h2 {
+    font-size: 23px;
+  }
+
+  .values-description {
+    font-size: 9px;
+    line-height: 1.65;
+  }
+
+  .values-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .value-point {
+    min-height: 40px;
+    padding: 5px 4px;
+  }
+
+  .value-point strong {
+    font-size: 6px;
+  }
+
+
+  /* Lifestyle */
+
+  .profile-lifestyle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .lifestyle-card {
+    min-height: 135px;
+    padding: 13px 10px;
+    border-radius: 10px;
+  }
+
+  .lifestyle-icon {
+    margin-bottom: 9px;
+    font-size: 17px;
+  }
+
+  .lifestyle-card > span:not(.lifestyle-icon) {
+    font-size: 5px;
+  }
+
+  .lifestyle-card h3 {
+    font-size: 12px;
+    margin: 5px 0;
+  }
+
+  .lifestyle-card p {
+    font-size: 7px;
+    line-height: 1.45;
+  }
+
+
+  /* Quote */
+
+  .profile-quote {
+    padding: 30px 10px;
+  }
+
+  .profile-quote p {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL — 2 COLUMN COMPACT
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .profile-layout {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 7px;
+  }
+
+  .profile-identity-card {
+    min-height: 370px;
+  }
+
+  .profile-information {
+    padding: 12px 7px;
+  }
+
+  .profile-detail-item {
+    min-height: 57px;
+    padding: 7px 6px;
+  }
+
+  .profile-detail-item strong {
+    font-size: 7px;
+  }
+
+  .detail-label {
+    font-size: 4.5px;
+  }
+
+  .profile-section-heading h2 {
+    font-size: 12px;
+  }
+
+  .background-card {
+    min-height: 135px;
+  }
+
+  .lifestyle-card {
+    min-height: 125px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .profile-page {
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FINAL MOBILE — BRAND TITLE / SUBTITLE FIX
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .footer-brand-name {
+    margin-bottom: 0 !important;
+  }
+
+  /* Line ko title ke neeche rakho */
+  .footer-brand-name::after {
+    bottom: -2px !important;
+  }
+
+  /* Subtitle ko line se clearly neeche push karo */
+  .footer-brand-subtitle {
+    display: block;
+    margin-top: 5px !important;
+  }
+}

@@ -1,0 +1,527 @@
+/* =========================================================
+   MANGLIK MODULE
+   ========================================================= */
+
+.manglik-module {
+    width: 100%;
+}
+
+.manglik-page-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px;
+    margin-bottom: 18px;
+    background: #ffffff;
+    border: 1px solid rgba(104, 26, 38, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(48, 12, 18, 0.06);
+}
+
+.manglik-eyebrow {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #9b7228;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.manglik-page-head h2 {
+    margin: 0;
+    color: #4d1520;
+    font-size: 26px;
+    line-height: 1.25;
+}
+
+.manglik-page-head p {
+    margin: 8px 0 0;
+    color: #75666a;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.manglik-engine-badge {
+    flex-shrink: 0;
+    padding: 8px 13px;
+    border: 1px solid rgba(155, 114, 40, 0.35);
+    border-radius: 999px;
+    background: #fffaf0;
+    color: #76551d;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.manglik-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.manglik-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.manglik-card {
+    min-width: 0;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(104, 26, 38, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 7px 20px rgba(48, 12, 18, 0.055);
+}
+
+.manglik-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.manglik-card-title h3 {
+    margin: 0;
+    color: #4d1520;
+    font-size: 17px;
+}
+
+.manglik-card-title span {
+    color: #8c7479;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.manglik-status-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 18px;
+}
+
+.manglik-status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #f8f1df;
+    color: #7a581f;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.manglik-status-card.is-manglik .manglik-status-icon {
+    background: #f8e7e8;
+    color: #7c1d2b;
+}
+
+.manglik-status-card.is-non-manglik .manglik-status-icon {
+    background: #edf5ef;
+    color: #28603b;
+}
+
+.manglik-status-label {
+    margin: 0 0 5px;
+    color: #8b7479;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.manglik-status-value {
+    margin: 0;
+    color: #4d1520;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.manglik-status-meta {
+    text-align: right;
+}
+
+.manglik-status-meta strong {
+    display: block;
+    color: #4d1520;
+    font-size: 20px;
+}
+
+.manglik-status-meta span {
+    color: #8b7479;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MARS SUMMARY
+   ========================================================= */
+
+.manglik-mars-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.manglik-stat {
+    padding: 14px;
+    border-radius: 12px;
+    background: #faf7f4;
+    border: 1px solid rgba(104, 26, 38, 0.08);
+}
+
+.manglik-stat-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #8d797d;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.manglik-stat-value {
+    display: block;
+    color: #4d1520;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   REFERENCE CARDS
+   ========================================================= */
+
+.manglik-reference {
+    position: relative;
+}
+
+.manglik-reference::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+    background: #b9a06a;
+}
+
+.manglik-reference.is-affected::before {
+    background: #7c1d2b;
+}
+
+.manglik-reference.is-clear::before {
+    background: #497654;
+}
+
+.manglik-reference-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.manglik-reference-name {
+    color: #4d1520;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.manglik-reference-hindi {
+    margin-top: 3px;
+    color: #8d797d;
+    font-size: 12px;
+}
+
+.manglik-reference-result {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #f4efe6;
+    color: #72551e;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.manglik-reference.is-affected .manglik-reference-result {
+    background: #f7e6e8;
+    color: #7c1d2b;
+}
+
+.manglik-reference.is-clear .manglik-reference-result {
+    background: #eaf3ed;
+    color: #2f6540;
+}
+
+.manglik-reference-body {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.manglik-mini-stat {
+    padding: 10px;
+    border-radius: 10px;
+    background: #faf8f6;
+}
+
+.manglik-mini-stat span {
+    display: block;
+    color: #927f83;
+    font-size: 10px;
+    margin-bottom: 4px;
+}
+
+.manglik-mini-stat strong {
+    color: #4d1520;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TRADITIONAL HOUSES
+   ========================================================= */
+
+.manglik-houses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.manglik-house-chip {
+    min-width: 42px;
+    padding: 8px 10px;
+    border: 1px solid rgba(104, 26, 38, 0.12);
+    border-radius: 9px;
+    background: #faf7f4;
+    color: #4d1520;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.manglik-house-chip.is-active {
+    background: #f7e5e7;
+    border-color: rgba(124, 29, 43, 0.25);
+    color: #7c1d2b;
+}
+
+
+/* =========================================================
+   CROSS CHECK
+   ========================================================= */
+
+.manglik-crosscheck {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.manglik-cross-item {
+    padding: 14px;
+    border: 1px solid rgba(104, 26, 38, 0.09);
+    border-radius: 12px;
+    background: #faf8f6;
+}
+
+.manglik-cross-item span {
+    display: block;
+    color: #8d797d;
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.manglik-cross-item strong {
+    color: #4d1520;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RULE TABLE
+   ========================================================= */
+
+.manglik-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.manglik-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+.manglik-table th,
+.manglik-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(104, 26, 38, 0.09);
+    text-align: left;
+    vertical-align: top;
+}
+
+.manglik-table th {
+    background: #faf7f4;
+    color: #715e63;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.manglik-table td {
+    color: #4d4044;
+    font-size: 13px;
+}
+
+.manglik-rule-status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #f4efe6;
+    color: #72551e;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.manglik-rule-status.affected {
+    background: #f7e6e8;
+    color: #7c1d2b;
+}
+
+.manglik-rule-status.clear {
+    background: #eaf3ed;
+    color: #2f6540;
+}
+
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.manglik-note {
+    padding: 17px 19px;
+    border-left: 4px solid #9b7228;
+    border-radius: 10px;
+    background: #fffaf0;
+}
+
+.manglik-note strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #63491a;
+    font-size: 13px;
+}
+
+.manglik-note p {
+    margin: 0;
+    color: #6f625f;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   EMPTY / ERROR
+   ========================================================= */
+
+.manglik-empty {
+    padding: 45px 25px;
+    border: 1px dashed rgba(104, 26, 38, 0.2);
+    border-radius: 16px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.manglik-empty h3 {
+    margin: 0 0 8px;
+    color: #4d1520;
+    font-size: 18px;
+}
+
+.manglik-empty p {
+    margin: 0;
+    color: #806f73;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+    .manglik-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .manglik-mars-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .manglik-crosscheck {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .manglik-page-head {
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .manglik-status-card {
+        grid-template-columns: auto 1fr;
+    }
+
+    .manglik-status-meta {
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+
+    .manglik-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .manglik-mars-summary,
+    .manglik-crosscheck {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .manglik-reference-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .manglik-mars-summary,
+    .manglik-crosscheck {
+        grid-template-columns: 1fr;
+    }
+
+    .manglik-card {
+        padding: 16px;
+    }
+
+    .manglik-page-head h2 {
+        font-size: 22px;
+    }
+
+    .manglik-status-value {
+        font-size: 21px;
+    }
+}

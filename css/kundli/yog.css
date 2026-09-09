@@ -1,0 +1,782 @@
+/* =========================================================
+   VEDIC KUNDLI - YOG MODULE
+   ========================================================= */
+
+.yog-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.yog-hero {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 28px 30px;
+    margin-bottom: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf8 0%,
+            #f8f1e3 100%
+        );
+
+    border: 1px solid #e5d3ad;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 28px rgba(70, 40, 15, 0.08);
+}
+
+.yog-hero-icon {
+    width: 68px;
+    height: 68px;
+
+    flex: 0 0 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #5b1717;
+    color: #d6ad52;
+
+    font-size: 34px;
+    font-family: serif;
+
+    box-shadow:
+        0 8px 18px rgba(91, 23, 23, 0.18);
+}
+
+.yog-hero-content {
+    min-width: 0;
+}
+
+.yog-eyebrow {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #9b7428;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+.yog-hero h2 {
+    margin: 0 0 7px;
+
+    color: #4d1515;
+
+    font-size: 32px;
+    line-height: 1.15;
+}
+
+.yog-hero p {
+    max-width: 800px;
+
+    margin: 0;
+
+    color: #6f6257;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.yog-empty {
+    padding: 55px 25px;
+
+    text-align: center;
+
+    background: #fff;
+
+    border: 1px solid #eadfce;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 28px rgba(50, 30, 15, 0.06);
+}
+
+.yog-empty-icon {
+    margin-bottom: 10px;
+
+    color: #9b7428;
+
+    font-size: 38px;
+    font-family: serif;
+}
+
+.yog-empty h3 {
+    margin: 0 0 8px;
+
+    color: #4d1515;
+
+    font-size: 21px;
+}
+
+.yog-empty p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: #756a61;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.yog-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+.yog-stat-card {
+    position: relative;
+
+    padding: 21px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #eadfce;
+    border-radius: 16px;
+
+    box-shadow:
+        0 7px 22px rgba(60, 35, 15, 0.055);
+}
+
+.yog-stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #b38a38;
+}
+
+.yog-stat-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #806e5c;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.yog-stat-card strong {
+    display: block;
+
+    color: #531919;
+
+    font-size: 30px;
+    line-height: 1.15;
+}
+
+.yog-stat-card small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #998c80;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.yog-section {
+    margin-bottom: 22px;
+
+    padding: 22px;
+
+    background: #fff;
+
+    border: 1px solid #eadfce;
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 24px rgba(60, 35, 15, 0.05);
+}
+
+.yog-section-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #eee5d9;
+}
+
+.yog-section-kicker {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #a37a2b;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+.yog-section-heading h3 {
+    margin: 0;
+
+    color: #4e1717;
+
+    font-size: 21px;
+}
+
+.yog-section-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 10px;
+
+    color: #77591e;
+    background: #fbf4e4;
+
+    border: 1px solid #ead6aa;
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   YOGA LIST
+   ========================================================= */
+
+.yog-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.yog-card {
+    position: relative;
+
+    padding: 19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff 0%,
+            #fffaf3 100%
+        );
+
+    border: 1px solid #e8dccb;
+    border-radius: 14px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.yog-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(70, 40, 15, 0.08);
+}
+
+.yog-card-top {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 12px;
+}
+
+.yog-card-title {
+    min-width: 0;
+}
+
+.yog-card-title .hi {
+    display: block;
+
+    color: #541717;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.yog-card-title .en {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8c7b6c;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.yog-card-category {
+    flex: 0 0 auto;
+
+    padding: 5px 8px;
+
+    color: #7c5b20;
+    background: #fbf3df;
+
+    border: 1px solid #ead8ad;
+    border-radius: 7px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.yog-card-description {
+    margin: 0 0 13px;
+
+    color: #64594f;
+
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.yog-basis {
+    padding: 11px 12px;
+
+    background: #f9f5ee;
+
+    border-left: 3px solid #b28a3b;
+    border-radius: 8px;
+
+    color: #5e5147;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.yog-basis strong {
+    color: #4f1717;
+}
+
+.yog-planets {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 13px;
+}
+
+.yog-planet-chip {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 6px 9px;
+
+    background: #fff;
+
+    border: 1px solid #e4d9ca;
+    border-radius: 8px;
+
+    color: #5b5048;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.yog-planet-chip small {
+    color: #9a8d80;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   COMBINATIONS
+   ========================================================= */
+
+.yog-combinations {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.yog-combination {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 10px 13px;
+
+    background: #fcf8f0;
+
+    border: 1px solid #eadfce;
+    border-radius: 10px;
+
+    color: #5b4d42;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.yog-combination strong {
+    color: #531818;
+}
+
+.yog-combination span {
+    margin-left: 6px;
+
+    color: #978779;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.yog-table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.yog-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 680px;
+}
+
+.yog-table th {
+    padding: 12px 13px;
+
+    text-align: left;
+
+    color: #705c47;
+
+    background: #faf6ef;
+
+    border-bottom: 1px solid #e6dacb;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.yog-table td {
+    padding: 12px 13px;
+
+    color: #5f554d;
+
+    border-bottom: 1px solid #eee7dd;
+
+    font-size: 12px;
+}
+
+.yog-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.yog-table .house-number {
+    color: #561919;
+    font-weight: 800;
+}
+
+.yog-table .lord {
+    color: #561919;
+    font-weight: 800;
+}
+
+.yog-class {
+    display: inline-flex;
+
+    padding: 5px 8px;
+
+    border-radius: 7px;
+
+    background: #f7f1e7;
+
+    color: #725d44;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   RULE COVERAGE
+   ========================================================= */
+
+.yog-rule-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.yog-rule {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 12px 13px;
+
+    background: #fcfaf6;
+
+    border: 1px solid #ebe1d3;
+    border-radius: 10px;
+}
+
+.yog-rule-name {
+    color: #5c5047;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.yog-rule-status {
+    flex: 0 0 auto;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.yog-rule-status.detected {
+    color: #4e751f;
+}
+
+.yog-rule-status.not-detected {
+    color: #9b8d80;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+   ========================================================= */
+
+.yog-highlights {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+}
+
+.yog-highlight {
+    padding: 17px;
+
+    background: #fcf8f1;
+
+    border: 1px solid #eadfce;
+    border-radius: 13px;
+}
+
+.yog-highlight-title {
+    color: #541818;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.yog-highlight-value {
+    margin-top: 7px;
+
+    color: #786750;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.yog-disclaimer {
+    padding: 15px 17px;
+
+    background: #fff9ec;
+
+    border: 1px solid #ecdcb9;
+    border-radius: 13px;
+}
+
+.yog-disclaimer strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #77591f;
+
+    font-size: 12px;
+}
+
+.yog-disclaimer p {
+    margin: 0;
+
+    color: #766858;
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .yog-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .yog-rule-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .yog-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .yog-page {
+        padding: 14px;
+    }
+
+    .yog-hero {
+        padding: 20px;
+    }
+
+    .yog-hero-icon {
+        width: 52px;
+        height: 52px;
+
+        flex-basis: 52px;
+
+        font-size: 27px;
+    }
+
+    .yog-hero h2 {
+        font-size: 26px;
+    }
+
+    .yog-summary-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .yog-stat-card {
+        padding: 15px;
+    }
+
+    .yog-stat-card strong {
+        font-size: 24px;
+    }
+
+    .yog-section {
+        padding: 16px;
+    }
+
+    .yog-section-heading {
+        align-items: flex-start;
+    }
+
+    .yog-rule-grid,
+    .yog-highlights {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .yog-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .yog-hero {
+        align-items: flex-start;
+    }
+
+    .yog-hero p {
+        font-size: 12px;
+    }
+
+}

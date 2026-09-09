@@ -1,0 +1,475 @@
+/* =========================================================
+   BHAVA MODULE
+========================================================= */
+
+.bhava-module {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.bhava-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.bhava-eyebrow,
+.bhava-card-kicker {
+    display: block;
+    color: #c9a227;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.bhava-header h2 {
+    margin: 7px 0 6px;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.bhava-header p {
+    margin: 0;
+    color: #afa4a9;
+    font-size: 13px;
+}
+
+.bhava-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.bhava-badge {
+    padding: 8px 12px;
+    border: 1px solid rgba(201, 162, 39, 0.22);
+    border-radius: 999px;
+    color: #91878c;
+    background: rgba(255, 255, 255, 0.025);
+    font-size: 10px;
+}
+
+.bhava-badge-active {
+    color: #d5b13a;
+    border-color: rgba(201, 162, 39, 0.42);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.bhava-summary-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.bhava-summary-card {
+    padding: 17px 18px;
+    border: 1px solid rgba(201, 162, 39, 0.17);
+    border-radius: 13px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(46, 19, 31, 0.92),
+            rgba(18, 11, 18, 0.97)
+        );
+}
+
+.bhava-summary-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #81767c;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bhava-summary-card strong {
+    display: block;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.bhava-summary-card small {
+    display: block;
+    margin-top: 5px;
+    color: #9c9196;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.bhava-card {
+    margin-bottom: 18px;
+    border: 1px solid rgba(201, 162, 39, 0.20);
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(43, 18, 30, 0.95),
+            rgba(18, 11, 18, 0.98)
+        );
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+.bhava-card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 22px 15px;
+}
+
+.bhava-card-heading h3 {
+    margin: 5px 0 0;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.bhava-heading-note {
+    color: #80757b;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   HOUSE GRID
+========================================================= */
+
+.bhava-house-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 22px 22px;
+}
+
+.bhava-house-card {
+    position: relative;
+    padding: 17px;
+    border: 1px solid rgba(255, 255, 255, 0.065);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.15);
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.bhava-house-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(201, 162, 39, 0.30);
+}
+
+.bhava-house-card.is-lagna {
+    border-color: rgba(201, 162, 39, 0.48);
+    background: rgba(201, 162, 39, 0.045);
+}
+
+.bhava-house-card.is-marriage {
+    box-shadow:
+        inset 0 0 0 1px rgba(170, 70, 100, 0.08);
+}
+
+.bhava-house-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.bhava-house-number {
+    color: #c9a227;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.bhava-house-type {
+    color: #71676d;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.bhava-house-rashi {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.bhava-house-rashi-en {
+    margin-top: 2px;
+    color: #81767d;
+    font-size: 9px;
+}
+
+.bhava-house-lord {
+    margin-top: 13px;
+    padding-top: 11px;
+    border-top: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.bhava-house-lord-label {
+    color: #766b71;
+    font-size: 9px;
+}
+
+.bhava-house-lord-value {
+    margin-top: 4px;
+    color: #d8b63e;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bhava-house-planets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 12px;
+}
+
+.bhava-planet-pill {
+    padding: 5px 7px;
+    border: 1px solid rgba(201, 162, 39, 0.20);
+    border-radius: 5px;
+    color: #d4cbcf;
+    background: rgba(201, 162, 39, 0.045);
+    font-size: 9px;
+}
+
+.bhava-empty {
+    color: #62585e;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   HOUSE SIGNIFICATION
+========================================================= */
+
+.bhava-signification {
+    margin-top: 12px;
+    color: #92878d;
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   ASPECTS
+========================================================= */
+
+.bhava-aspect-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 22px 22px;
+}
+
+.bhava-aspect-item {
+    padding: 13px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.13);
+}
+
+.bhava-aspect-source {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bhava-aspect-arrow {
+    margin: 0 6px;
+    color: #c9a227;
+}
+
+.bhava-aspect-target {
+    color: #d4b13b;
+    font-size: 11px;
+}
+
+.bhava-aspect-meta {
+    margin-top: 6px;
+    color: #756b71;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.bhava-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 12px 15px;
+}
+
+.bhava-table {
+    width: 100%;
+    min-width: 920px;
+    border-collapse: collapse;
+}
+
+.bhava-table th {
+    padding: 10px;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.20);
+    color: #81767c;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.bhava-table td {
+    padding: 13px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #c8bec2;
+    font-size: 11px;
+    vertical-align: top;
+}
+
+.bhava-table tr:last-child td {
+    border-bottom: none;
+}
+
+.bhava-table-house {
+    color: #d1ab32;
+    font-weight: 700;
+}
+
+.bhava-table-rashi {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.bhava-table-lord {
+    color: #d4b13b;
+}
+
+.bhava-table-planet {
+    display: inline-block;
+    margin: 2px 3px 2px 0;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background: rgba(201, 162, 39, 0.06);
+    color: #d3c9cd;
+    font-size: 9px;
+}
+
+.bhava-table-empty {
+    color: #645a60;
+}
+
+.bhava-aspect-list {
+    color: #aaa0a5;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.bhava-note {
+    padding: 14px 16px;
+    border-left: 2px solid rgba(201, 162, 39, 0.52);
+    border-radius: 8px;
+    color: #8c8187;
+    background: rgba(201, 162, 39, 0.035);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.bhava-note strong {
+    color: #c0a046;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.bhava-error {
+    padding: 18px;
+    border: 1px solid rgba(190, 70, 70, 0.30);
+    border-radius: 10px;
+    color: #d2a1a1;
+    background: rgba(100, 25, 25, 0.10);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .bhava-house-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .bhava-aspect-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .bhava-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .bhava-header {
+        flex-direction: column;
+    }
+
+    .bhava-house-grid,
+    .bhava-aspect-grid,
+    .bhava-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .bhava-header h2 {
+        font-size: 24px;
+    }
+
+    .bhava-card-heading {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .bhava-house-grid,
+    .bhava-aspect-grid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
