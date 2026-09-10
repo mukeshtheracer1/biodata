@@ -673,7 +673,7 @@
                 getDegreeInRashi(siderealAscendant)
             ),
             localSiderealTime: Number(houses.armc || 0),
-            ayanamsha,
+            ayanamsa,
             midheavenTropical: Number(houses.mc || 0),
             vertexTropical: Number(houses.vertex || 0),
             houseSystem: "Whole Sign"
